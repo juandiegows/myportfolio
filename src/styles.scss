@@ -4,10 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 html {
   font-size: 10px;
+  font-family: 'Quicksand', sans-serif;
 }
 body {
-  background-color: $background;
-  color: $DarkColor;
+  background-color: var(--background);
+  color: var(--DarkColor);
   padding: 0 2rem;
   font-size: 1.6rem;
+  transition: var(--myTransition);
 }

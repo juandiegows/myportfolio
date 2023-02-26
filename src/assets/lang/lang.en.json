@@ -1,0 +1,11 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about_me":"About me",
+    "services":"Services",
+    "skills":"Skills",
+    "projects":"Projects",
+    "blog":"Blog",
+    "contact_me": "Contact me"
+  }
+}

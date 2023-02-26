@@ -5,13 +5,15 @@ import { WebsiteRoutingModule } from './website-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ImageComponent } from './components/image/image.component';
+import { PalletteComponent } from './components/pallette/pallette.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     HeaderComponent,
-    ImageComponent
+    ImageComponent,
+    PalletteComponent
   ],
   imports: [
     CommonModule,

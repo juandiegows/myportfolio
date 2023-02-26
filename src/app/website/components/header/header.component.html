@@ -4,14 +4,14 @@
 
     <div class="logo">
       <div class="image">
-        <app-image srcImg="/assets/img/Icons/logo.svg" textAlt="logo JD" />
+        <app-image [activeFilter]="true" srcImg="/assets/img/Icons/logo.svg" textAlt="logo JD" />
       </div>
-      <p class="title">JuanDiegoWS</p>
+      <p class="title">JuanDiegoWS </p>
     </div>
 
     <div class="flags">
 
-      <div class="flag">
+      <div class="flag" (click)='changesLang(langPage.en)' [class.flag-active]="lang == langPage.en">
         <div class="image">
           <app-image srcImg="/assets/img/Icons/Englishflag.svg" textAlt="logo JD" />
         </div>
@@ -19,7 +19,7 @@
       </div>
 
 
-      <div class="flag  flag-active">
+      <div class="flag" [class.flag-active]="lang == langPage.es" (click)='changesLang(langPage.es)'>
         <div class="image">
           <app-image srcImg="/assets/img/Icons/Spanishflag.svg" textAlt="logo JD" />
         </div>
@@ -39,14 +39,16 @@
 
 
   <nav class="navigation">
-    <a href="">Inicio</a>
-    <a href="">Sobre mi</a>
-    <a href="">Servicios</a>
-    <a href="">Habilidades</a>
-    <a href="">Proyectos</a>
-    <a href="">Blog</a>
-    <div class="image">
-      <app-image srcImg="assets/img/Icons/pallette.svg"></app-image>
-    </div>
+    <a href="">{{data.navigation.home}}</a>
+    <a href="">{{data.navigation.about_me}}</a>
+    <a href="">{{data.navigation.services}}</a>
+    <a href="">{{data.navigation.skills}}</a>
+    <a href="">{{data.navigation.projects}}</a>
+    <a href="">{{data.navigation.blog}}</a>
+    <app-pallette />
   </nav>
 </header>
+<br>
+{{data | json}}
+<br>
+{{color}}

@@ -9,6 +9,9 @@ export class ImageComponent {
   @Input() srcImg: String  = "";
   srcImgDefault: string = "/assets/img/Icons/logo.svg";
   @Input() textAlt:String = "undefined";
+
+  @Input()
+  activeFilter : Boolean = false;
   setImgDefault() {
     this.srcImg = this.srcImgDefault;
   }

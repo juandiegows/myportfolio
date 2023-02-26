@@ -1,0 +1,66 @@
+
+.image {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.colors {
+  display: none;
+  background-color: #000000;
+  position: absolute;
+  top: 5.5rem;
+  right: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+
+  .color {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: white;
+    cursor: pointer;
+  }
+  .color-orange {
+    background-color: var(--OrangeColor);
+  }
+  .color-blue {
+    background-color: var(--BlueColor);
+  }
+  .color-lemon {
+    background-color: var(--LemonColor);
+  }
+  .color-pink {
+    background-color: var(--pinkColor);
+  }
+  .color-purple {
+    background-color: var(--purpleColor);
+  }
+  .color-yellow {
+    background-color: var(--Yellow2Color);
+  }
+  .color-gray {
+    background-color: var(--GraycColor);
+  }
+  .color-blue2 {
+    background-color: var(--Blue2Color);
+  }
+  .color-red {
+    background-color: var(--RedColor);
+  }
+  .color-green {
+    background-color: var(--greenColor);
+  }
+  .color-yellow2 {
+    background-color: var(--Yellow2Color);
+  }
+  .color-purple2 {
+    background-color: var(--purpleDarkColor);
+  }
+
+}
+.colors-active {
+  display: grid;
+  border-radius: 0.4rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0.5rem;
+}

@@ -1,23 +1,29 @@
-// modo oscuro
-$DarkBackgoundColor: #333333;
-$DarkColor: #fefefe;
+:root {
+/* modo oscuro */
+--DarkBackgoundColor: #333333;
+--DarkColor: #fefefe;
 
-// colores
-$BlueColor: #82CFFF;
-$OrangeColor : #FF8A42;
-$Blue2Color : #0572EC;
-$LemonColor : #64FF7D;
-$purpleColor : #B38AF5;
-$purpleDarkColor : #ff92f8;
-$GraycColor : #f3f3f3;
-$RedColor : #DC0823;
-$pinkColor : #ef63e4;
-$greenColor : #0A9F2B;
-$Yellow2Color:#ffd42a;
+/* colores */
+--BlueColor: #82CFFF;
+--OrangeColor: #FF8A42;
+--Blue2Color: #0572EC;
+--LemonColor: #64FF7D;
+--purpleColor: #B38AF5;
+--purpleDarkColor: #ff92f8;
+--GraycColor: #f3f3f3;
+--RedColor: #DC0823;
+--pinkColor: #ef63e4;
+--greenColor: #0A9F2B;
+--Yellow2Color: #ffd42a;
+// filtros
 
 
+/* variables */
+--colorPrimary: var(--BlueColor);
+--colorPrimaryF: brightness(0) saturate(100%) invert(68%) sepia(73%) saturate(460%) hue-rotate(177deg) brightness(102%) contrast(105%);
+--background: var(--DarkBackgoundColor);
+--color: var(--DarkColor);
 
-//variables
-$colorPrimary: $pinkColor;
-$background: $DarkBackgoundColor;
-$color: $DarkColor;
+
+--myTransition: background-color 0.8s ease, color 0.5s ease, filter 0.5s ease;
+}
