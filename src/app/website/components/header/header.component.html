@@ -46,9 +46,9 @@
     <a href="">{{data.navigation.projects}}</a>
     <a href="">{{data.navigation.blog}}</a>
     <app-pallette />
+    <app-mode-dark-light/>
+    <button class="btn"  [ngClass]="{'btn-dark':darkMode, 'btn-light':!darkMode}">{{data.navigation.contact_me}}</button>
   </nav>
 </header>
 <br>
 {{data | json}}
-<br>
-{{color}}

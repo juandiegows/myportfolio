@@ -1,0 +1,45 @@
+.container {
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 30rem;
+  background-color: #3557A0;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  p {
+    position: absolute;
+    left: 0rem;
+    font-size: 1rem;
+    margin-left: 0.8rem;
+    margin-right: 0;
+    font-weight: 900;
+    transition: all 1s ease;
+    color: white;
+  }
+  .image {
+    position: absolute;
+    right: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: all 1s ease;
+  }
+}
+
+.container-light {
+  background-color: #3c9bff;
+  p {
+    position: absolute;
+    left: calc(100% - 2.5rem);
+    margin-left: 0;
+    margin-right: 0.8rem;
+  }
+  .image {
+    position: absolute;
+    right: calc(100% - 2.5rem);
+  }
+}

@@ -20,6 +20,17 @@ export class SettingService {
   }
 
 
+  mode: Mode = Mode.dark;
+  private _mode = new BehaviorSubject<Mode>(this.mode);
+  mode$ = this._mode.asObservable();
+
+  setMode(mode: Mode) {
+    this.mode = mode;
+    this._mode.next(mode);
+  }
+
+
+
   GetLangText() {
     return   this.http.get<any>(`/assets/lang/lang.${this.lang.toString()}.json`);
   }
@@ -28,4 +39,8 @@ export class SettingService {
 export enum Lang {
   en = "en",
   es = "es"
+}
+export enum Mode {
+  dark = "dark",
+  light = "ligth"
 }

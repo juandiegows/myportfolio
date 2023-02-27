@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Lang } from '../../models/lang/lang.model';
 import { Navigation } from '../../models/lang/navigation.model';
 import { ColorFilterService } from '../../services/color-filter.service';
-import { SettingService, Lang as LangEnum } from '../../services/setting.service';
+import { SettingService, Lang as LangEnum, Mode } from '../../services/setting.service';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
     }
   };
   lang = this.langPage.en;
-  color :any = "ada";
+  darkMode: Boolean = true;
 
   constructor(private setting: SettingService) {
     this.lang = setting.lang;
@@ -35,6 +35,10 @@ export class HeaderComponent implements OnInit {
         this.data = data;
       });
     })
+    this.setting.mode$.subscribe(data => {
+      this.darkMode = data == Mode.dark ? true : false;
+
+    });
   }
 
 
