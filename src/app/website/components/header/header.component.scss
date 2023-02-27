@@ -1,10 +1,13 @@
 .container__header {
   margin-top: 2rem;
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-
+  position: sticky;
+  left: 0;
+  top: 0;
   .header__left {
     display: flex;
     gap: 2rem;
@@ -22,6 +25,7 @@
       }
       .title {
         color: var(--colorPrimary);
+        font-weight: 900;
       }
     }
 
@@ -120,22 +124,21 @@
         box-shadow: none;
         outline: none;
         padding: 0.5rem;
-        color:  white;
+        color: white;
         border-radius: 0.5rem;
         cursor: pointer;
         transition: var(--myTransition);
       }
       .btn-dark {
-        background-color:  #3557A0 ;
+        background-color: #3557a0;
       }
       .btn-light {
-        background-color:  #3C9BFF ;
+        background-color: #3c9bff;
       }
     }
   }
 }
 @media screen and (min-width: 800px) {
-
   .container__header {
     .header__left {
       .logo {
@@ -151,12 +154,10 @@
     .navigation {
       gap: 1rem;
       font-size: 1.6rem;
-
     }
   }
 }
 @media screen and (min-width: 908px) {
-
   .container__header {
     .header__left {
       .logo {
@@ -171,7 +172,6 @@
     .navigation {
       gap: 1rem;
       font-size: 1.6rem;
-
     }
   }
 }
