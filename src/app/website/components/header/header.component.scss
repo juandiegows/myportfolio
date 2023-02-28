@@ -26,6 +26,9 @@
       .title {
         color: var(--colorPrimary);
         font-weight: 900;
+        -webkit-user-select: none;
+        user-select: none;
+
       }
     }
 
@@ -114,6 +117,8 @@
         text-decoration: none;
         color: var(--color);
         font-weight: 500;
+        -webkit-user-select: none;
+        user-select: none;
       }
       a:hover {
         color: var(--colorPrimary);

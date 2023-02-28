@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -6,8 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 
-export class SettingService {
-
+export class SettingService  {
 
 
   lang: Lang = Lang.es;
@@ -15,8 +14,12 @@ export class SettingService {
   lang$ = this._lang.asObservable();
 
   setLang(lang: Lang) {
-    this.lang = lang;
-    this._lang.next(lang);
+    this.GetLangText(lang).subscribe(data => {
+      this.data =data;
+      this.lang = lang;
+      this._lang.next(lang);
+    });
+
   }
 
 
@@ -29,12 +32,42 @@ export class SettingService {
     this._mode.next(mode);
   }
 
+  data:any ={
+    "navigation": {
+      "home": "Inicio ",
+      "about_me":"Sobre mi",
+      "services":"Servicios",
+      "skills":"Habilidades",
+      "projects":"Proyectos",
+      "blog":"Blog",
+      "contact_me": "Contáctame"
+    },
+    "introduction": {
+      "hello": "Hola, Mi nombre es",
+      "Iam": "Soy",
+      "roles":["Desarrollador web",
+      "Desarrollador móvil",
+      "Desarrollador full stack",
+      "Desarrollador backend",
+      "Analista de datos (SQL SERVER y MYSQL)",
+      "Desarrollador Vue.js",
+      "Desarrollador Angular",
+      "Desarrollador .NET",
+      "diseñador UX/UI"
+      ],
+      "achievements":"Logros destacados",
+      "achievements1":"Campeón de worldskills colombia",
+      "achievements2":"Campeón de worldskills chile",
+      "achievements3":"SubCampeón de worldskills American",
+      "achievements4":"Medalla de excelencia worldskils special edition"
+    }
+  };
 
-
-  GetLangText() {
-    return   this.http.get<any>(`/assets/lang/lang.${this.lang.toString()}.json`);
+  GetLangText(lang:Lang) {
+    return this.http.get<any>(`/assets/lang/lang.${lang.toString()}.json`);
   }
   constructor(private http: HttpClient) { }
+
 }
 export enum Lang {
   en = "en",

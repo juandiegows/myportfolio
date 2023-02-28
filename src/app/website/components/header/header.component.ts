@@ -12,16 +12,14 @@ import { SettingService, Lang as LangEnum, Mode } from '../../services/setting.s
 export class HeaderComponent implements OnInit {
 
   langPage = LangEnum;
-  data: Lang = {
-    navigation: {
-      home: 'Home',
-      about_me: 'About me',
-      services: 'Services',
-      skills: 'Skills',
-      projects: 'Projects',
-      blog: 'Blog',
-      contact_me: 'Contact me'
-    }
+  data = {
+    "home": "Inicio ",
+    "about_me":"Sobre mi",
+    "services":"Servicios",
+    "skills":"Habilidades",
+    "projects":"Proyectos",
+    "blog":"Blog",
+    "contact_me": "Contáctame"
   };
   lang = this.langPage.en;
   darkMode: Boolean = true;
@@ -31,9 +29,7 @@ export class HeaderComponent implements OnInit {
   }
   ngOnInit(): void {
     this.setting.lang$.subscribe(data => {
-      this.setting.GetLangText().subscribe(data => {
-        this.data = data;
-      });
+      this.data = this.setting.data.navigation;
     })
     this.setting.mode$.subscribe(data => {
       this.darkMode = data == Mode.dark ? true : false;

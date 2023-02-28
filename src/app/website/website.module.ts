@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ImageComponent } from './components/image/image.component';
 import { PalletteComponent } from './components/pallette/pallette.component';
 import { ModeDarkLightComponent } from './components/mode-dark-light/mode-dark-light.component';
-
+import { IntroductionComponent } from './components/introduction/introduction.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import { ModeDarkLightComponent } from './components/mode-dark-light/mode-dark-l
     HeaderComponent,
     ImageComponent,
     PalletteComponent,
-    ModeDarkLightComponent
+    ModeDarkLightComponent,
+    IntroductionComponent
   ],
   imports: [
     CommonModule,

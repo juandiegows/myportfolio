@@ -7,5 +7,24 @@
     "projects":"Proyectos",
     "blog":"Blog",
     "contact_me": "Contáctame"
+  },
+  "introduction": {
+    "hello": "Hola, Mi nombre es",
+    "Iam": "Soy",
+    "roles":["Desarrollador web",
+    "Desarrollador móvil",
+    "Desarrollador full stack",
+    "Desarrollador backend",
+    "Analista de datos (SQL SERVER y MYSQL)",
+    "Desarrollador Vue.js",
+    "Desarrollador Angular",
+    "Desarrollador .NET",
+    "diseñador UX/UI"
+    ],
+    "achievements":"Logros destacados",
+    "achievements1":"Campeón de worldskills colombia",
+    "achievements2":"Campeón de worldskills chile",
+    "achievements3":"SubCampeón de worldskills American",
+    "achievements4":"Medalla de excelencia worldskils special edition"
   }
 }

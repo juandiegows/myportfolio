@@ -1,11 +1,31 @@
 {
   "navigation": {
     "home": "Home",
-    "about_me":"About me",
-    "services":"Services",
-    "skills":"Skills",
-    "projects":"Projects",
-    "blog":"Blog",
+    "about_me": "About me",
+    "services": "Services",
+    "skills": "Skills",
+    "projects": "Projects",
+    "blog": "Blog",
     "contact_me": "Contact me"
+  },
+  "introduction": {
+    "hello": "Hi, My name is",
+    "Iam": "I am",
+    "roles": [
+      "Web Developer",
+      "Mobile Developer",
+      "Full Stack Developer",
+      "Backend Developer",
+      "Data Analyst (SQL SERVER and MYSQL)",
+      "Vue.js Developer",
+      "Angular Developer",
+      ".NET Developer",
+      "UX/UI Designer"
+    ],
+    "achievements": "Outstanding Achievements",
+    "achievements1": "champion of worldskills colombia",
+    "achievements2": "champion of worldskills chile",
+    "achievements3": "runner-up of worldskills American",
+    "achievements4": "medal of excellence in worldskils special edition"
   }
 }
