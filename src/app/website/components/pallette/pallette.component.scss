@@ -2,13 +2,14 @@
 .image {
   width: 2.5rem;
   height: 2.5rem;
+  position: relative;
 }
 .colors {
   display: none;
   background-color: #000000;
   position: absolute;
-  top: 5.5rem;
-  right: 8rem;
+  top: 3rem;
+  right: 0rem;
   width: auto;
   height: auto;
   padding: 0.5rem;

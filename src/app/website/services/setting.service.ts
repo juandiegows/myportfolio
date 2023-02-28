@@ -49,11 +49,11 @@ export class SettingService  {
       "Desarrollador móvil",
       "Desarrollador full stack",
       "Desarrollador backend",
-      "Analista de datos (SQL SERVER y MYSQL)",
+      "Analista de datos",
       "Desarrollador Vue.js",
       "Desarrollador Angular",
       "Desarrollador .NET",
-      "diseñador UX/UI"
+      "Diseñador UX/UI"
       ],
       "achievements":"Logros destacados",
       "achievements1":"Campeón de worldskills colombia",

@@ -17,11 +17,11 @@ export class IntroductionComponent implements OnInit {
     "Desarrollador móvil",
     "Desarrollador full stack",
     "Desarrollador backend",
-    "Analista de datos (SQL SERVER y MYSQL)",
+    "Analista de datos",
     "Desarrollador Vue.js",
     "Desarrollador Angular",
     "Desarrollador .NET",
-    "diseñador UX/UI"
+    "Diseñador UX/UI"
   ];
   options = {
     strings: this.roles,
@@ -70,6 +70,7 @@ export class IntroductionComponent implements OnInit {
         showCursor: true,
         loop: true,
         smartBackspace: true
+
 
       };
       this.typed = new Typed('.typed-element', this.options)

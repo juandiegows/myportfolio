@@ -8,6 +8,7 @@ import { ImageComponent } from './components/image/image.component';
 import { PalletteComponent } from './components/pallette/pallette.component';
 import { ModeDarkLightComponent } from './components/mode-dark-light/mode-dark-light.component';
 import { IntroductionComponent } from './components/introduction/introduction.component';
+import { LevitateIconComponent } from './components/levitate-icon/levitate-icon.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { IntroductionComponent } from './components/introduction/introduction.co
     ImageComponent,
     PalletteComponent,
     ModeDarkLightComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    LevitateIconComponent
   ],
   imports: [
     CommonModule,

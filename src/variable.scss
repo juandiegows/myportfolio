@@ -2,7 +2,7 @@
 /* modo oscuro */
 --DarkBackgoundColor: #333333;
 --DarkColor: #eaeaea;
---LightBackgroudColor :#F3F3F3;
+--LightBackgroudColor :#f4f4f4;
 --LightColor: #333333;
 /* colores */
 --BlueColor: #82CFFF;
@@ -26,5 +26,5 @@
 --color: var(--DarkColor);
 
 
---myTransition: background-color 0.8s ease, color 0.5s ease, filter 0.5s ease;
+--myTransition: background-color 0.5s ease, color 0.5s ease, filter 0.4s ease;
 }

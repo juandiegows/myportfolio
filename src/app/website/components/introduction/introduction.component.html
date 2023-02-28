@@ -1,10 +1,74 @@
 <div class="container">
   <div class="info">
-    <p>{{data.hello}}</p>
-    <p>Juan Diego Mejia Maestre</p>
-    <div class="flex">{{data.Iam}} <p class="typed-element"> </p>
+
+    <div class="text">
+
+      <div class="text__info">
+        <p>{{data.hello}}</p>
+        <p class="text__name">Juan Diego Mejia Maestre</p>
+        <div class="text__flex">{{data.Iam}}
+          <h1 class="typed-element"></h1>
+        </div>
+      </div>
+
+      <div class="social_media">
+        <a target="_blank" rel="noopener" href="https://github.com/juandiegows" title="GitHub JuanDiegoWS"  >
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/GitHub.svg" textAlt="Github"/>
+        </a>
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/juandiegows/" title="Linked JuanDiegoWS">
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/Linked.svg" textAlt="Linked" />
+        </a>
+        <a target="_blank" rel="noopener" href="https://www.instagram.com/juandiego.ws/" title="Instagram JuanDiego.WS">
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/Instagram.svg" textAlt="Instagram"/>
+        </a>
+        <a target="_blank" rel="noopener" href="https://twitter.com/juandiegows" title="Twitter JuanDiegoWS">
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/twitter.svg" textAlt="Twitter" />
+        </a>
+        <a target="_blank" rel="noopener" href="https://web.facebook.com/juandiego.wsc/" title="YouTube JuanDiegoWS">
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/FB.svg" textAlt="FB" />
+        </a>
+        <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCBruvsN18FvqNHSHe7E6WWg"
+          title="GitHub JuanDiegoWS">
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/YouTube.svg" textAlt="Youtube" />
+        </a>
+      </div>
+
+
     </div>
 
+    <div class="Outstanding">
+      <h2 class="title">
+        {{data.achievements}}
+      </h2>
+      <div class="Outstaning_item">
+        <div class="image">
+          <app-image  [activeFilter]="true"   srcImg="/assets/img/Icons/Outstanding.svg"  [textAlt]="data.achievements"/>
+        </div>
+        <p>{{data.achievements1}}</p>
+      </div>
+      <div class="Outstaning_item">
+        <div class="image">
+          <app-image  [activeFilter]="true"  srcImg="/assets/img/Icons/Outstanding.svg"   [textAlt]="data.achievements"/>
+        </div>
+        <p>{{data.achievements2}}</p>
+      </div>
+      <div class="Outstaning_item">
+        <div class="image">
+          <app-image  [activeFilter]="true"  srcImg="/assets/img/Icons/Outstanding.svg"  [textAlt]="data.achievements" />
+        </div>
+        <p>{{data.achievements3}}</p>
+      </div>
+
+      <div class="Outstaning_item">
+        <div class="image">
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg"  [textAlt]="data.achievements" />
+        </div>
+        <p>{{data.achievements4}}</p>
+      </div>
+
+
+
+    </div>
   </div>
   <div class="image">
 
