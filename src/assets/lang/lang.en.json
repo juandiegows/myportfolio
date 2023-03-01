@@ -31,5 +31,37 @@
   "about_me": {
     "title": "Sobre mi",
     "info": "<p>I'm Juan Diego, a passionate software developer specializing in web and mobile development.</p> <p>I represented Colombia in the WorldSkills 2022 competition and won a medal of excellence thanks to my skills and knowledge in different programming languages, API design, SQL and design patterns. </p> <p>I love learning new tools and updating myself day by day with the latest technology.   If you want to know more about my work experience, take a look at my <a style='color: var(--colorPrimary);' href='https://www.linkedin.com/in/juandiegows/' target='_blank' class='link'>LinkedIn</a> profile or scroll down and see some of my work.</p>"
-  }
+  },
+  "services": {
+    "title": "My Services",
+    "services": [
+    {
+    "title": "Web Design and Development",
+    "description": "Customized Web Design and Development, creating modern, intuitive, and search engine optimized (SEO) websites, tailored to each client's needs.",
+    "link": ""
+    },
+    {
+    "title": "Mobile Apps",
+    "description": "Personalized mobile app development for Android, tailored to the client's needs.",
+    "link": ""
+    }, {
+    "title": "Desktop Development",
+    "description": "Customized desktop program development, tailored to each client's needs. I create high-quality, user-friendly desktop programs.",
+    "link": ""
+    }, {
+    "title": "Custom Software",
+    "description": "I create the solution your business needs, including the entire development cycle from requirements analysis to maintenance.",
+    "link": ""
+    }, {
+    "title": "Classes",
+    "description": "I provide personal classes for those who need to reinforce knowledge or learn new technologies.",
+    "link": ""
+    }, {
+    "title": "Databases",
+    "description": "Creation and administration of databases.",
+    "link": ""
+    }
+    ],
+    "nameButtom":"See Results"
+    }
 }

@@ -12,6 +12,7 @@ import { LevitateIconComponent } from './components/levitate-icon/levitate-icon.
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { SanitizeHtmlPipe } from './pipes/sanitize-html.pipe';
 import { CarouselImageComponent } from './components/carousel-image/carousel-image.component';
+import { MyServicesComponent } from './components/my-services/my-services.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -23,7 +24,8 @@ import { CarouselImageComponent } from './components/carousel-image/carousel-ima
     LevitateIconComponent,
     AboutMeComponent,
     SanitizeHtmlPipe,
-    CarouselImageComponent
+    CarouselImageComponent,
+    MyServicesComponent
   ],
   imports: [
     CommonModule,

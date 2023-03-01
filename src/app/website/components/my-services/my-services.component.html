@@ -1,0 +1,16 @@
+<section class="container">
+  <h2 class="title">
+    {{data.title}}
+  </h2>
+  <div class="services">
+    <article class="service" *ngFor="let service of data.services">
+      <h3 class="service__title">
+        {{service.title}}
+      </h3>
+      <p class="service__description">
+        {{service.description}}
+      </p>
+      <button class="service__btn">{{data.nameButtom}}</button>
+    </article>
+  </div>
+</section>

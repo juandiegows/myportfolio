@@ -16,13 +16,15 @@
 --pinkColor: #ef63e4;
 --greenColor: #0A9F2B;
 --Yellow2Color: #ffd42a;
-// filtros
 
+--DarkSecondBackgoundColor: #434242;
+--LightSecondBackgoundColor: #FFFFFF;
 
 /* variables */
 --colorPrimary: var(--BlueColor);
 --colorPrimaryF: brightness(0) saturate(100%) invert(68%) sepia(73%) saturate(460%) hue-rotate(177deg) brightness(102%) contrast(105%);
 --background: var(--DarkBackgoundColor);
+--backgroundSecond: var(--DarkSecondBackgoundColor);
 --color: var(--DarkColor);
 
 
