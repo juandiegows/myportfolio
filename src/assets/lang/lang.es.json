@@ -44,24 +44,60 @@
         "title": "Apps Móviles",
         "description": "Desarrollo de aplicaciones móviles personalizada para android, Adaptada a la necesita de cliente.",
         "link": ""
-      },   {
+      },
+      {
         "title": "Desarrollo de escritorio",
         "description": "Desarrollo de programas de escritorio personalizados, adaptados a las necesidades de cada cliente. Creo programas de escritorio de alta calidad, fáciles de usar.",
         "link": ""
-      },   {
+      },
+      {
         "title": "Software a la medida",
         "description": "Creo la solución que necesita tu negocio, esto incluye todo el ciclo de desarrollo desde al analisis de requerimiento hasta mantenimiento.",
         "link": ""
-      },   {
+      },
+      {
         "title": "Clases",
         "description": "Doy clases personales para aquellas personas que necesita reforzar conocimientos o aprender nuevas tecnnologia.",
         "link": ""
-      },   {
+      },
+      {
         "title": "Bases de datos",
         "description": "Creacion y administrador de bases de datos",
         "link": ""
       }
     ],
-    "nameButtom":"Ver resultado"
+    "nameButtom": "Ver resultado"
+  },
+  "client": {
+    "title": "Clientes",
+    "clients": [
+      {
+        "name": "Lazos de Dignidad",
+        "imgSrc": "/assets/img/Icons/client/Lazos de dignidad.svg",
+        "tools": ["php", "MVC", "JQuery", "CSS", "HTML", "POO"],
+        "count": 5,
+        "year": 2020,
+        "url":"https://lazosdedignidad.org/"
+      },
+      {
+        "name": "Monnerverse",
+        "imgSrc": "/assets/img/Icons/client/monnerverse.svg",
+        "tools": ["Vue.js", "Javascript", "CSS", "HTML"],
+        "count": 4,
+        "year": 2022,
+        "url":"https://www.monnerverse.com/"
+      },
+      {
+        "name": "Vittoria Pizzeria",
+        "imgSrc": "/assets/img/Icons/client/vittoria Pizzeria Trattoria.svg",
+        "tools": ["Angular", "TypeScript", "SCSS", "HTML"],
+        "count": 2,
+        "year": 2023,
+        "url":"https://vittoriapizzeriaytrattoria.com/"
+      }
+
+    ],
+    "btnVisit": "Visitar",
+    "btnDetails": "Detalles"
   }
 }

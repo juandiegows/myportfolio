@@ -63,5 +63,36 @@
     }
     ],
     "nameButtom":"See Results"
+    },
+    "client": {
+      "title": "Clients",
+      "clients": [
+        {
+          "name": "Lazos de Dignidad",
+          "imgSrc": "/assets/img/Icons/client/Lazos de dignidad.svg",
+          "tools": ["php", "MVC", "JQuery", "CSS", "HTML", "POO"],
+          "count": 5,
+          "year": 2020,
+          "url":"https://lazosdedignidad.org/"
+        },
+        {
+          "name": "Monnerverse",
+          "imgSrc": "/assets/img/Icons/client/monnerverse.svg",
+          "tools": ["Vue.js", "Javascript", "CSS", "HTML"],
+          "count": 4,
+          "year": 2022,
+          "url":"https://www.monnerverse.com/"
+        },
+        {
+          "name": "Vittoria Pizzeria",
+          "imgSrc": "/assets/img/Icons/client/vittoria Pizzeria Trattoria.svg",
+          "tools": ["Angular", "TypeScript", "SCSS", "HTML"],
+          "count": 2,
+          "year": 2023,
+          "url":"https://vittoriapizzeriaytrattoria.com/"
+        }
+      ],
+      "btnVisit": "Visit",
+      "btnDetails": "Details"
     }
 }

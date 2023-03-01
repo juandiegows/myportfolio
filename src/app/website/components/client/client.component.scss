@@ -1,0 +1,113 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  .title {
+    font-size: 3rem;
+    color: var(--colorPrimary);
+    font-weight: 900;
+  }
+  .clients {
+    margin-top: 3rem;
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    .client {
+      background-color: var(--backgroundSecond);
+      padding: 1rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      padding-bottom: 4rem;
+      .client__title {
+        margin-top: 1rem;
+        font-size: 2rem;
+        color: var(--colorPrimary);
+        font-weight: 900;
+        text-align: center;
+      }
+      .client__image {
+        margin-top: 2rem;
+        width: 30rem;
+        height: auto;
+      }
+      .tags {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        margin-bottom: 2rem;
+        .tag {
+          cursor: pointer;
+          font-weight: 600;
+        }
+        .tag:hover {
+
+          color: var(--colorPrimary);
+        }
+      }
+      .btns {
+        display: flex;
+        gap: 1rem;
+        .btn {
+          outline: none;
+          border: none;
+          font-family: 'Quicksand', sans-serif;
+          font-weight: 900;
+          border-radius: 5px;
+          padding: 0.8rem 2rem;
+          background-color: var(--colorPrimary);
+          text-decoration: none;
+          color: #333333;
+        }
+      }
+      .info_extra {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        .count {
+          background-color: var(--background);
+          width: 6rem;
+          padding: 0.6rem 1rem;
+          border-top-left-radius: 2rem;
+          display: flex;
+          justify-content: center;
+
+          gap: 0.3rem;
+        }
+        .year {
+          background-color: var(--background);
+          padding: 0.8rem 2.5rem;
+          border-top-left-radius: 2rem;
+          border-bottom-left-radius: 2rem;
+        }
+      }
+    }
+  }
+}
+@media(min-width: 700px){
+  .container {
+    .clients {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+}
+@media(min-width: 1000px){
+  .container {
+    .clients {
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: 120rem;
+    }
+  }
+
+}

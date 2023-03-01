@@ -13,6 +13,7 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
 import { SanitizeHtmlPipe } from './pipes/sanitize-html.pipe';
 import { CarouselImageComponent } from './components/carousel-image/carousel-image.component';
 import { MyServicesComponent } from './components/my-services/my-services.component';
+import { ClientComponent } from './components/client/client.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -25,7 +26,8 @@ import { MyServicesComponent } from './components/my-services/my-services.compon
     AboutMeComponent,
     SanitizeHtmlPipe,
     CarouselImageComponent,
-    MyServicesComponent
+    MyServicesComponent,
+    ClientComponent
   ],
   imports: [
     CommonModule,
