@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-levitate-icon',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./levitate-icon.component.scss']
 })
 export class LevitateIconComponent {
-
+  @Input() srcImg: String  = "";
+  @Input() textAlt:String = "undefined";
 }

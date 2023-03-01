@@ -1,0 +1,63 @@
+$time: 3s;
+
+.container {
+  width: 5rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  .image {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 0;
+    /* Prefijos de proveedores para Firefox , Safari y opera antiguo */
+    -moz-animation-name: levitate;
+    -moz-animation-duration: $time;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-direction: alternate-reverse;
+
+    -webkit-animation-name: levitate;
+    -webkit-animation-duration: $time;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate-reverse;
+
+    -o-animation-name: levitate;
+    -o-animation-duration: $time;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: ease-in-out;
+    -o-animation-direction: alternate-reverse;
+
+    /* Prefijos de proveedores para Chroome y otros navegadores*/
+    animation-name: levitate;
+    animation-duration: $time;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate-reverse;
+  }
+}
+
+@keyframes levitate {
+  100% {
+    top: calc(100% - 3rem);
+  }
+}
+@-moz-keyframes levitate {
+  100% {
+    top: calc(100% - 3rem);
+  }
+}
+
+@-webkit-keyframes levitate {
+  100% {
+    top: calc(100% - 3rem);
+  }
+}
+
+@-o-keyframes levitate {
+  100% {
+    top: calc(100% - 3rem);
+  }
+}
