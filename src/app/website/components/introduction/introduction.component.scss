@@ -72,7 +72,7 @@
   .email {
     margin-top: 1rem;
     color: var(--colorPrimary);
-    font-size: 2rem;
+    font-size: clamp(1rem,5vw,2rem);
   }
   .photo_languajes {
     width: 100%;

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  .title {
+    font-size: 3rem;
+    color: var(--colorPrimary);
+    font-weight: 900;
+  }
+  .info {
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: justify;
+
+
+
+  }
+  margin-bottom: 4rem;
+}
+a {
+  color: var(--colorPrimary);
+}

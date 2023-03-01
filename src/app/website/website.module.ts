@@ -9,7 +9,9 @@ import { PalletteComponent } from './components/pallette/pallette.component';
 import { ModeDarkLightComponent } from './components/mode-dark-light/mode-dark-light.component';
 import { IntroductionComponent } from './components/introduction/introduction.component';
 import { LevitateIconComponent } from './components/levitate-icon/levitate-icon.component';
-
+import { AboutMeComponent } from './components/about-me/about-me.component';
+import { SanitizeHtmlPipe } from './pipes/sanitize-html.pipe';
+import { CarouselImageComponent } from './components/carousel-image/carousel-image.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -18,7 +20,10 @@ import { LevitateIconComponent } from './components/levitate-icon/levitate-icon.
     PalletteComponent,
     ModeDarkLightComponent,
     IntroductionComponent,
-    LevitateIconComponent
+    LevitateIconComponent,
+    AboutMeComponent,
+    SanitizeHtmlPipe,
+    CarouselImageComponent
   ],
   imports: [
     CommonModule,
