@@ -14,6 +14,7 @@ import { SanitizeHtmlPipe } from './pipes/sanitize-html.pipe';
 import { CarouselImageComponent } from './components/carousel-image/carousel-image.component';
 import { MyServicesComponent } from './components/my-services/my-services.component';
 import { ClientComponent } from './components/client/client.component';
+import { SkillsComponent } from './components/skills/skills.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -27,7 +28,8 @@ import { ClientComponent } from './components/client/client.component';
     SanitizeHtmlPipe,
     CarouselImageComponent,
     MyServicesComponent,
-    ClientComponent
+    ClientComponent,
+    SkillsComponent
   ],
   imports: [
     CommonModule,

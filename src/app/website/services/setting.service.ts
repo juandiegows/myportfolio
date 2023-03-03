@@ -88,7 +88,7 @@ export class SettingService  {
         },   {
           "title": "Clases",
           "description": "Doy clases personales para aquellas personas que necesita reforzar conocimientos o aprender nuevas tecnnologia.",
-          "link": ""
+          "link": "https://www.tusclases.co/profesores/juan-diego-mejia-maestre.htm"
         },   {
           "title": "Bases de datos",
           "description": "Creacion y administrador de bases de datos",

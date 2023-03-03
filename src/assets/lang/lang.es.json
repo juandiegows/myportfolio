@@ -58,7 +58,7 @@
       {
         "title": "Clases",
         "description": "Doy clases personales para aquellas personas que necesita reforzar conocimientos o aprender nuevas tecnnologia.",
-        "link": ""
+        "link": "https://www.tusclases.co/profesores/juan-diego-mejia-maestre.htm"
       },
       {
         "title": "Bases de datos",
@@ -77,7 +77,7 @@
         "tools": ["php", "MVC", "JQuery", "CSS", "HTML", "POO"],
         "count": 5,
         "year": 2020,
-        "url":"https://lazosdedignidad.org/"
+        "url": "https://lazosdedignidad.org/"
       },
       {
         "name": "Monnerverse",
@@ -85,7 +85,7 @@
         "tools": ["Vue.js", "Javascript", "CSS", "HTML"],
         "count": 4,
         "year": 2022,
-        "url":"https://www.monnerverse.com/"
+        "url": "https://www.monnerverse.com/"
       },
       {
         "name": "Vittoria Pizzeria",
@@ -93,11 +93,25 @@
         "tools": ["Angular", "TypeScript", "SCSS", "HTML"],
         "count": 2,
         "year": 2023,
-        "url":"https://vittoriapizzeriaytrattoria.com/"
+        "url": "https://vittoriapizzeriaytrattoria.com/"
       }
-
     ],
     "btnVisit": "Visitar",
     "btnDetails": "Detalles"
+  },
+  "skills": {
+    "title": "Mis habilidades",
+    "skills": [
+      {
+        "name": "C#",
+        "urlImg":"../../assets/img/Icons/skills/Csharp.svg",
+        "description": "Es un lenguaje de programación orientado a objetos y de propósito general desarrollado por Microsoft. Se utiliza principalmente para desarrollar aplicaciones de escritorio, móviles, web y juegos. C# se basa en el marco .NET y ofrece características avanzadas como la recolección automática de basura y la administración de memoria."
+      },
+      {
+        "name": "Java",
+        "urlImg":"../../assets/img/Icons/skills/java.svg",
+        "description": "Es un lenguaje de programación orientado a objetos utilizado para desarrollar aplicaciones empresariales, móviles y juegos. Se basa en la máquina virtual Java (JVM) para la portabilidad y ofrece características de alto nivel como la recolección automática de basura y el manejo de excepciones"
+      }
+    ]
   }
 }

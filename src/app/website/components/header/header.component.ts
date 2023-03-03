@@ -14,11 +14,11 @@ export class HeaderComponent implements OnInit {
   langPage = LangEnum;
   data = {
     "home": "Inicio ",
-    "about_me":"Sobre mi",
-    "services":"Servicios",
-    "skills":"Habilidades",
-    "projects":"Proyectos",
-    "blog":"Blog",
+    "about_me": "Sobre mi",
+    "services": "Servicios",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "blog": "Blog",
     "contact_me": "Contáctame"
   };
   lang = this.langPage.en;
@@ -43,6 +43,14 @@ export class HeaderComponent implements OnInit {
     this.lang = lang;
   }
 
-
+  toGo(name: string) {
+    window.history.pushState({}, '', name);
+    setTimeout(()=> {
+      const element: HTMLElement = document.getElementById(name) as HTMLElement;
+      const rect = element.getBoundingClientRect();
+      const topOffset = window.pageYOffset + rect.top - 5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+      window.scrollTo({ top: topOffset, behavior: 'smooth' });
+    }, 200);
+  }
 
 }
