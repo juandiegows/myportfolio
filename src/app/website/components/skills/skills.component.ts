@@ -15,7 +15,9 @@ export class SkillsComponent implements OnInit {
         "urlImg": "/assets/img/Icons/skills/Csharp.svg",
         "description": "Es un lenguaje de programación orientado a objetos y de propósito general desarrollado por Microsoft. Se utiliza principalmente para desarrollar aplicaciones de escritorio, móviles, web y juegos. C# se basa en el marco .NET y ofrece características avanzadas como la recolección automática de basura y la administración de memoria."
       }
-    ]
+    ],
+    "btnProject": "Ver Proyectos",
+    "btnExperience": "Ver Experiencia"
   }
   skillActive = {
     "name": "C#",
@@ -31,7 +33,7 @@ export class SkillsComponent implements OnInit {
       this.dataSkill = this.setting.data.skills;
     })
   }
-  Open(data:any){
+  Open(data: any) {
     this.skillActive = data;
     this.active = true;
   }

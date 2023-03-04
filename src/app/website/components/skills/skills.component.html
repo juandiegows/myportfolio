@@ -3,7 +3,7 @@
     <h2 class="title">{{dataSkill.title}}</h2>
     <div class="skills">
       <div class="skill" (click)="Open(skill)" *ngFor="let skill of dataSkill.skills">
-        <app-image class="skill" [srcImg]="skill.urlImg" />
+        <app-image [srcImg]="skill.urlImg" />
       </div>
 
     </div>
@@ -13,4 +13,4 @@
   </div>
 </div>
 <app-alert-info [active]="active" (IsActive)="active = $event" [title]="skillActive.name" [img]="skillActive.urlImg"
-  [texto]="skillActive.description" />
+  [texto]="skillActive.description" [textBtnProject]="dataSkill.btnProject" [textBtnExperience]="dataSkill.btnExperience" />

@@ -12,12 +12,17 @@ export class AlertInfoComponent {
   @Output()
   IsActive = new EventEmitter<Boolean>();
   @Input()
-  img : String = "";
+  img: String = "";
   @Input()
-  title : String = "sin titulo";
+  title: String = "sin titulo";
   @Input()
-  texto : String = "";
-  Close(){
+  texto: String = "";
+
+  @Input()
+  textBtnProject: String = ""
+  @Input()
+  textBtnExperience: String = ""
+  Close() {
     this.active = false;
     this.IsActive.emit(false);
   }

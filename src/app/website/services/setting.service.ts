@@ -231,7 +231,9 @@ export class SettingService {
           "urlImg": "/assets/img/Icons/skills/git.svg",
           "description": "Es un sistema de control de versiones de software utilizado para rastrear los cambios en el código fuente durante el desarrollo de software. Git es altamente eficiente y proporciona una mayor colaboración en equipo y seguimiento de cambios en el código fuente. Es ampliamente utilizado en la industria del desarrollo de software."
         }
-      ]
+      ],
+      "btnProject":"Ver Proyectos",
+      "btnExperience":"Ver Experiencia"
     }
   };
 

@@ -35,170 +35,176 @@
   "services": {
     "title": "My Services",
     "services": [
-    {
-    "title": "Web Design and Development",
-    "description": "Customized Web Design and Development, creating modern, intuitive, and search engine optimized (SEO) websites, tailored to each client's needs.",
-    "link": ""
-    },
-    {
-    "title": "Mobile Apps",
-    "description": "Personalized mobile app development for Android, tailored to the client's needs.",
-    "link": ""
-    }, {
-    "title": "Desktop Development",
-    "description": "Customized desktop program development, tailored to each client's needs. I create high-quality, user-friendly desktop programs.",
-    "link": ""
-    }, {
-    "title": "Custom Software",
-    "description": "I create the solution your business needs, including the entire development cycle from requirements analysis to maintenance.",
-    "link": ""
-    }, {
-    "title": "Classes",
-    "description": "I provide personal classes for those who need to reinforce knowledge or learn new technologies.",
-    "link": "https://www.tusclases.co/profesores/juan-diego-mejia-maestre.htm"
-    }, {
-    "title": "Databases",
-    "description": "Creation and administration of databases.",
-    "link": ""
-    }
+      {
+        "title": "Web Design and Development",
+        "description": "Customized Web Design and Development, creating modern, intuitive, and search engine optimized (SEO) websites, tailored to each client's needs.",
+        "link": ""
+      },
+      {
+        "title": "Mobile Apps",
+        "description": "Personalized mobile app development for Android, tailored to the client's needs.",
+        "link": ""
+      },
+      {
+        "title": "Desktop Development",
+        "description": "Customized desktop program development, tailored to each client's needs. I create high-quality, user-friendly desktop programs.",
+        "link": ""
+      },
+      {
+        "title": "Custom Software",
+        "description": "I create the solution your business needs, including the entire development cycle from requirements analysis to maintenance.",
+        "link": ""
+      },
+      {
+        "title": "Classes",
+        "description": "I provide personal classes for those who need to reinforce knowledge or learn new technologies.",
+        "link": "https://www.tusclases.co/profesores/juan-diego-mejia-maestre.htm"
+      },
+      {
+        "title": "Databases",
+        "description": "Creation and administration of databases.",
+        "link": ""
+      }
     ],
-    "nameButtom":"See Results"
-    },
-    "client": {
-      "title": "Clients",
-      "clients": [
-        {
-          "name": "Lazos de Dignidad",
-          "imgSrc": "/assets/img/Icons/client/Lazos de dignidad.svg",
-          "tools": ["php", "MVC", "JQuery", "CSS", "HTML", "POO"],
-          "count": 5,
-          "year": 2020,
-          "url":"https://lazosdedignidad.org/"
-        },
-        {
-          "name": "Monnerverse",
-          "imgSrc": "/assets/img/Icons/client/monnerverse.svg",
-          "tools": ["Vue.js", "Javascript", "CSS", "HTML"],
-          "count": 4,
-          "year": 2022,
-          "url":"https://www.monnerverse.com/"
-        },
-        {
-          "name": "Vittoria Pizzeria",
-          "imgSrc": "/assets/img/Icons/client/vittoria Pizzeria Trattoria.svg",
-          "tools": ["Angular", "TypeScript", "SCSS", "HTML"],
-          "count": 2,
-          "year": 2023,
-          "url":"https://vittoriapizzeriaytrattoria.com/"
-        }
-      ],
-      "btnVisit": "Visit",
-      "btnDetails": "Details"
-    },
-    "skills": {
-      "title": "My skilss",
-      "skills": [
-        {
-          "name": "C#",
-          "urlImg": "/assets/img/Icons/skills/Csharp.svg",
-          "description": "It is an object-oriented, general-purpose programming language developed by Microsoft. It is primarily used to develop desktop, mobile, web, and game applications. C# is based on the .NET framework and offers advanced features such as automatic garbage collection and memory management."
-        },
-        {
-          "name": "Java",
-          "urlImg": "/assets/img/Icons/skills/java.svg",
-          "description": "It is an object-oriented programming language used to develop enterprise, mobile, and game applications. It is based on the Java Virtual Machine (JVM) for portability and offers high-level features such as automatic garbage collection and exception handling."
-        },
-        {
-          "name": "Php",
-          "urlImg": "/assets/img/Icons/skills/php.svg",
-          "description": "It is a widely used web programming language. It allows for creating dynamic and customized web applications. It is easy to use and has a large community of developers."
-        },
-        {
-          "name": "Javascript",
-          "urlImg": "/assets/img/Icons/skills/js.svg",
-          "description": "It is a programming language used to develop interactive web applications. It runs on the user's browser and adds interactivity to web pages. It is essential for any modern web developer."
-        },
-        {
-          "name": "Vue.js",
-          "urlImg": "/assets/img/Icons/skills/vue.svg",
-          "description": "It's a JavaScript framework for building interactive user interfaces and single-page applications. It provides a component-based approach to web application development, allowing for greater modularity and code reuse. It's highly adaptable and easy to integrate with other JavaScript libraries."
-        },
-        {
-          "name": "Angular",
-          "urlImg": "/assets/img/Icons/skills/angular.svg",
-          "description": "It's a JavaScript framework for building web and hybrid mobile applications. It uses TypeScript for greater efficiency and is highly scalable. It has a large community of developers and modern development tools."
-        },
-        {
-          "name": "Kotlin",
-          "urlImg": "/assets/img/Icons/skills/kotlin.svg",
-          "description": "It's a programming language used for developing Android, server, and web applications. It's safe, interoperable, and concise. It's compatible with popular development tools and has a growing community."
-        },
-        {
-          "name": "CSS",
-          "urlImg": "/assets/img/Icons/skills/css.svg",
-          "description": "It's a cascading style sheet language used in web development to describe the visual presentation of HTML and XML documents. While not considered a full programming language, it's essential for creating modern and attractive websites. It's supported by all modern web browsers."
-        },
-        {
-          "name": "HTML",
-          "urlImg": "/assets/img/Icons/skills/html.svg",
-          "description": "Es un lenguaje de marcado utilizado para crear páginas web y otros documentos. Proporciona una estructura para el contenido y utiliza etiquetas para definir el significado de cada elemento. Es esencial para el desarrollo web y compatible con todos los navegadores modernos."
-        },
-        {
-          "name": "Android Studio",
-          "urlImg": "/assets/img/Icons/skills/android_studio.svg",
-          "description": "Es el IDE oficial para el desarrollo de aplicaciones Android, creado por Google. Proporciona un editor de código, un depurador y emuladores de dispositivos, entre otras herramientas. Es compatible con Java, Kotlin y otros lenguajes de programación."
-        },
-        {
-          "name": "SQL Server",
-          "urlImg": "/assets/img/Icons/skills/sql_server.svg",
-          "description": "Es un RDBMS creado por Microsoft para la gestión y análisis de datos. Proporciona características como soporte para transacciones, consultas complejas y seguridad de datos. Ampliamente utilizado en empresas para almacenar y analizar grandes cantidades de datos."
-        },
-        {
-          "name": "MySQL",
-          "urlImg": "/assets/img/Icons/skills/mysql.svg",
-          "description": "Es un sistema de gestión de bases de datos relacionales de código abierto, utilizado para almacenar y administrar datos en aplicaciones web. Proporciona características como soporte para transacciones, consultas complejas, escalabilidad, seguridad de datos y alta disponibilidad. Es ampliamente utilizado en aplicaciones web de todo el mundo."
-        },
-        {
-          "name": "SQLite",
-          "urlImg": "/assets/img/Icons/skills/sqlite.svg",
-          "description": "Es un motor de base de datos relacional ligero y sin servidor, utilizado para almacenar y administrar datos localmente. Fácil de integrar en aplicaciones, proporciona soporte para transacciones, consultas complejas y seguridad de datos. Compatible con la mayoría de los sistemas operativos."
-        },
-        {
-          "name": "Figma",
-          "urlImg": "/assets/img/Icons/skills/figma.svg",
-          "description": "It's a cloud-based tool for UI/UX design. It allows real-time collaboration and the creation of interactive designs and prototypes. It provides vector design tools, reusable component libraries, and a team collaboration platform."
-        },
-        {
-          "name": "Ubuntu",
-          "urlImg": "/assets/img/Icons/skills/ubuntu.svg",
-          "description": "It's a free and open-source operating system based on Linux. Easy to install and use, it comes with a wide range of pre-installed applications and tools. Popular among Linux users for its ease of use and active community support."
-        },
-        {
-          "name": "Visual Studio",
-          "urlImg": "/assets/img/Icons/skills/visual studio 2022.svg",
-          "description": "It's a Microsoft IDE. It offers tools for developing applications on multiple platforms and languages. It's used by developers to create desktop, web, and mobile applications."
-        },
-        {
-          "name": "Visual Studio Code",
-          "urlImg": "/assets/img/Icons/skills/visual studio code.svg",
-          "description": "It's a free, multi-platform code editor from Microsoft. It has advanced tools like Git and code autocompletion. It's popular among developers for its ease of use and available extensions."
-        },
-        {
-          "name": "React",
-          "urlImg": "/assets/img/Icons/skills/react.svg",
-          "description": "It is a JavaScript library for building user interfaces. It uses a component-based approach to create scalable and reusable web applications. React is highly popular and has a large community of developers and open-source code libraries."
-          },
-          {
-          "name": "Node.js",
-          "urlImg": "/assets/img/Icons/skills/nodejs.svg",
-          "description": "It is a JavaScript runtime environment built on the Google Chrome V8 engine. It allows developers to run JavaScript on the server-side to create scalable and high-performance web applications. Node.js has a large community and a rich ecosystem of libraries and tools."
-          },
-          {
-          "name": "Git",
-          "urlImg": "/assets/img/Icons/skills/git.svg",
-          "description": "It is a software version control system used to track changes in source code during software development. Git is highly efficient and provides greater team collaboration and tracking of changes in source code. It is widely used in the software development industry."
-          }
+    "nameButtom": "See Results"
+  },
+  "client": {
+    "title": "Clients",
+    "clients": [
+      {
+        "name": "Lazos de Dignidad",
+        "imgSrc": "/assets/img/Icons/client/Lazos de dignidad.svg",
+        "tools": ["php", "MVC", "JQuery", "CSS", "HTML", "POO"],
+        "count": 5,
+        "year": 2020,
+        "url": "https://lazosdedignidad.org/"
+      },
+      {
+        "name": "Monnerverse",
+        "imgSrc": "/assets/img/Icons/client/monnerverse.svg",
+        "tools": ["Vue.js", "Javascript", "CSS", "HTML"],
+        "count": 4,
+        "year": 2022,
+        "url": "https://www.monnerverse.com/"
+      },
+      {
+        "name": "Vittoria Pizzeria",
+        "imgSrc": "/assets/img/Icons/client/vittoria Pizzeria Trattoria.svg",
+        "tools": ["Angular", "TypeScript", "SCSS", "HTML"],
+        "count": 2,
+        "year": 2023,
+        "url": "https://vittoriapizzeriaytrattoria.com/"
+      }
+    ],
+    "btnVisit": "Visit",
+    "btnDetails": "Details"
+  },
+  "skills": {
+    "title": "My skilss",
+    "skills": [
+      {
+        "name": "C#",
+        "urlImg": "/assets/img/Icons/skills/Csharp.svg",
+        "description": "It is an object-oriented, general-purpose programming language developed by Microsoft. It is primarily used to develop desktop, mobile, web, and game applications. C# is based on the .NET framework and offers advanced features such as automatic garbage collection and memory management."
+      },
+      {
+        "name": "Java",
+        "urlImg": "/assets/img/Icons/skills/java.svg",
+        "description": "It is an object-oriented programming language used to develop enterprise, mobile, and game applications. It is based on the Java Virtual Machine (JVM) for portability and offers high-level features such as automatic garbage collection and exception handling."
+      },
+      {
+        "name": "Php",
+        "urlImg": "/assets/img/Icons/skills/php.svg",
+        "description": "It is a widely used web programming language. It allows for creating dynamic and customized web applications. It is easy to use and has a large community of developers."
+      },
+      {
+        "name": "Javascript",
+        "urlImg": "/assets/img/Icons/skills/js.svg",
+        "description": "It is a programming language used to develop interactive web applications. It runs on the user's browser and adds interactivity to web pages. It is essential for any modern web developer."
+      },
+      {
+        "name": "Vue.js",
+        "urlImg": "/assets/img/Icons/skills/vue.svg",
+        "description": "It's a JavaScript framework for building interactive user interfaces and single-page applications. It provides a component-based approach to web application development, allowing for greater modularity and code reuse. It's highly adaptable and easy to integrate with other JavaScript libraries."
+      },
+      {
+        "name": "Angular",
+        "urlImg": "/assets/img/Icons/skills/angular.svg",
+        "description": "It's a JavaScript framework for building web and hybrid mobile applications. It uses TypeScript for greater efficiency and is highly scalable. It has a large community of developers and modern development tools."
+      },
+      {
+        "name": "Kotlin",
+        "urlImg": "/assets/img/Icons/skills/kotlin.svg",
+        "description": "It's a programming language used for developing Android, server, and web applications. It's safe, interoperable, and concise. It's compatible with popular development tools and has a growing community."
+      },
+      {
+        "name": "CSS",
+        "urlImg": "/assets/img/Icons/skills/css.svg",
+        "description": "It's a cascading style sheet language used in web development to describe the visual presentation of HTML and XML documents. While not considered a full programming language, it's essential for creating modern and attractive websites. It's supported by all modern web browsers."
+      },
+      {
+        "name": "HTML",
+        "urlImg": "/assets/img/Icons/skills/html.svg",
+        "description": "Es un lenguaje de marcado utilizado para crear páginas web y otros documentos. Proporciona una estructura para el contenido y utiliza etiquetas para definir el significado de cada elemento. Es esencial para el desarrollo web y compatible con todos los navegadores modernos."
+      },
+      {
+        "name": "Android Studio",
+        "urlImg": "/assets/img/Icons/skills/android_studio.svg",
+        "description": "Es el IDE oficial para el desarrollo de aplicaciones Android, creado por Google. Proporciona un editor de código, un depurador y emuladores de dispositivos, entre otras herramientas. Es compatible con Java, Kotlin y otros lenguajes de programación."
+      },
+      {
+        "name": "SQL Server",
+        "urlImg": "/assets/img/Icons/skills/sql_server.svg",
+        "description": "Es un RDBMS creado por Microsoft para la gestión y análisis de datos. Proporciona características como soporte para transacciones, consultas complejas y seguridad de datos. Ampliamente utilizado en empresas para almacenar y analizar grandes cantidades de datos."
+      },
+      {
+        "name": "MySQL",
+        "urlImg": "/assets/img/Icons/skills/mysql.svg",
+        "description": "Es un sistema de gestión de bases de datos relacionales de código abierto, utilizado para almacenar y administrar datos en aplicaciones web. Proporciona características como soporte para transacciones, consultas complejas, escalabilidad, seguridad de datos y alta disponibilidad. Es ampliamente utilizado en aplicaciones web de todo el mundo."
+      },
+      {
+        "name": "SQLite",
+        "urlImg": "/assets/img/Icons/skills/sqlite.svg",
+        "description": "Es un motor de base de datos relacional ligero y sin servidor, utilizado para almacenar y administrar datos localmente. Fácil de integrar en aplicaciones, proporciona soporte para transacciones, consultas complejas y seguridad de datos. Compatible con la mayoría de los sistemas operativos."
+      },
+      {
+        "name": "Figma",
+        "urlImg": "/assets/img/Icons/skills/figma.svg",
+        "description": "It's a cloud-based tool for UI/UX design. It allows real-time collaboration and the creation of interactive designs and prototypes. It provides vector design tools, reusable component libraries, and a team collaboration platform."
+      },
+      {
+        "name": "Ubuntu",
+        "urlImg": "/assets/img/Icons/skills/ubuntu.svg",
+        "description": "It's a free and open-source operating system based on Linux. Easy to install and use, it comes with a wide range of pre-installed applications and tools. Popular among Linux users for its ease of use and active community support."
+      },
+      {
+        "name": "Visual Studio",
+        "urlImg": "/assets/img/Icons/skills/visual studio 2022.svg",
+        "description": "It's a Microsoft IDE. It offers tools for developing applications on multiple platforms and languages. It's used by developers to create desktop, web, and mobile applications."
+      },
+      {
+        "name": "Visual Studio Code",
+        "urlImg": "/assets/img/Icons/skills/visual studio code.svg",
+        "description": "It's a free, multi-platform code editor from Microsoft. It has advanced tools like Git and code autocompletion. It's popular among developers for its ease of use and available extensions."
+      },
+      {
+        "name": "React",
+        "urlImg": "/assets/img/Icons/skills/react.svg",
+        "description": "It is a JavaScript library for building user interfaces. It uses a component-based approach to create scalable and reusable web applications. React is highly popular and has a large community of developers and open-source code libraries."
+      },
+      {
+        "name": "Node.js",
+        "urlImg": "/assets/img/Icons/skills/nodejs.svg",
+        "description": "It is a JavaScript runtime environment built on the Google Chrome V8 engine. It allows developers to run JavaScript on the server-side to create scalable and high-performance web applications. Node.js has a large community and a rich ecosystem of libraries and tools."
+      },
+      {
+        "name": "Git",
+        "urlImg": "/assets/img/Icons/skills/git.svg",
+        "description": "It is a software version control system used to track changes in source code during software development. Git is highly efficient and provides greater team collaboration and tracking of changes in source code. It is widely used in the software development industry."
+      }
+    ],
 
-      ]
-    }
+    "btnProject": "See Projects",
+    "btnExperience": "See Experience"
+  }
 }
