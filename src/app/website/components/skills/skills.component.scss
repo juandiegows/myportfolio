@@ -110,7 +110,6 @@
             text-align: center;
             position: sticky;
             top: 0;
-            color: var(--colorPrimary);
             font-size: 1.7rem;
             background-color: var(--backgroundDark);
           }
@@ -197,8 +196,8 @@
         place-content: center;
         align-items: center;
         .years__title {
+
           font-size: 1.8rem;
-          color: var(--colorPrimary);
           text-align: center;
           cursor: pointer;
         }
