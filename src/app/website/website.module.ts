@@ -15,6 +15,7 @@ import { CarouselImageComponent } from './components/carousel-image/carousel-ima
 import { MyServicesComponent } from './components/my-services/my-services.component';
 import { ClientComponent } from './components/client/client.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { AlertInfoComponent } from './components/alert-info/alert-info.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -29,7 +30,8 @@ import { SkillsComponent } from './components/skills/skills.component';
     CarouselImageComponent,
     MyServicesComponent,
     ClientComponent,
-    SkillsComponent
+    SkillsComponent,
+    AlertInfoComponent
   ],
   imports: [
     CommonModule,

@@ -33,3 +33,20 @@ body {
   background-color: var(--colorPrimary);
   border-radius: 2rem;
 }
+.title {
+  font-size: 3rem;
+  color: var(--colorPrimary);
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+.btn {
+  outline: none;
+  border: none;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 900;
+  border-radius: 5px;
+  padding: 0.8rem 2rem;
+  background-color: var(--colorPrimary);
+  text-decoration: none;
+  color: #333333;
+}

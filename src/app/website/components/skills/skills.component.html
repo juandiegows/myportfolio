@@ -1,11 +1,16 @@
 <div id="skills" class="container">
   <div class="container__skills">
-    <h2 class="title">My Skills</h2>
+    <h2 class="title">{{dataSkill.title}}</h2>
     <div class="skills">
+      <div class="skill" (click)="Open(skill)" *ngFor="let skill of dataSkill.skills">
+        <app-image class="skill" [srcImg]="skill.urlImg" />
+      </div>
 
     </div>
   </div>
   <div class="education_experince">
-    <h2> My Experince job and education</h2>
+    <h2 class="title"> My Experince job and education</h2>
   </div>
 </div>
+<app-alert-info [active]="active" (IsActive)="active = $event" [title]="skillActive.name" [img]="skillActive.urlImg"
+  [texto]="skillActive.description" />

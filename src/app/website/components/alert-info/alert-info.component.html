@@ -1,0 +1,21 @@
+<div class="container" (click)=" Close()" [class.container_active]="active">
+  <div class="alert">
+    <app-image class="image" [srcImg]="img" [textAlt]="title" />
+    <div class="info">
+      <h3 class="title">{{title}}</h3>
+      <p class="text">{{texto}}</p>
+      <div class="actions">
+        <a class="btn">Ver Proyectos</a>
+        <a class="btn">Ver Experiencia</a>
+      </div>
+    </div>
+    <app-image class="btnClose" srcImg="/assets/img/Icons/close.svg" (click)=" Close()" textAlt="cerrar" />
+    <div class="image_anim">
+      <app-image [activeFilter]="true" class="background" srcImg="/assets/img/alert/Background Simple.svg" textAlt="color de fondo" />
+      <app-image class="pc" srcImg="/assets/img/alert/pc.svg" textAlt="pc" />
+      <app-image class="hand hand-left" srcImg="/assets/img/alert/Hand 1.svg" />
+      <app-image class="hand hand-right" srcImg="/assets/img/alert/Hand 2.svg" />
+      <app-image class="code" srcImg="/assets/img/alert/code.svg" />
+    </div>
+  </div>
+</div>
