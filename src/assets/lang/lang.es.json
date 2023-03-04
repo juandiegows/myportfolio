@@ -259,8 +259,8 @@
           "nameBusiness": "Mi portafolio",
           "Description": "Desarrollé un portafolio para mostrar mis habilidades y más información sobre mi, utilizando Angular, TypeScript y SCSS. ",
           "Rol": "Desarrollador Web Fronted",
-          "StartDate": "01/12/2022",
-          "EndDate": "01/02/2023",
+          "StartDate": "25/02/2022",
+          "EndDate": "15/02/2023",
           "tools": ["Angular","HTML","CSS", "TypeScript", "SEO"]
         }
       ]

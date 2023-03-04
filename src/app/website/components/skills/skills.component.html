@@ -28,7 +28,7 @@
           <div class="entity__item">
 
             <div class="item" [ngClass]="{'item_active':item_active==item}" (click)="item_active = item"
-              *ngFor="let item of dataE.items">
+              *ngFor="let item of GetItem()">
               <div class="indicator"></div>
               <p>{{item.nameBusiness}}</p>
             </div>
@@ -59,8 +59,18 @@
           </div>
         </div>
       </div>
-      <div class="years">
+      <div class="container__years">
+        <h5 class="years__title" (click)=" clearFilter()">{{dataE.titleyear}}</h5>
+        <div class="years">
+          <div class="year" (click)="setFilter(year)" [ngClass]="{'year_active':IsFilter(year)}" *ngFor="let year of GetYear()">
 
+            <p>{{year}}</p>
+            <div class="indicator">
+
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
