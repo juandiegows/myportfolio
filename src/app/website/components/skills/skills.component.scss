@@ -28,6 +28,60 @@
       }
     }
   }
+  .education_experince {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .options {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      width: 100%;
+      border-bottom: 2px solid var(--colorPrimary);
+      border-radius: 10px;
+      height: 4rem;
+      box-sizing: border-box;
+      position: relative;
+
+      margin-top: 1rem;
+      .option {
+        display: grid;
+        place-content: center;
+        color: var(--color);
+        border-radius: 10px;
+        height: 100%;
+        cursor: pointer;
+        font-weight: 600;
+        -webkit-user-select: none;
+        user-select: none;
+
+        transition: all 2s ease;
+      }
+      .option-active {
+        color: var(--background);
+      }
+      .option-active_index {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 2s ease;
+        width: 50%;
+        height: 100%;
+        background-color: var(--colorPrimary);
+        border-radius: 10px;
+        z-index: -1;
+      }
+      .option-active_index_2 {
+        left: 50%;
+      }
+      .option:hover {
+        color: var(--colorPrimary);
+      }
+      .option-active:hover {
+        color: var(--background);
+        font-weight: 900;
+      }
+    }
+  }
 }
 
 @media (min-width: 700px) {

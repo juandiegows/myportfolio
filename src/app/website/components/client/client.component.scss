@@ -73,7 +73,7 @@
         right: 0;
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: flex-end;
         .count {
           background-color: var(--background);
           width: 6rem;

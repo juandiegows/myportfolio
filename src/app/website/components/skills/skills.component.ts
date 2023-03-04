@@ -25,6 +25,7 @@ export class SkillsComponent implements OnInit {
     "description": "Es un lenguaje de programación orientado a objetos y de propósito general desarrollado por Microsoft. Se utiliza principalmente para desarrollar aplicaciones de escritorio, móviles, web y juegos. C# se basa en el marco .NET y ofrece características avanzadas como la recolección automática de basura y la administración de memoria."
   };
   active: Boolean = false;
+  IsExperience :Boolean =true;
   constructor(private setting: SettingService) {
 
   }

@@ -10,7 +10,15 @@
   </div>
   <div class="education_experince">
     <h2 class="title"> My Experince job and education</h2>
+    <div class="options">
+      <h4 class="option" (click)="IsExperience = true" [ngClass]="{'option-active':IsExperience}">
+        Experiencia
+      </h4 >
+      <h4 class="option"  [ngClass]="{'option-active':!IsExperience}"  (click)="IsExperience = false" >Educacion </h4>
+      <div class="option-active_index" [ngClass]="{'option-active_index_2':!IsExperience}"></div>
+    </div>
   </div>
 </div>
 <app-alert-info [active]="active" (IsActive)="active = $event" [title]="skillActive.name" [img]="skillActive.urlImg"
-  [texto]="skillActive.description" [textBtnProject]="dataSkill.btnProject" [textBtnExperience]="dataSkill.btnExperience" />
+  [texto]="skillActive.description" [textBtnProject]="dataSkill.btnProject"
+  [textBtnExperience]="dataSkill.btnExperience" />

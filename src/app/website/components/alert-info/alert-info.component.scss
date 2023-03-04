@@ -63,80 +63,48 @@ $time: 3s;
         width: 10rem;
         z-index: 3;
       }
-      .hand-left {
-        left: -25%;
-        /* Prefijos de proveedores para Firefox , Safari y opera antiguo */
-        -moz-animation-name: Writing_left;
+      .hand,
+      .code {
         -moz-animation-duration: $time;
         -moz-animation-iteration-count: infinite;
         -moz-animation-timing-function: ease-in-out;
 
-        -webkit-animation-name: Writing_left;
         -webkit-animation-duration: $time;
         -webkit-animation-iteration-count: infinite;
         -webkit-animation-timing-function: ease-in-out;
 
-        -o-animation-name: Writing_left;
         -o-animation-duration: $time;
         -o-animation-iteration-count: infinite;
         -o-animation-timing-function: ease-in-out;
 
-        /* Prefijos de proveedores para Chroome y otros navegadores*/
-        animation-name: Writing_left;
         animation-duration: $time;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
       }
+      .hand-left {
+        left: -25%;
+        -moz-animation-name: Writing_left;
+        -webkit-animation-name: Writing_left;
+        -o-animation-name: Writing_left;
+        animation-name: Writing_left;
+      }
       .hand-right {
         right: -15%;
-        /* Prefijos de proveedores para Firefox , Safari y opera antiguo */
+
         -moz-animation-name: Writing_right;
-        -moz-animation-duration: $time;
-        -moz-animation-iteration-count: infinite;
-        -moz-animation-timing-function: ease-in-out;
-
         -webkit-animation-name: Writing_right;
-        -webkit-animation-duration: $time;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-timing-function: ease-in-out;
-
         -o-animation-name: Writing_right;
-        -o-animation-duration: $time;
-        -o-animation-iteration-count: infinite;
-        -o-animation-timing-function: ease-in-out;
-
-        /* Prefijos de proveedores para Chroome y otros navegadores*/
         animation-name: Writing_right;
-        animation-duration: $time;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
       }
       .code {
         position: absolute;
         top: 0;
         right: 0;
         z-index: 4;
-        /* Prefijos de proveedores para Firefox , Safari y opera antiguo */
         -moz-animation-name: code;
-        -moz-animation-duration: $time;
-        -moz-animation-iteration-count: infinite;
-        -moz-animation-timing-function: ease-in-out;
-
         -webkit-animation-name: code;
-        -webkit-animation-duration: $time;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-timing-function: ease-in-out;
-
         -o-animation-name: code;
-        -o-animation-duration: $time;
-        -o-animation-iteration-count: infinite;
-        -o-animation-timing-function: ease-in-out;
-
-        /* Prefijos de proveedores para Chroome y otros navegadores*/
         animation-name: code;
-        animation-duration: $time;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
       }
     }
     .btnClose:hover {

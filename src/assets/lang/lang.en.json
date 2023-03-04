@@ -100,7 +100,7 @@
     "btnDetails": "Details"
   },
   "skills": {
-    "title": "My skilss",
+    "title": "My skills",
     "skills": [
       {
         "name": "C#",
@@ -207,4 +207,5 @@
     "btnProject": "See Projects",
     "btnExperience": "See Experience"
   }
+
 }
