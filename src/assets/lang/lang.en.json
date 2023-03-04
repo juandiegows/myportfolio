@@ -206,6 +206,119 @@
 
     "btnProject": "See Projects",
     "btnExperience": "See Experience"
-  }
+  },
 
+  "experienceEducation": {
+    "title": "My work experience and education",
+    "titleExperience": "Experience",
+    "titleEducation": "education",
+    "dataExp": {
+      "subtitle": "Company or Customers",
+      "titleyear": "years",
+      "items": [
+        {
+          "nameBusiness": "Lazos de dignidad",
+          "description": "A web page was created in PHP without using a Framework, with object oriented programming and connected to a MySQL database. A section for clients and an administration panel to manage the site were also included.",
+          "Rol": "Full Stack Web Developer",
+          "StartDate": "05/22/2020",
+          "EndDate": "11/30/2020",
+          "tools": ["php", "HTML", "CSS", "OOP"]
+        },
+        {
+          "nameBusiness": "SENA",
+          "description": "I developed an access control system for a center using C# in Windows Form, an API with ASP.NET and a SQL Server database. In addition, I prepared for a competition using C# for desktop development and Java for mobile application development.",
+          "Rol": "Competitor - Developer",
+          "StartDate": "01/06/2021",
+          "EndDate": "11/30/2021",
+          "tools": [
+            "C#",
+            "HTML",
+            "CSS",
+            "Javascript",
+            "SQL Server",
+            "Android Studio",
+            "Java"
+          ]
+        },
+        {
+          "nameBusiness": "SENA",
+          "description": "I prepared for the WorldSkills competition using the following programming languages: C# for the development of web pages, desktop applications and APIs, with the use of the Entities Framework. Perform automated testing with UNIT in C#, use Kotlin to create mobile applications, and JavaScript with the Vue.js Framework for web page development.",
+          "Rol": "Competitor - Developer",
+          "StartDate": "01/02/2022",
+          "EndDate": "12/30/2022",
+          "tools": [
+            "C#",
+            "HTML",
+            "CSS",
+            "Javascript",
+            "SQL Server",
+            "Android Studio",
+            "Kotlin"
+          ]
+        },
+        {
+          "nameBusiness": "Monnerverse",
+          "description": "An interactive web page was created using the Vue.js Framework and JavaScript. The page features smooth animations and dynamic styling similar to a PowerPoint presentation, without requiring vertical scrolling to navigate through the content.",
+          "Rol": "Fronted Web Developer",
+          "StartDate": "01/10/2022",
+          "EndDate": "12/30/2022",
+          "tools": ["Vue.js", "HTML", "CSS", "Javascript", "SEO"]
+        },
+        {
+          "nameBusiness": "Vittoria Pizzeria",
+          "description": "I developed an application for a fast food restaurant, specialized in pizza, using Angular, TypeScript and SCSS. The application allows customers to order online and customize their pizzas according to their tastes and preferences",
+          "Rol": "Fronted Web Developer",
+          "StartDate": "01/12/2022",
+          "EndDate": "01/02/2023",
+          "tools": ["Angular", "HTML", "CSS", "TypeScript", "SEO"]
+        },
+        {
+          "nameBusiness": "My Portfolio",
+          "description": "I developed a portfolio to showcase my skills and more information about me, using Angular, TypeScript and SCSS. ",
+          "Rol": "Fronted Web Developer",
+          "StartDate": "01/12/2022",
+          "EndDate": "01/02/2023",
+          "tools": ["Angular", "HTML", "CSS", "TypeScript", "SEO"]
+        }
+      ]
+    },
+    "dataEdu": {
+      "subtitle": "schoolorentity",
+      "titleyear": "years",
+      "items": [
+        {
+          "nameBusiness": "Elementary",
+          "description": "I study in an elementary school in Carrizal, where there is still no electricity, internet, nothing technological, the town where Diomedez was born, and despite the lack of technology, I managed to become the champion of IT business software solutions and win a medal of excellence in South Korea...",
+          "Rol": "hugues Manuel",
+          "StartDate": "01/01/2006",
+          "EndDate": "07/12/2011",
+          "tools": []
+        },
+        {
+          "nameBusiness": "HighSchool",
+          "description": "I studied in high school at Junta until tenth grade, I always ranked first among my classmates and excelled with high honors in school, I wanted to finish but we had to leave my beloved town.",
+          "Rol": "Competitor - Developer",
+          "StartDate": "01/01/2012",
+          "EndDate": "07/12/2016",
+          "tools": []
+        },
+        {
+          "nameBusiness": "HighSchool",
+          "description": "I graduated from Colegio Pablo VI, in Colombia, La Guajira, Barrancas, I ranked 3rd in the school in the ICFES tests",
+          "Rol": "Pablo",
+          "StartDate": "01/01/2017",
+          "EndDate": "07/12/2017",
+          "tools": []
+        },
+        {
+          "nameBusiness": "CareerTechnology",
+          "description": "I performed a technologist in the Analysis and Development of information system, I earned the place to compete in worldskills where he was champion 2 times, worldskills colombia and chile in the skill IT Software solutions for business, and runner-up in worldskills america, and medal of excellence in Worldskills Special Edition in south korea.",
+          "Rol": "SENA",
+          "StartDate": "01/01/2018",
+          "EndDate": "07/12/2022",
+          "tools": ["Worldskills"]
+        }
+      ]
+    }
+  }
 }

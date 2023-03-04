@@ -19,12 +19,14 @@
 
 --DarkSecondBackgoundColor: #434242;
 --LightSecondBackgoundColor: #FFFFFF;
-
+--Dark2SecondBackgoundColor: #1E1E1E ;
+--Light2SecondBackgoundColor: #B9B9B9;
 /* variables */
 --colorPrimary: var(--BlueColor);
 --colorPrimaryF: brightness(0) saturate(100%) invert(68%) sepia(73%) saturate(460%) hue-rotate(177deg) brightness(102%) contrast(105%);
 --background: var(--DarkBackgoundColor);
 --backgroundSecond: var(--DarkSecondBackgoundColor);
+--backgroundDark: var(--Dark2SecondBackgoundColor);
 --color: var(--DarkColor);
 
 

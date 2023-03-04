@@ -210,14 +210,102 @@
     "title": "Mi experiencia laboral y educación",
     "titleExperience": "Experiencia",
     "titleEducation": "educación",
-    "experience": [{
-      "nameBusiness":"",
-      "Description":"",
-      "Rol":"",
-      "StartDate":"",
-      "EndDate":"",
-      "tools":[""]
+    "dataExp": {
 
-    }]
+      "subtitle": "Empresa o Clientes",
+      "titleyear": "años",
+      "items": [
+        {
+          "nameBusiness": "Lazos de dignidad",
+          "Description": "Se creó una página web en PHP sin utilizar un Framework, con programación orientada a objetos y conectada a una base de datos MySQL. También se incluyó una sección para los clientes y un panel de administración para gestionar el sitio.",
+          "Rol": "Desarrollador web Full Stack",
+          "StartDate": "22/05/2020",
+          "EndDate": "30/11/2020",
+          "tools": ["php","HTML","CSS", "POO"]
+        },
+        {
+          "nameBusiness": "SENA",
+          "Description": "Desarrollé un sistema de control de acceso para un centro usando C# en Windows Form, una API con ASP.NET y una base de datos SQL Server. Además, me preparé para una competencia utilizando C# para desarrollo de escritorio y Java para desarrollo de aplicaciones móviles.",
+          "Rol": "Competidor - Desarrollador",
+          "StartDate": "01/06/2021",
+          "EndDate": "30/11/2021",
+          "tools": ["C#","HTML","CSS", "Javascript", "SQL Server", "Android Studio", "Java"]
+        },
+        {
+          "nameBusiness": "SENA",
+          "Description": "Me preparé para la competencia de WorldSkills utilizando los siguientes lenguajes de programación: C# para el desarrollo de páginas web, aplicaciones de escritorio y API, con el uso del framework Entities Framework. Realice pruebas automatizadas con UNIT en C#, utilice Kotlin para crear aplicaciones móviles y JavaScript con el Framework de Vue.js para el desarrollo de páginas web.",
+          "Rol": "Competidor - Desarrollador",
+          "StartDate": "01/02/2022",
+          "EndDate": "30/12/2022",
+          "tools": ["C#","HTML","CSS", "Javascript", "SQL Server", "Android Studio", "Kotlin"]
+        },
+        {
+          "nameBusiness": "Monnerverse",
+          "Description": "Se creó una página web interactiva utilizando el Framework de Vue.js y JavaScript. La página cuenta con animaciones suaves y un estilo dinámico similar al de una presentación de PowerPoint, sin requerir desplazamiento vertical para navegar por el contenido.",
+          "Rol": "Desarrollador Web Fronted",
+          "StartDate": "01/10/2022",
+          "EndDate": "30/12/2022",
+          "tools": ["Vue.js","HTML","CSS", "Javascript", "SEO"]
+        },
+        {
+          "nameBusiness": "Vittoria Pizzeria",
+          "Description": "Desarrollé una aplicación para un restaurante de comida rápida, especializado en pizza, utilizando Angular, TypeScript y SCSS. La aplicación permite a los clientes hacer pedidos en línea y personalizar sus pizzas según sus gustos y preferencias",
+          "Rol": "Desarrollador Web Fronted",
+          "StartDate": "01/12/2022",
+          "EndDate": "01/02/2023",
+          "tools": ["Angular","HTML","CSS", "TypeScript", "SEO"]
+        },
+        {
+          "nameBusiness": "Mi portafolio",
+          "Description": "Desarrollé un portafolio para mostrar mis habilidades y más información sobre mi, utilizando Angular, TypeScript y SCSS. ",
+          "Rol": "Desarrollador Web Fronted",
+          "StartDate": "01/12/2022",
+          "EndDate": "01/02/2023",
+          "tools": ["Angular","HTML","CSS", "TypeScript", "SEO"]
+        }
+      ]
+    },
+    "dataEdu": {
+
+      "subtitle": "Escuela o Entidad",
+      "titleyear": "años",
+      "items": [
+        {
+          "nameBusiness": "Primaria",
+          "Description": "Estudio en una primaria en Carrizal, donde aún no tiene luz, internet, nada tecnologico, el pueblo donde nacio Diomedez, y a pensar de no haber tecnologo me logre convertir en el campeón de IT soluciones de software para negocio y ganar medalla de excelencia en corea del sur..",
+          "Rol": "hugues Manuel",
+          "StartDate": "01/01/2006",
+          "EndDate": "07/12/2011",
+          "tools": []
+        },
+        {
+          "nameBusiness": "Secundaria",
+          "Description": "Estudio en la secundaria en la Junta hasta decimo grado, siempre ocupe el primero puesto entre mis compañeros y resalte con grendes honores en el colegio, queria terminar pero tuvimos que mundarnos y irme de mi pueblo querido.",
+          "Rol": "Competidor - Desarrollador",
+          "StartDate": "01/01/2012",
+          "EndDate": "07/12/2016",
+          "tools": []
+        },
+        {
+          "nameBusiness": "Secundaria",
+          "Description": "Me gradue en el colegio Pablo VI, en Colombia, La Guajira, Barrancas, ocupe el 3 puesto del colegio en las pruebas ICFES",
+          "Rol": "Pablo",
+          "StartDate": "01/01/2017",
+          "EndDate": "07/12/2017",
+          "tools": []
+        },
+        {
+          "nameBusiness": "Carrera tecnológica",
+          "Description": "Realice un tecnologo en el Analisis y Desarrollo de sistema de información, me gane el lugar de competir en worldskills donde fue campeon 2 veces, worldskills colombia y chile en la habilidad IT Soluciones de software para negocios,  y subcampeon en worldskills america, y medalla de excelencia en Worldskills Special Edition en corea del sur",
+          "Rol": "SENA",
+          "StartDate": "01/01/2018",
+          "EndDate": "07/12/2022",
+          "tools": ["Worldskills"]
+        }
+
+      ]
+    }
+
+
   }
 }

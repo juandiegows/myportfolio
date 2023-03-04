@@ -19,12 +19,14 @@ export class ModeDarkLightComponent {
       root.style.setProperty('--background', style.getPropertyValue('--DarkBackgoundColor'));
       root.style.setProperty('--color', style.getPropertyValue('--DarkColor'));
       root.style.setProperty('--backgroundSecond', style.getPropertyValue('--DarkSecondBackgoundColor'));
+      root.style.setProperty('--backgroundDark', style.getPropertyValue('--Dark2SecondBackgoundColor'));
       this.setting.setMode(Mode.dark);
       root.style.setProperty('--GraycColor', '#f3f3f3');
     } else {
       root.style.setProperty('--background', style.getPropertyValue('--LightBackgroudColor'));
       root.style.setProperty('--color', style.getPropertyValue('--LightColor'));
       root.style.setProperty('--backgroundSecond', style.getPropertyValue('--LightSecondBackgoundColor'));
+      root.style.setProperty('--backgroundDark', style.getPropertyValue('--Light2SecondBackgoundColor'));
       root.style.setProperty('--GraycColor', '#333333');
       this.setting.setMode(Mode.light);
     }
