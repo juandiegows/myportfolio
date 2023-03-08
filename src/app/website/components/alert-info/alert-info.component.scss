@@ -13,6 +13,14 @@ $time: 3s;
   -o-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 
+  .message {
+    opacity: 0;
+    color: var(--colorPrimary);
+  }
+
+  .message_active {
+    opacity: 1;
+  }
 
   .alert {
     width: 90%;
@@ -149,6 +157,8 @@ $time: 3s;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 @media (max-width: 480px) {
   .container {

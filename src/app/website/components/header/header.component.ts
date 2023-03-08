@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   };
   lang = this.langPage.en;
   darkMode: Boolean = true;
+  expanded = false;
 
   constructor(private setting: SettingService) {
     this.lang = setting.lang;

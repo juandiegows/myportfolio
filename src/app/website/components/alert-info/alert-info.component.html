@@ -1,5 +1,5 @@
-<div class="container" (click)=" Close()" [class.container_active]="active">
-  <div id="myAlert" class="alert" >
+<div class="container" (dblclick)=" Close()" [class.container_active]="active">
+  <div id="myAlert" class="alert" (mouseenter)="message_active = false" (mouseleave)="message_active = true">
     <app-image class="image" [srcImg]="img" [textAlt]="title" />
     <div class="info">
       <h3 class="title">{{title}}</h3>
@@ -11,11 +11,15 @@
     </div>
     <app-image class="btnClose" srcImg="/assets/img/Icons/close.svg" (click)=" Close()" textAlt="cerrar" />
     <div class="image_anim">
-      <app-image [activeFilter]="true" class="background" srcImg="/assets/img/alert/Background Simple.svg" textAlt="color de fondo" />
+      <app-image [activeFilter]="true" class="background" srcImg="/assets/img/alert/Background Simple.svg"
+        textAlt="color de fondo" />
       <app-image class="pc" srcImg="/assets/img/alert/pc.svg" textAlt="pc" />
       <app-image class="hand hand-left" srcImg="/assets/img/alert/Hand 1.svg" />
       <app-image class="hand hand-right" srcImg="/assets/img/alert/Hand 2.svg" />
       <app-image class="code" srcImg="/assets/img/alert/code.svg" />
     </div>
+  </div>
+  <div class="message" [ngClass]="{'message_active' : message_active}">
+    {{message}}
   </div>
 </div>
