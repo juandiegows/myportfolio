@@ -8,6 +8,11 @@ $time: 3s;
   top: 0%;
   left: 0;
   display: none;
+  -webkit-backdrop-filter: blur(10px);
+  -moz-backdrop-filter: blur(10px);
+  -o-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
 
   .alert {
     width: 90%;
@@ -21,6 +26,7 @@ $time: 3s;
     grid-template-columns: 33% 66%;
     padding: 2rem;
     position: relative;
+    z-index: 101;
     .btnClose {
       position: absolute;
       top: 0rem;

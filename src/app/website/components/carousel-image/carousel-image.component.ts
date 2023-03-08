@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./carousel-image.component.scss']
 })
 export class CarouselImageComponent {
-  index_active = 3;
+  index_active = 4;
 }

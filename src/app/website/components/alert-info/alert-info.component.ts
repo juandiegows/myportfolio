@@ -26,4 +26,6 @@ export class AlertInfoComponent {
     this.active = false;
     this.IsActive.emit(false);
   }
+
+
 }

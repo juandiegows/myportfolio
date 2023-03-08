@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SettingService } from './website/services/setting.service';
+import { CommonModule } from '@angular/common';
 
 export function initApp(settingService: SettingService) {
   return () => settingService.init();
@@ -15,7 +16,8 @@ export function initApp(settingService: SettingService) {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [SettingService,
     {
