@@ -1,4 +1,4 @@
-<div class="container" (dblclick)=" Close()" [class.container_active]="active">
+<div class="container" (dblclick)=" Close()" (click)="message_active = true" [class.container_active]="active">
   <div id="myAlert" class="alert" (mouseenter)="message_active = false" (mouseleave)="message_active = true">
     <app-image class="image" [srcImg]="img" [textAlt]="title" />
     <div class="info">
