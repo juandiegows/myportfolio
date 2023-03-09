@@ -32,6 +32,8 @@ export class SkillsComponent implements OnInit {
 
       "subtitle": "Empresa o Clientes",
       "titleyear": "años",
+      "titleClear":"clean filter",
+      "titleMessage": "You can click on the years to filter",
       "items": [
         {
           "nameBusiness": "Lazos de dignidad",
@@ -47,6 +49,8 @@ export class SkillsComponent implements OnInit {
 
       "subtitle": "Escuela o Entidad",
       "titleyear": "años",
+      "titleClear":"clean filter",
+      "titleMessage": "You can click on the years to filter",
       "items": [
         {
           "nameBusiness": "Primaria",
@@ -66,6 +70,8 @@ export class SkillsComponent implements OnInit {
 
     "subtitle": "Empresa o Clientes",
     "titleyear": "años",
+    "titleClear":"Limpiar filtro",
+    "titleMessage": "Puedes darle clic a los años para filtrar",
     "items": [
       {
         "nameBusiness": "Lazos de dignidad",
@@ -135,6 +141,7 @@ export class SkillsComponent implements OnInit {
 
 
   ChangeData() {
+    this.clearFilter();
     if (this.IsExperience) {
       this.dataE = this.dataExpEdu.dataExp;
     } else {

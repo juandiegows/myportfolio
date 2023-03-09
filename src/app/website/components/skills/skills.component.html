@@ -32,7 +32,6 @@
               <div class="indicator"></div>
               <p>{{item.nameBusiness}}</p>
             </div>
-
           </div>
 
         </div>
@@ -59,19 +58,26 @@
           </div>
         </div>
       </div>
+
       <div class="container__years">
         <h5 class="years__title" (click)=" clearFilter()">{{dataE.titleyear}}</h5>
         <div class="years">
-          <div class="year" (click)="setFilter(year)" [ngClass]="{'year_active':IsFilter(year)}" *ngFor="let year of GetYear()">
+          <div class="year" (click)="setFilter(year)" [ngClass]="{'year_active':IsFilter(year)}"
+            *ngFor="let year of GetYear()">
 
             <p>{{year}}</p>
-            <div class="indicator">
-
-            </div>
+            <div class="indicator"> </div>
 
           </div>
+
         </div>
+
       </div>
+      <div class="container__infoYear">
+        <p class="filter__clear" (click)=" clearFilter()" >{{dataE.titleClear}}</p>
+        <p >{{dataE.titleMessage}}</p>
+      </div>
+
     </div>
   </div>
 </div>

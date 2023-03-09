@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 4rem;
   .container__skills {
     width: 100%;
     display: flex;
@@ -14,13 +14,13 @@
       text-align: center;
     }
     .skills {
-      margin-top: 3rem;
+      margin-top: 2rem;
       margin-bottom: 2rem;
       width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
+      gap: 3.5rem;
       .skill {
         width: auto;
         cursor: pointer;
@@ -84,6 +84,7 @@
     .edu_exp_container {
       margin-top: 2rem;
       width: 100%;
+
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -103,6 +104,9 @@
           flex-direction: column;
           align-items: center;
           background-color: var(--backgroundDark);
+              &::-webkit-scrollbar-track {
+              background-color: var(--backgroundDark) ;
+            }
           .entity__title {
             margin-top: 1rem;
             width: 100%;
@@ -152,6 +156,9 @@
           flex-direction: column;
           justify-content: space-between;
           padding: 1rem;
+          &::-webkit-scrollbar-track {
+            background-color: var(--backgroundSecond) ;
+          }
           .info__title {
             font-size: 2rem;
             color: var(--colorPrimary);
@@ -189,30 +196,32 @@
       }
       .container__years {
         width: 100%;
-        height: 3rem;
+        height: 5rem;
         background-color: var(--backgroundDark);
         display: grid;
         grid-template-columns: 30% 70%;
         place-content: center;
         align-items: center;
-        .years__title {
+        padding-bottom: 0.5rem;
 
+        .years__title {
           font-size: 1.8rem;
           text-align: center;
           cursor: pointer;
         }
-        .years{
+        .years {
           display: flex;
           align-items: center;
 
-          height: 4rem;
+          height: 5rem;
           overflow: hidden;
           overflow-x: auto;
           &::-webkit-scrollbar {
             height: 8px;
           }
-
-
+          &::-webkit-scrollbar-track {
+            background-color: var(--backgroundDark);
+          }
           .year {
             position: relative;
             display: flex;
@@ -222,11 +231,10 @@
             -webkit-user-select: none;
             user-select: none;
             p {
-
-            padding: 1rem;
+              padding: 1rem;
             }
 
-            .indicator{
+            .indicator {
               position: absolute;
               bottom: 0;
               width: 100%;
@@ -250,6 +258,23 @@
           }
         }
       }
+      .container__infoYear {
+        width: 100%;
+        height: 3rem;
+        background-color: var(--backgroundDark);
+        display: grid;
+        grid-template-columns: 30% 70%;
+        place-content: center;
+        align-items: center;
+        .filter__clear {
+          margin: auto;
+          color: var(--colorPrimary);
+          cursor: pointer;
+        }
+        & > * {
+          margin: auto;
+        }
+      }
     }
   }
 }
@@ -262,14 +287,48 @@
     gap: 5rem;
     grid-template-rows: 1fr;
     grid-template-columns: 50% 50%;
+    margin-bottom: 3rem;
+    .container__skills {
+      .skills{
+        margin-top: 6rem;
+        gap: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        .skill {
+          width: auto;
+          cursor: pointer;
+          height: 5rem;
+        }
+      }
+    }
     .education_experience {
       .edu_exp_container {
+
         .info {
           display: grid;
           grid-template-columns: 30% 70%;
+          padding: 0;
+          max-height: 25rem;
+
           .entity {
             height: 100%;
-            max-height: 300rem;
+
+            max-height: 25rem;
+          }
+          .info__container{
+            overflow: auto;
+            height: 100%;
+            max-height: 25rem;
+            padding: 0%;
+            padding-bottom: 0.5rem;
+
+            .info__title{
+              position: sticky;
+              top: 0;
+              background-color: var(--backgroundSecond);
+              padding-bottom: 1rem;
+              padding-top: 1rem;
+            }
           }
         }
       }

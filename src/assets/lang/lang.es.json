@@ -214,6 +214,8 @@
 
       "subtitle": "Empresa o Clientes",
       "titleyear": "años",
+      "titleClear":"Limpiar filtro",
+      "titleMessage": "Puedes darle clic a los años para filtrar",
       "items": [
         {
           "nameBusiness": "Lazos de dignidad",
@@ -269,6 +271,8 @@
 
       "subtitle": "Escuela o Entidad",
       "titleyear": "años",
+      "titleClear":"Limpiar filtro",
+      "titleMessage": "Puedes darle clic a los años para filtrar",
       "items": [
         {
           "nameBusiness": "Primaria",

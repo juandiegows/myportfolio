@@ -215,6 +215,8 @@
     "dataExp": {
       "subtitle": "Company or Customers",
       "titleyear": "years",
+      "titleClear":"clean filter",
+      "titleMessage": "You can click on the years to filter",
       "items": [
         {
           "nameBusiness": "Lazos de dignidad",
@@ -285,6 +287,8 @@
     "dataEdu": {
       "subtitle": "school or entity",
       "titleyear": "years",
+      "titleClear":"clean filter",
+      "titleMessage": "You can click on the years to filter",
       "items": [
         {
           "nameBusiness": "Elementary",
