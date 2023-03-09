@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Typed from 'typed.js';
-import { SettingService } from '../../services/setting.service';
+import { Lang, SettingService } from '../../services/setting.service';
 
 @Component({
   selector: 'app-introduction',
@@ -54,7 +54,9 @@ export class IntroductionComponent implements OnInit {
     "achievements1": "Campeón de worldskills colombia",
     "achievements2": "Campeón de worldskills chile",
     "achievements3": "SubCampeón de worldskills American",
-    "achievements4": "Medalla de excelencia worldskils special edition"
+    "achievements4": "Medalla de excelencia worldskils special edition",
+    "btnDownload": "Descargar resumen",
+    "linkDownload": "/assets/docs/CV/CV_JuanDiegoWS.pdf"
   };
   ngOnInit(): void {
     this.typed = new Typed('.typed-element', this.options)
@@ -79,6 +81,7 @@ export class IntroductionComponent implements OnInit {
 
 
   }
+
 
 
 

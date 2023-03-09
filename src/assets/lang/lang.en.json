@@ -26,7 +26,9 @@
     "achievements1": "champion of worldskills colombia",
     "achievements2": "champion of worldskills chile",
     "achievements3": "runner-up of worldskills American",
-    "achievements4": "medal of excellence in worldskils special edition"
+    "achievements4": "medal of excellence in worldskils special edition",
+    "btnDownload": "Download summary CV",
+    "linkDownload":"/assets/docs/CV/CV_JuanDiegoWS.en.pdf"
   },
   "about_me": {
     "title": "Sobre mi",
