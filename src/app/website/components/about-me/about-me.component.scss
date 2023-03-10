@@ -5,13 +5,15 @@
   flex-direction: column;
   gap: 2rem;
   margin-top: 3rem;
+  max-width: 160rem;
+  margin: auto;
   .title {
     font-size: 3rem;
     color: var(--colorPrimary);
     font-weight: 900;
   }
   .info {
-    font-size: 1.8rem;
+    font-size: clamp(1.8rem, 1.8vw, 2.5rem);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;

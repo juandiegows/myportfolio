@@ -64,7 +64,7 @@
           padding: 0.8rem 2rem;
           background-color: var(--colorPrimary);
           text-decoration: none;
-          color: #333333;
+          color: var(--backgroundSecond);
         }
       }
       .info_extra {
@@ -106,7 +106,7 @@
   .container {
     .clients {
       grid-template-columns: 1fr 1fr 1fr;
-      max-width: 120rem;
+      max-width: 160rem;
     }
   }
 

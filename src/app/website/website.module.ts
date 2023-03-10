@@ -16,6 +16,7 @@ import { MyServicesComponent } from './components/my-services/my-services.compon
 import { ClientComponent } from './components/client/client.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { AlertInfoComponent } from './components/alert-info/alert-info.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -31,7 +32,8 @@ import { AlertInfoComponent } from './components/alert-info/alert-info.component
     MyServicesComponent,
     ClientComponent,
     SkillsComponent,
-    AlertInfoComponent
+    AlertInfoComponent,
+    ProjectsComponent
   ],
   imports: [
     CommonModule,
