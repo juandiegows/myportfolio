@@ -38,7 +38,7 @@
   </div>
 
 
-  <nav class="navigation" [ngClass]="{'navigation_active':expanded}" (mouseout)="expanded = false">
+  <nav class="navigation" [ngClass]="{'navigation_active':expanded}" >
     <a data-url="/home" href="javascript:void(0);" (click)="toGo('home')">{{data.home}}</a>
     <a data-url="/about-me" href="javascript:void(0);" (click)="toGo('about-me')">{{data.about_me}}</a>
     <a href="javascript:void(0);" data-url="/services"  (click)="toGo('services')">{{data.services}}</a>
