@@ -176,7 +176,7 @@ export class SkillsComponent implements OnInit {
     return new Date(Number(dateParts[2]), Number(dateParts[1]) - 1, Number(dateParts[0]));
   }
   getFormattedDates(date1: string, date2: string): string {
-    const date1Obj = this.GetDate(date2);
+    const date1Obj = this.GetDate(date1);
     const date2Obj = this.GetDate(date2);
 
     if (date1Obj.getFullYear() === date2Obj.getFullYear()) {
