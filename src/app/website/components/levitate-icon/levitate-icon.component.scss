@@ -11,8 +11,8 @@ $time: 3s;
   position: relative;
   .image {
     --delay-1: random();
-    width: 3rem;
-    height: 3rem;
+    width: clamp(3rem, 3.5vw, 5rem);
+    height: clamp(3rem, 3.5vw, 5rem);
     position: absolute;
     top: 0;
     /* Prefijos de proveedores para Firefox , Safari y opera antiguo */
