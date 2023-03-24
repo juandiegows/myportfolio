@@ -5,14 +5,14 @@ $time: 3s;
 }
 .container {
   width: 5rem;
-  height: 5rem;
+  height: 4.5rem;
   display: flex;
   justify-content: center;
   position: relative;
   .image {
     --delay-1: random();
-    width: clamp(3rem, 3.5vw, 5rem);
-    height: clamp(3rem, 3.5vw, 5rem);
+    width: clamp(2rem, 3.5vw, 5rem);
+    height: clamp(2rem, 3.5vw, 5rem);
     position: absolute;
     top: 0;
     /* Prefijos de proveedores para Firefox , Safari y opera antiguo */
@@ -45,6 +45,17 @@ $time: 3s;
 }
 
 @keyframes levitate {
+  70%{
+    transform: rotate(0);
+    filter:  drop-shadow(0 0 0px #4f9) ;
+
+  }
+  90%{
+    transform: rotate(180deg);
+
+    filter: drop-shadow(0 0 5px #4f9) ;
+
+  }
   100% {
     top: calc(100% - 3rem);
   }

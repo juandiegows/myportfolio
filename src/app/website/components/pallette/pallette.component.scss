@@ -1,13 +1,13 @@
 .image {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: auto;
+  height: 3vh;
   position: relative;
 }
 .colors {
   display: none;
   background-color: var(--backgroundSecond);
   position: absolute;
-  top: 3rem;
+  top: 4vh;
   right: 0rem;
   width: auto;
   height: auto;

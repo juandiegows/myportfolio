@@ -15,7 +15,7 @@ body {
   box-sizing: border-box;
   background-color: var(--background);
   color: var(--color);
-  padding: 0 2rem;
+  padding: 0 0rem;
   font-size: clamp(1.6rem, 1vw, 4rem);
   transition: var(--myTransition);
   cursor: default;
@@ -35,7 +35,7 @@ body {
   border-radius: 2rem;
 }
 .title {
-  font-size: 3rem;
+  font-size: clamp(4rem, 2.5vw, 7rem);
   color: var(--colorPrimary);
   font-weight: 900;
   margin-bottom: 1rem;

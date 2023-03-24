@@ -82,14 +82,6 @@
         "url": "https://lazosdedignidad.org/"
       },
       {
-        "name": "Monnerverse",
-        "imgSrc": "/assets/img/Icons/client/monnerverse.svg",
-        "tools": ["Vue.js", "Javascript", "CSS", "HTML"],
-        "count": 4,
-        "year": 2022,
-        "url": "https://www.monnerverse.com/"
-      },
-      {
         "name": "Vittoria Pizzeria",
         "imgSrc": "/assets/img/Icons/client/vittoria Pizzeria Trattoria.svg",
         "tools": ["Angular", "TypeScript", "SCSS", "HTML"],

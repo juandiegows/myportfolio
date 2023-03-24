@@ -1,6 +1,6 @@
 .container {
-  width: 6rem;
-  height: 2.5rem;
+  width: 10vh;
+  height: 4vh;
   border-radius: 30rem;
   background-color: #3557A0;
   display: flex;
@@ -13,7 +13,7 @@
   position: relative;
   p {
     position: absolute;
-    left: 0rem;
+    left: 0.5rem;
     font-size: 1rem;
     margin-left: 0.8rem;
     margin-right: 0;
@@ -23,7 +23,7 @@
   }
   .image {
     position: absolute;
-    right: 0;
+    right: 0.5rem;
     width: 2.5rem;
     height: 2.5rem;
     transition: all 1s ease;
@@ -34,12 +34,12 @@
   background-color: #3c9bff;
   p {
     position: absolute;
-    left: calc(100% - 2.5rem);
+    left: calc(100% - 3rem);
     margin-left: 0;
     margin-right: 0.8rem;
   }
   .image {
     position: absolute;
-    right: calc(100% - 2.5rem);
+    right: calc(100% - 3rem);
   }
 }

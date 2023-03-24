@@ -3,16 +3,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  .title {
-    font-size: 3rem;
-    color: var(--colorPrimary);
-    font-weight: 900;
-  }
+  padding: 1rem 5vw;
   .services {
     margin-top: 3rem;
     display: grid;
     gap: 1rem;
-    max-width: 160rem;
     .service {
       background-color: var(--backgroundSecond);
       padding: 2rem;
