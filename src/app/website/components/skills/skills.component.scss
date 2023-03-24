@@ -284,8 +284,7 @@
 @media (min-width: 900px) {
   .container {
     display: grid;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding: 1rem 5vw;
     gap: 5rem;
     grid-template-rows: 1fr;
     grid-template-columns: 50% 50%;
