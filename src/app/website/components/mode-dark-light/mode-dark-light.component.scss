@@ -1,5 +1,5 @@
 .container {
-  width: 10vh;
+  width: 4.5vw;
   height: 4vh;
   border-radius: 30rem;
   background-color: #3557A0;
@@ -14,18 +14,19 @@
   p {
     position: absolute;
     left: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.4vh;
     margin-left: 0.8rem;
     margin-right: 0;
-    font-weight: 900;
+    font-weight: bold;
     transition: all 1s ease;
     color: white;
+    letter-spacing: 0.2vh;
   }
   .image {
     position: absolute;
     right: 0.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3vh;
+    height: 3vh;
     transition: all 1s ease;
   }
 }
@@ -34,12 +35,13 @@
   background-color: #3c9bff;
   p {
     position: absolute;
-    left: calc(100% - 3rem);
-    margin-left: 0;
+    left: calc(100% - 4rem);
+    margin-left: 0rem;
     margin-right: 0.8rem;
+
   }
   .image {
     position: absolute;
-    right: calc(100% - 3rem);
+    right: calc(100% - 3.5vh);
   }
 }

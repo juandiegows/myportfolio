@@ -80,14 +80,6 @@
         "count": 5,
         "year": 2020,
         "url": "https://lazosdedignidad.org/"
-      },
-      {
-        "name": "Vittoria Pizzeria",
-        "imgSrc": "/assets/img/Icons/client/vittoria Pizzeria Trattoria.svg",
-        "tools": ["Angular", "TypeScript", "SCSS", "HTML"],
-        "count": 2,
-        "year": 2023,
-        "url": "https://vittoriapizzeriaytrattoria.com/"
       }
     ],
     "btnVisit": "Visit",
