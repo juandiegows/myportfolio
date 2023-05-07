@@ -80,6 +80,14 @@
         "count": 5,
         "year": 2020,
         "url": "https://lazosdedignidad.org/"
+      },
+      {
+        "name": "Vittoria Pizzeria",
+        "imgSrc": "/assets/img/Icons/client/vittoria Pizzeria Trattoria.svg",
+        "tools": ["Angular", "TypeScript", "SCSS", "HTML"],
+        "count": 2,
+        "year": 2023,
+        "url": "https://vittoriapizzeriaytrattoria.com/"
       }
     ],
     "btnVisit": "Visit",
@@ -197,11 +205,11 @@
   "experienceEducation": {
     "title": "My work experience and education",
     "titleExperience": "Experience",
-    "titleEducation": "education",
+    "titleEducation": "Education",
     "dataExp": {
       "subtitle": "Company or Customers",
-      "titleyear": "years",
-      "titleClear":"clean filter",
+      "titleyear": "Years",
+      "titleClear":"Clean Filter",
       "titleMessage": "You can click on the years to filter",
       "items": [
         {
