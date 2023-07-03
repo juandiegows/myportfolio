@@ -51,3 +51,9 @@ body {
   text-decoration: none;
   color: #333333;
 }
+
+::selection {
+  background-color: var(--colorPrimary);
+  color: var(--color);
+
+}
