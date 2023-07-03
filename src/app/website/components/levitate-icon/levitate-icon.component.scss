@@ -47,13 +47,13 @@ $time: 3s;
 @keyframes levitate {
   70%{
     transform: rotate(0);
-    filter:  drop-shadow(0 0 0px #4f9) ;
+    filter:  drop-shadow(0 0 0px var(--colorPrimary)) ;
 
   }
   90%{
     transform: rotate(180deg);
 
-    filter: drop-shadow(0 0 5px #4f9) ;
+    filter: drop-shadow(0 0 5px var(--colorPrimary)) ;
 
   }
   100% {
