@@ -8,7 +8,7 @@
   position: sticky;
   left: 0;
   top: 0;
-  padding: 1rem 5vw;
+  padding: 1vh 5vw;
   z-index: 100;
   margin: 0;
   background-color: var(--background);
@@ -21,7 +21,7 @@
       align-items: center;
       gap: 1rem;
       .image {
-        width: 3rem;
+        width: clamp(5rem, 2vw, 40rem);;
         height: auto;
         & > img {
           filter: var(--colorPrimaryF);
@@ -32,6 +32,7 @@
         font-weight: 900;
         -webkit-user-select: none;
         user-select: none;
+        font-size:  clamp(1rem, 1vw, 5rem);
       }
     }
 
@@ -42,7 +43,7 @@
       gap: 1rem;
       cursor: pointer;
       .flag {
-        width: 3rem;
+        width: clamp(3rem, 2vw, 40rem);;;
         display: grid;
         grid-template-rows: 9fr 1fr;
         .line {
@@ -123,7 +124,7 @@
     flex-wrap: wrap;
 
     a {
-      font-size: clamp(1.6rem, 1.3vw, 4rem);
+      font-size: clamp(1.6rem, 1.3vw, 40rem);
       text-decoration: none;
       color: var(--color);
       font-weight: 500;
@@ -135,7 +136,7 @@
       color: var(--colorPrimary);
     }
     .btn {
-      font-size: clamp(1.6rem, 1.3vw, 4rem);
+      font-size: clamp(1.6rem, 1.3vw, 40rem);
       padding: 0.3vw 0.7vw;
     }
   }

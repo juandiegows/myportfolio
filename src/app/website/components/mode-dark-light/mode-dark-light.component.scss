@@ -6,27 +6,25 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  transition: all 2s ease;
   -webkit-user-select: none;
   user-select: none;
   cursor: pointer;
   position: relative;
+  padding: 0.7vw;
   p {
     position: absolute;
-    left: 0.5rem;
-    font-size: 1rem;
-    margin-left: 0.8rem;
+    font-size:  clamp(1rem, 0.8vw, 40rem);;;
     margin-right: 0;
     font-weight: 900;
-    transition: all 1s ease;
     color: white;
+    transition: transform 2s ease, margin-left 2s ease;
   }
   .image {
     position: absolute;
-    right: 0.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    transition: all 1s ease;
+    width:  clamp(2.5rem, 1.5vw, 40rem);
+    height:  clamp(2.5rem, 1.5vw, 40rem);
+    right: 0;
+    transition: transform 2s ease, margin-left 2s ease;
   }
 }
 
@@ -34,12 +32,12 @@
   background-color: #3c9bff;
   p {
     position: absolute;
-    left: calc(100% - 3rem);
     margin-left: 0;
-    margin-right: 0.8rem;
+    margin-right: 0.8vw;
+    transform: translateX(170%);
   }
   .image {
     position: absolute;
-    right: calc(100% - 3rem);
+    transform: translateX(-170%);
   }
 }
