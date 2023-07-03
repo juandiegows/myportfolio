@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     gap: 0.5rem;
+    min-height: 90vh;
     .text {
       display: flex;
       flex-direction: column;
@@ -23,7 +24,7 @@
           color: var(--colorPrimary);
           font-weight: 900;
         }
-        font-size: clamp(1rem, 3.4vw, 40rem);
+        font-size: clamp(2.4rem, 3.4vw, 40rem);
         .text__flex {
           display: flex;
           gap: 0.5rem;
@@ -79,12 +80,12 @@
   }
 
   .btn {
-    margin: 0;
-    width: 15vw;
-    padding: 0.5vw;
+    margin: 1rem 1rem 0 0;
+    width: 90vw;
+    padding: 2vw;
     cursor: pointer;
     color: var(--background);
-    font-size: clamp(1rem, 1vw, 30rem);
+    font-size: clamp(2rem, 1vw, 30rem);
     text-align: center;
     border-radius: 0.5vw;
   }
@@ -168,6 +169,11 @@
   .container {
     .info {
       gap: 3rem;
+      min-height: 0vh;
+    }
+    .btn {
+      width: 18vw;
+      padding: 0.5vw;
     }
   }
 }
