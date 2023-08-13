@@ -21,13 +21,7 @@
     max-width: 60rem;
     border-radius: 2rem;
   }
-  .image-active_2 {
-    width: 90vw;
-    height: 50vw;
-    max-height: 60rem;
-    max-width: 60rem;
-    border-radius: 2rem;
-  }
+
 }
 img {
   width: 100%;
@@ -53,10 +47,7 @@ img {
       max-width: 80rem;
       border-radius: 2rem;
     }
-    .image-active_2 {
-      max-width: 80rem;
-      border-radius: 2rem;
-    }
+
   }
   img {
     width: 100%;
@@ -69,17 +60,13 @@ img {
   .container {
 
     .image {
-      width:  12rem;
+      max-width: 18rem;
     }
     .image-active {
-      max-width: none;
-      width:30vw;
+      width: auto;
+      max-width:60vw;
       border-radius: 10rem;
     }
-    .image-active_2 {
-      width:1600px;
-      border-radius: 10rem;
-      max-width: none;
-    }
+
   }
 }
