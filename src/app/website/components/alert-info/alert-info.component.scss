@@ -25,7 +25,7 @@ $time: 3s;
   .alert {
     width: 90%;
     height: auto;
-    max-width: 70rem;
+    max-width: 90rem;
     background-color: var(--background);
     border-radius: 10px;
     border: 2px solid var(--colorPrimary);
@@ -39,7 +39,7 @@ $time: 3s;
       position: absolute;
       top: 0rem;
       right: 0rem;
-      width: 4rem;
+      width:clamp(4rem,12vw, 8rem);
       transform: translate(50%, -50%);
       cursor: pointer;
     }
@@ -122,7 +122,7 @@ $time: 3s;
       }
     }
     .btnClose:hover {
-      width: 3.5rem;
+      width: clamp(3.5rem,10vw, 7.5rem);
     }
     .image {
       width: 100%;
