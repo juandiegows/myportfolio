@@ -24,7 +24,7 @@
       padding-bottom: 4rem;
       .client__title {
         margin-top: 1rem;
-        font-size: 2rem;
+        font-size: clamp(2rem, 1.8vw, 30rem);
         color: var(--colorPrimary);
         font-weight: 900;
         text-align: center;
@@ -38,6 +38,7 @@
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
+        font-size:  clamp(1.4rem, 1.4vw, 20rem);
 
         margin-bottom: 2rem;
         .tag {
@@ -52,6 +53,7 @@
       .btns {
         display: flex;
         gap: 1rem;
+        font-size:  clamp(1.4rem, 1.4vw, 20rem);
         .btn {
           outline: none;
           border: none;
@@ -71,15 +73,18 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        font-size:  clamp(1.4rem, 1.4vw, 20rem);
         .count {
           background-color: var(--backgroundDark);
-          width: 6rem;
+          width: auto;
           padding: 0.6rem 1rem;
           border-top-left-radius: 2rem;
           display: flex;
           justify-content: center;
-
           gap: 0.3rem;
+          .icon{
+            width:  clamp(2rem, 1.4vw, 20rem);
+          }
         }
         .year {
           background-color: var(--backgroundDark);

@@ -15,13 +15,13 @@
         <p class="tag" *ngFor="let tool of client.tools">#{{tool}}</p>
       </div>
       <div class="btns">
-        <a [href]="client.url" target="_blank"  class="btn">{{data.btnVisit}}</a>
-        <button class="btn">{{data.btnDetails}}</button>
+        <a [href]="client.url" target="_blank" class="btn">{{data.btnVisit}}</a>
+        <a class="btn">{{data.btnDetails}}</a>
       </div>
       <div class="info_extra">
         <p class="count">
           {{client.count}}
-          <app-image class="icon" [activeFilter]="true" srcImg="/assets/img/Icons/user.svg"/>
+          <app-image class="icon" [activeFilter]="true" srcImg="/assets/img/Icons/user.svg" />
         </p>
         <p class="year">
           {{client.year}}
