@@ -3,14 +3,17 @@
   margin: auto;
   padding: 1rem 5vw;
   margin-top: 3rem;
+
   .container__skills {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-     .title {
+
+    .title {
       text-align: center;
     }
+
     .skills {
       margin-top: 2rem;
       margin-bottom: 2rem;
@@ -19,34 +22,40 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 3.5rem;
+
       .skill {
         width: clamp(3rem, 2vw, 20rem);
         cursor: pointer;
         height: clamp(3rem, 2vw, 20rem);
+
         .lang {
           width: 100%;
         }
       }
     }
   }
+
   .education_experience {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .title {
       text-align: center;
     }
+
     .options {
       display: grid;
       grid-template-columns: 50% 50%;
       width: 100%;
       border-bottom: 2px solid var(--colorPrimary);
       border-radius: 10px;
-      height: 4rem;
+      height: clamp(4rem, 5vh, 30rem);
       box-sizing: border-box;
       position: relative;
 
       margin-top: 1rem;
+
       .option {
         display: grid;
         place-content: center;
@@ -60,9 +69,11 @@
 
         transition: all 2s ease;
       }
+
       .option-active {
         color: var(--background);
       }
+
       .option-active_index {
         position: absolute;
         top: 0;
@@ -74,17 +85,21 @@
         border-radius: 10px;
         z-index: -1;
       }
+
       .option-active_index_2 {
         left: 50%;
       }
+
       .option:hover {
         color: var(--colorPrimary);
       }
+
       .option-active:hover {
         color: var(--background);
         font-weight: 900;
       }
     }
+
     .edu_exp_container {
       margin-top: 2rem;
       width: 100%;
@@ -92,15 +107,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
       .info {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
         padding: 1rem 0 0 0;
+
         .entity {
           width: 100%;
-          max-height: 30rem;
           overflow: auto;
           position: relative;
           top: 0;
@@ -108,9 +124,11 @@
           flex-direction: column;
           align-items: center;
           background-color: var(--backgroundDark);
-              &::-webkit-scrollbar-track {
-              background-color: var(--backgroundDark) ;
-            }
+
+          &::-webkit-scrollbar-track {
+            background-color: var(--backgroundDark);
+          }
+
           .entity__title {
             margin-top: 1rem;
             width: 100%;
@@ -122,48 +140,58 @@
             background-color: var(--backgroundDark);
             cursor: pointer;
           }
+
           .entity__item {
             width: 100%;
             margin-top: 1rem;
             height: auto;
+
             .item {
               display: flex;
               align-items: center;
               padding: 1rem 0;
               height: 3rem;
               cursor: pointer;
+
               .indicator {
                 height: 3rem;
                 width: 3px;
                 margin-right: 10px;
                 border-radius: 10px;
               }
+
               &:hover {
                 background-color: var(--backgroundSecond);
               }
-              &:hover > .indicator {
+
+              &:hover>.indicator {
                 background-color: var(--colorPrimary);
               }
             }
+
             .item_active {
               background-color: var(--backgroundSecond);
+
               .indicator {
                 background-color: var(--colorPrimary);
               }
             }
           }
         }
+
         .info__container {
           background-color: var(--backgroundSecond);
-          min-height: 25rem;
+          min-height: clamp(25rem, 10vw, 100rem);
           width: 100%;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           padding: 1rem;
+
           &::-webkit-scrollbar-track {
-            background-color: var(--backgroundSecond) ;
+            background-color: var(--backgroundSecond);
           }
+
           .info__title {
             font-size: 2rem;
             color: var(--colorPrimary);
@@ -171,24 +199,29 @@
             text-align: center;
             margin: 1rem;
           }
+
           .info__desc {
             text-align: justify;
             padding: 1rem;
           }
+
           .info__tools {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 0.8rem;
             margin-bottom: 1rem;
+
             .link {
               cursor: pointer;
               font-weight: 600;
+
               &:hover {
                 color: var(--colorPrimary);
               }
             }
           }
+
           .info_extra {
             margin-top: 2rem;
             display: flex;
@@ -199,6 +232,7 @@
           }
         }
       }
+
       .container__years {
         width: 100%;
         height: 5rem;
@@ -214,6 +248,7 @@
           text-align: center;
           cursor: pointer;
         }
+
         .years {
           display: flex;
           align-items: center;
@@ -221,12 +256,15 @@
           height: 5rem;
           overflow: hidden;
           overflow-x: auto;
+
           &::-webkit-scrollbar {
             height: 8px;
           }
+
           &::-webkit-scrollbar-track {
             background-color: var(--backgroundDark);
           }
+
           .year {
             position: relative;
             display: flex;
@@ -235,6 +273,7 @@
             cursor: pointer;
             -webkit-user-select: none;
             user-select: none;
+
             p {
               padding: 1rem;
             }
@@ -246,23 +285,28 @@
               height: 2px;
               border-radius: 10px;
             }
+
             &:hover {
               background-color: var(--backgroundSecond);
               color: var(--colorPrimary);
+
               .indicator {
                 background-color: var(--colorPrimary);
               }
             }
           }
+
           .year_active {
             background-color: var(--backgroundSecond);
             color: var(--colorPrimary);
+
             .indicator {
               background-color: var(--colorPrimary);
             }
           }
         }
       }
+
       .container__infoYear {
         width: 100%;
         height: 3rem;
@@ -271,12 +315,14 @@
         grid-template-columns: 30% 70%;
         place-content: center;
         align-items: center;
+
         .filter__clear {
           margin: auto;
           color: var(--colorPrimary);
           cursor: pointer;
         }
-        & > * {
+
+        &>* {
           margin: auto;
         }
       }
@@ -292,8 +338,9 @@
     grid-template-rows: 1fr;
     grid-template-columns: 50% 50%;
     margin-bottom: 3rem;
+
     .container__skills {
-      .skills{
+      .skills {
         margin-top: 6rem;
         gap: 3rem;
         display: grid;
@@ -301,30 +348,48 @@
 
       }
     }
+
     .education_experience {
+      font-size: clamp(1.4rem, 1.4vw, 20rem);
+
 
       .edu_exp_container {
+
 
         .info {
           display: grid;
           grid-template-columns: 30% 70%;
           padding: 0;
-          max-height: 25rem;
+          max-height: clamp(35rem, 20vw, 90rem);
 
           .entity {
+            gap: clamp(1.4rem, 2vh, 40rem);
             height: 100%;
 
-            max-height: 25rem;
+            .entity__item {
+
+              .item {
+                font-size: clamp(1.4rem, 1vw, 15rem);
+                gap: clamp(1.4rem, 4vh, 40rem);
+                padding: 1rem 0;
+                height: clamp(3rem, 5vh, 20rem);
+              }
+            }
+
+            .entity__title {
+              font-size: clamp(1.4rem, 1.4vw, 20rem);
+            }
           }
-          .info__container{
+
+          .info__container {
             overflow: auto;
             height: 100%;
-            max-height: 25rem;
-            padding: 0%;
+            padding: 3%;
             padding-bottom: 0.5rem;
 
-            .info__title{
+            .info__title {
               position: sticky;
+              font-size: clamp(1.4rem, 1.4vw, 20rem);
               top: 0;
               background-color: var(--backgroundSecond);
               padding-bottom: 1rem;
