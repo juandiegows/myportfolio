@@ -3,7 +3,7 @@
     <h2 class="title">{{dataSkill.title}}</h2>
     <div class="skills">
       <div class="skill" (click)="Open(skill)" *ngFor="let skill of dataSkill.skills">
-        <app-image [srcImg]="skill.urlImg" />
+        <app-image class="lang" [srcImg]="skill.urlImg" />
       </div>
 
     </div>
@@ -74,8 +74,8 @@
 
       </div>
       <div class="container__infoYear">
-        <p class="filter__clear" (click)=" clearFilter()" >{{dataE.titleClear}}</p>
-        <p >{{dataE.titleMessage}}</p>
+        <p class="filter__clear" (click)=" clearFilter()">{{dataE.titleClear}}</p>
+        <p>{{dataE.titleMessage}}</p>
       </div>
 
     </div>
