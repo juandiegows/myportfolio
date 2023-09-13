@@ -2,9 +2,11 @@
 @import './variable.scss';
 @import url('./reset.scss');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
+
 html {
   font-size: 10px;
   font-family: 'Quicksand', sans-serif;
@@ -26,20 +28,24 @@ body {
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background-color: var(--background);
   border-radius: 2rem;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
   background-color: var(--colorPrimary);
   border-radius: 2rem;
 }
+
 .title {
   font-size: clamp(4rem, 2.5vw, 20rem);
   color: var(--colorPrimary);
   font-weight: 900;
   margin-bottom: 1rem;
 }
+
 .btn {
   outline: none;
   border: none;
@@ -56,4 +62,8 @@ body {
   background-color: var(--colorPrimary);
   color: var(--color);
 
+}
+
+.text-center {
+  text-align: center;
 }

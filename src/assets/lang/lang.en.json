@@ -28,7 +28,7 @@
     "achievements3": "runner-up of worldskills American",
     "achievements4": "medal of excellence in worldskils special edition",
     "btnDownload": "Download summary CV",
-    "linkDownload":"/assets/docs/CV/CV_JuanDiegoWS.en.pdf"
+    "linkDownload": "/assets/docs/CV/CV_JuanDiegoWS.en.pdf"
   },
   "about_me": {
     "title": "About me",
@@ -76,7 +76,14 @@
       {
         "name": "Lazos de Dignidad",
         "imgSrc": "/assets/img/Icons/client/Lazos de dignidad.svg",
-        "tools": ["php", "MVC", "JQuery", "CSS", "HTML", "POO"],
+        "tools": [
+          "php",
+          "MVC",
+          "JQuery",
+          "CSS",
+          "HTML",
+          "POO"
+        ],
         "count": 5,
         "year": 2020,
         "url": "https://lazosdedignidad.org/"
@@ -84,7 +91,12 @@
       {
         "name": "Vittoria Pizzeria",
         "imgSrc": "/assets/img/Icons/client/vittoria Pizzeria Trattoria.svg",
-        "tools": ["Angular", "TypeScript", "SCSS", "HTML"],
+        "tools": [
+          "Angular",
+          "TypeScript",
+          "SCSS",
+          "HTML"
+        ],
         "count": 2,
         "year": 2023,
         "url": "https://vittoriapizzeriaytrattoria.com/"
@@ -197,11 +209,9 @@
         "description": "It is a software version control system used to track changes in source code during software development. Git is highly efficient and provides greater team collaboration and tracking of changes in source code. It is widely used in the software development industry."
       }
     ],
-
     "btnProject": "See Projects",
     "btnExperience": "See Experience"
   },
-
   "experienceEducation": {
     "title": "My work experience and education",
     "titleExperience": "Experience",
@@ -209,7 +219,7 @@
     "dataExp": {
       "subtitle": "Company or Customers",
       "titleyear": "years",
-      "titleClear":"clean filter",
+      "titleClear": "clean filter",
       "titleMessage": "You can click on the years to filter",
       "items": [
         {
@@ -218,7 +228,12 @@
           "Rol": "Full Stack Web Developer",
           "StartDate": "05/22/2020",
           "EndDate": "11/30/2020",
-          "tools": ["php", "HTML", "CSS", "OOP"]
+          "tools": [
+            "php",
+            "HTML",
+            "CSS",
+            "OOP"
+          ]
         },
         {
           "nameBusiness": "SENA",
@@ -258,7 +273,13 @@
           "Rol": "Fronted Web Developer",
           "StartDate": "01/10/2022",
           "EndDate": "12/30/2022",
-          "tools": ["Vue.js", "HTML", "CSS", "Javascript", "SEO"]
+          "tools": [
+            "Vue.js",
+            "HTML",
+            "CSS",
+            "Javascript",
+            "SEO"
+          ]
         },
         {
           "nameBusiness": "Vittoria Pizzeria",
@@ -266,7 +287,13 @@
           "Rol": "Fronted Web Developer",
           "StartDate": "01/12/2022",
           "EndDate": "01/02/2023",
-          "tools": ["Angular", "HTML", "CSS", "TypeScript", "SEO"]
+          "tools": [
+            "Angular",
+            "HTML",
+            "CSS",
+            "TypeScript",
+            "SEO"
+          ]
         },
         {
           "nameBusiness": "My Portfolio",
@@ -274,14 +301,20 @@
           "Rol": "Fronted Web Developer",
           "StartDate": "01/12/2022",
           "EndDate": "01/02/2023",
-          "tools": ["Angular", "HTML", "CSS", "TypeScript", "SEO"]
+          "tools": [
+            "Angular",
+            "HTML",
+            "CSS",
+            "TypeScript",
+            "SEO"
+          ]
         }
       ]
     },
     "dataEdu": {
       "subtitle": "school or entity",
       "titleyear": "years",
-      "titleClear":"clean filter",
+      "titleClear": "clean filter",
       "titleMessage": "You can click on the years to filter",
       "items": [
         {
@@ -314,9 +347,14 @@
           "Rol": "SENA",
           "StartDate": "01/01/2018",
           "EndDate": "07/12/2022",
-          "tools": ["Worldskills"]
+          "tools": [
+            "Worldskills"
+          ]
         }
       ]
     }
+  },
+  "myStory": {
+    "title": "My Story"
   }
 }

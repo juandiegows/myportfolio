@@ -42,7 +42,7 @@ export class SettingService {
   }
 
   init() {
-    return this.GetLangText(this.lang).toPromise().then(data => {
+    return this.GetLangText(this.lang).subscribe(data => {
       this.data = data;
     });
   }

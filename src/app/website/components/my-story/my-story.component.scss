@@ -1,0 +1,50 @@
+.container {
+  .title {
+    margin-top: 10px;
+  }
+
+  .stories {
+    height: 70vh;
+  }
+
+  .timeline {
+    margin: auto;
+    width: 90vw;
+
+    .events-wrapper {
+      padding: 0 10vw;
+
+      .events {
+        position: relative;
+        width: 100%;
+        height: 0.3vw;
+        background-color: var(--color);
+        border-radius: 2vw;
+
+        .events__option {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          justify-content: center;
+          width: 90%;
+          margin: auto;
+          display: flex;
+          gap: 2vw;
+
+          li {
+            margin-bottom: 1vw;
+
+            a {
+              color: var(--colorPrimary);
+              font-size: 1vw;
+            }
+
+          }
+
+        }
+      }
+
+    }
+  }
+}

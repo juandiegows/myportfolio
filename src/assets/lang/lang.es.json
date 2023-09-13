@@ -28,7 +28,7 @@
     "achievements3": "SubCampeón de worldskills American",
     "achievements4": "Medalla de excelencia worldskils special edition",
     "btnDownload": "Descargar resumen CV",
-    "linkDownload":"/assets/docs/CV/CV_JuanDiegoWS.pdf"
+    "linkDownload": "/assets/docs/CV/CV_JuanDiegoWS.pdf"
   },
   "about_me": {
     "title": "Sobre mi",
@@ -76,7 +76,14 @@
       {
         "name": "Lazos de Dignidad",
         "imgSrc": "/assets/img/Icons/client/Lazos de dignidad.svg",
-        "tools": ["php", "MVC", "JQuery", "CSS", "HTML", "POO"],
+        "tools": [
+          "php",
+          "MVC",
+          "JQuery",
+          "CSS",
+          "HTML",
+          "POO"
+        ],
         "count": 5,
         "year": 2020,
         "url": "https://lazosdedignidad.org/"
@@ -84,7 +91,12 @@
       {
         "name": "Vittoria Pizzeria",
         "imgSrc": "/assets/img/Icons/client/vittoria Pizzeria Trattoria.svg",
-        "tools": ["Angular", "TypeScript", "SCSS", "HTML"],
+        "tools": [
+          "Angular",
+          "TypeScript",
+          "SCSS",
+          "HTML"
+        ],
         "count": 2,
         "year": 2023,
         "url": "https://vittoriapizzeriaytrattoria.com/"
@@ -205,10 +217,9 @@
     "titleExperience": "Experiencia",
     "titleEducation": "educación",
     "dataExp": {
-
       "subtitle": "Empresa o Clientes",
       "titleyear": "años",
-      "titleClear":"Limpiar filtro",
+      "titleClear": "Limpiar filtro",
       "titleMessage": "Puedes darle clic a los años para filtrar",
       "items": [
         {
@@ -217,7 +228,12 @@
           "Rol": "Desarrollador web Full Stack",
           "StartDate": "22/05/2020",
           "EndDate": "30/11/2020",
-          "tools": ["php","HTML","CSS", "POO"]
+          "tools": [
+            "php",
+            "HTML",
+            "CSS",
+            "POO"
+          ]
         },
         {
           "nameBusiness": "SENA",
@@ -225,7 +241,15 @@
           "Rol": "Competidor - Desarrollador",
           "StartDate": "01/06/2021",
           "EndDate": "30/11/2021",
-          "tools": ["C#","HTML","CSS", "Javascript", "SQL Server", "Android Studio", "Java"]
+          "tools": [
+            "C#",
+            "HTML",
+            "CSS",
+            "Javascript",
+            "SQL Server",
+            "Android Studio",
+            "Java"
+          ]
         },
         {
           "nameBusiness": "SENA",
@@ -233,7 +257,15 @@
           "Rol": "Competidor - Desarrollador",
           "StartDate": "01/02/2022",
           "EndDate": "30/12/2022",
-          "tools": ["C#","HTML","CSS", "Javascript", "SQL Server", "Android Studio", "Kotlin"]
+          "tools": [
+            "C#",
+            "HTML",
+            "CSS",
+            "Javascript",
+            "SQL Server",
+            "Android Studio",
+            "Kotlin"
+          ]
         },
         {
           "nameBusiness": "Monnerverse",
@@ -241,7 +273,13 @@
           "Rol": "Desarrollador Web Fronted",
           "StartDate": "01/10/2022",
           "EndDate": "30/12/2022",
-          "tools": ["Vue.js","HTML","CSS", "Javascript", "SEO"]
+          "tools": [
+            "Vue.js",
+            "HTML",
+            "CSS",
+            "Javascript",
+            "SEO"
+          ]
         },
         {
           "nameBusiness": "Vittoria Pizzeria",
@@ -249,7 +287,13 @@
           "Rol": "Desarrollador Web Fronted",
           "StartDate": "01/12/2022",
           "EndDate": "01/02/2023",
-          "tools": ["Angular","HTML","CSS", "TypeScript", "SEO"]
+          "tools": [
+            "Angular",
+            "HTML",
+            "CSS",
+            "TypeScript",
+            "SEO"
+          ]
         },
         {
           "nameBusiness": "Mi portafolio",
@@ -257,15 +301,20 @@
           "Rol": "Desarrollador Web Fronted",
           "StartDate": "25/02/2022",
           "EndDate": "15/02/2023",
-          "tools": ["Angular","HTML","CSS", "TypeScript", "SEO"]
+          "tools": [
+            "Angular",
+            "HTML",
+            "CSS",
+            "TypeScript",
+            "SEO"
+          ]
         }
       ]
     },
     "dataEdu": {
-
       "subtitle": "Escuela o Entidad",
       "titleyear": "años",
-      "titleClear":"Limpiar filtro",
+      "titleClear": "Limpiar filtro",
       "titleMessage": "Puedes darle clic a los años para filtrar",
       "items": [
         {
@@ -298,12 +347,14 @@
           "Rol": "SENA",
           "StartDate": "01/01/2018",
           "EndDate": "07/12/2022",
-          "tools": ["Worldskills"]
+          "tools": [
+            "Worldskills"
+          ]
         }
-
       ]
     }
-
-
+  },
+  "myStory": {
+    "title": "Mi Historia"
   }
 }
