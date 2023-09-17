@@ -214,13 +214,17 @@
       background-color: transparent;
       transition: none;
 
+      a {
+        font-size: 1.3vw;
+      }
+
       .btn {
         border: none;
         background-color: transparent;
         box-shadow: none;
         outline: none;
         color: white;
-        border-radius: 0.5rem;
+        border-radius: 0.5vw;
         cursor: pointer;
         transition: var(--myTransition);
       }
@@ -248,7 +252,7 @@
 
         .image {
           width: 2vw;
-          height: auto;
+          height: 2vw;
 
           &>img {
             filter: var(--colorPrimaryF);

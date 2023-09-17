@@ -1,7 +1,7 @@
 .container {
-  width: 10vh;
+  width: 5vw;
   height: 4vh;
-  border-radius: 30rem;
+  border-radius: 30vw;
   background-color: #3557A0;
   display: flex;
   align-items: center;
@@ -11,18 +11,20 @@
   cursor: pointer;
   position: relative;
   padding: 0.7vw;
+
   p {
     position: absolute;
-    font-size:  clamp(1rem, 0.8vw, 40rem);;;
+    font-size: 0.8vw;
     margin-right: 0;
     font-weight: 900;
     color: white;
     transition: transform 2s ease, margin-left 2s ease;
   }
+
   .image {
     position: absolute;
-    width:  clamp(2.5rem, 1.5vw, 40rem);
-    height:  clamp(2.5rem, 1.5vw, 40rem);
+    width: 1.5vw;
+    height: 1.5vw;
     right: 0;
     transition: transform 2s ease, margin-left 2s ease;
   }
@@ -30,14 +32,16 @@
 
 .container-light {
   background-color: #3c9bff;
+
   p {
     position: absolute;
     margin-left: 0;
     margin-right: 0.8vw;
-    transform: translateX(170%);
+    transform: translateX(2.2vw);
   }
+
   .image {
     position: absolute;
-    transform: translateX(-170%);
+    transform: translateX(-3vw);
   }
 }
