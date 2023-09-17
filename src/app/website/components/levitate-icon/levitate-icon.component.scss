@@ -1,18 +1,21 @@
 $time: 3s;
+
 :root {
   --delay-1: random();
   --delay-2: random();
 }
+
 .container {
   width: 5rem;
   height: 4.5rem;
   display: flex;
   justify-content: center;
   position: relative;
+
   .image {
     --delay-1: random();
-    width: clamp(2rem, 3.5vw, 50rem);
-    height: clamp(2rem, 3.5vw, 50rem);
+    width: 3rem;
+    height: 3rem;
     position: absolute;
     top: 0;
     /* Prefijos de proveedores para Firefox , Safari y opera antiguo */
@@ -44,22 +47,37 @@ $time: 3s;
   }
 }
 
+@media (min-width: 900px) {
+  .container {
+    width: 5vw;
+    height: 5vw;
+
+    .image {
+      width: 2.5vw;
+      height: 2.5vw;
+    }
+  }
+}
+
 @keyframes levitate {
-  70%{
+  70% {
     transform: rotate(0);
-    filter:  drop-shadow(0 0 0px var(--colorPrimary)) ;
+    filter: drop-shadow(0 0 0px var(--colorPrimary));
 
   }
-  90%{
+
+  90% {
     transform: rotate(180deg);
 
-    filter: drop-shadow(0 0 5px var(--colorPrimary)) ;
+    filter: drop-shadow(0 0 5px var(--colorPrimary));
 
   }
+
   100% {
     top: calc(100% - 3rem);
   }
 }
+
 @-moz-keyframes levitate {
   100% {
     top: calc(100% - 3rem);

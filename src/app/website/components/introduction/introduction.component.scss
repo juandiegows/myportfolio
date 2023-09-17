@@ -197,21 +197,51 @@
       min-height: 0vh;
 
       .text {
-        .social_media {
+        gap: 1vw;
 
-          a {
-            width: 3vw;
-            height: 3vw;
-            cursor: pointer;
+        .text__info {
+          gap: 0.5vw;
+
+          .text__flex {
+            gap: 1vw;
           }
         }
 
+
+      }
+
+      .social_media {
+
+        a {
+          width: 3vw;
+          height: 3vw;
+          cursor: pointer;
+        }
+      }
+
+      .Outstanding {
+        gap: 0.5vw;
+
+        .title {
+          font-size: 2.2vw;
+        }
+
+        .Outstaning_item {
+          gap: 1vw;
+          font-size: 1.8vw;
+
+          .image {
+            width: 2vw;
+            height: 2vw;
+          }
+        }
       }
     }
 
     .btn {
-      width: 18vw;
+      width: 20vw;
       padding: 0.5vw;
+      font-size: 1vw;
     }
   }
 }
