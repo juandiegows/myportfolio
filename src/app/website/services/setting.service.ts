@@ -42,6 +42,16 @@ export class SettingService {
       root.style.setProperty('--backgroundDark', style.getPropertyValue('--Dark2SecondBackgoundColor'));
       root.style.setProperty('--GraycColor', '#f3f3f3');
       root.style.setProperty('--YellowColor', '#fcf1c7');
+      switch (style.getPropertyValue('--colorPrimary')) {
+        case "rgb(198, 159, 0)":
+          this.changeColor("rgb(252, 241, 199)");
+          break;
+        case "rgb(51, 51, 51)":
+          this.changeColor("rgb(243, 243, 243)");
+          break;
+        default:
+          break;
+      }
     } else {
       root.style.setProperty('--background', style.getPropertyValue('--LightBackgroudColor'));
       root.style.setProperty('--color', style.getPropertyValue('--LightColor'));
@@ -49,6 +59,16 @@ export class SettingService {
       root.style.setProperty('--backgroundDark', style.getPropertyValue('--Light2SecondBackgoundColor'));
       root.style.setProperty('--GraycColor', '#333333');
       root.style.setProperty('--YellowColor', '#c69f00');
+      switch (style.getPropertyValue('--colorPrimary')) {
+        case "rgb(252, 241, 199)":
+          this.changeColor("rgb(198, 159, 0)");
+          break;
+        case "rgb(243, 243, 243)":
+          this.changeColor("rgb(51, 51, 51)");
+          break;
+        default:
+          break;
+      }
     }
     this._mode.next(mode);
   }
