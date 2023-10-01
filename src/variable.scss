@@ -17,6 +17,7 @@
   --RedColor: #ff5a51;
   --pinkColor: #ef63e4;
   --greenColor: #0A9F2B;
+  --YellowColor: #fcf1c7;
   --Yellow2Color: #ffd42a;
   --DarkSecondBackgoundColor: #434242;
   --LightSecondBackgoundColor: #FFFFFF;
@@ -24,8 +25,8 @@
   --Light2SecondBackgoundColor: #B9B9B9;
 
   /* variables */
-  --colorPrimary: var(--BlueColor);
-  --colorPrimaryF: brightness(0) saturate(100%) invert(68%) sepia(73%) saturate(460%) hue-rotate(177deg) brightness(102%) contrast(105%);
+  --colorPrimary: var(--OrangeColor);
+  --colorPrimaryF: brightness(0) saturate(100%) invert(70%) sepia(13%) saturate(7487%) hue-rotate(330deg) brightness(103%) contrast(101%);
   --background: var(--DarkBackgoundColor);
   --backgroundSecond: var(--DarkSecondBackgoundColor);
   --backgroundDark: var(--Dark2SecondBackgoundColor);

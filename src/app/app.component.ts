@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SettingService } from './website/services/setting.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'portfolio';
+  title = 'Mi portafolio';
+  constructor(private settingService: SettingService) {}
+
+  ngOnInit(): void {
+     this.settingService.init();
+  }
 }
