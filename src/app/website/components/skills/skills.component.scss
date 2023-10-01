@@ -3,6 +3,7 @@
   margin: auto;
   padding: 1rem 5vw;
   margin-top: 3rem;
+  box-sizing: border-box;
 
   .container__skills {
     width: 100%;
@@ -336,7 +337,7 @@
     padding: 1rem 5vw;
     gap: 5rem;
     grid-template-rows: 1fr;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 48% 48%;
     margin-bottom: 3rem;
 
     .container__skills {

@@ -249,6 +249,15 @@
       }
     }
 
+    .photo_languajes {
+
+      .fondo_imagen {
+        display: none;
+      }
+
+
+    }
+
     .btn {
       width: 21vw;
       padding: 0.5vw;
@@ -275,6 +284,7 @@
         bottom: 0;
 
         .fondo_imagen {
+          display: initial;
           margin-top: 0;
           width: 100%;
           transform: translateY(-1.2%);
