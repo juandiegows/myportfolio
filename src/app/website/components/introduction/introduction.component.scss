@@ -1,17 +1,15 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 5vh;
-  margin: auto;
-  padding: 1rem 5vw;
+  gap: 2vh;
+  width: 90vw;
+  margin: 0 auto;
   position: relative;
 
   .info {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    gap: 0.5vw;
-    min-height: 90vh;
+    gap: 3rem;
 
     .text {
       display: flex;
@@ -47,12 +45,11 @@
 
   .social_media {
     display: flex;
-    gap: 1vw;
-    margin-top: 3vh;
+    margin: 1rem 0;
+    gap: 2vw;
 
     a {
-      width: 3rem;
-      height: 3rem;
+      width: auto;
       cursor: pointer;
     }
   }
@@ -61,31 +58,32 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin: 0%;
 
     .title {
       color: var(--colorPrimary);
       font-weight: 500;
-      font-size: clamp(2.2rem, 2.2vw, 40rem);
+      font-size: 7vw;
+      margin-bottom: 1rem;
     }
 
     .Outstaning_item {
-      display: flex;
-      gap: 1rem;
+      display: grid;
+      grid-template-columns: 10% 85%;
+      gap: 2rem;
       align-items: center;
-      font-size: clamp(1.8rem, 1.8vw, 30rem);
+      font-size: 5vw;
 
       .image {
-        width: clamp(2rem, 2vw, 40rem);
-        height: clamp(2rem, 2vw, 40rem);
+        width: 4rem;
+
       }
     }
   }
 
   .email {
-    margin-top: clamp(1.8rem, 2vw, 30rem);
     color: var(--colorPrimary);
     font-size: clamp(1.8rem, 2vw, 30rem);
+
   }
 
   .btn {
@@ -100,26 +98,34 @@
   }
 
   .photo_languajes {
-    width: 70%;
-    max-width: 50rem;
-    margin: auto;
-    margin-top: 2rem;
+    width: 100%;
+    margin-top: 10rem;
     margin-bottom: 2rem;
     cursor: default;
     -webkit-user-select: none;
     user-select: none;
     position: relative;
 
+    .fondo_imagen {
+      width: 92vw;
+      margin: -1.2vw auto;
+      position: absolute;
+    }
+
     .image_photo {
-      width: auto;
-      z-index: 10;
+      width: 90vw;
+      margin: auto;
       display: flex;
       justify-content: center;
 
+      .profile {
+        z-index: 100;
+      }
+
       img {
-        width: 80%;
+        z-index: 2;
+        width: 100%;
         height: auto;
-        max-width: 35rem;
       }
     }
 
@@ -130,7 +136,7 @@
     }
 
     .levitate__1 {
-      bottom: 30%;
+      bottom: 40%;
     }
 
     .levitate__2 {
@@ -192,8 +198,10 @@
 
 @media (min-width: 700px) {
   .container {
+    gap: 1vw;
+
     .info {
-      gap: 3vw;
+      gap: 1vw;
       min-height: 0vh;
 
       .text {
@@ -211,6 +219,7 @@
       }
 
       .social_media {
+        margin: 1vw 0;
 
         a {
           width: 3vw;
@@ -224,68 +233,60 @@
 
         .title {
           font-size: 2.2vw;
+          margin-bottom: 1vw;
         }
 
         .Outstaning_item {
+          margin: 0;
+          display: flex;
           gap: 1vw;
           font-size: 1.8vw;
 
           .image {
-            width: 2vw;
-            height: 2vw;
+            width: 3vw;
           }
         }
       }
     }
 
     .btn {
-      width: 20vw;
+      width: 21vw;
       padding: 0.5vw;
-      font-size: 1vw;
+      font-size: 1.7vw;
+      margin: 0.8vw 0;
     }
   }
 }
 
 @media (min-width: 900px) {
   .container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 60% 40%;
     position: relative;
-    min-height: 60rem;
 
     .photo_languajes {
-      display: initial;
-      position: absolute;
-      bottom: -2rem;
-      right: 2%;
-      width: 50%;
-      max-width: none;
+      width: 100%;
+      position: relative;
 
       .image_photo {
-        img {
-          width: 70%;
-          max-width: none;
+        position: absolute;
+        width: 100%;
+        object-fit: scale-down;
+        bottom: 0;
+
+        .fondo_imagen {
+          margin-top: 0;
+          width: 100%;
+          transform: translateY(-1.2%);
+          object-fit: scale-down;
         }
-      }
 
-      .levitate {
-        display: initial;
-      }
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    height: 91vh;
-
-    .photo_languajes {
-      width: 40%;
-
-      .image_photo {
-        img {
-          width: 70%;
-          max-width: none;
+        .profile {
+          width: 98%;
+          margin: 0;
+          padding: 0;
+          z-index: 100;
+          object-fit: scale-down;
         }
       }
 
