@@ -32,7 +32,7 @@
   },
   "about_me": {
     "title": "About me",
-    "info": "<p>I'm Juan Diego, a passionate software developer specializing in web and mobile development.</p> <p>I represented Colombia in the WorldSkills 2022 competition and won a medal of excellence thanks to my skills and knowledge in different programming languages, API design, SQL and design patterns. </p> <p>I love learning new tools and updating myself day by day with the latest technology.   If you want to know more about my work experience, take a look at my <a style='color: var(--colorPrimary);' href='https://www.linkedin.com/in/juandiegows/' target='_blank' class='link'>LinkedIn</a> profile or scroll down and see some of my work.</p>"
+    "info": "<p>I'm Juan Diego, a passionate software developer specializing in web and mobile development.</p> <p>I represented Colombia in the WorldSkills 2022 competition and won a medal of excellence thanks to my skills and knowledge in different programming languages, API design, SQL and design patterns. </p> <p>I love learning new tools and updating myself day by day with the latest technology.   If you want to know more about my work experience, take a look at my <a style='color: var(--colorPrimary);' href='https://www.linkedin.com/in/juandiegows' target='_blank' class='link'>LinkedIn</a> profile or scroll down and see some of my work.</p>"
   },
   "services": {
     "title": "My Services",
