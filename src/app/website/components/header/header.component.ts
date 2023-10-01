@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     "contact_me": "Contáctame"
   };
   lang = this.langPage.en;
-  darkMode: Boolean = true;
+  darkMode: boolean = true;
   expanded = false;
 
   constructor(private setting: SettingService) {
@@ -33,8 +33,7 @@ export class HeaderComponent implements OnInit {
       this.data = this.setting.data.navigation;
     })
     this.setting.mode$.subscribe(data => {
-      this.darkMode = data == Mode.dark ? true : false;
-
+      this.darkMode = data == Mode.dark;
     });
   }
 
@@ -46,7 +45,7 @@ export class HeaderComponent implements OnInit {
 
   toGo(name: string) {
     window.history.pushState({}, '', name);
-    setTimeout(()=> {
+    setTimeout(() => {
       const element: HTMLElement = document.getElementById(name) as HTMLElement;
       const rect = element.getBoundingClientRect();
       const topOffset = window.pageYOffset + rect.top - 5 * parseFloat(getComputedStyle(document.documentElement).fontSize);

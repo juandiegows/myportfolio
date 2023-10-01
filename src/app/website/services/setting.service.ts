@@ -14,7 +14,7 @@ export class SettingService {
   lang: Lang = Lang.es;
   private _lang = new BehaviorSubject<Lang>(this.lang);
   lang$ = this._lang.asObservable();
-
+  data: any = {};
   setLang(lang: Lang) {
     localStorage.setItem('lang', lang);
     this.GetLangText(lang).subscribe(data => {
@@ -53,7 +53,7 @@ export class SettingService {
     this._mode.next(mode);
   }
 
-  data: any = {};
+
   GetLangText(lang: Lang) {
     return this.http.get<any>(`/assets/lang/lang.${lang.toString()}.json`);
   }
@@ -90,9 +90,7 @@ export class SettingService {
     if (color != null) {
       this.changeColor(color);
     }
-    return this.GetLangText(this.lang).subscribe(data => {
-      this.data = data;
-    });
+    this.setLang(this.lang);
   }
 
 }

@@ -1,9 +1,8 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SettingService } from './website/services/setting.service';
 import { CommonModule } from '@angular/common';
 
 
@@ -12,8 +11,8 @@ import { CommonModule } from '@angular/common';
     AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     HttpClientModule,
     CommonModule
   ],
