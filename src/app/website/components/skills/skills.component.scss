@@ -344,10 +344,19 @@
     .container__skills {
       .skills {
         margin-top: 3vw;
-        gap: 1.5vw;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 3vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
 
+        .skill {
+          width: 4vw;
+          height: 4vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
 
