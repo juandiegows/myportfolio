@@ -16,6 +16,7 @@ export class SettingService {
   lang$ = this._lang.asObservable();
 
   setLang(lang: Lang) {
+    localStorage.setItem('lang', lang);
     this.GetLangText(lang).subscribe(data => {
       this.data = data;
       this.lang = lang;
@@ -31,6 +32,7 @@ export class SettingService {
 
   setMode(mode: Mode) {
     this.mode = mode;
+    localStorage.setItem('mode', mode);
     const root = document.documentElement;
     const style = getComputedStyle(root);
     if (this.mode == Mode.dark) {
@@ -57,6 +59,7 @@ export class SettingService {
   }
 
   changeColor(backgroundColor: any) {
+    localStorage.setItem('color', backgroundColor);
     const root = document.documentElement;
     const rgbValues = backgroundColor.substring(4, backgroundColor.length - 1)
       .replace(/ /g, '')
@@ -72,6 +75,19 @@ export class SettingService {
 
 
   init() {
+    let lang: string | null = localStorage.getItem('lang');
+    if (lang != null) {
+      this.lang = lang == Lang.en ? Lang.en : Lang.es;
+    }
+
+    let mode: string | null = localStorage.getItem('mode');
+    if (mode != null) {
+      this.setMode(mode == Mode.dark ? Mode.dark : Mode.light);
+    }
+    let color: string | null = localStorage.getItem('color');
+    if (color != null) {
+      this.changeColor(color);
+    }
     return this.GetLangText(this.lang).subscribe(data => {
       this.data = data;
     });

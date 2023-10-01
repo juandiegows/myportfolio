@@ -9,7 +9,7 @@ import { Mode, SettingService } from '../../services/setting.service';
 export class ModeDarkLightComponent {
   modeDark: boolean = true;
   constructor(private setting: SettingService) {
-
+    this.modeDark = setting.mode == Mode.dark;
   }
   ChangesMode() {
     this.modeDark = !this.modeDark;
