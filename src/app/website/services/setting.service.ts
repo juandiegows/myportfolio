@@ -78,6 +78,8 @@ export class SettingService {
     let lang: string | null = localStorage.getItem('lang');
     if (lang != null) {
       this.lang = lang == Lang.en ? Lang.en : Lang.es;
+    } else {
+      this.lang = Lang.es;
     }
 
     let mode: string | null = localStorage.getItem('mode');
