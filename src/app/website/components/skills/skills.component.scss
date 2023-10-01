@@ -110,6 +110,7 @@
       align-items: center;
 
       .info {
+        background-color: var(--backgroundSecond);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -334,16 +335,16 @@
 @media (min-width: 900px) {
   .container {
     display: grid;
-    padding: 1rem 5vw;
-    gap: 5rem;
+    padding: 1vw 5vw;
+    gap: 3vw;
     grid-template-rows: 1fr;
     grid-template-columns: 48% 48%;
-    margin-bottom: 3rem;
+    margin-bottom: 3vw;
 
     .container__skills {
       .skills {
-        margin-top: 6rem;
-        gap: 3rem;
+        margin-top: 3vw;
+        gap: 1.5vw;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
@@ -351,52 +352,127 @@
     }
 
     .education_experience {
-      font-size: clamp(1.4rem, 1.4vw, 20rem);
+      font-size: 1.4vw;
 
+      .options {
+        border-bottom: 0.15vw solid var(--colorPrimary);
+        border-radius: 0.5vw;
+
+        .option {
+          border-radius: 1vw;
+          transition: color 2s ease;
+        }
+
+
+
+        .option-active_index {
+          border-radius: 0.5vw;
+        }
+
+        .option-active_index_2 {
+          left: 50%;
+        }
+
+        .option:hover {
+          color: var(--colorPrimary);
+        }
+
+        .option-active:hover {
+          color: var(--background);
+          font-weight: 900;
+        }
+      }
 
       .edu_exp_container {
-
+        margin-top: 1vw;
 
         .info {
           display: grid;
           grid-template-columns: 30% 70%;
           padding: 0;
-          max-height: clamp(35rem, 20vw, 90rem);
+          max-height: 20vw;
 
           .entity {
-            gap: clamp(1.4rem, 2vh, 40rem);
+            gap: 2vh;
             height: 100%;
 
             .entity__item {
 
               .item {
-                font-size: clamp(1.4rem, 1vw, 15rem);
-                gap: clamp(1.4rem, 4vh, 40rem);
-                padding: 1rem 0;
-                height: clamp(3rem, 5vh, 20rem);
+                font-size: 1.1vw;
+                gap: 4vh;
+                padding: 1vw 0;
+                height: 5vh;
+
+                .indicator {
+                  height: 5vh;
+                  width: 0.2vw;
+                }
               }
             }
 
             .entity__title {
-              font-size: clamp(1.4rem, 1.4vw, 20rem);
+              font-size: 1.4vw;
             }
           }
 
           .info__container {
-            overflow: auto;
-            height: 100%;
-            padding: 3%;
-            padding-bottom: 0.5rem;
+            overflow: hidden;
+            overflow-y: auto;
+            padding: 0.5vw;
+            max-height: 20vw;
+            gap: 1vw;
+
+            &::-webkit-scrollbar {
+              width: 0.4vw;
+            }
 
             .info__title {
               position: sticky;
-              font-size: clamp(1.4rem, 1.4vw, 20rem);
-              top: 0;
+              z-index: 100;
+              font-size: 1.4vw;
+              top: -1vw;
+              padding-bottom: 1vw;
+              padding-top: 1vw;
               background-color: var(--backgroundSecond);
-              padding-bottom: 1rem;
-              padding-top: 1rem;
             }
           }
+        }
+
+        .container__years {
+
+          height: 3vw;
+          padding-bottom: 0.5vw;
+
+          .years__title {
+            font-size: 1.8vw;
+            text-align: center;
+            cursor: pointer;
+          }
+
+          .years {
+            height: 3vw;
+
+            &::-webkit-scrollbar {
+              height: 0.8vw;
+            }
+
+
+
+            .year {
+
+              .indicator {
+                height: 0.2vw;
+                border-radius: 1vw;
+              }
+            }
+
+
+          }
+        }
+
+        .container__infoYear {
+          height: 3vw;
         }
       }
     }
