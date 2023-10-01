@@ -221,14 +221,62 @@ $time: 3s;
 
 @media (min-width: 700px) {
   .container {
+
     .alert {
+
+
+      width: 55vw;
+      max-width: 60vw;
+      font-size: 1.2vw;
+      border-radius: 1vw;
+
       .image_anim {
-        transform: translate(-20%, -50%);
+        width: 10vw;
+        height: 10vw;
+
+        .pc {
+          margin-top: 1.8vw;
+          margin-left: -2vw;
+        }
+
+        .code {
+          width: 5vw;
+
+        }
+
+        .hand {
+          width: 5vw;
+        }
+      }
+
+
+      .image {
+        margin-right: 1vw;
+        max-width: 12vw;
+      }
+
+      .btnClose {
+        width: 2.4vw;
+
+        &:hover {
+          width: 2.2vw;
+        }
       }
 
       .info {
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+        margin: 1vw;
+
         .actions {
           flex-direction: row;
+          gap: 1vw;
+
+          .btn {
+            border-radius: 0.2vw;
+            padding: 0.5vw 1vw;
+          }
         }
       }
     }
