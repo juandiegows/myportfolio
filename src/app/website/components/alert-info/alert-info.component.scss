@@ -35,14 +35,16 @@ $time: 3s;
     padding: 2rem;
     position: relative;
     z-index: 101;
+
     .btnClose {
       position: absolute;
       top: 0rem;
       right: 0rem;
-      width:clamp(4rem,12vw, 8rem);
+      width: 4rem;
       transform: translate(50%, -50%);
       cursor: pointer;
     }
+
     .image_anim {
       position: absolute;
       top: 0%;
@@ -54,6 +56,7 @@ $time: 3s;
       justify-content: center;
 
       z-index: 1000;
+
       .background {
         position: absolute;
         top: 0;
@@ -62,6 +65,7 @@ $time: 3s;
         height: 100%;
         z-index: 1;
       }
+
       .pc {
         position: absolute;
         top: 0;
@@ -70,6 +74,7 @@ $time: 3s;
         height: 80%;
         z-index: 2;
       }
+
       .hand {
         position: absolute;
         bottom: 0;
@@ -77,6 +82,7 @@ $time: 3s;
         width: 10rem;
         z-index: 3;
       }
+
       .hand,
       .code {
         -moz-animation-duration: $time;
@@ -95,6 +101,7 @@ $time: 3s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
       }
+
       .hand-left {
         left: -25%;
         -moz-animation-name: Writing_left;
@@ -102,6 +109,7 @@ $time: 3s;
         -o-animation-name: Writing_left;
         animation-name: Writing_left;
       }
+
       .hand-right {
         right: -15%;
 
@@ -110,6 +118,7 @@ $time: 3s;
         -o-animation-name: Writing_right;
         animation-name: Writing_right;
       }
+
       .code {
         position: absolute;
         top: 0;
@@ -121,29 +130,35 @@ $time: 3s;
         animation-name: code;
       }
     }
+
     .btnClose:hover {
-      width: clamp(3.5rem,10vw, 7.5rem);
+      width: 4.5rem;
     }
+
     .image {
       width: 100%;
       margin-right: 1rem;
       max-width: 12rem;
       z-index: 2;
     }
+
     .info {
       width: 100%;
       margin-right: 1rem;
+
       .text {
         width: 100%;
         height: auto;
         text-align: justify;
         margin-top: 1rem;
       }
+
       .actions {
         display: flex;
         flex-direction: column;
         margin-top: 1rem;
         gap: 1rem;
+
         .btn {
           text-align: center;
           cursor: pointer;
@@ -160,6 +175,7 @@ $time: 3s;
   flex-direction: column;
   gap: 1rem;
 }
+
 @media (max-width: 480px) {
   .container {
     .alert {
@@ -167,7 +183,9 @@ $time: 3s;
         width: 10rem;
         margin-right: 1rem;
       }
+
       grid-template-columns: 100%;
+
       .info {
         .actions {
           margin-top: 1rem;
@@ -186,7 +204,9 @@ $time: 3s;
         width: 10rem;
         margin-right: 1rem;
       }
+
       grid-template-columns: 100%;
+
       .info {
         .actions {
           margin-top: 1rem;
@@ -204,6 +224,7 @@ $time: 3s;
       .image_anim {
         transform: translate(-20%, -50%);
       }
+
       .info {
         .actions {
           flex-direction: row;
@@ -228,13 +249,16 @@ $time: 3s;
     bottom: 0%;
     left: -35%;
   }
+
   20% {
     bottom: -10%;
     left: -25%;
   }
+
   40% {
     left: -35%;
   }
+
   60% {
     left: -25%;
   }
@@ -242,6 +266,7 @@ $time: 3s;
   80% {
     left: -35%;
   }
+
   100% {
     bottom: 0%;
     left: -35%;
@@ -253,12 +278,15 @@ $time: 3s;
     bottom: 0%;
     right: -15%;
   }
+
   40% {
     right: -5%;
   }
+
   60% {
     right: -5%;
   }
+
   100% {
     bottom: 0%;
     right: -15%;
@@ -271,21 +299,25 @@ $time: 3s;
     transform: rotate(90deg);
     transform-origin: 0% 100%;
   }
+
   10% {
     opacity: 1;
     transform: rotate(0deg);
     transform-origin: 0% 100%;
   }
+
   60% {
     opacity: 1;
     transform: rotate(0deg);
     transform-origin: 0% 100%;
   }
+
   70% {
     opacity: 0;
     transform: rotate(90deg);
     transform-origin: 0% 100%;
   }
+
   100% {
     opacity: 0;
   }
