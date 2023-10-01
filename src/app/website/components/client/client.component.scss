@@ -6,11 +6,13 @@
   margin-top: 3rem;
   padding: 1rem 5vw;
   margin-bottom: 3rem;
+
   .clients {
     margin-top: 3rem;
     width: 100%;
     display: grid;
     gap: 1rem;
+
     .client {
       background-color: var(--backgroundSecond);
       padding: 1rem;
@@ -22,6 +24,7 @@
       justify-content: space-between;
       position: relative;
       padding-bottom: 4rem;
+
       .client__title {
         margin-top: 1rem;
         font-size: clamp(2rem, 1.8vw, 30rem);
@@ -29,31 +32,37 @@
         font-weight: 900;
         text-align: center;
       }
+
       .client__image {
         margin-top: 2rem;
         width: 100%;
         height: auto;
       }
+
       .tags {
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
-        font-size:  clamp(1.4rem, 1.4vw, 20rem);
+        font-size: clamp(1.4rem, 1.4vw, 20rem);
 
         margin-bottom: 2rem;
+
         .tag {
           cursor: pointer;
           font-weight: 600;
         }
+
         .tag:hover {
 
           color: var(--colorPrimary);
         }
       }
+
       .btns {
         display: flex;
         gap: 1rem;
-        font-size:  clamp(1.4rem, 1.4vw, 20rem);
+        font-size: clamp(1.4rem, 1.4vw, 20rem);
+
         .btn {
           outline: none;
           border: none;
@@ -66,6 +75,7 @@
           color: var(--backgroundSecond);
         }
       }
+
       .info_extra {
         position: absolute;
         bottom: 0;
@@ -73,7 +83,8 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        font-size:  clamp(1.4rem, 1.4vw, 20rem);
+        font-size: clamp(1.4rem, 1.4vw, 20rem);
+
         .count {
           background-color: var(--backgroundDark);
           width: auto;
@@ -82,10 +93,12 @@
           display: flex;
           justify-content: center;
           gap: 0.3rem;
-          .icon{
-            width:  clamp(2rem, 1.4vw, 20rem);
+
+          .icon {
+            width: clamp(2rem, 1.4vw, 20rem);
           }
         }
+
         .year {
           background-color: var(--backgroundDark);
           padding: 0.8rem 2.5rem;
@@ -96,16 +109,87 @@
     }
   }
 }
-@media(min-width: 700px){
+
+@media(min-width: 700px) {
   .container {
     .clients {
       grid-template-columns: 1fr 1fr;
       place-content: center;
+      gap: 1vw;
+
+      .client {
+        background-color: var(--backgroundSecond);
+        padding: 1rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        padding-bottom: 4rem;
+
+        .client__title {
+          margin-top: 1rem;
+          font-size: clamp(2rem, 1.8vw, 30rem);
+          color: var(--colorPrimary);
+          font-weight: 900;
+          text-align: center;
+        }
+
+        .client__image {
+          margin-top: 2vw;
+          width: 70%;
+        }
+
+
+        .tags {
+          margin: auto;
+          justify-content: center;
+          gap: 1vw;
+          font-size: 1.4vw;
+          margin-bottom: 2.5vw;
+        }
+
+        .btns {
+          gap: 1vw;
+          font-size: 1.4vw;
+          justify-content: start;
+          margin-right: 2vw;
+
+          .btn {
+            border-radius: 0.5vw;
+            padding: 0.8vw 2vw;
+          }
+        }
+
+        .info_extra {
+
+          font-size: 1.4vw;
+
+          .count {
+            padding: 0.6vw 0.8vw;
+            border-top-left-radius: 2vw;
+            gap: 0.3vw;
+
+            .icon {
+              width: 1.4vw;
+            }
+          }
+
+          .year {
+            padding: 0.8vw 1.3vw;
+            border-top-left-radius: 2vw;
+            border-bottom-left-radius: 2vw;
+          }
+        }
+      }
     }
   }
 
 }
-@media(min-width: 1000px){
+
+@media(min-width: 1000px) {
   .container {
     .clients {
       grid-template-columns: 1fr 1fr 1fr;
