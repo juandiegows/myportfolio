@@ -1,6 +1,6 @@
 .image {
-  width: 2vw;
-  height: 3vh;
+  width: 3rem;
+  height: 3rem;
   position: relative;
   float: left;
 }
@@ -9,14 +9,14 @@
   display: none;
   background-color: var(--backgroundSecond);
   position: absolute;
-  top: 4vh;
-  right: 0rem;
+  top: 4rem;
+  left: 0;
   padding: 0.5vw;
   z-index: 200;
 
   .color {
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 3rem;
+    height: 3rem;
     background-color: white;
     cursor: pointer;
   }
@@ -75,5 +75,26 @@
   border-radius: 0.4vw;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 0.5vw;
+  gap: 0.4rem;
+
+}
+
+
+@media(min-width : 900px) {
+  .image {
+    width: 2vw;
+    height: 3vh;
+  }
+
+  .colors {
+    .color {
+      width: 1.5vw;
+      height: 1.5vw;
+    }
+
+  }
+
+  .colors-active {
+    gap: 0.5vw;
+  }
 }
