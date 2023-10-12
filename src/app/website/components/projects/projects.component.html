@@ -1,3 +1,32 @@
-<div class="container">
-<h2 class="title">Proyectos</h2>
-</div>
+<section class="container">
+  <h2 class="title">Proyectos</h2>
+  <div class="projects">
+    <article class="project" *ngFor="let client of [1,2,3,4,5,6,7,8]">
+      <div class="project__image">
+        <app-image srcImg="/assets/img/projects/example-1.png"></app-image>
+      </div>
+      <div class="more_info">
+        <div class="stars">
+          <p>9</p>
+          <div class="star__image">
+            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/project/star.svg"></app-image>
+
+          </div>
+        </div>
+
+        <svg class="bottom_project" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400.42 122.25">
+          <path class="cls-2" d="m3.48,48.17L399.37,8.82l-40.49,91.32-351-1.54L3.48,48.17Z" />
+          <path class="cls-1" d="m0,24.64l368.39,51.7L400.42,0v122.25H0V24.64Z" />
+        </svg>
+        <h3 class="project__title">Proyecto</h3>
+        <div class="actions">
+          <app-image class="action__image" [activeFilter]="true" srcImg="/assets/img/Icons/project/see.svg"></app-image>
+          <app-image class="action__image" [activeFilter]="true"
+            srcImg="/assets/img/Icons/project/download.svg"></app-image>
+          <app-image class="action__image" [activeFilter]="true"
+            srcImg="/assets/img/Icons/project/preview.svg"></app-image>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
