@@ -1,7 +1,24 @@
 <section class="container">
   <h2 class="title">Proyectos</h2>
+  <div class="info">
+    Bienvenidos a mis projectos, puedes mirar en esta sección mis proyectos más destacado si quieres ver
+    más de mis trabajos, presiona en el boton ver todos.
+    <ul class="list">
+
+      <li class="item"> <app-image class="icon" [activeFilter]="true"
+          srcImg="/assets/img/Icons/project/see.svg"></app-image>
+
+        Ver proyecto funcional</li>
+      <li class="item"><app-image class="icon" [activeFilter]="true"
+          srcImg="/assets/img/Icons/project/git.svg"></app-image>Ver
+        proyecto en Git</li>
+      <li class="item"> <app-image class="icon" [activeFilter]="true"
+          srcImg="/assets/img/Icons/project/preview.svg"></app-image>
+        Ver más información del proyecto</li>
+    </ul>
+  </div>
   <div class="projects">
-    <article class="project" *ngFor="let client of [1,2,3,4,5,6,7,8]">
+    <article class="project" *ngFor="let client of [1,2,3,4,5,6]">
       <div class="project__image">
         <app-image srcImg="/assets/img/projects/example-1.png"></app-image>
       </div>
@@ -21,12 +38,12 @@
         <h3 class="project__title">Proyecto</h3>
         <div class="actions">
           <app-image class="action__image" [activeFilter]="true" srcImg="/assets/img/Icons/project/see.svg"></app-image>
-          <app-image class="action__image" [activeFilter]="true"
-            srcImg="/assets/img/Icons/project/download.svg"></app-image>
+          <app-image class="action__image" [activeFilter]="true" srcImg="/assets/img/Icons/project/git.svg"></app-image>
           <app-image class="action__image" [activeFilter]="true"
             srcImg="/assets/img/Icons/project/preview.svg"></app-image>
         </div>
       </div>
     </article>
   </div>
+  <button class="btn">Ver todos</button>
 </section>
