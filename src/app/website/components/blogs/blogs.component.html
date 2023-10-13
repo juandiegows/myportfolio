@@ -1,0 +1,16 @@
+<section id="blogs" class="container">
+  <h2 class="title">Mis Articulos</h2>
+  <div class="blogs">
+    <article class="blog" *ngFor="let blog of [1,2,3,4,5,6]">
+      <app-image class="blog__image" class2="b_image" srcImg="/assets/img/blog/blog.png"></app-image>
+      <div class="info">
+        <div class="date">
+          <app-image class="s" srcImg="assets/img/Icons/blog/calendar.svg"></app-image>
+          <p>23 febrero del 2023</p>
+        </div>
+        <h3 class="blog__title">Cómo crear un proyecto desde cero en angular</h3>
+      </div>
+    </article>
+  </div>
+  <button class="btn">Ver todos</button>
+</section>

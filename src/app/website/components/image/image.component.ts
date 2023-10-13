@@ -6,12 +6,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./image.component.scss']
 })
 export class ImageComponent {
-  @Input() srcImg: String  = "";
-  srcImgDefault: string = "/assets/img/Icons/logo.svg";
-  @Input() textAlt:String = "undefined";
+  @Input() class2: String = "";
+  @Input() srcImg: String = "";
+  srcImgDefault: String = "/assets/img/Icons/logo.svg";
+  @Input() textAlt: String = "undefined";
 
   @Input()
-  activeFilter : Boolean = false;
+  activeFilter: boolean = false;
   setImgDefault() {
     this.srcImg = this.srcImgDefault;
   }

@@ -18,6 +18,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { AlertInfoComponent } from './components/alert-info/alert-info.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { MyStoryComponent } from './components/my-story/my-story.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -35,7 +36,8 @@ import { MyStoryComponent } from './components/my-story/my-story.component';
     SkillsComponent,
     AlertInfoComponent,
     ProjectsComponent,
-    MyStoryComponent
+    MyStoryComponent,
+    BlogsComponent
   ],
   imports: [
     CommonModule,
