@@ -44,7 +44,7 @@
     <a href="javascript:void(0);" data-url="/services" (click)="toGo('services')">{{data.services}}</a>
     <a href="javascript:void(0);" data-url="/skills" (click)="toGo('skills')">{{data.skills}}</a>
     <a data-url="/projects" href="javascript:void(0);" (click)="toGo('projects')">{{data.projects}}</a>
-    <a href="">{{data.blog}}</a>
+    <a data-url="/blogs" href="javascript:void(0);" (click)="toGo('blogs')">{{data.blog}}</a>
     <app-pallette />
     <app-mode-dark-light />
     <button class="btn" [ngClass]="{'btn-dark':darkMode, 'btn-light':!darkMode}">{{data.contact_me}}</button>
