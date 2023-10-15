@@ -1,1 +1,64 @@
-<p>footer works!</p>
+<footer class="container">
+  <section class="links">
+    <h3 class="title">Links</h3>
+    <nav class="list_links">
+      <a data-url="/home" href="javascript:void(0);" (click)="toGo('home')">{{ data.home }}</a>
+      <a data-url="/about-me" href="javascript:void(0);" (click)="toGo('about-me')">{{ data.about_me }}</a>
+      <a href="javascript:void(0);" data-url="/services" (click)="toGo('services')">{{ data.services }}</a>
+      <a href="javascript:void(0);" data-url="/skills" (click)="toGo('skills')">{{ data.skills }}</a>
+      <a data-url="/projects" href="javascript:void(0);" (click)="toGo('projects')">{{ data.projects }}</a>
+      <a data-url="/blogs" href="javascript:void(0);" (click)="toGo('blogs')">{{ data.blog }}</a>
+    </nav>
+  </section>
+
+  <section class="section_social_media">
+    <h3 class="title">Sigueme</h3>
+    <div class="social_media">
+      <a target="_blank" rel="noopener" href="https://github.com/juandiegows" title="GitHub JuanDiegoWS">
+        <div class="image__social_media">
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/GitHub.svg" textAlt="Github" />
+        </div>
+      </a>
+      <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/juandiegows/" title="Linked JuanDiegoWS">
+        <div class="image__social_media">
+
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/Linked.svg" textAlt="Linked" />
+        </div>
+      </a>
+      <a target="_blank" rel="noopener" href="https://www.instagram.com/juandiego.ws/" title="Instagram JuanDiego.WS">
+        <div class="image__social_media">
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/Instagram.svg" textAlt="Instagram" />
+        </div>
+      </a>
+      <a target="_blank" rel="noopener" href="https://twitter.com/juandiegows" title="Twitter JuanDiegoWS">
+        <div class="image__social_media">
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/twitter.svg" textAlt="Twitter" />
+        </div>
+      </a>
+      <a target="_blank" rel="noopener" href="https://web.facebook.com/juandiego.wsc/" title="YouTube JuanDiegoWS">
+        <div class="image__social_media">
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/FB.svg" textAlt="FB" />
+        </div>
+      </a>
+      <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCBruvsN18FvqNHSHe7E6WWg"
+        title="GitHub JuanDiegoWS">
+        <div class="image__social_media">
+          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/YouTube.svg" textAlt="Youtube" />
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="info_profile">
+    <div class="image_photo">
+      <div class="fondo_imagen">
+        <app-image [activeFilter]="true" srcImg="/assets/img/photo/profile.png"></app-image>
+      </div>
+      <div class="profile">
+        <app-image srcImg="/assets/img/photo/profile.png"></app-image>
+      </div>
+    </div>
+    <h4 class="info__text">Derecho reservado por JuanDiegoWS © {{ year }}</h4>
+    <p class="text__visit">Eres el visitante N° {{ 1 }} </p>
+  </section>
+</footer>
