@@ -20,6 +20,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { MyStoryComponent } from './components/my-story/my-story.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { FormContactMeComponent } from './components/form-contact-me/form-contact-me.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -39,7 +40,8 @@ import { FormContactMeComponent } from './components/form-contact-me/form-contac
     ProjectsComponent,
     MyStoryComponent,
     BlogsComponent,
-    FormContactMeComponent
+    FormContactMeComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

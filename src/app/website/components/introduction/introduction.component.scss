@@ -84,7 +84,7 @@
   .email {
     color: var(--colorPrimary);
     font-size: clamp(1.8rem, 2vw, 30rem);
-
+    word-wrap: break-word;
   }
 
   .btn {

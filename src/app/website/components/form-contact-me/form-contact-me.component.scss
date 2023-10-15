@@ -22,7 +22,7 @@
 
     .group {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 2vw;
 
     }
@@ -64,6 +64,10 @@
     .form {
 
       width: 70vw;
+
+      .group {
+        grid-template-columns: 1fr 1fr;
+      }
 
       .input {
 

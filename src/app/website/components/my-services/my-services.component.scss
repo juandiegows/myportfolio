@@ -37,10 +37,10 @@
         font-family: 'Quicksand', sans-serif;
         outline: none;
         border: none;
-        padding: 0.8rem 2rem;
+        padding: 0.8rem 1rem;
         background-color: var(--colorPrimary);
         color: var(--backgroundSecond);
-        font-size: clamp(1.4rem, 1.4vw, 20rem);
+        font-size: clamp(1rem, 1.3vw, 20rem);
         font-weight: 900;
         border-radius: 5px;
       }
