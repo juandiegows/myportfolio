@@ -1,6 +1,6 @@
 <footer class="container">
   <section class="links">
-    <h3 class="title">Links</h3>
+    <h3 class="title">{{ dataFooter?.link_title }}</h3>
     <nav class="list_links">
       <a data-url="/home" href="javascript:void(0);" (click)="toGo('home')">{{ data.home }}</a>
       <a data-url="/about-me" href="javascript:void(0);" (click)="toGo('about-me')">{{ data.about_me }}</a>
@@ -12,7 +12,7 @@
   </section>
 
   <section class="section_social_media">
-    <h3 class="title">Sigueme</h3>
+    <h3 class="title">{{ dataFooter?.follow_me }}</h3>
     <div class="social_media">
       <a target="_blank" rel="noopener" href="https://github.com/juandiegows" title="GitHub JuanDiegoWS">
         <div class="image__social_media">

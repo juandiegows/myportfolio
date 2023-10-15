@@ -475,6 +475,8 @@
   },
   "footer": {
     "text_main": "Derecho reservado por JuanDiegoWS ©",
-    "text_second": "Eres el visitante N° "
+    "text_second": "Eres el visitante N° ",
+    "link_title": "Enlaces",
+    "follow_me": "Sígueme"
   }
 }

@@ -477,7 +477,9 @@
   },
   "footer": {
     "text_main": "All rights reserved by JuanDiegoWS ©",
-    "text_second": "You are visitor N° "
+    "text_second": "You are visitor N° ",
+    "link_title": "Links",
+    "follow_me": "Follow me"
   }
 
 
