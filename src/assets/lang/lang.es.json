@@ -464,5 +464,13 @@
       }
     ],
     "btn_text": "Ver todos"
+  },
+  "contact_me": {
+    "title": "Contáctame",
+    "name": "Nombre",
+    "subject": "Asunto",
+    "email": "Correo",
+    "message": "Mensaje",
+    "btn_send": "Enviar"
   }
 }

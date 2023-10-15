@@ -466,6 +466,14 @@
       }
     ],
     "btn_text": "View All"
+  },
+  "contact_me": {
+    "title": "Contact Me",
+    "name": "Name",
+    "subject": "Subject",
+    "email": "Email",
+    "message": "Message",
+    "btn_send": "Send"
   }
 
 

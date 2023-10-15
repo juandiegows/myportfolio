@@ -1,28 +1,28 @@
 <section class="container">
   <form action="" id="contact-me" class="form">
     <h2 class="title">
-      Contáctame
+      {{ data?.title }}
     </h2>
     <div class="group">
       <div class="input">
-        <label for="txt-name">Nombre</label>
-        <input type="text" name="name" id="txt-name">
+        <label for="txt-name"> {{ data?.name }}</label>
+        <input type="text" name="name" id="txt-name" [placeholder]="data?.name">
       </div>
       <div class="input">
-        <label for="txt-subject">Asunto</label>
-        <input type="text" name="subject" id="txt-subject">
+        <label for="txt-subject"> {{ data?.subject }}</label>
+        <input type="text" name="subject" id="txt-subject" [placeholder]="data?.subject">
       </div>
     </div>
     <div class="input">
-      <label for="txt-email">Correo</label>
-      <input type="email" name="email" id="txt-email">
+      <label for="txt-email">{{ data?.email }}</label>
+      <input type="email" name="email" id="txt-email" [placeholder]="data?.email">
     </div>
     <div class="input">
-      <label for="txt-message">Mensaje</label>
-      <textarea name="message" id="txt-message">
+      <label for="txt-message">{{ data?.message }}</label>
+      <textarea name="message" id="txt-message" [placeholder]="data?.message">
 
   </textarea>
     </div>
-    <button type="button" class="btn">Enviar</button>
+    <button type="button" class="btn">{{ data?.btn_send }}</button>
   </form>
 </section>
