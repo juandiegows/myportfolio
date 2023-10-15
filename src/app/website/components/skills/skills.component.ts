@@ -32,7 +32,7 @@ export class SkillsComponent implements OnInit {
 
       "subtitle": "Empresa o Clientes",
       "titleyear": "años",
-      "titleClear":"clean filter",
+      "titleClear": "clean filter",
       "titleMessage": "You can click on the years to filter",
       "items": [
         {
@@ -49,7 +49,7 @@ export class SkillsComponent implements OnInit {
 
       "subtitle": "Escuela o Entidad",
       "titleyear": "años",
-      "titleClear":"clean filter",
+      "titleClear": "clean filter",
       "titleMessage": "You can click on the years to filter",
       "items": [
         {
@@ -70,7 +70,7 @@ export class SkillsComponent implements OnInit {
 
     "subtitle": "Empresa o Clientes",
     "titleyear": "años",
-    "titleClear":"Limpiar filtro",
+    "titleClear": "Limpiar filtro",
     "titleMessage": "Puedes darle clic a los años para filtrar",
     "items": [
       {
@@ -105,7 +105,7 @@ export class SkillsComponent implements OnInit {
     return this.dataE.items.filter(x => this.filter.includes(this.GetDate(x.StartDate).getFullYear()) || this.filter.includes(this.GetDate(x.EndDate).getFullYear()));
   }
 
-  clearFilter(){
+  clearFilter() {
     this.filter = [];
   }
   setFilter(year: number) {

@@ -4,9 +4,9 @@
     <div class="text">
 
       <article class="text__info">
-        <p>{{data.hello}}</p>
+        <p>{{ data.hello }}</p>
         <p class="text__name">Juan Diego Mejia Maestre</p>
-        <div class="text__flex">{{data.Iam}}
+        <div class="text__flex">{{ data.Iam }}
           <h1 class="typed-element"></h1>
         </div>
       </article>
@@ -51,47 +51,47 @@
 
     <div class="Outstanding">
       <h2 class="title">
-        {{data.achievements}}
+        {{ data.achievements }}
       </h2>
       <div class="Outstaning_item">
         <div class="image">
           <app-image [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
         </div>
-        <p>{{data.achievements1}}</p>
+        <p>{{ data.achievements1 }}</p>
       </div>
       <div class="Outstaning_item">
         <div class="image">
           <app-image [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
         </div>
-        <p>{{data.achievements2}}</p>
+        <p>{{ data.achievements2 }}</p>
       </div>
       <div class="Outstaning_item">
         <div class="image">
           <app-image [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
         </div>
-        <p>{{data.achievements3}}</p>
+        <p>{{ data.achievements3 }}</p>
       </div>
 
       <div class="Outstaning_item">
         <div class="image">
           <app-image [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
         </div>
-        <p>{{data.achievements4}}</p>
+        <p>{{ data.achievements4 }}</p>
       </div>
 
 
 
     </div>
-    <a class="btn" [href]="data.linkDownload" download>{{data.btnDownload}}</a>
+    <a class="btn" [href]="data.linkDownload" download>{{ data.btnDownload }}</a>
   </div>
 
   <div class="photo_languajes">
     <div class="image_photo">
       <div class="fondo_imagen">
-        <app-image [activeFilter]="true" srcImg="/assets/img/photo/profile.png"></app-image>
+        <app-image [activeFilter]="true" srcImg="/assets/img/photo/profile.png" />
       </div>
       <div class="profile">
-        <app-image srcImg="/assets/img/photo/profile.png"></app-image>
+        <app-image srcImg="/assets/img/photo/profile.png" />
       </div>
     </div>
     <app-levitate-icon srcImg="/assets/img/Icons/Languaje/js.svg" textAlt="js" class="levitate levitate__1" />

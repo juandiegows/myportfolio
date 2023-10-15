@@ -1,5 +1,5 @@
 <div class="image" (click)="active = !active" tabIndex="0" (blur)="active = false">
-  <app-image [activeFilter]="true" srcImg="assets/img/Icons/pallette.svg"></app-image>
+  <app-image [activeFilter]="true" srcImg="assets/img/Icons/pallette.svg" />
   <div class="colors" [class.colors-active]="active">
     <div (click)="changeColor($event)" class="color color-blue"></div>
     <div (click)="changeColor($event)" class="color color-orange"></div>

@@ -1,32 +1,24 @@
 <section id="projects" class="container">
-  <h2 class="title">Proyectos</h2>
+  <h2 class="title"> {{ data?.title }}</h2>
   <div class="info">
-    Bienvenidos a mis projectos, puedes mirar en esta sección mis proyectos más destacado si quieres ver
-    más de mis trabajos, presiona en el boton ver todos.
+    {{ data?.text }}
     <ul class="list">
-
-      <li class="item"> <app-image class="icon" [activeFilter]="true"
-          srcImg="/assets/img/Icons/project/see.svg"></app-image>
-
-        Ver proyecto funcional</li>
-      <li class="item"><app-image class="icon" [activeFilter]="true"
-          srcImg="/assets/img/Icons/project/git.svg"></app-image>Ver
-        proyecto en Git</li>
-      <li class="item"> <app-image class="icon" [activeFilter]="true"
-          srcImg="/assets/img/Icons/project/preview.svg"></app-image>
-        Ver más información del proyecto</li>
+      <li class="item" *ngFor="let item of data?.items">
+        <app-image class="icon" [activeFilter]="true" [srcImg]="item.url_image" />
+        {{ item.text }}
+      </li>
     </ul>
   </div>
   <div class="projects">
-    <article class="project" *ngFor="let client of [1,2,3,4,5,6]">
+    <article class="project" *ngFor="let project of data?.projects">
       <div class="project__image">
-        <app-image srcImg="/assets/img/projects/example-1.png"></app-image>
+        <app-image srcImg="/assets/img/projects/example-1.png" />
       </div>
       <div class="more_info">
         <div class="stars">
-          <p>9</p>
+          <p>{{ project.count_star }}</p>
           <div class="star__image">
-            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/project/star.svg"></app-image>
+            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/project/star.svg" />
 
           </div>
         </div>
@@ -35,15 +27,15 @@
           <path class="cls-2" d="m3.48,48.17L399.37,8.82l-40.49,91.32-351-1.54L3.48,48.17Z" />
           <path class="cls-1" d="m0,24.64l368.39,51.7L400.42,0v122.25H0V24.64Z" />
         </svg>
-        <h3 class="project__title">Proyecto</h3>
+        <h3 class="project__title">{{ project.name }}</h3>
         <div class="actions">
-          <app-image class="action__image" [activeFilter]="true" srcImg="/assets/img/Icons/project/see.svg"></app-image>
-          <app-image class="action__image" [activeFilter]="true" srcImg="/assets/img/Icons/project/git.svg"></app-image>
-          <app-image class="action__image" [activeFilter]="true"
-            srcImg="/assets/img/Icons/project/preview.svg"></app-image>
+          <app-image class="action__image" [activeFilter]="true" srcImg="/assets/img/Icons/project/see.svg" />
+          <app-image class="action__image" [activeFilter]="true" srcImg="/assets/img/Icons/project/git.svg" />
+          <app-image class="action__image" [activeFilter]="true" srcImg="/assets/img/Icons/project/preview.svg" />
+
         </div>
       </div>
     </article>
   </div>
-  <button class="btn">Ver todos</button>
+  <button class="btn"> {{ data?.btn_text }}</button>
 </section>

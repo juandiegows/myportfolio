@@ -36,8 +36,7 @@
   },
   "services": {
     "title": "My Services",
-    "services": [
-      {
+    "services": [{
         "title": "Web Design and Development",
         "description": "Customized Web Design and Development, creating modern, intuitive, and search engine optimized (SEO) websites, tailored to each client's needs.",
         "link": ""
@@ -72,8 +71,7 @@
   },
   "client": {
     "title": "Clients",
-    "clients": [
-      {
+    "clients": [{
         "name": "Lazos de Dignidad",
         "imgSrc": "/assets/img/Icons/client/Lazos de dignidad.svg",
         "tools": [
@@ -107,8 +105,7 @@
   },
   "skills": {
     "title": "My skills",
-    "skills": [
-      {
+    "skills": [{
         "name": "C#",
         "urlImg": "/assets/img/Icons/skills/Csharp.svg",
         "description": "It is an object-oriented, general-purpose programming language developed by Microsoft. It is primarily used to develop desktop, mobile, web, and game applications. C# is based on the .NET framework and offers advanced features such as automatic garbage collection and memory management."
@@ -221,8 +218,7 @@
       "titleyear": "years",
       "titleClear": "clean filter",
       "titleMessage": "You can click on the years to filter",
-      "items": [
-        {
+      "items": [{
           "nameBusiness": "Lazos de dignidad",
           "Description": "A web page was created in PHP without using a Framework, with object oriented programming and connected to a MySQL database. A section for clients and an administration panel to manage the site were also included.",
           "Rol": "Full Stack Web Developer",
@@ -316,8 +312,7 @@
       "titleyear": "years",
       "titleClear": "clean filter",
       "titleMessage": "You can click on the years to filter",
-      "items": [
-        {
+      "items": [{
           "nameBusiness": "Elementary",
           "Description": "I study in an elementary school in Carrizal, where there is still no electricity, internet, nothing technological, the town where Diomedez was born, and despite the lack of technology, I managed to become the champion of IT business software solutions and win a medal of excellence in South Korea...",
           "Rol": "Hugues Manuel Lacouture",
@@ -356,5 +351,86 @@
   },
   "myStory": {
     "title": "My Story"
+  },
+  "project": {
+    "title": "My Projects",
+    "text": "Welcome to my projects. In this section, you can check out my most prominent projects. If you'd like to see more of my work, click on the 'See All' button.",
+    "items": [{
+        "url_image": "/assets/img/Icons/project/see.svg",
+        "text": "View Functional Project"
+      },
+      {
+        "url_image": "/assets/img/Icons/project/git.svg",
+        "text": "View Project on Git"
+      },
+      {
+        "url_image": "/assets/img/Icons/project/preview.svg",
+        "text": "View More Project Information"
+      }
+    ],
+    "projects": [{
+        "name": "Project",
+        "count_star": 3,
+        "url_git": "",
+        "url_details": "",
+        "url_preview": "",
+        "url_images": [
+          "/assets/img/projects/example-1.png"
+        ]
+      },
+      {
+        "name": "Project",
+        "count_star": 3,
+        "url_git": "",
+        "url_details": "",
+        "url_preview": "",
+        "url_images": [
+          "/assets/img/projects/example-1.png"
+        ]
+      },
+      {
+        "name": "Project",
+        "count_star": 3,
+        "url_git": "",
+        "url_details": "",
+        "url_preview": "",
+        "url_images": [
+          "/assets/img/projects/example-1.png"
+        ]
+      },
+      {
+        "name": "Project",
+        "count_star": 3,
+        "url_git": "",
+        "url_details": "",
+        "url_preview": "",
+        "url_images": [
+          "/assets/img/projects/example-1.png"
+        ]
+      },
+      {
+        "name": "Project",
+        "count_star": 3,
+        "url_git": "",
+        "url_details": "",
+        "url_preview": "",
+        "url_images": [
+          "/assets/img/projects/example-1.png"
+        ]
+      },
+      {
+        "name": "Project",
+        "count_star": 3,
+        "url_git": "",
+        "url_details": "",
+        "url_preview": "",
+        "url_images": [
+          "/assets/img/projects/example-1.png"
+        ]
+      }
+    ],
+
+    "btn_text": "see all"
   }
+
 }
