@@ -19,6 +19,7 @@ import { AlertInfoComponent } from './components/alert-info/alert-info.component
 import { ProjectsComponent } from './components/projects/projects.component';
 import { MyStoryComponent } from './components/my-story/my-story.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
+import { FormContactMeComponent } from './components/form-contact-me/form-contact-me.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -37,7 +38,8 @@ import { BlogsComponent } from './components/blogs/blogs.component';
     AlertInfoComponent,
     ProjectsComponent,
     MyStoryComponent,
-    BlogsComponent
+    BlogsComponent,
+    FormContactMeComponent
   ],
   imports: [
     CommonModule,

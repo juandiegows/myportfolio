@@ -118,7 +118,11 @@
 
           .date {
             display: flex;
-            gap: 2vw;
+            align-items: center;
+            gap: 1vw;
+            .info__image {
+              width: 2vw;
+            }
           }
         }
       }
@@ -142,10 +146,6 @@
 
           gap: 0.5vw;
 
-          .date {
-            display: flex;
-            gap: 2vw;
-          }
         }
       }
     }
