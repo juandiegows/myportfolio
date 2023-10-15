@@ -474,6 +474,10 @@
     "email": "Email",
     "message": "Message",
     "btn_send": "Send"
+  },
+  "footer": {
+    "text_main": "All rights reserved by JuanDiegoWS ©",
+    "text_second": "You are visitor N° "
   }
 
 

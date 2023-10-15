@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SettingService } from '../../services/setting.service';
+import { FooterData } from '../../models/lang/footerData.model';
 
 @Component({
   selector: 'app-footer',
@@ -17,12 +18,16 @@ export class FooterComponent {
     "blog": "Blog",
     "contact_me": "Contáctame"
   };
+
+  dataFooter: FooterData | null = null;
+
   constructor(private setting: SettingService) {
 
   }
   ngOnInit(): void {
     this.setting.lang$.subscribe(data => {
       this.data = this.setting.data.navigation;
+      this.dataFooter = this.setting.data.footer;
     })
   }
 
