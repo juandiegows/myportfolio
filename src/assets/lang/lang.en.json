@@ -354,7 +354,7 @@
   },
   "project": {
     "title": "My Projects",
-    "text": "Welcome to my projects. In this section, you can check out my most prominent projects. If you'd like to see more of my work, click on the 'See All' button.",
+    "text": "Welcome to my projects. In this section, you can check out my most prominent projects. If you'd like to see more of my work, click on the 'View All' button.",
     "items": [{
         "url_image": "/assets/img/Icons/project/see.svg",
         "text": "View Functional Project"
@@ -430,7 +430,43 @@
       }
     ],
 
-    "btn_text": "see all"
+    "btn_text": "View all"
+  },
+  "blog": {
+    "title": "My Articles",
+    "blogs": [{
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "February 23, 2023",
+        "title": "How to Create a Project from Scratch in Angular?"
+      },
+      {
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "February 23, 2023",
+        "title": "How to Create a Project from Scratch in Angular?"
+      },
+      {
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "February 23, 2023",
+        "title": "How to Create a Project from Scratch in Angular?"
+      },
+      {
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "February 23, 2023",
+        "title": "How to Create a Project from Scratch in Angular?"
+      },
+      {
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "February 23, 2023",
+        "title": "How to Create a Project from Scratch in Angular?"
+      },
+      {
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "February 23, 2023",
+        "title": "How to Create a Project from Scratch in Angular?"
+      }
+    ],
+    "btn_text": "View All"
   }
+
 
 }

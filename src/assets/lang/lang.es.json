@@ -430,5 +430,39 @@
       }
     ],
     "btn_text": "Ver todos"
+  },
+  "blog": {
+    "title": "Mis Articulos",
+    "blogs": [{
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "23 febrero del 2023",
+        "title": "¿Cómo crear un proyecto desde cero en angular?"
+      },
+      {
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "23 febrero del 2023",
+        "title": "¿Cómo crear un proyecto desde cero en angular?"
+      },
+      {
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "23 febrero del 2023",
+        "title": "¿Cómo crear un proyecto desde cero en angular?"
+      }, {
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "23 febrero del 2023",
+        "title": "¿Cómo crear un proyecto desde cero en angular?"
+      },
+      {
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "23 febrero del 2023",
+        "title": "¿Cómo crear un proyecto desde cero en angular?"
+      },
+      {
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "23 febrero del 2023",
+        "title": "¿Cómo crear un proyecto desde cero en angular?"
+      }
+    ],
+    "btn_text": "Ver todos"
   }
 }
