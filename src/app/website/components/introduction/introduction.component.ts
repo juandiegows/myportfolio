@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Typed from 'typed.js';
 import { Lang, SettingService } from '../../services/setting.service';
+import { User } from '../../models/User.model';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-introduction',
@@ -9,7 +11,7 @@ import { Lang, SettingService } from '../../services/setting.service';
 })
 export class IntroductionComponent implements OnInit {
 
-  constructor(private setting: SettingService) {
+  constructor(private setting: SettingService, private apiService: ApiService) {
 
   }
 
@@ -23,6 +25,7 @@ export class IntroductionComponent implements OnInit {
     "Desarrollador .NET",
     "Diseñador UX/UI"
   ];
+
   options = {
     strings: this.roles,
     typeSpeed: 50,
@@ -37,19 +40,11 @@ export class IntroductionComponent implements OnInit {
 
 
 
+  userData: User = new User;
   data = {
     "hello": "Hola, Mi nombre es",
     "Iam": "Soy",
-    "roles": ["Desarrollador web",
-      "Desarrollador móvil",
-      "Desarrollador full stack",
-      "Desarrollador backend",
-      "Analista de datos (SQL SERVER y MYSQL)",
-      "Desarrollador Vue.js",
-      "Desarrollador Angular",
-      "Desarrollador .NET",
-      "diseñador UX/UI"
-    ],
+    "roles": [],
     "achievements": "Logros destacados",
     "achievements1": "Campeón de worldskills colombia",
     "achievements2": "Campeón de worldskills chile",
@@ -58,28 +53,48 @@ export class IntroductionComponent implements OnInit {
     "btnDownload": "Descargar resumen",
     "linkDownload": "/assets/docs/CV/CV_JuanDiegoWS.pdf"
   };
+  // Inyecta el servicio en el constructor
+
   ngOnInit(): void {
     this.typed = new Typed('.typed-element', this.options)
+    this.apiService.getUser().subscribe((data: any) => {
+
+      this.userData = data.data as User;
+      if (this.setting.lang == Lang.en) {
+        this.roles = this.userData.professions.map(profession => profession.name);
+      } else {
+        this.roles = this.userData.professions.map(profession => profession.name_spanish);
+      }
+      this.resetType();
+    });
     this.setting.lang$.subscribe(data => {
 
       this.data = this.setting.data.introduction;
-      this.roles = this.data.roles;
-      this.typed?.destroy();
-      this.options = {
-        strings: this.roles,
-        typeSpeed: 50,
-        backSpeed: 50,
-        showCursor: true,
-        loop: true,
-        smartBackspace: true
-
-
-      };
-      this.typed = new Typed('.typed-element', this.options)
+      if (this.setting.lang == Lang.en) {
+        this.roles = this.userData.professions.map(profession => profession.name);
+      } else {
+        this.roles = this.userData.professions.map(profession => profession.name_spanish);
+      }
+      this.resetType();
     });
 
 
 
+  }
+
+  resetType() {
+    this.typed?.destroy();
+    this.options = {
+      strings: this.roles,
+      typeSpeed: 50,
+      backSpeed: 50,
+      showCursor: true,
+      loop: true,
+      smartBackspace: true
+
+
+    };
+    this.typed = new Typed('.typed-element', this.options)
   }
 
 

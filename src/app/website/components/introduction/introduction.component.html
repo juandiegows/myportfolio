@@ -5,7 +5,7 @@
 
       <article class="text__info">
         <p>{{ data.hello }}</p>
-        <p class="text__name">Juan Diego Mejia Maestre</p>
+        <p class="text__name">{{ userData.name }} {{ userData.last_name }}</p>
         <div class="text__flex">{{ data.Iam }}
           <h1 class="typed-element"></h1>
         </div>
@@ -45,7 +45,7 @@
           </div>
         </a>
       </div>
-      <a target="_blank" href="mailto:mejiamaestrejuandiego@gmail.com" class="email">mejiamaestrejuandiego@gmail.com</a>
+      <a target="_blank" href="mailto:{{ userData.email }}" class="email">{{ userData.email }}</a>
 
     </div>
 
