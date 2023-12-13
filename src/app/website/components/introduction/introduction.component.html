@@ -12,36 +12,11 @@
       </article>
 
       <div class="social_media">
-        <a target="_blank" rel="noopener" href="https://github.com/juandiegows" title="GitHub JuanDiegoWS">
+        <a *ngFor="let social of userData.social_medias" target="_blank" rel="noopener" href="{{ social.link }}"
+          title="{{ social.social_media.name }} JuanDiegoWS">
           <div class="image__social_media">
-            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/GitHub.svg" textAlt="Github" />
-          </div>
-        </a>
-        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/juandiegows/" title="Linked JuanDiegoWS">
-          <div class="image__social_media">
-
-            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/Linked.svg" textAlt="Linked" />
-          </div>
-        </a>
-        <a target="_blank" rel="noopener" href="https://www.instagram.com/juandiego.ws/" title="Instagram JuanDiego.WS">
-          <div class="image__social_media">
-            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/Instagram.svg" textAlt="Instagram" />
-          </div>
-        </a>
-        <a target="_blank" rel="noopener" href="https://twitter.com/juandiegows" title="Twitter JuanDiegoWS">
-          <div class="image__social_media">
-            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/twitter.svg" textAlt="Twitter" />
-          </div>
-        </a>
-        <a target="_blank" rel="noopener" href="https://web.facebook.com/juandiego.wsc/" title="YouTube JuanDiegoWS">
-          <div class="image__social_media">
-            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/FB.svg" textAlt="FB" />
-          </div>
-        </a>
-        <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCBruvsN18FvqNHSHe7E6WWg"
-          title="GitHub JuanDiegoWS">
-          <div class="image__social_media">
-            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/SocialMedia/YouTube.svg" textAlt="Youtube" />
+            <app-image [activeFilter]="true" srcImg="{{ social.social_media.url }}"
+              textAlt="{{ social.social_media.name }}" />
           </div>
         </a>
       </div>

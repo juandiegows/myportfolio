@@ -1,5 +1,5 @@
 import { Profession } from "./Profession.model"
-import { SocialMedia } from "./SocialMedia.model"
+import { SocialMediaUser } from "./SocialMediaUser.model"
 
 export class User
 {
@@ -13,5 +13,5 @@ export class User
   active: boolean =false;
   is_principal: boolean = false;
   professions: Profession[] = []
-  social_medias: SocialMedia[] = []
+  social_medias: SocialMediaUser[] = []
 }
