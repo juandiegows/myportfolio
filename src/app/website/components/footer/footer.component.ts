@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { SettingService } from '../../services/setting.service';
+import { Lang, SettingService } from '../../services/setting.service';
 import { FooterData } from '../../models/lang/footerData.model';
+import { User } from '../../models/User.model';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-footer',
@@ -20,11 +22,18 @@ export class FooterComponent {
   };
 
   dataFooter: FooterData | null = null;
-
-  constructor(private setting: SettingService) {
+  userData: User = new User;
+  constructor(private setting: SettingService, private apiService: ApiService) {
 
   }
   ngOnInit(): void {
+
+    this.apiService.getUser().subscribe((data: any) => {
+
+      this.userData = data.data as User;
+    });
+
+
     this.setting.lang$.subscribe(data => {
       this.data = this.setting.data.navigation;
       this.dataFooter = this.setting.data.footer;
