@@ -1,16 +1,16 @@
 <section id="services" class="container">
   <h2 class="title">
-    {{data.title}}
+    {{ data.title }}
   </h2>
   <div class="services">
-    <article class="service" *ngFor="let service of data.services">
+    <article class="service" *ngFor="let service of services">
       <h3 class="service__title">
-        {{service.title}}
+        {{ service.title }}
       </h3>
       <p class="service__description">
-        {{service.description}}
+        {{ service.description }}
       </p>
-      <a target="_blank" [href]="service.link" class="service__btn">{{data.nameButtom}}</a>
+      <a target="_blank" [href]="service.link" class="service__btn">{{ data.nameButtom }}</a>
     </article>
   </div>
 </section>

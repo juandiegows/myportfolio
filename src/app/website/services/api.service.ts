@@ -6,14 +6,17 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  private apiUrl = 'http://myportfolioapi.test/api'; // Reemplaza con la URL de tu API
+  private apiUrl = 'http://myportfolioapi.test/api';
 
   constructor(private http: HttpClient) { }
 
-  // Ejemplo de una solicitud GET
-  getUser(): Observable<any> {
 
+  getUser(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/users/juandiegows`);
+  }
+
+  getServices(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/users/juandiegows/services`);
   }
 
 }
