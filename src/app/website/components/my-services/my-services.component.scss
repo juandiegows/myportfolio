@@ -65,6 +65,17 @@
         border-radius: 1vw;
         gap: 1vw;
 
+        .service__title {
+          font-size: 2vw;
+          margin-bottom: 1vw;
+        }
+
+        .service__description {
+          font-size: 1vw;
+          margin-bottom: 1vw;
+          text-align: justify;
+        }
+
         .service__btn {
 
           padding: 0.8vw 2vw;
