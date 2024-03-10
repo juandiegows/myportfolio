@@ -5,12 +5,17 @@
   flex-direction: column;
   padding: 1rem 5vw;
 
+  .message_error {
+    margin: 1vw 0;
+  }
+
   .services {
     margin-top: 3rem;
     display: grid;
     gap: 1rem;
 
     .service {
+
       background-color: var(--backgroundSecond);
       padding: 2rem;
       border-radius: 1rem;
@@ -65,7 +70,7 @@
         border-radius: 1vw;
         gap: 1vw;
 
-        .service__title { 
+        .service__title {
           font-size: 2vw;
           margin-bottom: 1vw;
         }

@@ -11,14 +11,14 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getUser(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/users/juandiegows`);
+    return this.http.get<any>(`${this.apiUrl}/user/juandiegows`);
   }
 
   getServices(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/users/juandiegows/services`);
+    return this.http.get<any>(`${this.apiUrl}/user/juandiegows/services`);
   }
 
   getClients(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/users/juandiegows/clients`);
+    return this.http.get<any>(`${this.apiUrl}/user/juandiegows/clients`);
   }
 }

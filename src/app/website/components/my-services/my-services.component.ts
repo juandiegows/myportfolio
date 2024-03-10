@@ -11,6 +11,7 @@ import { ServicesInfo } from '../../models/info/ServicesInfo.model';
 })
 export class MyServicesComponent implements OnInit {
   services: ServicesInfo[] = [];
+  message = "No hay servicios disponibles en este momento.";
   servicesList: Services[] = [];
   data = {
     title: 'Mis Servicios',
@@ -20,12 +21,22 @@ export class MyServicesComponent implements OnInit {
   constructor(
     private setting: SettingService,
     private apiService: ApiService
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.apiService.getServices().subscribe((d) => {
-      this.servicesList = d.data as Services[];
-      this.fillServices();
-    });
+
+      if (d.status != 200) {
+        this.servicesList = d.data as Services[];
+        this.fillServices();
+      } else {
+        this.message = "Error al  intentar traer los datos desde el api.";
+      }
+
+    },
+
+      (error) => {
+        this.message = "Error al  intentar conectar con el api.";
+      });
     this.setting.lang$.subscribe((d) => {
       this.data = this.setting.data.services;
       this.fillServices();

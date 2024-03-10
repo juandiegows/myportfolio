@@ -2,15 +2,18 @@
   <h2 class="title">
     {{ data.title }}
   </h2>
-  <div class="services">
-    <article class="service" *ngFor="let service of services">
-      <h3 class="service__title">
-        {{ service.title }}
-      </h3>
-      <p class="service__description">
-        {{ service.description }}
-      </p>
+
+  <ng-container *ngIf="services.length > 0; else emptyState">
+    <div class="services">
+      <article class="service" *ngFor="let service of services">
+        <h3 class="service__title">{{ service.title }}</h3>
+        <p class="service__description">{{ service.description }}</p>
         <a target="_blank" [href]="service.link" class="service__btn">{{ data.nameButtom }}</a>
-    </article>
-  </div>
+      </article>
+    </div>
+  </ng-container>
+  <ng-template #emptyState>
+    <p class="message_error">{{ message }}</p>
+  </ng-template>
+
 </section>
