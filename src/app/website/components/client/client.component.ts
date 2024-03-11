@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SettingService } from '../../services/setting.service';
+import { Lang, SettingService } from '../../services/setting.service';
+import { ApiService } from '../../services/api.service';
+import { Client } from '../../models/Client.model';
+import { ClientInfo } from '../../models/info/ClientInfo.model';
 
 @Component({
   selector: 'app-client',
@@ -7,48 +10,74 @@ import { SettingService } from '../../services/setting.service';
   styleUrls: ['./client.component.scss']
 })
 export class ClientComponent implements OnInit {
+
+  message = "No hay datos disponibles en este momento.";
+  clients: ClientInfo[] = [];
+  clientList: Client[] = [];
+
   data = {
     "title": "Clientes",
-    "clients": [
-      {
-        "name": "Lazos de Dignidad",
-        "imgSrc": "/assets/img/Icons/client/Lazos de dignidad.svg",
-        "tools": ["php", "MVC", "JQuery", "CSS", "HTML", "POO"],
-        "count": 5,
-        "year": 2020,
-        "url": "https://lazosdedignidad.org/"
-      },
-      {
-        "name": "Monnerverse",
-        "imgSrc": "/assets/img/Icons/client/monnerverse.svg",
-        "tools": ["Vue.js", "Javascript", "CSS", "HTML"],
-        "count": 4,
-        "year": 2022,
-        "url": "https://www.monnerverse.com/"
-      },
-      {
-        "name": "Vittoria Pizzeria",
-        "imgSrc": "/assets/img/Icons/client/vittoria Pizzeria Trattoria.svg",
-        "tools": ["Angular", "TypeScript", "SCSS", "HTML"],
-        "count": 5,
-        "year": 2023,
-        "url": "https://vittoriapizzeriaytrattoria.com/"
-      }
-
-    ],
+    "clients": [],
     "btnVisit": "Visitar",
     "btnDetails": "Detalles"
   }
 
-  constructor(private setting: SettingService) {
-
-  }
+  constructor(
+    private setting: SettingService,
+    private apiService: ApiService
+  ) { }
   ngOnInit(): void {
+    this.apiService.getClients()
+      .subscribe({
+        next: d => {
+          if (d.status != 200) {
+            this.clientList = d.data as Client[];
+            this.fillData();
+          } else {
+            this.message = "Error al  intentar traer los datos desde el api.";
+          }
+        },
+        error: (error) => {
+          this.message = "Error al  intentar conectar con el api.";
+        }
+      });
     this.setting.lang$.subscribe(d => {
       this.data = this.setting.data.client;
-
+      this.fillData();
     })
   }
 
+  fillData() {
+    this.clients = [];
+    this.clientList.forEach((client) => {
+      if (this.setting.lang == Lang.en) {
+        this.clients.push(
+          {
+            id: client.id,
+            name: client.name,
+            description: client.description,
+            url_logo: client.url_logo,
+            link_site: client.link_site,
+            year: client.year,
+            topics: client.topics,
+            count_participants: client.count_participants
+          }
 
+        );
+      } else {
+        this.clients.push(
+          {
+            id: client.id,
+            name: client.name,
+            description: client.spanish_description,
+            url_logo: client.url_logo,
+            link_site: client.link_site,
+            year: client.year,
+            topics: client.topics_spanish,
+            count_participants: client.count_participants
+          }
+        );
+      }
+    });
+  }
 }
