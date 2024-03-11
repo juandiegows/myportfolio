@@ -21,4 +21,7 @@ export class ApiService {
   getClients(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/user/juandiegows/clients`);
   }
+  getSkills(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/user/juandiegows/skills`);
+  }
 }

@@ -1,13 +1,22 @@
 <div id="skills" class="container">
+
   <div class="container__skills">
     <h2 class="title">{{ dataSkill.title }}</h2>
-    <div class="skills">
-      <div class="skill" (click)="Open(skill)" *ngFor="let skill of dataSkill.skills">
-        <app-image class="lang" [srcImg]="skill.urlImg" />
-      </div>
+    <ng-container *ngIf="skills.length > 0; else emptyState">
+      <div class="skills">
+        <div class="skill" (click)="Open(skill,i)" *ngFor="let skill of skills;let i = index">
+          <app-image class="lang" [srcImg]="skill.link_image" />
+        </div>
 
-    </div>
+      </div>
+    </ng-container>
+    <ng-template #emptyState>
+      <p class="message_error">{{ messageSkill }}</p>
+    </ng-template>
   </div>
+
+
+
   <div class="education_experience">
     <h2 class="title"> {{ dataExpEdu.title }}</h2>
     <div class="options">
@@ -82,6 +91,6 @@
   </div>
 </div>
 
-<app-alert-info [active]="active" (IsActive)="active = $event" [title]="skillActive.name" [img]="skillActive.urlImg"
-  [texto]="skillActive.description" [textBtnProject]="dataSkill.btnProject"
+<app-alert-info [active]="active" (IsActive)="active = $event" [title]="skillInfoActive.name"
+  [img]="skillInfoActive.link_image" [texto]="skillInfoActive.description" [textBtnProject]="dataSkill.btnProject"
   [textBtnExperience]="dataSkill.btnExperience" />

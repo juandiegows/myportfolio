@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Lang, SettingService } from '../../services/setting.service';
+import { Topic } from '../../models/Topic.model';
+import { TopicInfo } from '../../models/info/TopicInfo.model';
+import { ApiService } from '../../services/api.service';
+import { TypeTopicInfo } from '../../models/info/TypeTopicInfo.model';
 
 @Component({
   selector: 'app-skills',
@@ -7,23 +11,20 @@ import { Lang, SettingService } from '../../services/setting.service';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
+  messageSkill = "Cnnsultado los datos...";
+  skills: TopicInfo[] = [];
+  skillList: Topic[] = [];
+  filter: number[] = []
+  skillActive: Topic = new Topic();
+  skillInfoActive: TopicInfo = new TopicInfo();
+
   dataSkill = {
     "title": "Mi habilidades",
-    "skills": [
-      {
-        "name": "C#",
-        "urlImg": "/assets/img/Icons/skills/Csharp.svg",
-        "description": "Es un lenguaje de programación orientado a objetos y de propósito general desarrollado por Microsoft. Se utiliza principalmente para desarrollar aplicaciones de escritorio, móviles, web y juegos. C# se basa en el marco .NET y ofrece características avanzadas como la recolección automática de basura y la administración de memoria."
-      }
-    ],
     "btnProject": "Ver Proyectos",
     "btnExperience": "Ver Experiencia"
   }
-  skillActive = {
-    "name": "C#",
-    "urlImg": "/assets/img/Icons/skills/Csharp.svg",
-    "description": "Es un lenguaje de programación orientado a objetos y de propósito general desarrollado por Microsoft. Se utiliza principalmente para desarrollar aplicaciones de escritorio, móviles, web y juegos. C# se basa en el marco .NET y ofrece características avanzadas como la recolección automática de basura y la administración de memoria."
-  };
+
+
   dataExpEdu = {
     "title": "Mi experiencia laboral y educación",
     "titleExperience": "Experiencia",
@@ -83,6 +84,7 @@ export class SkillsComponent implements OnInit {
       }
     ]
   }
+
   item_active = {
     "nameBusiness": "",
     "Description": "",
@@ -91,12 +93,106 @@ export class SkillsComponent implements OnInit {
     "EndDate": "",
     "tools": [""]
   }
+
   active: Boolean = false;
   IsExperience: Boolean = true;
-  constructor(private setting: SettingService) {
+  constructor(
+    private setting: SettingService,
+    private apiService: ApiService
+  ) { }
 
+  ngOnInit(): void {
+
+    this.apiService.getSkills()
+      .subscribe({
+        next: d => {
+          if (d.status != 200) {
+            this.skillList = d.data as Topic[];
+            this.fillData();
+          } else {
+            this.messageSkill = "Error al  intentar traer los datos desde el api.";
+          }
+        },
+        error: (error) => {
+          this.messageSkill = "Error al  intentar conectar con el api.";
+        }
+      });
+
+
+    this.setting.lang$.subscribe(data => {
+      this.dataSkill = this.setting.data.skills;
+      this.dataExpEdu = this.setting.data.experienceEducation;
+      this.ChangeData();
+      this.fillData();
+    })
   }
-  filter: number[] = []
+
+  fillData() {
+    if (this.setting.lang == Lang.en) {
+      this.skillInfoActive =
+      {
+        id: this.skillActive.id,
+        name: this.skillActive.name,
+        link_image: this.skillActive.link_image,
+        description: this.skillActive.description,
+        topic: null,
+        type_topic: {
+          id: this.skillActive.type_topic.id,
+          name: this.skillActive.type_topic.name
+        }
+      }
+        ;
+    } else {
+      this.skillInfoActive =
+      {
+        id: this.skillActive.id,
+        name: this.skillActive.spanish_name,
+        link_image: this.skillActive.link_image,
+        description: this.skillActive.spanish_description,
+        topic: null,
+        type_topic: {
+          id: this.skillActive.type_topic.id,
+          name: this.skillActive.type_topic.spanish_name
+        }
+      }
+        ;
+    }
+    this.skills = [];
+    this.skillList.forEach((skill) => {
+      if (this.setting.lang == Lang.en) {
+        this.skills.push(
+          {
+            id: skill.id,
+            name: skill.name,
+            link_image: skill.link_image,
+            description: skill.description,
+            topic: null,
+            type_topic: {
+              id: skill.type_topic.id,
+              name: skill.type_topic.name
+            }
+          }
+        );
+      } else {
+        this.skills.push(
+          {
+            id: skill.id,
+            name: skill.spanish_name,
+            link_image: skill.link_image,
+            description: skill.spanish_description,
+            topic: null,
+            type_topic: {
+              id: skill.type_topic.id,
+              name: skill.type_topic.spanish_name
+            }
+          }
+        );
+      }
+    });
+  }
+
+
+
   GetItem(): any[] {
     if (this.filter.length == 0) {
       return this.dataE.items;
@@ -108,6 +204,7 @@ export class SkillsComponent implements OnInit {
   clearFilter() {
     this.filter = [];
   }
+
   setFilter(year: number) {
     if (this.filter.includes(year)) {
       this.filter.splice(this.filter.indexOf(year), 1);
@@ -119,21 +216,19 @@ export class SkillsComponent implements OnInit {
     return this.filter.includes(year);
   }
 
-  ngOnInit(): void {
-    this.setting.lang$.subscribe(data => {
-      this.dataSkill = this.setting.data.skills;
-      this.dataExpEdu = this.setting.data.experienceEducation;
-      this.ChangeData();
-    })
-  }
-  Open(data: any) {
-    this.skillActive = data;
+
+
+  Open(data: TopicInfo, index: number) {
+    this.skillInfoActive = data;
+    this.skillActive = this.skillList[index];
     this.active = true;
   }
+
   OpenExperience() {
     this.IsExperience = true;
     this.ChangeData();
   }
+
   OpenEducation() {
     this.IsExperience = false;
     this.ChangeData();
@@ -175,6 +270,7 @@ export class SkillsComponent implements OnInit {
     let dateParts = _date1.split('/');
     return new Date(Number(dateParts[2]), Number(dateParts[1]) - 1, Number(dateParts[0]));
   }
+
   getFormattedDates(date1: string, date2: string): string {
     const date1Obj = this.GetDate(date1);
     const date2Obj = this.GetDate(date2);
