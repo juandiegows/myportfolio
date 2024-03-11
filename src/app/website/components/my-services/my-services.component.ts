@@ -23,19 +23,19 @@ export class MyServicesComponent implements OnInit {
     private apiService: ApiService
   ) { }
   ngOnInit(): void {
-    this.apiService.getServices().subscribe((d) => {
-
-      if (d.status != 200) {
-        this.servicesList = d.data as Services[];
-        this.fillServices();
-      } else {
-        this.message = "Error al  intentar traer los datos desde el api.";
-      }
-
-    },
-
-      (error) => {
-        this.message = "Error al  intentar conectar con el api.";
+    this.apiService.getServices()
+      .subscribe({
+        next: d => {
+          if (d.status != 200) {
+            this.servicesList = d.data as Services[];
+            this.fillServices();
+          } else {
+            this.message = "Error al  intentar traer los datos desde el api.";
+          }
+        },
+        error: (error) => {
+          this.message = "Error al  intentar conectar con el api.";
+        }
       });
     this.setting.lang$.subscribe((d) => {
       this.data = this.setting.data.services;
