@@ -10,8 +10,8 @@ import { ServicesInfo } from '../../models/info/ServicesInfo.model';
   styleUrls: ['./my-services.component.scss'],
 })
 export class MyServicesComponent implements OnInit {
-  services: ServicesInfo[] = [];
   message = "No hay servicios disponibles en este momento.";
+  services: ServicesInfo[] = [];
   servicesList: Services[] = [];
   data = {
     title: 'Mis Servicios',

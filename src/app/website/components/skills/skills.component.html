@@ -1,6 +1,6 @@
 <div id="skills" class="container">
   <div class="container__skills">
-    <h2 class="title">{{dataSkill.title}}</h2>
+    <h2 class="title">{{ dataSkill.title }}</h2>
     <div class="skills">
       <div class="skill" (click)="Open(skill)" *ngFor="let skill of dataSkill.skills">
         <app-image class="lang" [srcImg]="skill.urlImg" />
@@ -9,13 +9,13 @@
     </div>
   </div>
   <div class="education_experience">
-    <h2 class="title"> {{dataExpEdu.title}}</h2>
+    <h2 class="title"> {{ dataExpEdu.title }}</h2>
     <div class="options">
       <h4 class="option" (click)="OpenExperience()" [ngClass]="{'option-active':IsExperience}">
-        {{dataExpEdu.titleExperience}}
+        {{ dataExpEdu.titleExperience }}
       </h4>
       <h4 class="option" [ngClass]="{'option-active':!IsExperience}" (click)="OpenEducation()">
-        {{dataExpEdu.titleEducation}} </h4>
+        {{ dataExpEdu.titleEducation }} </h4>
       <div class="option-active_index" [ngClass]="{'option-active_index_2':!IsExperience}"></div>
     </div>
     <div class="edu_exp_container">
@@ -23,49 +23,49 @@
 
         <div class="entity">
 
-          <h5 class="entity__title">{{dataE.subtitle}}</h5>
+          <h5 class="entity__title">{{ dataE.subtitle }}</h5>
 
           <div class="entity__item">
 
             <div class="item" [ngClass]="{'item_active':item_active==item}" (click)="item_active = item"
               *ngFor="let item of GetItem()">
               <div class="indicator"></div>
-              <p>{{item.nameBusiness}}</p>
+              <p>{{ item.nameBusiness }}</p>
             </div>
           </div>
 
         </div>
 
         <div class="info__container">
-          <h3 class="info__title">{{item_active.nameBusiness}}</h3>
+          <h3 class="info__title">{{ item_active.nameBusiness }}</h3>
           <p class="info__desc">
-            {{item_active.Description}}
+            {{ item_active.Description }}
           </p>
           <div class="info__tools">
-            <a class="link" *ngFor="let tool of item_active.tools"># {{tool}}</a>
+            <a class="link" *ngFor="let tool of item_active.tools"># {{ tool }}</a>
           </div>
           <div class="info_extra">
             <p class="rol">
-              {{item_active.Rol}}
+              {{ item_active.Rol }}
             </p>
             <p class="mouth">
-              {{GetDiffMouth(item_active.StartDate, item_active.EndDate)}}
+              {{ GetDiffMouth(item_active.StartDate, item_active.EndDate) }}
             </p>
 
             <p class="startEndDate">
-              {{getFormattedDates(item_active.StartDate, item_active.EndDate)}}
+              {{ getFormattedDates(item_active.StartDate, item_active.EndDate) }}
             </p>
           </div>
         </div>
       </div>
 
       <div class="container__years">
-        <h5 class="years__title" (click)=" clearFilter()">{{dataE.titleyear}}</h5>
+        <h5 class="years__title" (click)=" clearFilter()">{{ dataE.titleyear }}</h5>
         <div class="years">
           <div class="year" (click)="setFilter(year)" [ngClass]="{'year_active':IsFilter(year)}"
             *ngFor="let year of GetYear()">
 
-            <p>{{year}}</p>
+            <p>{{ year }}</p>
             <div class="indicator"> </div>
 
           </div>
@@ -74,13 +74,14 @@
 
       </div>
       <div class="container__infoYear">
-        <p class="filter__clear" (click)=" clearFilter()">{{dataE.titleClear}}</p>
-        <p>{{dataE.titleMessage}}</p>
+        <p class="filter__clear" (click)=" clearFilter()">{{ dataE.titleClear }}</p>
+        <p>{{ dataE.titleMessage }}</p>
       </div>
 
     </div>
   </div>
 </div>
+
 <app-alert-info [active]="active" (IsActive)="active = $event" [title]="skillActive.name" [img]="skillActive.urlImg"
   [texto]="skillActive.description" [textBtnProject]="dataSkill.btnProject"
   [textBtnExperience]="dataSkill.btnExperience" />
