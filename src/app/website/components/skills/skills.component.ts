@@ -4,6 +4,7 @@ import { Topic } from '../../models/Topic.model';
 import { TopicInfo } from '../../models/info/TopicInfo.model';
 import { ApiService } from '../../services/api.service';
 import { TypeTopicInfo } from '../../models/info/TypeTopicInfo.model';
+import { Profession } from '../../models/Profession.model';
 
 @Component({
   selector: 'app-skills',
@@ -11,7 +12,7 @@ import { TypeTopicInfo } from '../../models/info/TypeTopicInfo.model';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
-  messageSkill = "Cnnsultado los datos...";
+  messageSkill = "Consultado los datos...";
   skills: TopicInfo[] = [];
   skillList: Topic[] = [];
   filter: number[] = []
@@ -189,6 +190,9 @@ export class SkillsComponent implements OnInit {
         );
       }
     });
+    if (this.skills.length == 0) {
+      this.messageSkill = "No hay habilidades disponibles";
+    }
   }
 
 
