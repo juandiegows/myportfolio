@@ -60,7 +60,9 @@ export class SkillsComponent implements OnInit {
       "titleyear": "años",
       "titleClear": "clean filter",
       "titleMessage": "You can click on the years to filter"
-    }
+    },
+    "textCertificate": "Certificate Download",
+    "textHelpCertificate": "clic para descargar el certificado"
 
 
   }

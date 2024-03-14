@@ -56,9 +56,19 @@
 
           <p>{{ getMessage() }}</p>
 
-          <p *ngIf="isWorkInfo(itemActive)" class="info__title"> {{ getWorkInfo(itemActive).profession.name }}</p>
+          <div *ngIf="isWorkInfo(itemActive)" class="info__title">
+            <a *ngIf="getWorkInfo(itemActive).certificate_url != null" target="_blank"
+              [href]="getWorkInfo(itemActive).certificate_url" class="img_certificate"
+              [title]="dataExpEdu.textHelpCertificate" download>
+              <app-image [activeFilter]="true" srcImg="assets/img/Icons/certificate.svg"></app-image>
+            </a>
+            <p> {{ getWorkInfo(itemActive).profession.name }}</p>
 
-          <p *ngIf="!isWorkInfo(itemActive)" class="info__title"> {{ getEducation(itemActive).title_education }}</p>
+          </div>
+
+          <p *ngIf="!isWorkInfo(itemActive)" class="info__title">
+
+            {{ getEducation(itemActive).title_education }}</p>
 
           <p class="info__desc">
             {{ itemActive.description }}
@@ -77,6 +87,13 @@
             <p class="startEndDate">
               {{ getFormattedDates(itemActive.start_date, itemActive.end_date) }}
             </p>
+
+
+            <a *ngIf="isWorkInfo(itemActive) &&  getWorkInfo(itemActive).certificate_url != null"
+              [href]="getWorkInfo(itemActive).certificate_url" class="btn_certificate"
+              title="clic para descargar el certificado " download>{{ dataExpEdu.textCertificate }}</a>
+
+
           </div>
 
         </div>

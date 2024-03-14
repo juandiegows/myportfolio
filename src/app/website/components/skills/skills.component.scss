@@ -428,7 +428,7 @@
             }
 
             .entity__title {
-              font-size: 1.4vw;
+              font-size: 1.2vw;
             }
           }
 
@@ -445,17 +445,39 @@
             }
 
             .info__title {
+              display: flex;
+              justify-content: center;
+              gap: 1vw;
               position: sticky;
               z-index: 100;
               font-size: 1.4vw;
               top: -1vw;
-              padding-bottom: 0.5vw;
-              padding-top: 0.5vw;
+              padding: 1vw 0;
               background-color: var(--backgroundSecond);
+
+              .img_certificate {
+                width: 1.5vw;
+                height: auto;
+                cursor: pointer;
+
+                &:hover {
+                  opacity: 0.8;
+                }
+              }
             }
 
             .info_extra {
               margin-top: 2vw;
+
+              .btn_certificate {
+                display: flex;
+                border-radius: 2vw;
+                background-color: var(--colorPrimary);
+                color: var(--color);
+                padding: 0.5vw 1vw;
+                margin-top: 1vw;
+
+              }
             }
           }
         }
