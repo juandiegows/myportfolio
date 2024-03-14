@@ -27,6 +27,7 @@
         {{ dataExpEdu.titleEducation }} </h4>
       <div class="option-active_index" [ngClass]="{'option-active_index_2':!IsExperience}"></div>
     </div>
+
     <div class="edu_exp_container">
       <div class="info">
 
@@ -36,33 +37,46 @@
 
           <div class="entity__item">
 
-            <div class="item" [ngClass]="{'item_active':item_active==item}" (click)="item_active = item"
+            <div class="item" [ngClass]="{'item_active':itemActive==item}" (click)="itemActive = item"
               *ngFor="let item of GetItem()">
               <div class="indicator"></div>
-              <p>{{ item.nameBusiness }}</p>
+              <div *ngIf="isWorkInfo(item); else noMessage">
+                <p> {{ getWorkInfo(item).business }}</p>
+              </div>
+              <ng-template #noMessage>
+                <p> {{ getEducation(item).title }}</p>
+              </ng-template>
+
             </div>
           </div>
 
         </div>
 
         <div class="info__container">
-          <h3 class="info__title">{{ item_active.nameBusiness }}</h3>
+
+
+          <div *ngIf="isWorkInfo(itemActive); else noMessage">
+            <p class="info__title"> {{ getWorkInfo(itemActive).profession.name }}</p>
+          </div>
+          <ng-template #noMessage>
+            <p class="info__title"> {{ getEducation(itemActive).title_education }}</p>
+          </ng-template>
           <p class="info__desc">
-            {{ item_active.Description }}
+            {{ itemActive.description }}
           </p>
-          <div class="info__tools">
-            <a class="link" *ngFor="let tool of item_active.tools"># {{ tool }}</a>
+          <div class="info__tools" *ngIf="isWorkInfo(itemActive)">
+            <a class="link" *ngFor="let tool of getWorkInfo(itemActive).topics"># {{ tool }}</a>
           </div>
           <div class="info_extra">
-            <p class="rol">
-              {{ item_active.Rol }}
-            </p>
+            <!-- <p class="rol">
+              {{ itemActive.Rol }}
+            </p> -->
             <p class="mouth">
-              {{ GetDiffMouth(item_active.StartDate, item_active.EndDate) }}
+              {{ GetDiffMouth(itemActive.start_date, itemActive.end_date) }}
             </p>
 
             <p class="startEndDate">
-              {{ getFormattedDates(item_active.StartDate, item_active.EndDate) }}
+              {{ getFormattedDates(itemActive.start_date, itemActive.end_date) }}
             </p>
           </div>
         </div>

@@ -183,7 +183,7 @@
 
         .info__container {
           background-color: var(--backgroundSecond);
-          min-height: clamp(25rem, 10vw, 100rem);
+
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -432,6 +432,7 @@
             overflow: hidden;
             overflow-y: auto;
             padding: 0.5vw;
+            padding-bottom: 2vw;
             max-height: 20vw;
             gap: 1vw;
 
@@ -447,6 +448,10 @@
               padding-bottom: 1vw;
               padding-top: 1vw;
               background-color: var(--backgroundSecond);
+            }
+
+            .info_extra {
+              margin-top: 2vw;
             }
           }
         }
