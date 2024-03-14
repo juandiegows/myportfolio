@@ -89,9 +89,9 @@
             </p>
 
 
-            <a *ngIf="isWorkInfo(itemActive) &&  getWorkInfo(itemActive).certificate_url != null"
+            <a *ngIf="isWorkInfo(itemActive) &&  getWorkInfo(itemActive).certificate_url != null" target="_blank"
               [href]="getWorkInfo(itemActive).certificate_url" class="btn_certificate"
-              title="clic para descargar el certificado " download>{{ dataExpEdu.textCertificate }}</a>
+              title="clic para descargar el certificado " download="certificado">{{ dataExpEdu.textCertificate }}</a>
 
 
           </div>
