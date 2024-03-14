@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.juandiegows.com/api'
+  apiUrl: 'http://myportfolioapi.test/api'
+  // apiUrl: 'https://api.juandiegows.com/api'
 };
