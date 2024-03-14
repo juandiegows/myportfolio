@@ -1,23 +1,64 @@
 <div class="container">
   <div class="image" [class.image-active]="index_active ==1" (click)="index_active = 1">
-    <img src="/assets/img/photo/photo_corea.png" alt="photo corea" />
+    <picture>
+      <source media="(max-width: 300px)" srcset="/assets/img/photo/tiny/photo_corea.png" />
+      <source media="(max-width: 800px)" srcset="/assets/img/photo/small/photo_corea.png" />
+      <source media="(min-width: 800px)" srcset="/assets/img/photo/photo_corea.png" />
+      <img src="/assets/img/photo/photo_corea.png" alt="photo corea" />
+    </picture>
   </div>
+
   <div class="image" [class.image-active]="index_active ==2" (click)="index_active = 2">
-    <img src="/assets/img/photo/photo_africa.png" alt="photo corea" />
+    <picture>
+      <source media="(max-width: 300px)" srcset="/assets/img/photo/tiny/photo_africa.png" />
+      <source media="(max-width: 800px)" srcset="/assets/img/photo/small/photo_africa.png" />
+      <source media="(min-width: 800px)" srcset="/assets/img/photo/photo_africa.png" />
+      <img src="/assets/img/photo/photo_africa.png" alt="photo corea" />
+    </picture>
   </div>
+
   <div class="image" [class.image-active]="index_active ==3" (click)="index_active = 3">
-    <img src="/assets/img/photo/photo_all.png" alt="photo corea" />
+    <picture>
+      <source media="(max-width: 300px)" srcset="/assets/img/photo/tiny/photo_all.png" />
+      <source media="(max-width: 800px)" srcset="/assets/img/photo/small/photo_all.png" />
+      <source media="(min-width: 800px)" srcset="/assets/img/photo/photo_all.png" />
+      <img src="/assets/img/photo/photo_all.png" alt="photo corea" />
+    </picture>
   </div>
+
   <div class="image" [class.image-active]="index_active ==4" (click)="index_active = 4">
-    <img src="/assets/img/photo/photo_campeon.jpg" alt="photo corea" />
+    <picture>
+      <source media="(max-width: 300px)" srcset="/assets/img/photo/tiny/photo_campeon.jpg" />
+      <source media="(max-width: 800px)" srcset="/assets/img/photo/small/photo_campeon.jpg" />
+      <source media="(min-width: 800px)" srcset="/assets/img/photo/photo_campeon.jpg" />
+      <img src="/assets/img/photo/photo_campeon.jpg" alt="photo corea" />
+    </picture>
   </div>
+
   <div class="image" [class.image-active]="index_active ==5" (click)="index_active = 5">
-    <img src="/assets/img/photo/photo_aleman_paris.png" alt="photo corea" />
+    <picture>
+      <source media="(max-width: 300px)" srcset="/assets/img/photo/tiny/photo_aleman_paris.png" />
+      <source media="(max-width: 800px)" srcset="/assets/img/photo/small/photo_aleman_paris.png" />
+      <source media="(min-width: 800px)" srcset="/assets/img/photo/photo_aleman_paris.png" />
+      <img src="/assets/img/photo/photo_aleman_paris.png" alt="photo corea" />
+    </picture>
   </div>
+
   <div class="image" [class.image-active]="index_active ==6" (click)="index_active = 6">
-    <img src="/assets/img/photo/photo_singapur_china.png" alt="photo corea" />
+    <picture>
+      <source media="(max-width: 300px)" srcset="/assets/img/photo/tiny/photo_singapur_china.png" />
+      <source media="(max-width: 800px)" srcset="/assets/img/photo/small/photo_singapur_china.png" />
+      <source media="(min-width: 800px)" srcset="/assets/img/photo/photo_singapur_china.png" />
+      <img src="/assets/img/photo/photo_singapur_china.png" alt="photo corea" />
+    </picture>
   </div>
+
   <div class="image" [class.image-active]="index_active ==7" (click)="index_active = 7">
-    <img src="/assets/img/photo/photo_taiwan.png" alt="photo corea" />
+    <picture>
+      <source media="(max-width: 300px)" srcset="/assets/img/photo/tiny/photo_taiwan.png" />
+      <source media="(max-width: 800px)" srcset="/assets/img/photo/small/photo_taiwan.png" />
+      <source media="(min-width: 800px)" srcset="/assets/img/photo/photo_taiwan.png" />
+      <img src="/assets/img/photo/photo_taiwan.png" alt="photo corea" />
+    </picture>
   </div>
 </div>
