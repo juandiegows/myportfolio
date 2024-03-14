@@ -62,11 +62,21 @@
 
   <div class="photo_languajes">
     <div class="image_photo">
-      <div class="fondo_imagen">
-        <app-image [activeFilter]="true" srcImg="/assets/img/photo/profile.png" />
+      <div class="fondo_imagen profile">
+        <picture class="filter">
+          <source media="(max-width: 300px)" srcset="/assets/img/photo/tiny/profile.png" />
+          <source media="(max-width: 800px)" srcset="/assets/img/photo/small/profile.png" />
+          <source media="(min-width: 800px)" srcset="/assets/img/photo/profile.png" />
+          <img src="/assets/img/photo/profile.png" alt="photo corea" />
+        </picture>
       </div>
       <div class="profile">
-        <app-image srcImg="/assets/img/photo/profile.png" />
+        <picture>
+          <source media="(max-width: 300px)" srcset="/assets/img/photo/tiny/profile.png" />
+          <source media="(max-width: 800px)" srcset="/assets/img/photo/small/profile.png" />
+          <source media="(min-width: 800px)" srcset="/assets/img/photo/profile.png" />
+          <img src="/assets/img/photo/profile.png" alt="photo corea" />
+        </picture>
       </div>
     </div>
     <app-levitate-icon srcImg="/assets/img/Icons/Languaje/js.svg" textAlt="js" class="levitate levitate__1" />

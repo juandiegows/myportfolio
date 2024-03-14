@@ -7,6 +7,11 @@
   margin: 0 auto;
   position: relative;
 
+  .filter {
+    filter: var(--colorPrimaryF);
+    transition: var(--myTransition);
+  }
+
   .info {
     display: flex;
     flex-direction: column;
@@ -108,8 +113,6 @@
     position: relative;
 
     .fondo_imagen {
-      width: 92vw;
-      margin: -1.2vw auto;
       position: absolute;
     }
 
