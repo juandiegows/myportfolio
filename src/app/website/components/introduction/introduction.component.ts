@@ -60,20 +60,24 @@ export class IntroductionComponent implements OnInit {
     this.apiService.getUser().subscribe((data: any) => {
 
       this.userData = data.data as User;
-      if (this.setting.lang == Lang.en) {
-        this.roles = this.userData.professions.map(profession => profession.name);
-      } else {
-        this.roles = this.userData.professions.map(profession => profession.name_spanish);
+      if (this.userData.professions.length != 0) {
+        if (this.setting.lang == Lang.en) {
+          this.roles = this.userData.professions.map(profession => profession.name);
+        } else {
+          this.roles = this.userData.professions.map(profession => profession.name_spanish);
+        }
       }
       this.resetType();
     });
     this.setting.lang$.subscribe(data => {
 
       this.data = this.setting.data.introduction;
-      if (this.setting.lang == Lang.en) {
-        this.roles = this.userData.professions.map(profession => profession.name);
-      } else {
-        this.roles = this.userData.professions.map(profession => profession.name_spanish);
+      if (this.userData.professions.length != 0) {
+        if (this.setting.lang == Lang.en) {
+          this.roles = this.userData.professions.map(profession => profession.name);
+        } else {
+          this.roles = this.userData.professions.map(profession => profession.name_spanish);
+        }
       }
       this.resetType();
     });

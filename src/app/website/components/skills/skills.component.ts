@@ -88,6 +88,7 @@ export class SkillsComponent implements OnInit {
         next: d => {
           if (d.status != 200) {
             this.skillList = d.data as Topic[];
+            this.messageSkill = "";
             this.fillData();
           } else {
             this.messageSkill = "Error al  intentar traer los datos desde el api.";
@@ -103,6 +104,7 @@ export class SkillsComponent implements OnInit {
         next: d => {
           if (d.status != 200) {
             this.worksList = d.data as Work[];
+            this.messageWork = "";
             this.fillData();
           } else {
             this.messageWork = "Error al  intentar traer los datos desde el api.";
@@ -118,6 +120,7 @@ export class SkillsComponent implements OnInit {
         next: d => {
           if (d.status != 200) {
             this.educationList = d.data as Education[];
+            this.messageEducation = "";
             this.fillData();
           } else {
             this.messageEducation = "Error al  intentar traer los datos desde el api.";
@@ -359,6 +362,14 @@ export class SkillsComponent implements OnInit {
       this.workEducation = this.education;
     }
     this.itemActive = this.workEducation[0];
+  }
+
+  getMessage(): string {
+    if (this.IsExperience) {
+      return this.messageWork;
+    } else {
+      return this.messageEducation;
+    }
   }
 
   GetDiffMouth(_date1: string, _date2: string | null): string {

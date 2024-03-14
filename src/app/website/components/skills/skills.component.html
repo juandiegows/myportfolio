@@ -2,17 +2,16 @@
 
   <div class="container__skills">
     <h2 class="title">{{ dataSkill.title }}</h2>
-    <ng-container *ngIf="skills.length > 0; else emptyState">
-      <div class="skills">
-        <div class="skill" (click)="Open(skill,i)" *ngFor="let skill of skills;let i = index">
-          <app-image class="lang" [srcImg]="skill.link_image" />
-        </div>
 
+    <div class="skills">
+      <div class="skill" (click)="Open(skill,i)" *ngFor="let skill of skills;let i = index">
+        <app-image class="lang" [srcImg]="skill.link_image" />
       </div>
-    </ng-container>
-    <ng-template #emptyState>
-      <p class="message_error">{{ messageSkill }}</p>
-    </ng-template>
+
+    </div>
+
+    <p class="message_error">{{ messageSkill }}</p>
+
   </div>
 
 
@@ -48,19 +47,19 @@
               </ng-template>
 
             </div>
+
           </div>
 
         </div>
 
         <div class="info__container">
 
+          <p>{{ getMessage() }}</p>
 
-          <div *ngIf="isWorkInfo(itemActive); else noMessage">
-            <p class="info__title"> {{ getWorkInfo(itemActive).profession.name }}</p>
-          </div>
-          <ng-template #noMessage>
-            <p class="info__title"> {{ getEducation(itemActive).title_education }}</p>
-          </ng-template>
+          <p *ngIf="isWorkInfo(itemActive)" class="info__title"> {{ getWorkInfo(itemActive).profession.name }}</p>
+
+          <p *ngIf="!isWorkInfo(itemActive)" class="info__title"> {{ getEducation(itemActive).title_education }}</p>
+
           <p class="info__desc">
             {{ itemActive.description }}
           </p>
@@ -79,7 +78,9 @@
               {{ getFormattedDates(itemActive.start_date, itemActive.end_date) }}
             </p>
           </div>
+
         </div>
+
       </div>
 
       <div class="container__years">
