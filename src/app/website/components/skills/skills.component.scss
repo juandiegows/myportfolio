@@ -366,6 +366,7 @@
     .education_experience {
       font-size: 1.4vw;
 
+
       .options {
         border-bottom: 0.15vw solid var(--colorPrimary);
         border-radius: 0.5vw;
@@ -409,6 +410,9 @@
             height: 100%;
 
             .entity__item {
+              overflow: hidden;
+              overflow-y: auto;
+              max-height: 17vw;
 
               .item {
                 font-size: 1.1vw;
