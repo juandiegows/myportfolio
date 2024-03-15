@@ -442,7 +442,8 @@ export class SkillsComponent implements OnInit {
       if (!years.includes(datef.getFullYear()))
         years.push(datef.getFullYear());
     });
-    return years;
+
+    return years.sort((a, b) => a - b);
   }
 
 
