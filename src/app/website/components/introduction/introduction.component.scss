@@ -135,6 +135,7 @@
 
     .levitate {
       position: absolute;
+      bottom: 0;
       width: clamp(2rem, 4vw, 4rem);
       height: auto;
     }
@@ -150,7 +151,7 @@
 
     .levitate__3 {
       left: 30%;
-      bottom: 70%;
+      bottom: 50%;
     }
 
     .levitate__4 {
@@ -165,7 +166,7 @@
 
     .levitate__6 {
       left: 55%;
-      bottom: 105%;
+      bottom: 85%;
     }
 
     .levitate__7 {
