@@ -66,7 +66,7 @@
 
           </div>
 
-          <div *ngIf="getEducation(itemActive)" class="info__title">
+          <div *ngIf="!isWorkInfo(itemActive)" class="info__title">
             <a *ngIf="getEducation(itemActive).certificate_url != null" target="_blank"
               [href]="getEducation(itemActive).certificate_url" class="img_certificate"
               [title]="dataExpEdu.textHelpCertificate" download>
