@@ -448,9 +448,8 @@ export class SkillsComponent implements OnInit {
 
 
   isWorkInfo(item: any): boolean {
-    return item.hasOwnProperty('profession');
-  }
-
+    return item && item.hasOwnProperty('profession');
+}
 
 
   getWorkInfo(item: any): WorkInfo {

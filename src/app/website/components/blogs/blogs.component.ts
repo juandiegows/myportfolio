@@ -11,6 +11,7 @@ export class BlogsComponent {
   constructor(private setting: SettingService) {
 
   }
+  
   data: BlogData | null = null
 
   ngOnInit(): void {

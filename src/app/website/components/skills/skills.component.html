@@ -52,7 +52,7 @@
 
         </div>
 
-        <div class="info__container">
+        <div class="info__container"  *ngIf="itemActive">
 
           <p>{{ getMessage() }}</p>
 
@@ -79,7 +79,7 @@
 
 
 
-          <p class="info__desc">
+          <p class="info__desc" *ngIf="itemActive">
             {{ itemActive.description }}
           </p>
           <div class="info__tools" *ngIf="isWorkInfo(itemActive)">
@@ -89,18 +89,20 @@
             <!-- <p class="rol">
               {{ itemActive.Rol }}
             </p> -->
-            <p class="mouth">
+            <p class="mouth" *ngIf="itemActive">
               {{ GetDiffMouth(itemActive.start_date, itemActive.end_date) }}
             </p>
 
-            <p class="startEndDate">
+            <p class="startEndDate" *ngIf="itemActive">
               {{ getFormattedDates(itemActive.start_date, itemActive.end_date) }}
             </p>
 
+            <div *ngIf="itemActive">
+              <a *ngIf="getWorkInfo(itemActive).certificate_url != null" target="_blank"
+                [href]="getWorkInfo(itemActive).certificate_url" class="btn_certificate"
+                title="clic para descargar el certificado " download="certificado">{{ dataExpEdu.textCertificate }}</a>
+            </div>
 
-            <a *ngIf="getWorkInfo(itemActive).certificate_url != null" target="_blank"
-              [href]="getWorkInfo(itemActive).certificate_url" class="btn_certificate"
-              title="clic para descargar el certificado " download="certificado">{{ dataExpEdu.textCertificate }}</a>
 
 
           </div>
