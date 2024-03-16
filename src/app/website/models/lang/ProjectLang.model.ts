@@ -1,4 +1,4 @@
-export interface Project {
+export interface ProjectLang {
   title: string;
   text: string;
   items: Array<{

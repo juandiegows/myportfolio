@@ -10,13 +10,13 @@
     </ul>
   </div>
   <div class="projects">
-    <article class="project" *ngFor="let project of data?.projects">
+    <article class="project" *ngFor="let project of projects">
       <div class="project__image">
-        <app-image srcImg="/assets/img/projects/example-1.png" />
+        <app-image [srcImg]="project.front_page.link_700" />
       </div>
       <div class="more_info">
         <div class="stars">
-          <p>{{ project.count_star }}</p>
+          <p>{{ 0 }}</p>
           <div class="star__image">
             <app-image [activeFilter]="true" srcImg="/assets/img/Icons/project/star.svg" />
 
@@ -27,11 +27,18 @@
           <path class="cls-2" d="m3.48,48.17L399.37,8.82l-40.49,91.32-351-1.54L3.48,48.17Z" />
           <path class="cls-1" d="m0,24.64l368.39,51.7L400.42,0v122.25H0V24.64Z" />
         </svg>
-        <h3 class="project__title">{{ project.name }}</h3>
+        <h3 class="project__title">{{ project.title }}</h3>
         <div class="actions">
-          <app-image class="action__image" [activeFilter]="true" srcImg="/assets/img/Icons/project/see.svg" />
-          <app-image class="action__image" [activeFilter]="true" srcImg="/assets/img/Icons/project/git.svg" />
-          <app-image class="action__image" [activeFilter]="true" srcImg="/assets/img/Icons/project/preview.svg" />
+          <a class="action__image"  *ngIf="project.view_link != null" target="_blank" [href]="project.view_link ">
+            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/project/see.svg" />
+          </a>
+
+          <a class="action__image"  *ngIf="project.download_link != null" target="_blank" [href]="project.download_link ">
+            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/project/git.svg" />
+          </a>
+
+
+          <app-image class="action__image" style="cursor: not-allowed;" [activeFilter]="true" srcImg="/assets/img/Icons/project/preview.svg" />
 
         </div>
       </div>

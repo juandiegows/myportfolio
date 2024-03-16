@@ -33,4 +33,9 @@ export class ApiService {
   getEducations(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/user/juandiegows/educations`);
   }
+
+  getProjects(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/user/juandiegows/projects`);
+  }
+  
 }
