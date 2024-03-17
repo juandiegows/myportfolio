@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { SettingService } from '../../services/setting.service';
 import { ContactMeData } from '../../models/lang/contact-me.model';
 import { ApiService } from '../../services/api.service';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-form-contact-me',
@@ -47,12 +48,44 @@ export class FormContactMeComponent {
           this.messageReponse.message = 'Error al enviar el correo';
         }
         this.enable = true;
+        let mensaje =  this.messageReponse.message;
+        let count = 0;
+        this.messageReponse.message = mensaje +" "+ (10 - count) +" seg";
+        count++;
+        let time=  setInterval(() =>{
+          if( this.messageReponse.message == ""){
+            clearInterval(time);
+            return;
+          }
+          this.messageReponse.message = mensaje +" "+ (10 - count) +" seg";
+          count++;
+          if(count == 11){
+            clearInterval(time);
+            this.messageReponse.message = "";
+          }
+        }, 1000);
       },
       error: (error) => {
         console.error('Error al enviar el mensaje:', error);
         this.messageReponse.code = 400;
         this.messageReponse.message = 'Error al intentar consumir el API';
         this.enable = true;
+        let mensaje =  this.messageReponse.message;
+        let count = 0;
+        this.messageReponse.message = mensaje +" "+ (10 - count) +" seg";
+        count++;
+        let time=  setInterval(() =>{
+          if( this.messageReponse.message == ""){
+            clearInterval(time);
+            return;
+          }
+          this.messageReponse.message = mensaje +" "+ (10 - count) +" seg";
+          count++;
+          if(count == 11){
+            clearInterval(time);
+            this.messageReponse.message = "";
+          }
+        }, 1000);
       },
     });
   }
