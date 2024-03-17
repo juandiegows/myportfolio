@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
+import { Message } from '../models/Message.model';
 @Injectable({
   providedIn: 'root',
 })
@@ -41,5 +42,9 @@ export class ApiService {
   getPosts(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/user/juandiegows/posts`);
   }
+
+  sendMessage(message: Message) {
+    return this.http.post<any>(`${this.apiUrl}/message`, message, {observe: 'response'});
+   }
 
 }

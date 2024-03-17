@@ -1,22 +1,63 @@
+import { Message } from './../../models/Message.model';
 import { Component } from '@angular/core';
 import { SettingService } from '../../services/setting.service';
 import { ContactMeData } from '../../models/lang/contact-me.model';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-form-contact-me',
   templateUrl: './form-contact-me.component.html',
-  styleUrls: ['./form-contact-me.component.scss']
+  styleUrls: ['./form-contact-me.component.scss'],
 })
 export class FormContactMeComponent {
-  constructor(private setting: SettingService) {
+  constructor(
+    private setting: SettingService,
+    private apiService: ApiService
+  ) {}
 
-  }
-  data: ContactMeData | null = null
+  message: Message = new Message();
+  name: String = '';
+  data: ContactMeData | null = null;
+  enable : boolean = true;
+  messageReponse = {
+    code: 200,
+    message: '',
+  };
 
   ngOnInit(): void {
-    this.setting.lang$.subscribe(d => {
+    this.setting.lang$.subscribe((d) => {
       this.data = this.setting.data.contact_me;
-    })
+    });
   }
 
+  onSubmit() {
+    this.enable = false;
+    this.apiService.sendMessage(this.message).subscribe({
+      next:d=> {
+
+
+        if (d.status == 200) {
+          this.messageReponse.code = 200;
+          this.messageReponse.message =
+            'Se ha enviado correctamente el mensaje';
+
+            this.message = new Message();
+        } else {
+          this.messageReponse.code = 400;
+          this.messageReponse.message = 'Error al enviar el correo';
+        }
+        this.enable = true;
+      },
+      error: (error) => {
+        console.error('Error al enviar el mensaje:', error);
+        this.messageReponse.code = 400;
+        this.messageReponse.message = 'Error al intentar consumir el API';
+        this.enable = true;
+      },
+    });
+  }
+
+  Close(){
+    this.messageReponse.message = "";
+  }
 }

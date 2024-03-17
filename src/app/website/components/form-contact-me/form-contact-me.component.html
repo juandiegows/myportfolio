@@ -1,28 +1,34 @@
 <section class="container">
-  <form action="" id="contact-me" class="form">
+  <form id="contact-me" class="form" (ngSubmit)="onSubmit()">
     <h2 class="title">
       {{ data?.title }}
     </h2>
+    <div  class="message_form" *ngIf="messageReponse.message != ''">
+      <h4 >{{ messageReponse.message }}</h4>
+      <div class="btnClose">
+        <app-image  srcImg="/assets/img/Icons/close_alert.svg" [activeFilter]="true" (click)=" Close()" textAlt="cerrar" />
+      </div>
+
+    </div>
+
     <div class="group">
       <div class="input">
-        <label for="txt-name"> {{ data?.name }}</label>
-        <input type="text" name="name" id="txt-name" [placeholder]="data?.name">
+        <label for="txt-name"> {{ data?.name }} </label>
+        <input type="text" name="name" id="txt-name" [placeholder]="data?.name" [(ngModel)]="message.name">
       </div>
       <div class="input">
         <label for="txt-subject"> {{ data?.subject }}</label>
-        <input type="text" name="subject" id="txt-subject" [placeholder]="data?.subject">
+        <input type="text" name="subject" id="txt-subject" [placeholder]="data?.subject" [(ngModel)]="message.subject">
       </div>
     </div>
     <div class="input">
       <label for="txt-email">{{ data?.email }}</label>
-      <input type="email" name="email" id="txt-email" [placeholder]="data?.email">
+      <input type="email" name="email" id="txt-email" [placeholder]="data?.email" [(ngModel)]="message.email">
     </div>
     <div class="input">
       <label for="txt-message">{{ data?.message }}</label>
-      <textarea name="message" id="txt-message" [placeholder]="data?.message">
-
-  </textarea>
+      <textarea name="message" id="txt-message" [placeholder]="data?.message" [(ngModel)]="message.message"></textarea>
     </div>
-    <button type="button" class="btn">{{ data?.btn_send }}</button>
-  </form>
+    <button type="submit"   [disabled]="!enable" class="btn">{{ data?.btn_send }}</button>
+</form>
 </section>

@@ -21,6 +21,7 @@ import { MyStoryComponent } from './components/my-story/my-story.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { FormContactMeComponent } from './components/form-contact-me/form-contact-me.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -45,7 +46,8 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     CommonModule,
-    WebsiteRoutingModule
+    WebsiteRoutingModule,
+    FormsModule
   ]
 })
 export class WebsiteModule { }

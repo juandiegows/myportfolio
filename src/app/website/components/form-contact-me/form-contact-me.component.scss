@@ -15,6 +15,19 @@
     flex-direction: column;
     gap: 2vw;
 
+    .message_form{
+      display: flex;
+      justify-content: space-between;
+      padding: 1vw;
+      border: 1px solid var(--colorPrimary);
+      color: var(--colorPrimary);
+      background-color: var(--background);
+      border-radius: 1vw;
+      opacity: 0.7;
+      .btnClose{
+        width: 2rem;
+      }
+    }
     .title {
       margin: auto;
       text-align: center;
@@ -24,45 +37,61 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 2vw;
-
     }
-
+    .btn {
+      color: var(--color);
+      font-size: 1.8vw;
+      &:disabled{
+        background-color: var(--color);
+        color: var(--colorPrimary);
+        cursor: not-allowed;
+      }
+    }
     .input {
-
       display: flex;
       flex-direction: column;
       gap: 2vw;
 
-      input,
-      textarea {
-        background-color: var(--backgroundSecond);
+
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px  var(--backgroundSecond)  inset;
+    }
+    input:-webkit-autofill {
+      -webkit-text-fill-color: var(--color);
+  }
+    input,
+    textarea {
+      background-color: var(--backgroundSecond);
+      border: none;
+      border-bottom: 1px solid var(--colorPrimary);
+      color: var(--color);
+      padding-bottom: 5px;
+
+
+      &:active,
+      &:focus {
         border: none;
-        border-bottom: 1px solid var(--colorPrimary);
-        color: var(--color);
-        padding-bottom: 5px;
-
-        &:active,
-        &:focus {
-          border: none;
-          outline: none;
-          border-bottom: 2px solid var(--colorPrimary);
-        }
+        outline: none;
+        border-bottom: 2px solid var(--colorPrimary);
+        background-color: var(--backgroundSecond);
       }
+    }
 
-      textarea {
-        min-height: 8vw;
-        width: 100%;
-      }
+    textarea {
+      min-height: 8vw;
+      width: 100%;
     }
   }
 }
 
-@media (min-width : 700px) {
+@media (min-width: 700px) {
   .container {
     font-size: 1.8vw;
 
     .form {
-
       width: 70vw;
 
       .group {
@@ -70,12 +99,10 @@
       }
 
       .input {
-
         input,
         textarea {
           font-size: 1.4vw;
         }
-
       }
 
       .btn {
@@ -84,10 +111,9 @@
       }
     }
   }
-
 }
 
-@media (min-width : 1200px) {
+@media (min-width: 1200px) {
   .container {
     font-size: 1.8vw;
 
@@ -118,5 +144,4 @@
       }
     }
   }
-
 }
