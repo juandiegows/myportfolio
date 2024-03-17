@@ -14,20 +14,20 @@
     <div class="group">
       <div class="input">
         <label for="txt-name"> {{ data?.name }} </label>
-        <input type="text" name="name" id="txt-name" [placeholder]="data?.name" [(ngModel)]="message.name">
+        <input type="text" name="name" required id="txt-name" [placeholder]="data?.name" [(ngModel)]="message.name">
       </div>
       <div class="input">
         <label for="txt-subject"> {{ data?.subject }}</label>
-        <input type="text" name="subject" id="txt-subject" [placeholder]="data?.subject" [(ngModel)]="message.subject">
+        <input type="text" name="subject" required id="txt-subject" [placeholder]="data?.subject" [(ngModel)]="message.subject">
       </div>
     </div>
     <div class="input">
       <label for="txt-email">{{ data?.email }}</label>
-      <input type="email" name="email" id="txt-email" [placeholder]="data?.email" [(ngModel)]="message.email">
+      <input type="email" name="email"  required id="txt-email" [placeholder]="data?.email" [(ngModel)]="message.email">
     </div>
     <div class="input">
       <label for="txt-message">{{ data?.message }}</label>
-      <textarea name="message" id="txt-message" [placeholder]="data?.message" [(ngModel)]="message.message"></textarea>
+      <textarea name="message" required id="txt-message" [placeholder]="data?.message" [(ngModel)]="message.message"></textarea>
     </div>
     <button type="submit"   [disabled]="!enable" class="btn">{{ data?.btn_send }}</button>
 </form>
