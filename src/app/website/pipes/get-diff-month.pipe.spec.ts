@@ -1,8 +1,8 @@
-import { GetDiffMonthPipePipe } from './get-diff-month-pipe.pipe';
+import { GetDiffMonthPipe } from './get-diff-month.pipe';
 
 describe('GetDiffMonthPipePipe', () => {
   it('create an instance', () => {
-    const pipe = new GetDiffMonthPipePipe();
+    const pipe = new GetDiffMonthPipe();
     expect(pipe).toBeTruthy();
   });
 });

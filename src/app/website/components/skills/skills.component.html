@@ -83,18 +83,18 @@
             {{ itemActive.description }}
           </p>
           <div class="info__tools" *ngIf="isWorkInfo(itemActive)">
-            <a class="link" *ngFor="let tool of getWorkInfo(itemActive).topics"># {{ tool }}</a>
+            <a class="link" *ngFor="let tool of getWorkInfo(itemActive).topics"> {{ tool | topic }}</a>
           </div>
           <div class="info_extra">
             <!-- <p class="rol">
               {{ itemActive.Rol }}
             </p> -->
             <p class="mouth" *ngIf="itemActive">
-              {{ itemActive.start_date | getDiffMonthPipe: itemActive.end_date:lang }}
+              {{ itemActive.start_date | getDiffMonth: itemActive.end_date:lang }}
             </p>
 
             <p class="startEndDate" *ngIf="itemActive">
-              {{ itemActive.start_date | getFormattedDatesPipe:itemActive.end_date }}
+              {{ itemActive.start_date | getFormattedDates:itemActive.end_date }}
             </p>
 
             <div *ngIf="itemActive">

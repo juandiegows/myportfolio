@@ -21,8 +21,9 @@ import { BlogsComponent } from './components/blogs/blogs.component';
 import { FormContactMeComponent } from './components/form-contact-me/form-contact-me.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
-import { GetDiffMonthPipePipe } from './pipes/get-diff-month-pipe.pipe';
-import { GetFormattedDatesPipePipe } from './pipes/get-formatted-dates-pipe.pipe';
+import { GetDiffMonthPipe } from './pipes/get-diff-month.pipe';
+import { TopicPipe } from './pipes/topic.pipe';
+import { GetFormattedDatesPipe } from './pipes/get-formatted-dates.pipe';
 
 @NgModule({
   declarations: [
@@ -45,8 +46,9 @@ import { GetFormattedDatesPipePipe } from './pipes/get-formatted-dates-pipe.pipe
     BlogsComponent,
     FormContactMeComponent,
     FooterComponent,
-    GetDiffMonthPipePipe,
-    GetFormattedDatesPipePipe
+    GetDiffMonthPipe,
+    GetFormattedDatesPipe,
+    TopicPipe,
   ],
   imports: [
     CommonModule,

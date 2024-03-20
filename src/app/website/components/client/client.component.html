@@ -12,7 +12,7 @@
           <app-image [srcImg]="client.url_logo" />
         </div>
         <div class="tags">
-          <p class="tag" *ngFor="let tool of client.topics">#{{ tool }}</p>
+          <p class="tag" *ngFor="let tool of client.topics">{{ tool | topic }}</p>
         </div>
         <div class="btns">
           <a [href]="client.link_site" target="_blank" class="btn">{{ data.btnVisit }}</a>

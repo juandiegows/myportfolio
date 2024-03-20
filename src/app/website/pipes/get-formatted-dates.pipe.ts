@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'getFormattedDatesPipe',
+  name: 'getFormattedDates',
 })
-export class GetFormattedDatesPipePipe implements PipeTransform {
+export class GetFormattedDatesPipe implements PipeTransform {
   transform(date1: string, date2: string | null): string {
     const date1Obj = this.getDate(date1);
     const date2Obj = date2 ? this.getDate(date2) : new Date();
