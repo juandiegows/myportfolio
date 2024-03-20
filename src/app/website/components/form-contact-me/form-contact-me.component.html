@@ -1,8 +1,5 @@
 <section class="container">
-  <form id="contact-me" class="form" (ngSubmit)="onSubmit()">
-    <h2 class="title">
-      {{ data?.title }}
-    </h2>
+  <form id="contact-me" class="form" [formGroup]="messageForm" (ngSubmit)="onSubmit()">
     <div  class="message_form" *ngIf="messageReponse.message != ''">
       <h4 >{{ messageReponse.message }}</h4>
       <div class="btnClose">
@@ -11,24 +8,46 @@
 
     </div>
 
+
     <div class="group">
       <div class="input">
-        <label for="txt-name"> {{ data?.name }} </label>
-        <input type="text" name="name" required id="txt-name" [placeholder]="data?.name" [(ngModel)]="message.name">
+        <label for="txt-name">{{ data?.name }}</label>
+        <input type="text" formControlName="name" id="txt-name" [placeholder]="data?.name">
+        <div *ngIf="messageForm.get('name')?.invalid && (messageForm.get('name')?.dirty || messageForm.get('name')?.touched)" class="error">
+          <div *ngIf="messageForm.get('name')?.errors?.['required']">El nombre es obligatorio.</div>
+          <div *ngIf="messageForm.get('name')?.errors?.['maxlength']">El nombre debe tener como máximo 250 caracteres.</div>
+        </div>
       </div>
       <div class="input">
-        <label for="txt-subject"> {{ data?.subject }}</label>
-        <input type="text" name="subject" required id="txt-subject" [placeholder]="data?.subject" [(ngModel)]="message.subject">
+        <label for="txt-subject">{{ data?.subject }}</label>
+        <input type="text" formControlName="subject" id="txt-subject" [placeholder]="data?.subject">
+        <div *ngIf="messageForm.get('subject')?.invalid && (messageForm.get('subject')?.dirty || messageForm.get('subject')?.touched)" class="error">
+          <div *ngIf="messageForm.get('subject')?.errors?.['required']">El asunto es obligatorio.</div>
+          <div *ngIf="messageForm.get('subject')?.errors?.['maxlength']">El asunto debe tener como máximo 250 caracteres.</div>
+        </div>
       </div>
     </div>
+
     <div class="input">
       <label for="txt-email">{{ data?.email }}</label>
-      <input type="email" name="email"  required id="txt-email" [placeholder]="data?.email" [(ngModel)]="message.email">
+      <input type="email" formControlName="email" id="txt-email" [placeholder]="data?.email">
+      <div *ngIf="messageForm.get('email')?.invalid && (messageForm.get('email')?.dirty || messageForm.get('email')?.touched)" class="error">
+        <div *ngIf="messageForm.get('email')?.errors?.['required']">El correo electrónico es obligatorio.</div>
+        <div *ngIf="messageForm.get('email')?.errors?.['email']">Por favor, introduce un correo electrónico válido.</div>
+        <div *ngIf="messageForm.get('email')?.errors?.['maxlength']">El correo electrónico debe tener como máximo 250 caracteres.</div>
+      </div>
     </div>
+
     <div class="input">
       <label for="txt-message">{{ data?.message }}</label>
-      <textarea name="message" required id="txt-message" [placeholder]="data?.message" [(ngModel)]="message.message"></textarea>
+      <textarea formControlName="message" id="txt-message" [placeholder]="data?.message"></textarea>
+      <div *ngIf="messageForm.get('message')?.invalid && (messageForm.get('message')?.dirty || messageForm.get('message')?.touched)" class="error">
+        <div *ngIf="messageForm.get('message')?.errors?.['required']">El mensaje es obligatorio.</div>
+        <div *ngIf="messageForm.get('message')?.errors?.['maxlength']">El mensaje debe tener como máximo 250 caracteres.</div>
+      </div>
     </div>
-    <button type="submit"   [disabled]="!enable" class="btn">{{ data?.btn_send }}</button>
-</form>
+
+    <button type="submit" [disabled]="!messageForm.valid || !enable" class="btn">{{ data?.btn_send }}</button>
+  </form>
+
 </section>

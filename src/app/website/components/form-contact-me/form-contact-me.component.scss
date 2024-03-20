@@ -6,7 +6,6 @@
   align-items: center;
 
   .form {
-
     background-color: var(--backgroundSecond);
     padding: 2vw;
     border-radius: 2vw;
@@ -14,8 +13,12 @@
     display: flex;
     flex-direction: column;
     gap: 2vw;
-
-    .message_form{
+    .error {
+      font-size: 0.7vw;
+      color: #ff2727;
+      margin-top: -0.7vw;
+    }
+    .message_form {
       display: flex;
       justify-content: space-between;
       padding: 1vw;
@@ -24,7 +27,7 @@
       background-color: var(--background);
       border-radius: 1vw;
       opacity: 0.7;
-      .btnClose{
+      .btnClose {
         width: 2rem;
       }
     }
@@ -41,7 +44,7 @@
     .btn {
       color: var(--color);
       font-size: 1.8vw;
-      &:disabled{
+      &:disabled {
         background-color: var(--color);
         color: var(--colorPrimary);
         cursor: not-allowed;
@@ -51,17 +54,15 @@
       display: flex;
       flex-direction: column;
       gap: 2vw;
-
-
     }
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus {
-        -webkit-box-shadow: 0 0 0px 1000px  var(--backgroundSecond)  inset;
+      -webkit-box-shadow: 0 0 0px 1000px var(--backgroundSecond) inset;
     }
     input:-webkit-autofill {
       -webkit-text-fill-color: var(--color);
-  }
+    }
     input,
     textarea {
       background-color: var(--backgroundSecond);
@@ -69,7 +70,6 @@
       border-bottom: 1px solid var(--colorPrimary);
       color: var(--color);
       padding-bottom: 5px;
-
 
       &:active,
       &:focus {
@@ -104,7 +104,19 @@
           font-size: 1.4vw;
         }
       }
-
+      .message_form {
+        display: flex;
+        justify-content: space-between;
+        padding: 1vw;
+        border: 1px solid var(--colorPrimary);
+        color: var(--colorPrimary);
+        background-color: var(--background);
+        border-radius: 1vw;
+        opacity: 0.7;
+        .btnClose {
+          width: 2vw;
+        }
+      }
       .btn {
         color: var(--color);
         font-size: 1.8vw;

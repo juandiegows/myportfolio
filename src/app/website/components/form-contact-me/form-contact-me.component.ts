@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { SettingService } from '../../services/setting.service';
 import { ContactMeData } from '../../models/lang/contact-me.model';
 import { ApiService } from '../../services/api.service';
-import { timeout } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-contact-me',
@@ -11,6 +11,9 @@ import { timeout } from 'rxjs';
   styleUrls: ['./form-contact-me.component.scss'],
 })
 export class FormContactMeComponent {
+  // @ts-ignore
+  messageForm: FormGroup;
+
   constructor(
     private setting: SettingService,
     private apiService: ApiService
@@ -19,13 +22,30 @@ export class FormContactMeComponent {
   message: Message = new Message();
   name: String = '';
   data: ContactMeData | null = null;
-  enable : boolean = true;
+  enable: boolean = true;
   messageReponse = {
     code: 200,
     message: '',
   };
 
   ngOnInit(): void {
+    this.messageForm = new FormGroup({
+      name: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(250),
+      ]),
+      subject: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(250),
+      ]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.email,
+        Validators.maxLength(250),
+      ]),
+      message: new FormControl('', [Validators.required]),
+    });
+
     this.setting.lang$.subscribe((d) => {
       this.data = this.setting.data.contact_me;
     });
@@ -33,35 +53,43 @@ export class FormContactMeComponent {
 
   onSubmit() {
     this.enable = false;
+    if (!this.messageForm.valid) {
+      return;
+    }
+    this.message = {
+      name: this.messageForm.value.name,
+      subject: this.messageForm.value.subject,
+      email: this.messageForm.value.email,
+      message: this.messageForm.value.message
+    };
+
     this.apiService.sendMessage(this.message).subscribe({
-      next:d=> {
-
-
+      next: (d) => {
         if (d.status == 200) {
           this.messageReponse.code = 200;
           this.messageReponse.message =
             'Se ha enviado correctamente el mensaje';
 
-            this.message = new Message();
+          this.message = new Message();
         } else {
           this.messageReponse.code = 400;
           this.messageReponse.message = 'Error al enviar el correo';
         }
         this.enable = true;
-        let mensaje =  this.messageReponse.message;
+        let mensaje = this.messageReponse.message;
         let count = 0;
-        this.messageReponse.message = mensaje +" "+ (10 - count) +" seg";
+        this.messageReponse.message = mensaje + ' ' + (10 - count) + ' seg';
         count++;
-        let time=  setInterval(() =>{
-          if( this.messageReponse.message == ""){
+        let time = setInterval(() => {
+          if (this.messageReponse.message == '') {
             clearInterval(time);
             return;
           }
-          this.messageReponse.message = mensaje +" "+ (10 - count) +" seg";
+          this.messageReponse.message = mensaje + ' ' + (10 - count) + ' seg';
           count++;
-          if(count == 11){
+          if (count == 11) {
             clearInterval(time);
-            this.messageReponse.message = "";
+            this.messageReponse.message = '';
           }
         }, 1000);
       },
@@ -70,27 +98,27 @@ export class FormContactMeComponent {
         this.messageReponse.code = 400;
         this.messageReponse.message = 'Error al intentar consumir el API';
         this.enable = true;
-        let mensaje =  this.messageReponse.message;
+        let mensaje = this.messageReponse.message;
         let count = 0;
-        this.messageReponse.message = mensaje +" "+ (10 - count) +" seg";
+        this.messageReponse.message = mensaje + ' ' + (10 - count) + ' seg';
         count++;
-        let time=  setInterval(() =>{
-          if( this.messageReponse.message == ""){
+        let time = setInterval(() => {
+          if (this.messageReponse.message == '') {
             clearInterval(time);
             return;
           }
-          this.messageReponse.message = mensaje +" "+ (10 - count) +" seg";
+          this.messageReponse.message = mensaje + ' ' + (10 - count) + ' seg';
           count++;
-          if(count == 11){
+          if (count == 11) {
             clearInterval(time);
-            this.messageReponse.message = "";
+            this.messageReponse.message = '';
           }
         }, 1000);
       },
     });
   }
 
-  Close(){
-    this.messageReponse.message = "";
+  Close() {
+    this.messageReponse.message = '';
   }
 }
