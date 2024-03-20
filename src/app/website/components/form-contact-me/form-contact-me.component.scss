@@ -14,8 +14,8 @@
     flex-direction: column;
     gap: 2vw;
     .error {
-      font-size: 0.7vw;
-      color: #ff2727;
+      font-size: 1rem;
+      color: var(--colorPrimary);
       margin-top: -0.7vw;
     }
     .message_form {
@@ -43,7 +43,7 @@
     }
     .btn {
       color: var(--color);
-      font-size: 1.8vw;
+      font-size: 1.8rem;
       &:disabled {
         background-color: var(--color);
         color: var(--colorPrimary);
@@ -93,7 +93,10 @@
 
     .form {
       width: 70vw;
-
+      .error {
+        font-size: 0.7vw;
+        margin-top: -0.7vw;
+      }
       .group {
         grid-template-columns: 1fr 1fr;
       }
