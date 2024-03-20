@@ -90,11 +90,11 @@
               {{ itemActive.Rol }}
             </p> -->
             <p class="mouth" *ngIf="itemActive">
-              {{ GetDiffMouth(itemActive.start_date, itemActive.end_date) }}
+              {{ itemActive.start_date | getDiffMonthPipe: itemActive.end_date:lang }}
             </p>
 
             <p class="startEndDate" *ngIf="itemActive">
-              {{ getFormattedDates(itemActive.start_date, itemActive.end_date) }}
+              {{ itemActive.start_date | getFormattedDatesPipe:itemActive.end_date }}
             </p>
 
             <div *ngIf="itemActive">

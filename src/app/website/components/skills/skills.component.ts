@@ -36,6 +36,7 @@ export class SkillsComponent implements OnInit {
   skillActive: Topic = new Topic();
   skillInfoActive: TopicInfo = new TopicInfo();
 
+  lang : string = "";
   dataSkill = {
     "title": "Mi habilidades",
     "btnProject": "Ver Proyectos",
@@ -134,6 +135,7 @@ export class SkillsComponent implements OnInit {
       });
 
     this.setting.lang$.subscribe(data => {
+      this.lang = data;
       this.dataSkill = this.setting.data.skills;
       this.dataExpEdu = this.setting.data.experienceEducation;
       this.ChangeData();
@@ -374,27 +376,6 @@ export class SkillsComponent implements OnInit {
     }
   }
 
-  GetDiffMouth(_date1: string, _date2: string | null): string {
-
-    const date1 = this.GetDate(_date1);
-    const date2 = _date2 ? this.GetDate(_date2) : new Date();
-    const diferenciaEnMs = date2.getTime() - date1.getTime();
-    const years = Math.floor(diferenciaEnMs / (1000 * 60 * 60 * 24 * 365));
-    const months = Math.floor((diferenciaEnMs % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-    const days = Math.floor((diferenciaEnMs % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-    let result = " ";
-    if (years > 0) {
-      result += `${years} ${this.setting.lang == Lang.en ? "Years" : "Años"}`;
-    }
-    if (months > 0) {
-      result += ` ${months} ${this.setting.lang == Lang.en ? "Mouth" : "Meses"} `;
-    }
-    if (days > 0) {
-      result += ` ${days} ${this.setting.lang == Lang.en ? "Days" : "Días"} `;
-    }
-
-    return result.trim() || 'Hoy';
-  }
 
   GetDate(_date1: string | null): Date {
     if (_date1 == null) {
@@ -409,23 +390,6 @@ export class SkillsComponent implements OnInit {
 
   }
 
-  getFormattedDates(date1: string, date2: string | null): string {
-
-    const date1Obj = this.GetDate(date1);
-    const date2Obj = date2 ? this.GetDate(date2) : new Date();
-
-    if (date1Obj.getFullYear() === date2Obj.getFullYear()) {
-      if (date2 == null) {
-        return `${date1Obj.getDate()}/${date1Obj.getMonth() + 1} - Actualmente`;
-      }
-      return `${date1Obj.getDate()}/${date1Obj.getMonth() + 1} - ${date2Obj.getDate()}/${date2Obj.getMonth() + 1} ${date1Obj.getFullYear()}`;
-    } else {
-      if (date2 == null) {
-        return `${date1} - Actualmente`;
-      }
-      return `${date1} - ${date2}`;
-    }
-  }
 
   GetYear(): number[] {
     let years: number[] = [];

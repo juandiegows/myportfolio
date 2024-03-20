@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { WebsiteRoutingModule } from './website-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -22,6 +21,9 @@ import { BlogsComponent } from './components/blogs/blogs.component';
 import { FormContactMeComponent } from './components/form-contact-me/form-contact-me.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { GetDiffMonthPipePipe } from './pipes/get-diff-month-pipe.pipe';
+import { GetFormattedDatesPipePipe } from './pipes/get-formatted-dates-pipe.pipe';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -42,7 +44,9 @@ import { FormsModule } from '@angular/forms';
     MyStoryComponent,
     BlogsComponent,
     FormContactMeComponent,
-    FooterComponent
+    FooterComponent,
+    GetDiffMonthPipePipe,
+    GetFormattedDatesPipePipe
   ],
   imports: [
     CommonModule,
