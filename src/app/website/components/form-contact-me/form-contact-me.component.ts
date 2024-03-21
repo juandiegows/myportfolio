@@ -65,12 +65,12 @@ export class FormContactMeComponent {
 
     this.apiService.sendMessage(this.message).subscribe({
       next: (d) => {
+
         if (d.status == 200) {
+            this.messageForm.reset();
           this.messageReponse.code = 200;
           this.messageReponse.message =
             'Se ha enviado correctamente el mensaje';
-
-          this.message = new Message();
         } else {
           this.messageReponse.code = 400;
           this.messageReponse.message = 'Error al enviar el correo';
