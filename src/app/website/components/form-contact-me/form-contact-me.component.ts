@@ -1,6 +1,6 @@
 import { Message } from './../../models/Message.model';
 import { Component } from '@angular/core';
-import { SettingService } from '../../services/setting.service';
+import { Lang, SettingService } from '../../services/setting.service';
 import { ContactMeData } from '../../models/lang/contact-me.model';
 import { ApiService } from '../../services/api.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -23,6 +23,7 @@ export class FormContactMeComponent {
   name: String = '';
   data: ContactMeData | null = null;
   enable: boolean = true;
+  lang:String = Lang.es;
   messageReponse = {
     code: 200,
     message: '',
@@ -48,6 +49,7 @@ export class FormContactMeComponent {
 
     this.setting.lang$.subscribe((d) => {
       this.data = this.setting.data.contact_me;
+      this.lang = d;
     });
   }
 
