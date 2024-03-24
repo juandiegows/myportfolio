@@ -72,6 +72,7 @@ export class BlogsComponent {
         this.blogs.push({
           id: blog.id,
           title: blog.title,
+          topics : blog.topics,
           url_image: blog.url_image,
           link: blog.link,
           date: blog.date,
@@ -82,6 +83,7 @@ export class BlogsComponent {
         this.blogs.push({
           id: blog.id,
           title: blog.spanish_title,
+          topics : blog.topics_spanish,
           url_image: blog.url_image,
           link: blog.link,
           date: blog.date,
