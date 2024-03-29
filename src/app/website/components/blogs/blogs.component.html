@@ -2,13 +2,13 @@
   <h2 class="title">{{ data?.title }}</h2>
   <div class="blogs">
     <article class="blog" *ngFor="let blog of blogs">
-      <a [href]="blog.link" class="blog__title">
+      <a [href]="blog.link" class="blog__image_container">
         <app-image class="blog__image" class2="b_image" [srcImg]="blog.url_image" />
       </a>
 
       <div class="info">
         <div class="date">
-          <app-image class="info__image" [activeFilter]="true" srcImg="assets/img/Icons/blog/calendar.svg" />
+          <app-image class2="max" class="info__image" [activeFilter]="true" srcImg="assets/img/Icons/blog/calendar.svg" />
           <p>{{ convertDate(blog.date) }}</p>
         </div>
         <a [href]="blog.link" class="blog__title">{{ blog.title }}</a>

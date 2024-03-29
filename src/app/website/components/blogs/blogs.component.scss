@@ -112,20 +112,23 @@
         ::ng-deep .blog__image .b_image {
           border-radius: 0.5vw;
         }
-
-        .blog__image {
-          border-radius: 5vw;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        .blog__image_container {
+          height: 53%;
+          .blog__image {
+            width: 100%;
+            border-radius: 5vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
-
         .info {
-          font-size: 1.4vw;
+          margin-top: 1vw;
+          font-size: 1vw;
           gap: 1vw;
           padding: 1vw;
           .topics {
-            font-size: 1.2vw;
+            font-size: 0.8vw;
           }
           .date {
             display: flex;
@@ -148,6 +151,23 @@
 
       .blog {
         width: 23vw;
+
+        .info {
+          gap: 0.5vw;
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 2400px) {
+  .container {
+    .blogs {
+      gap: 1vw;
+
+      .blog {
+        width: 20vw;
 
         .info {
           gap: 0.5vw;

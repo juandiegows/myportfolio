@@ -11,6 +11,10 @@ img {
     user-zoom: none;
   }
 
+  .max {
+    width: 100%;
+    height: 100%;
+  }
   .filter {
     filter: var(--colorPrimaryF);
     transition: var(--myTransition);
