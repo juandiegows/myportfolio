@@ -365,7 +365,7 @@
     grid-template-rows: 1fr;
     grid-template-columns: 48% 48%;
     margin-bottom: 3vw;
-
+    margin-top: 3vw;
     .container__skills {
       .skills {
         margin-top: 3vw;
@@ -465,6 +465,9 @@
             &::-webkit-scrollbar {
               width: 0.4vw;
             }
+            .info__tools{
+              gap: 1vw;
+            }
 
             .info__title {
 
@@ -520,7 +523,11 @@
 
             .year {
 
+              padding: 0 0.5vw;
+              position: relative;
               .indicator {
+                position: absolute;
+                left: 0;
                 height: 0.2vw;
                 border-radius: 1vw;
               }
