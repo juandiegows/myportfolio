@@ -7,37 +7,46 @@ import { ApiService } from '../../services/api.service';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
   year = new Date().getFullYear();
   data = {
-    "home": "Inicio ",
-    "about_me": "Sobre mi",
-    "services": "Servicios",
-    "skills": "Habilidades",
-    "projects": "Proyectos",
-    "blog": "Blog",
-    "contact_me": "Contáctame"
+    home: 'Inicio ',
+    about_me: 'Sobre mi',
+    services: 'Servicios',
+    skills: 'Habilidades',
+    projects: 'Proyectos',
+    blog: 'Blog',
+    contact_me: 'Contáctame',
   };
 
   dataFooter: FooterData | null = null;
-  userData: User = new User;
-  constructor(private setting: SettingService, private apiService: ApiService) {
-
-  }
+  userData: User = new User();
+  count = 1;
+  constructor(
+    private setting: SettingService,
+    private apiService: ApiService
+  ) {}
   ngOnInit(): void {
+    this.apiService.getVisit().subscribe({
+      next: (r) => {
+        console.log(r);
 
+        this.count = r.count;
+      },
+      error: (error) => {
+        this.count = -1;
+      },
+    });
     this.apiService.getUser().subscribe((data: any) => {
-
       this.userData = data.data as User;
     });
 
-
-    this.setting.lang$.subscribe(data => {
+    this.setting.lang$.subscribe((data) => {
       this.data = this.setting.data.navigation;
       this.dataFooter = this.setting.data.footer;
-    })
+    });
   }
 
   toGo(name: string) {
@@ -45,9 +54,11 @@ export class FooterComponent {
     setTimeout(() => {
       const element: HTMLElement = document.getElementById(name) as HTMLElement;
       const rect = element.getBoundingClientRect();
-      const topOffset = window.pageYOffset + rect.top - 5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const topOffset =
+        window.pageYOffset +
+        rect.top -
+        5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
       window.scrollTo({ top: topOffset, behavior: 'smooth' });
     }, 200);
   }
-
 }

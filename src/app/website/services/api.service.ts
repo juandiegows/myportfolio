@@ -47,4 +47,8 @@ export class ApiService {
     return this.http.post<any>(`${this.apiUrl}/message`, message, {observe: 'response'});
    }
 
+   getVisit(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/visit`);
+  }
+
 }
