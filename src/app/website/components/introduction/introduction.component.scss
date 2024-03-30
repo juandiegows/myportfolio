@@ -3,10 +3,9 @@
   flex-direction: column;
   gap: 2vh;
   width: 90vw;
-  min-height: 95vh;
   margin: 0 auto;
   position: relative;
-
+  border-bottom: 0.001vw solid var(--colorPrimary);
   .filter {
     filter: var(--colorPrimaryF);
     transition: var(--myTransition);
@@ -81,7 +80,6 @@
 
       .image {
         width: 4rem;
-
       }
     }
   }
@@ -118,12 +116,14 @@
 
     .image_photo {
       width: 90vw;
-      margin: auto;
+      margin-top: -1vw;
+
       display: flex;
       justify-content: center;
 
       .profile {
         z-index: 100;
+        margin-top: -1vw;
       }
 
       img {
@@ -219,8 +219,6 @@
             gap: 1vw;
           }
         }
-
-
       }
 
       .social_media {
@@ -255,12 +253,10 @@
     }
 
     .photo_languajes {
-
       .fondo_imagen {
         display: none;
+        margin-top: -1vw;
       }
-
-
     }
 
     .btn {
@@ -281,7 +277,7 @@
     .photo_languajes {
       width: 100%;
       position: relative;
-
+      margin: 0;
       .image_photo {
         position: absolute;
         width: 100%;
@@ -290,7 +286,7 @@
 
         .fondo_imagen {
           display: initial;
-          margin-top: 0;
+
           width: 100%;
           transform: translateY(-1.2%);
           object-fit: scale-down;
@@ -298,7 +294,6 @@
 
         .profile {
           width: 98%;
-          margin: 0;
           padding: 0;
           z-index: 100;
           object-fit: scale-down;
