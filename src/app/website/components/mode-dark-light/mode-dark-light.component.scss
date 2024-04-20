@@ -48,29 +48,30 @@
 
 @media(min-width: 900px) {
   .container {
-    width: 5vw;
-    height: 4vh;
+    width: 4vw;
+    height: 1.5vw;
     border-radius: 30vw;
-    padding-left: 1vw;
+    padding-left: 0.5vw;
 
     p {
       font-size: 0.8vw;
     }
 
     .image {
-      width: 1.5vw;
-      height: 1.5vw;
+      right: 0.2vw;
+      width: 1.2vw;
+      height: 1.2vw;
     }
   }
 
   .container-light {
 
     p {
-      transform: translateX(2.3vw);
+      transform: translateX(1.5vw);
     }
 
     .image {
-      transform: translateX(-3vw);
+      transform: translateX(-2.2vw);
     }
   }
 }
