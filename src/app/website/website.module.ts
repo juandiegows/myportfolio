@@ -24,6 +24,7 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { GetDiffMonthPipe } from './pipes/get-diff-month.pipe';
 import { TopicPipe } from './pipes/topic.pipe';
 import { GetFormattedDatesPipe } from './pipes/get-formatted-dates.pipe';
+import { UpButtomComponent } from './components/up-buttom/up-buttom.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { GetFormattedDatesPipe } from './pipes/get-formatted-dates.pipe';
     GetDiffMonthPipe,
     GetFormattedDatesPipe,
     TopicPipe,
+    UpButtomComponent,
   ],
   imports: [
     CommonModule,

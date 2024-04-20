@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { ColorFilterService } from './color-filter.service';
+import { tick } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,8 @@ export class SettingService {
     localStorage.setItem('mode', mode);
     const root = document.documentElement;
     const style = getComputedStyle(root);
+
+
     if (this.mode == Mode.dark) {
       root.style.setProperty('--background', style.getPropertyValue('--DarkBackgoundColor'));
       root.style.setProperty('--color', style.getPropertyValue('--DarkColor'));
@@ -70,10 +73,36 @@ export class SettingService {
           break;
       }
     }
+
+    this.getColorF();
     this._mode.next(mode);
+
   }
 
 
+  getColorF() {
+    const root = document.documentElement;
+    const style = getComputedStyle(root);
+    const colorText = style.getPropertyValue('--colorPrimary');
+    this.colorF.hexToRgb(colorText, true);
+    let sumColor = this.colorF.r + this.colorF.g + this.colorF.b;
+    if (sumColor > 382) {
+      this.colorF.r = 0;
+      this.colorF.g = 0;
+      this.colorF.b = 0;
+      const color = style.getPropertyValue('--LightColor');
+      root.style.setProperty('--colorD',color);
+    } else {
+      this.colorF.r = 255;
+      this.colorF.g = 255;
+      this.colorF.b = 255;
+      const color = style.getPropertyValue('--DarkColor');
+      root.style.setProperty('--colorD',color);
+    }
+
+    const result = this.colorF.solve();
+    root.style.setProperty('--colorF', result.filter);
+  }
   GetLangText(lang: Lang) {
     return this.http.get<any>(`/assets/lang/lang.${lang.toString()}.json`);
   }
@@ -91,6 +120,7 @@ export class SettingService {
     root.style.setProperty('--colorPrimary', backgroundColor);
     const result = this.colorF.solve();
     root.style.setProperty('--colorPrimaryF', result.filter);
+    this.getColorF();
   }
 
 
