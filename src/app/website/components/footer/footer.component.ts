@@ -31,8 +31,6 @@ export class FooterComponent {
   ngOnInit(): void {
     this.apiService.getVisit().subscribe({
       next: (r) => {
-        console.log(r);
-
         this.count = r.count;
       },
       error: (error) => {
