@@ -53,18 +53,24 @@
 @media(min-width: 900px) {
   .container {
     width: 3.5vw;
+    min-width: 5rem;
     height: 1.5vw;
+    min-height: 2.5rem;
     border-radius: 30vw;
     padding-left: 0.5vw;
 
     .earth {
       font-size: 0.8vw;  
+      width:  1.2vw;
+      min-width: 2rem;
+      height: auto;
     }
 
     .image {
       right: 0.2vw;
       width: 1.2vw;
-      height: 1.2vw;
+      min-width: 2rem;
+      height: auto;
     }
   }
 
