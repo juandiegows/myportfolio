@@ -1,6 +1,8 @@
 <div class="container" (click)="ChangesMode()" [class.container-light]="!modeDark">
-<p>  &lt;/&gt;</p>
+<div class="earth"> 
+  <app-image srcImg="/assets/img/Icons/earth.png" />
+</div>
 <div class="image">
-  <app-image srcImg="/assets/img/Icons/{{modeDark?'moon':'soon'}}.svg" />
+  <app-image srcImg="/assets/img/Icons/{{modeDark?'moon.png':'soon.svg'}}" />
 </div>
 </div>

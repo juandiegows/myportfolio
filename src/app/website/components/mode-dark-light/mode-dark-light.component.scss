@@ -10,15 +10,18 @@
   user-select: none;
   cursor: pointer;
   position: relative;
-  padding-left: 1rem;
-
-  p {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+ .earth {
     position: absolute;
+    width: 3rem;
+    height: 3rem;
     font-size: 1rem;
     margin-right: 1rem;
     font-weight: 900;
     color: white;
     transition: transform 2s ease, margin-left 2s ease;
+    z-index: 2;
   }
 
   .image {
@@ -33,11 +36,12 @@
 .container-light {
   background-color: #3c9bff;
 
-  p {
+  .earth {
     position: absolute;
     margin-left: 0;
     margin-right: 1rem;
     transform: translateX(4.5rem);
+    z-index: 0;
   }
 
   .image {
@@ -48,13 +52,13 @@
 
 @media(min-width: 900px) {
   .container {
-    width: 4vw;
+    width: 3.5vw;
     height: 1.5vw;
     border-radius: 30vw;
     padding-left: 0.5vw;
 
-    p {
-      font-size: 0.8vw;
+    .earth {
+      font-size: 0.8vw;  
     }
 
     .image {
@@ -66,12 +70,14 @@
 
   .container-light {
 
-    p {
-      transform: translateX(1.5vw);
+    .earth {
+      margin-left: 0.5vw;
+      margin-right: 0rem;
+      transform: translateX(1vw);
     }
 
     .image {
-      transform: translateX(-2.2vw);
+      transform: translateX(-1.7vw);
     }
   }
 }
