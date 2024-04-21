@@ -25,6 +25,7 @@ import { GetDiffMonthPipe } from './pipes/get-diff-month.pipe';
 import { TopicPipe } from './pipes/topic.pipe';
 import { GetFormattedDatesPipe } from './pipes/get-formatted-dates.pipe';
 import { UpButtomComponent } from './components/up-buttom/up-buttom.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { UpButtomComponent } from './components/up-buttom/up-buttom.component';
     GetFormattedDatesPipe,
     TopicPipe,
     UpButtomComponent,
+    SearchComponent,
   ],
   imports: [
     CommonModule,

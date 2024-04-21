@@ -1,10 +1,21 @@
 .container {
+  margin: 2rem 0;
+  
   .title {
-    margin-top: 10px;
+    margin-top: 4rem;
   }
 
   .stories {
-    height: 70vh;
+    display: grid;
+    place-content: center;
+    margin: auto;
+    width: 80%;
+    
+    video{
+      margin: auto;
+      width: 80%;
+      max-height: 70vw;
+    }
   }
 
   .timeline {

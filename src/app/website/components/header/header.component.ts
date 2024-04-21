@@ -3,6 +3,7 @@ import { Lang } from '../../models/lang/lang.model';
 import { Navigation } from '../../models/lang/navigation.model';
 import { ColorFilterService } from '../../services/color-filter.service';
 import { SettingService, Lang as LangEnum, Mode } from '../../services/setting.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,7 @@ export class HeaderComponent implements OnInit {
 
   langPage = LangEnum;
   data = {
+    "search": "Buscar",
     "home": "Inicio ",
     "about_me": "Sobre mi",
     "services": "Servicios",
@@ -25,7 +27,7 @@ export class HeaderComponent implements OnInit {
   darkMode: boolean = true;
   expanded = false;
 
-  constructor(private setting: SettingService) {
+  constructor(private setting: SettingService,private router: Router) {
     this.lang = setting.lang;
   }
   ngOnInit(): void {
@@ -45,12 +47,18 @@ export class HeaderComponent implements OnInit {
 
   toGo(name: string) {
     window.history.pushState({}, '', name);
-    setTimeout(() => {
-      const element: HTMLElement = document.getElementById(name) as HTMLElement;
-      const rect = element.getBoundingClientRect();
-      const topOffset = window.pageYOffset + rect.top - 5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
-      window.scrollTo({ top: topOffset, behavior: 'smooth' });
-    }, 200);
+    const element: HTMLElement = document.getElementById(name) as HTMLElement;
+    if(element){
+      setTimeout(() => {
+     
+        const rect = element.getBoundingClientRect();
+        const topOffset = window.pageYOffset + rect.top - 5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        window.scrollTo({ top: topOffset, behavior: 'smooth' });
+      }, 200);
+    }else{
+      this.router.navigate(['/'+name])
+    }
+  
   }
 
 }
