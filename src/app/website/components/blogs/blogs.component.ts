@@ -14,7 +14,7 @@ export class BlogsComponent {
   constructor(
     private setting: SettingService,
     private apiService: ApiService
-  ) {}
+  ) { }
 
   message: String = '';
   blogs: PostInfo[] = [];
@@ -38,6 +38,7 @@ export class BlogsComponent {
 
     this.setting.lang$.subscribe((d) => {
       this.data = this.setting.data.blog;
+      this.fill();
     });
   }
 
@@ -72,7 +73,7 @@ export class BlogsComponent {
         this.blogs.push({
           id: blog.id,
           title: blog.title,
-          topics : blog.topics,
+          topics: blog.topics,
           url_image: blog.url_image,
           link: blog.link,
           date: blog.date,
@@ -83,7 +84,7 @@ export class BlogsComponent {
         this.blogs.push({
           id: blog.id,
           title: blog.spanish_title,
-          topics : blog.topics_spanish,
+          topics: blog.topics_spanish,
           url_image: blog.url_image,
           link: blog.link,
           date: blog.date,
