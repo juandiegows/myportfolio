@@ -13,11 +13,13 @@
     display: flex;
     flex-direction: column;
     gap: 2vw;
+
     .error {
       font-size: 1rem;
       color: var(--colorPrimary);
       margin-top: -0.7vw;
     }
+
     .message_form {
       display: flex;
       justify-content: space-between;
@@ -27,10 +29,12 @@
       background-color: var(--background);
       border-radius: 1vw;
       opacity: 0.7;
+
       .btnClose {
         width: 2rem;
       }
     }
+
     .title {
       margin: auto;
       text-align: center;
@@ -41,28 +45,34 @@
       grid-template-columns: 1fr;
       gap: 2vw;
     }
+
     .btn {
       color: var(--color);
       font-size: 1.8rem;
+
       &:disabled {
         background-color: var(--color);
         color: var(--colorPrimary);
         cursor: not-allowed;
       }
     }
+
     .input {
       display: flex;
       flex-direction: column;
       gap: 2vw;
     }
+
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus {
       -webkit-box-shadow: 0 0 0px 1000px var(--backgroundSecond) inset;
     }
+
     input:-webkit-autofill {
       -webkit-text-fill-color: var(--color);
     }
+
     input,
     textarea {
       background-color: var(--backgroundSecond);
@@ -70,6 +80,8 @@
       border-bottom: 1px solid var(--colorPrimary);
       color: var(--color);
       padding-bottom: 5px;
+      min-width: 100%;
+      max-width: 100%;
 
       &:active,
       &:focus {
@@ -93,20 +105,24 @@
 
     .form {
       width: 70vw;
+
       .error {
         font-size: 0.7vw;
         margin-top: -0.7vw;
       }
+
       .group {
         grid-template-columns: 1fr 1fr;
       }
 
       .input {
+
         input,
         textarea {
           font-size: 1.4vw;
         }
       }
+
       .message_form {
         display: flex;
         justify-content: space-between;
@@ -116,10 +132,12 @@
         background-color: var(--background);
         border-radius: 1vw;
         opacity: 0.7;
+
         .btnClose {
           width: 2vw;
         }
       }
+
       .btn {
         color: var(--color);
         font-size: 1.8vw;
