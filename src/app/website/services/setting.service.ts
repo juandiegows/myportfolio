@@ -103,6 +103,7 @@ export class SettingService {
     const result = this.colorF.solve();
     root.style.setProperty('--colorF', result.filter);
   }
+
   GetLangText(lang: Lang) {
     return this.http.get<any>(`/assets/lang/lang.${lang.toString()}.json`);
   }
@@ -144,10 +145,12 @@ export class SettingService {
   }
 
 }
+
 export enum Lang {
   en = "en",
   es = "es"
 }
+
 export enum Mode {
   dark = "dark",
   light = "ligth"
