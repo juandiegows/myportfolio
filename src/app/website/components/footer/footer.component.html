@@ -2,12 +2,12 @@
   <section class="links">
     <h3 class="title">{{ dataFooter?.link_title }}</h3>
     <nav class="list_links">
-      <a data-url="/home" href="javascript:void(0);" (click)="toGo('home')">{{ data.home }}</a>
-      <a data-url="/about-me" href="javascript:void(0);" (click)="toGo('about-me')">{{ data.about_me }}</a>
-      <a href="javascript:void(0);" data-url="/services" (click)="toGo('services')">{{ data.services }}</a>
-      <a href="javascript:void(0);" data-url="/skills" (click)="toGo('skills')">{{ data.skills }}</a>
-      <a data-url="/projects" href="javascript:void(0);" (click)="toGo('projects')">{{ data.projects }}</a>
-      <a data-url="/blogs" href="javascript:void(0);" (click)="toGo('blogs')">{{ data.blog }}</a>
+      <a data-url="/home" href="/home" (click)="toGo($event, 'home')">{{ data.home }}</a>
+      <a data-url="/about-me" href="/about-me" (click)="toGo($event, 'about-me')">{{ data.about_me }}</a>
+      <a href="/services" data-url="/services" (click)="toGo($event, 'services')">{{ data.services }}</a>
+      <a href="/skills" data-url="/skills" (click)="toGo($event, 'skills')">{{ data.skills }}</a>
+      <a data-url="/projects" href="/projects" (click)="toGo($event, 'projects')">{{ data.projects }}</a>
+      <a data-url="/blogs" href="/blogs" (click)="toGo($event, 'blogs')">{{ data.blog }}</a>
     </nav>
   </section>
 

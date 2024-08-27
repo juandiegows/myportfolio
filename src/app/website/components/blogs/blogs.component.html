@@ -13,7 +13,7 @@
         </div>
         <a [href]="blog.link" class="blog__title">{{ blog.title }}</a>
         <div class="topics">
-          <a href="" class="link" *ngFor="let topic of blog.topics"> {{ topic|topic }}</a>
+          <p class="link" *ngFor="let topic of blog.topics"> {{ topic|topic }}</p>
         </div>
       </div>
     </article>

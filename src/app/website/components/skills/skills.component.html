@@ -4,56 +4,45 @@
     <h2 class="title">{{ dataSkill.title }}</h2>
 
     <div class="skills">
-      <div class="skill" (click)="Open(skill,i)" *ngFor="let skill of skills;let i = index">
-        <app-image class="lang" [title]="skill.name" [srcImg]="skill.link_image" [textAlt]="skill.name" />
+      <div class="skill" (click)="Open(skill, i)" *ngFor="let skill of skills; let i = index">
+        <app-image class="lang" [title]="skill.name" [srcImg]="skill.link_image" [textAlt]="skill.name"></app-image>
       </div>
-
     </div>
 
     <p class="message_error">{{ messageSkill }}</p>
-
   </div>
 
-
-
   <div class="education_experience">
-    <h2 class="title"> {{ dataExpEdu.title }}</h2>
+    <h2 class="title">{{ dataExpEdu.title }}</h2>
     <div class="options">
-      <h4 class="option" (click)="OpenExperience()" [ngClass]="{'option-active':IsExperience}">
+      <h4 class="option" (click)="OpenExperience()" [ngClass]="{'option-active': IsExperience}">
         {{ dataExpEdu.titleExperience }}
       </h4>
-      <h4 class="option" [ngClass]="{'option-active':!IsExperience}" (click)="OpenEducation()">
-        {{ dataExpEdu.titleEducation }} </h4>
-      <div class="option-active_index" [ngClass]="{'option-active_index_2':!IsExperience}"></div>
+      <h4 class="option" (click)="OpenEducation()" [ngClass]="{'option-active': !IsExperience}">
+        {{ dataExpEdu.titleEducation }}
+      </h4>
+      <div class="option-active_index" [ngClass]="{'option-active_index_2': !IsExperience}"></div>
     </div>
 
     <div class="edu_exp_container">
       <div class="info">
-
         <div class="entity">
-
           <h5 class="entity__title">{{ dataE.subtitle }}</h5>
-
           <div class="entity__item">
-
-            <div class="item" [ngClass]="{'item_active':itemActive==item}" (click)="itemActive = item"
+            <div class="item" (click)="itemActive = item" [ngClass]="{'item_active': itemActive == item}"
               *ngFor="let item of GetItem()">
               <div class="indicator"></div>
               <div *ngIf="isWorkInfo(item); else noMessage">
-                <p> {{ getWorkInfo(item).business }}</p>
+                <p>{{ getWorkInfo(item).business }}</p>
               </div>
               <ng-template #noMessage>
-                <p> {{ getEducation(item).title }}</p>
+                <p>{{ getEducation(item).title }}</p>
               </ng-template>
-
             </div>
-
           </div>
-
         </div>
 
-        <div class="info__container"  *ngIf="itemActive">
-
+        <div class="info__container" *ngIf="itemActive">
           <p>{{ getMessage() }}</p>
 
           <div *ngIf="isWorkInfo(itemActive)" class="info__title">
@@ -62,8 +51,7 @@
               [title]="dataExpEdu.textHelpCertificate" download>
               <app-image [activeFilter]="true" srcImg="assets/img/Icons/certificate.svg"></app-image>
             </a>
-            <p> {{ getWorkInfo(itemActive).profession.name }}</p>
-
+            <p>{{ getWorkInfo(itemActive).profession.name }}</p>
           </div>
 
           <div *ngIf="!isWorkInfo(itemActive)" class="info__title">
@@ -73,67 +61,42 @@
               <app-image [activeFilter]="true" srcImg="assets/img/Icons/certificate.svg"></app-image>
             </a>
             <p>{{ getEducation(itemActive).title_education }}</p>
-
           </div>
 
-
-
-
-          <p class="info__desc" *ngIf="itemActive">
-            {{ itemActive.description }}
-          </p>
+          <p class="info__desc" *ngIf="itemActive">{{ itemActive.description }}</p>
           <div class="info__tools" *ngIf="isWorkInfo(itemActive)">
-            <a class="link" *ngFor="let tool of getWorkInfo(itemActive).topics"> {{ tool | topic }}</a>
+            <p class="link" *ngFor="let tool of getWorkInfo(itemActive).topics">{{ tool | topic }}</p>
           </div>
           <div class="info_extra">
-            <!-- <p class="rol">
-              {{ itemActive.Rol }}
-            </p> -->
-            <p class="mouth" *ngIf="itemActive">
-              {{ itemActive.start_date | getDiffMonth: itemActive.end_date:lang }}
-            </p>
-
-            <p class="startEndDate" *ngIf="itemActive">
-              {{ itemActive.start_date | getFormattedDates:itemActive.end_date }}
-            </p>
-
+            <p class="mouth" *ngIf="itemActive">{{ itemActive.start_date | getDiffMonth: itemActive.end_date: lang }}</p>
+            <p class="startEndDate" *ngIf="itemActive">{{ itemActive.start_date | getFormattedDates: itemActive.end_date }}</p>
             <div *ngIf="itemActive">
               <a *ngIf="getWorkInfo(itemActive).certificate_url != null" target="_blank"
                 [href]="getWorkInfo(itemActive).certificate_url" class="btn_certificate"
-                title="clic para descargar el certificado " download="certificado">{{ dataExpEdu.textCertificate }}</a>
+                title="clic para descargar el certificado" download="certificado">{{ dataExpEdu.textCertificate }}</a>
             </div>
-
-
-
           </div>
-
         </div>
-
       </div>
 
       <div class="container__years">
-        <h5 class="years__title" (click)=" clearFilter()">{{ dataE.titleyear }}</h5>
+        <h5 class="years__title" (click)="clearFilter()">{{ dataE.titleyear }}</h5>
         <div class="years">
-          <div class="year" (click)="setFilter(year)" [ngClass]="{'year_active':IsFilter(year)}"
+          <div class="year" (click)="setFilter(year)" [ngClass]="{'year_active': IsFilter(year)}"
             *ngFor="let year of GetYear()">
-
             <p>{{ year }}</p>
-            <div class="indicator"> </div>
-
+            <div class="indicator"></div>
           </div>
-
         </div>
-
       </div>
       <div class="container__infoYear">
-        <p class="filter__clear" (click)=" clearFilter()">{{ dataE.titleClear }}</p>
+        <p class="filter__clear" (click)="clearFilter()">{{ dataE.titleClear }}</p>
         <p>{{ dataE.titleMessage }}</p>
       </div>
-
     </div>
   </div>
 </div>
 
 <app-alert-info [active]="active" (IsActive)="active = $event" [title]="skillInfoActive.name"
   [img]="skillInfoActive.link_image" [texto]="skillInfoActive.description" [textBtnProject]="dataSkill.btnProject"
-  [textBtnExperience]="dataSkill.btnExperience" />
+  [textBtnExperience]="dataSkill.btnExperience"></app-alert-info>

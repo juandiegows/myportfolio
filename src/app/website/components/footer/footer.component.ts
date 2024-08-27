@@ -3,6 +3,7 @@ import { Lang, SettingService } from '../../services/setting.service';
 import { FooterData } from '../../models/lang/footerData.model';
 import { User } from '../../models/User.model';
 import { ApiService } from '../../services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -26,7 +27,8 @@ export class FooterComponent {
   count = 1;
   constructor(
     private setting: SettingService,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.apiService.getVisit().subscribe({
@@ -47,16 +49,20 @@ export class FooterComponent {
     });
   }
 
-  toGo(name: string) {
+  toGo(event: Event, name: string) {
+    event.preventDefault(); // Evitar la redirección predeterminada
+  
     window.history.pushState({}, '', name);
-    setTimeout(() => {
-      const element: HTMLElement = document.getElementById(name) as HTMLElement;
-      const rect = element.getBoundingClientRect();
-      const topOffset =
-        window.pageYOffset +
-        rect.top -
-        5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
-      window.scrollTo({ top: topOffset, behavior: 'smooth' });
-    }, 200);
+  
+    const element: HTMLElement = document.getElementById(name) as HTMLElement;
+    if (element) {
+      setTimeout(() => {
+        const rect = element.getBoundingClientRect();
+        const topOffset = window.scrollY + rect.top - 5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        window.scrollTo({ top: topOffset, behavior: 'smooth' });
+      }, 200);
+    } else {
+      this.router.navigate([`/${name}`]);
+    }
   }
 }
