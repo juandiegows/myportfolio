@@ -1,0 +1,7 @@
+User-agent: *
+Allow:  /
+Disallow: /assets/img/icons
+Disallow: /assets/img/alert
+Disallow: /assets/lang
+
+Sitemap: https://juandiegows.com/sitemap.xml
