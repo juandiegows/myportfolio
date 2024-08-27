@@ -8,8 +8,8 @@
         <h3 class="client__title">
           {{ client.name }}
         </h3>
-        <div class="client__image">
-          <app-image [srcImg]="client.url_logo" />
+        <div class="client__image" [title]="client.name">
+          <app-image [srcImg]="client.url_logo" [title]="client.name" [textAlt]="client.name"  />
         </div>
         <div class="tags">
           <p class="tag" *ngFor="let tool of client.topics">{{ tool | topic }}</p>
@@ -21,7 +21,7 @@
         <div class="info_extra">
           <p class="count">
             {{ client.count_participants }}
-            <app-image class="icon" [activeFilter]="true" srcImg="/assets/img/Icons/user.svg" />
+            <app-image class="icon" [activeFilter]="true"  title="clic para ver los integrantes" textAlt="user"  srcImg="/assets/img/Icons/user.svg" />
           </p>
           <p class="year">
             {{ client.year }}
