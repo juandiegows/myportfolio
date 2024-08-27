@@ -45,20 +45,20 @@ export class HeaderComponent implements OnInit {
     this.lang = lang;
   }
 
-  toGo(name: string) {
+  toGo(event: Event, name: string) {
+    event.preventDefault(); // Evitar la redirección predeterminada
+  
     window.history.pushState({}, '', name);
+  
     const element: HTMLElement = document.getElementById(name) as HTMLElement;
-    if(element){
+    if (element) {
       setTimeout(() => {
-     
         const rect = element.getBoundingClientRect();
-        const topOffset = window.pageYOffset + rect.top - 5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const topOffset = window.scrollY + rect.top - 5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
         window.scrollTo({ top: topOffset, behavior: 'smooth' });
       }, 200);
-    }else{
-      this.router.navigate(['/'+name])
+    } else {
+      this.router.navigate([`/${name}`]);
     }
-  
   }
-
 }

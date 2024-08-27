@@ -37,19 +37,21 @@
     <span class="line"></span>
   </div>
 
+<nav class="navigation" [ngClass]="{'navigation_active': expanded}">
+      <!-- <a data-url="/search" href="/search" >{{ data.search }}</a> -->
+      <a data-url="/home" href="/home" (click)="toGo($event, 'home')">{{ data.home }}</a>
+      <a data-url="/about-me" href="/about-me" (click)="toGo($event, 'about-me')">{{ data.about_me }}</a>
+      <a href="/services" data-url="/services" (click)="toGo($event, 'services')">{{ data.services }}</a>
+      <a href="/skills" data-url="/skills" (click)="toGo($event, 'skills')">{{ data.skills }}</a>
+      <a data-url="/projects" href="/projects" (click)="toGo($event, 'projects')">{{ data.projects }}</a>
+      <a data-url="/blogs" href="/blogs" (click)="toGo($event, 'blogs')">{{ data.blog }}</a>
+      
+      <app-pallette></app-pallette>
+      <app-mode-dark-light></app-mode-dark-light>
+      <button class="btn" (click)="toGo($event,'contact-me')" [ngClass]="{'btn-dark': darkMode, 'btn-light': !darkMode}">
+          {{ data.contact_me }}
+      </button>
+</nav>
 
-  <nav class="navigation" [ngClass]="{'navigation_active':expanded}">
-    <!-- <a data-url="/search" href="/search" >{{ data.search }}</a> -->
-    <a data-url="/home" href="javascript:void(0);" (click)="toGo('home')">{{ data.home }}</a>
-    <a data-url="/about-me" href="javascript:void(0);" (click)="toGo('about-me')">{{ data.about_me }}</a>
-    <a href="javascript:void(0);" data-url="/services" (click)="toGo('services')">{{ data.services }}</a>
-    <a href="javascript:void(0);" data-url="/skills" (click)="toGo('skills')">{{ data.skills }}</a>
-    <a data-url="/projects" href="javascript:void(0);" (click)="toGo('projects')">{{ data.projects }}</a>
-    <a data-url="/blogs" href="javascript:void(0);" (click)="toGo('blogs')">{{ data.blog }}</a>
-    <app-pallette />
-    <app-mode-dark-light />
-    <button class="btn" (click)="toGo('contact-me')" [ngClass]=" {'btn-dark':darkMode, 'btn-light'
-      :!darkMode}">{{ data.contact_me }}</button>
-  </nav>
 </header>
 <br>
