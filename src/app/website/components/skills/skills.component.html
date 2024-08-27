@@ -5,7 +5,7 @@
 
     <div class="skills">
       <div class="skill" (click)="Open(skill,i)" *ngFor="let skill of skills;let i = index">
-        <app-image class="lang" [srcImg]="skill.link_image" />
+        <app-image class="lang" [title]="skill.name" [srcImg]="skill.link_image" [textAlt]="skill.name" />
       </div>
 
     </div>
