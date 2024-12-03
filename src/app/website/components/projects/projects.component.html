@@ -12,13 +12,13 @@
   <div class="projects">
     <article class="project" *ngFor="let project of projects">
       <div class="project__image">
-        <app-image [srcImg]="project.front_page.link_700" />
+        <app-image class2="max" [srcImg]="project.front_page.link_700" />
       </div>
       <div class="more_info">
         <div class="stars">
           <p>{{ 0 }}</p>
           <div class="star__image">
-            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/project/star.svg" />
+            <app-image [textAlt]="project.title" [title]="project.title" [activeFilter]="true" srcImg="/assets/img/Icons/project/star.svg" />
 
           </div>
         </div>
