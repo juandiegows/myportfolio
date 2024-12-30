@@ -4,6 +4,7 @@ import { Navigation } from '../../models/lang/navigation.model';
 import { ColorFilterService } from '../../services/color-filter.service';
 import { SettingService, Lang as LangEnum, Mode } from '../../services/setting.service';
 import { Router } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-header',
@@ -26,17 +27,32 @@ export class HeaderComponent implements OnInit {
   lang = this.langPage.en;
   darkMode: boolean = true;
   expanded = false;
+  servicesAvailable: boolean = false;
 
-  constructor(private setting: SettingService,private router: Router) {
+  constructor(private setting: SettingService,private router: Router,private apiService: ApiService) {
     this.lang = setting.lang;
   }
+
+
   ngOnInit(): void {
     this.setting.lang$.subscribe(data => {
       this.data = this.setting.data.navigation;
     })
+    
     this.setting.mode$.subscribe(data => {
       this.darkMode = data == Mode.dark;
     });
+
+    this.apiService.getServices().subscribe(
+      (services) => {
+        this.servicesAvailable = services && services.length > 0; // Verifica si hay registros
+      },
+      (error) => {
+        console.error('Error fetching services:', error);
+        this.servicesAvailable = false;
+      }
+    );
+
   }
 
 
@@ -47,9 +63,25 @@ export class HeaderComponent implements OnInit {
 
   toGo(event: Event, name: string) {
     event.preventDefault(); // Evitar la redirección predeterminada
+    
+    const currentUrl = this.router.url.split('#')[0]; // Obtener la URL base sin el fragmento
+    const homeUrl = '/'; // Definir la URL del home
+    
+    if (currentUrl !== homeUrl) {
+      // Navegar al inicio antes de continuar
+      this.router.navigate([homeUrl]).then(() => {
+        this.handleScroll(name); // Llamar a la función de desplazamiento
+      });
+    } else {
+      // Si ya estamos en el home, proceder directamente
+      this.handleScroll(name);
+    }
+  }
   
-    window.history.pushState({}, '', name);
-  
+  private handleScroll(name: string) {
+    // Actualizar la URL con el fragmento
+    window.history.pushState({}, '', `#${name}`);
+    
     const element: HTMLElement = document.getElementById(name) as HTMLElement;
     if (element) {
       setTimeout(() => {
@@ -58,7 +90,9 @@ export class HeaderComponent implements OnInit {
         window.scrollTo({ top: topOffset, behavior: 'smooth' });
       }, 200);
     } else {
-      this.router.navigate([`/${name}`]);
+      // Si no se encuentra el elemento, navegar a la ruta con el fragmento
+      this.router.navigate([], { fragment: name });
     }
   }
+  
 }

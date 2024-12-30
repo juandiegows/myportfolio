@@ -49,7 +49,7 @@ export class IntroductionComponent implements OnInit {
     "achievements1": "Campeón de worldskills colombia",
     "achievements2": "Campeón de worldskills chile",
     "achievements3": "SubCampeón de worldskills American",
-    "achievements4": "Medalla de excelencia worldskils special edition",
+    "achievements4": "Medalla de excelencia worldskills special edition",
     "btnDownload": "Descargar resumen",
     "linkDownload": "/assets/docs/CV/CV_JuanDiegoWS.pdf"
   };

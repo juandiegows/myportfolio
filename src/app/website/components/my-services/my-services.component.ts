@@ -22,6 +22,8 @@ export class MyServicesComponent implements OnInit {
     private setting: SettingService,
     private apiService: ApiService
   ) { }
+
+  
   ngOnInit(): void {
     this.apiService.getServices()
       .subscribe({

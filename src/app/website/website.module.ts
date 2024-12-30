@@ -15,7 +15,7 @@ import { MyServicesComponent } from './components/my-services/my-services.compon
 import { ClientComponent } from './components/client/client.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { AlertInfoComponent } from './components/alert-info/alert-info.component';
-import { ProjectsComponent } from './components/projects/projects.component';
+import { ProjectsComponent  as ProjectsCardComponent } from './components/projects/projects.component';
 import { MyStoryComponent } from './components/my-story/my-story.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { FormContactMeComponent } from './components/form-contact-me/form-contact-me.component';
@@ -26,7 +26,8 @@ import { TopicPipe } from './pipes/topic.pipe';
 import { GetFormattedDatesPipe } from './pipes/get-formatted-dates.pipe';
 import { UpButtomComponent } from './components/up-buttom/up-buttom.component';
 import { SearchComponent } from './pages/search/search.component';
-
+import { ProjectsComponent as PagesProjectsComponent   } from './pages/projects/projects.component';
+import { ArticlesComponent } from './pages/articles/articles.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -43,7 +44,7 @@ import { SearchComponent } from './pages/search/search.component';
     ClientComponent,
     SkillsComponent,
     AlertInfoComponent,
-    ProjectsComponent,
+    ProjectsCardComponent,
     MyStoryComponent,
     BlogsComponent,
     FormContactMeComponent,
@@ -53,6 +54,11 @@ import { SearchComponent } from './pages/search/search.component';
     TopicPipe,
     UpButtomComponent,
     SearchComponent,
+    PagesProjectsComponent,
+    ArticlesComponent
+  ],
+  exports: [
+    ProjectsCardComponent // Exporta el componente
   ],
   imports: [
     CommonModule,

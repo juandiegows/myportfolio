@@ -1,22 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Lang, SettingService } from '../../services/setting.service';
-import { ProjectLang } from '../../models/lang/ProjectLang.model';
-import { ProjectInfo } from '../../models/info/ProjectInfo.model';
-import { Project } from '../../models/Project.model';
 import { ApiService } from '../../services/api.service';
+import { Project } from '../../models/Project.model';
+import { ProjectInfo } from '../../models/info/ProjectInfo.model';
+import { ProjectLang } from '../../models/lang/ProjectLang.model';
 
 @Component({
-  selector: 'app-projects-card',
+  selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent {
   constructor(
     private setting: SettingService,
     private apiService: ApiService
   ) {}
   data: ProjectLang | null = null;
-
   message = 'No hay proyectos disponibles en este momento.';
   projects: ProjectInfo[] = [];
   projectList: Project[] = [];
