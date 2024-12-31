@@ -25,6 +25,8 @@ export class FooterComponent {
   dataFooter: FooterData | null = null;
   userData: User = new User();
   count = 1;
+  servicesAvailable: boolean = false;
+
   constructor(
     private setting: SettingService,
     private apiService: ApiService,
@@ -47,18 +49,34 @@ export class FooterComponent {
       this.data = this.setting.data.navigation;
       this.dataFooter = this.setting.data.footer;
     });
+
+    this.apiService.getServices().subscribe({
+      next: (services) => {
+        if (services.status != 200) {
+          this.servicesAvailable = services && services.data.length > 0;
+        } else {
+          this.servicesAvailable = false;
+        }
+      },
+      error: (error) => {
+        this.servicesAvailable = false;
+      },
+    });
   }
 
   toGo(event: Event, name: string) {
     event.preventDefault(); // Evitar la redirección predeterminada
-  
+
     window.history.pushState({}, '', name);
-  
+
     const element: HTMLElement = document.getElementById(name) as HTMLElement;
     if (element) {
       setTimeout(() => {
         const rect = element.getBoundingClientRect();
-        const topOffset = window.scrollY + rect.top - 5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const topOffset =
+          window.scrollY +
+          rect.top -
+          5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
         window.scrollTo({ top: topOffset, behavior: 'smooth' });
       }, 200);
     } else {

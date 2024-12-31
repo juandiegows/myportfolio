@@ -43,15 +43,18 @@ export class HeaderComponent implements OnInit {
       this.darkMode = data == Mode.dark;
     });
 
-    this.apiService.getServices().subscribe(
-      (services) => {
-        this.servicesAvailable = services && services.length > 0; // Verifica si hay registros
-      },
-      (error) => {
-        console.error('Error fetching services:', error);
-        this.servicesAvailable = false;
-      }
-    );
+    this.apiService.getServices().subscribe({
+          next: (services) => {
+            if (services.status != 200) {
+              this.servicesAvailable = services && services.data.length > 0;
+            } else {
+              this.servicesAvailable = false;
+            }
+          },
+          error: (error) => {
+            this.servicesAvailable = false;
+          },
+        });
 
   }
 
