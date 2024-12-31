@@ -1,0 +1,45 @@
+<app-header />
+<main class="container">
+    <h2 class="title"> {{ data?.title }}</h2>
+    <div class="search" *ngIf="false">
+        <select title="Seleccionar campo a filtrar" class="search__select">
+            <option value="1">Todos</option>
+            <option value="1">Proyectos</option>
+            <option value="1">Articulos</option>
+            <option value="1">Experiencias</option>
+            <option value="1">Clientes</option>
+        </select>
+        <div class="icon">
+            <app-image [activeFilter]="true" srcImg="assets/img/Icons/search.svg" />
+        </div>
+        <input class="search__input" type="text" placeholder="Search">
+        <select title="Seleccionar que desea buscar" class="search__select">
+            <option value="1">Todos</option>
+            <option value="1">Proyectos</option>
+            <option value="1">Articulos</option>
+            <option value="1">Experiencias</option>
+            <option value="1">Clientes</option>
+        </select>
+    </div>
+
+    <div class="blogs">
+        <article class="blog" *ngFor="let blog of blogs">
+            <a [href]="blog.link" class="blog__image_container">
+                <app-image class="blog__image" class2="b_image" [srcImg]="blog.url_image" />
+            </a>
+
+            <div class="info">
+                <div class="date">
+                    <app-image class2="max" class="info__image" [activeFilter]="true"
+                        srcImg="assets/img/Icons/blog/calendar.svg" />
+                    <p>{{ convertDate(blog.date) }}</p>
+                </div>
+                <a [href]="blog.link" class="blog__title">{{ blog.title }}</a>
+                <div class="topics">
+                    <p class="link" *ngFor="let topic of blog.topics"> {{ topic|topic }}</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</main>
+<app-footer />

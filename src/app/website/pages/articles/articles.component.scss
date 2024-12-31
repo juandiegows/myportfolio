@@ -1,0 +1,172 @@
+.container {
+    margin: 1vw auto 4vw auto;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+        margin:0 0 1vw 0;
+    }
+
+
+
+    .blogs {
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .blog {
+            background-color: var(--backgroundSecond);
+            border-radius: 2vw;
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+            gap: 3vw;
+
+            ::ng-deep .blog__image .b_image {
+                border-radius: 2vw;
+            }
+
+            .blog__image {
+                border-radius: 5vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                gap: 2vw;
+
+                padding: 3vw 2vw;
+
+                .topics {
+                    margin-top: 1vw;
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    gap: 1vw;
+
+                    .link {
+                        cursor: pointer;
+                        font-weight: 600;
+                        color: var(--color);
+
+                        &:hover {
+                            color: var(--colorPrimary);
+                        }
+                    }
+                }
+
+                .date {
+                    display: flex;
+                    gap: 2vw;
+
+                    .info__image {
+                        width: 5vw;
+                    }
+                }
+
+                .blog__title {
+                    text-decoration: none;
+                    color: var(--color);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 700px) {
+    .container {
+        .title {
+            margin:0 0 1vw  0;
+        }
+        .blogs {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 1.5vw;
+            text-align: justify;
+
+            .blog {
+                border-radius: 0.5vw;
+                width: 30vw;
+                gap: 0.5vw;
+
+                ::ng-deep .blog__image .b_image {
+                    border-radius: 0.5vw;
+                }
+
+                .blog__image_container {
+                    height: 53%;
+
+                    .blog__image {
+                        width: 100%;
+                        border-radius: 5vw;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+
+                .info {
+                    margin-top: 1vw;
+                    font-size: 1vw;
+                    gap: 1vw;
+                    padding: 1vw;
+
+                    .topics {
+                        font-size: 0.8vw;
+                    }
+
+                    .date {
+                        display: flex;
+                        align-items: center;
+                        gap: 1vw;
+
+                        .info__image {
+                            width: 2vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        .blogs {
+            gap: 1vw;
+
+            .blog {
+                width: 23vw;
+
+                .info {
+                    gap: 0.5vw;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 2400px) {
+    .container {
+        .blogs {
+            gap: 1vw;
+
+            .blog {
+                width: 20vw;
+
+                .info {
+                    gap: 0.5vw;
+                }
+            }
+        }
+    }
+}
