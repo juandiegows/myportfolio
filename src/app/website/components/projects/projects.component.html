@@ -14,11 +14,12 @@
       <div class="project__image">
         <app-image class2="max" [srcImg]="project.front_page.link_700" />
       </div>
-      <div class="more_info">
-        <div class="stars">
+      <div class="more_info"  (click)="openModal(project)">
+        <div class="stars" >
           <p>{{ 0 }}</p>
           <div class="star__image">
-            <app-image [textAlt]="project.title" [title]="project.title" [activeFilter]="true" srcImg="/assets/img/Icons/project/star.svg" />
+            <app-image [textAlt]="project.title" [title]="project.title" [activeFilter]="true"
+              srcImg="/assets/img/Icons/project/star.svg" />
 
           </div>
         </div>
@@ -28,21 +29,53 @@
           <path class="cls-1" d="m0,24.64l368.39,51.7L400.42,0v122.25H0V24.64Z" />
         </svg>
         <h3 class="project__title">{{ project.title }}</h3>
-        <div class="actions">
-          <a class="action__image"  *ngIf="project.view_link != null" target="_blank" [href]="project.view_link ">
+        <div class="actions" >
+          <a class="action__image" (click)="$event.stopPropagation()" *ngIf="project.view_link != null" target="_blank" [href]="project.view_link ">
             <app-image [activeFilter]="true" srcImg="/assets/img/Icons/project/see.svg" />
           </a>
 
-          <a class="action__image"  *ngIf="project.download_link != null" target="_blank" [href]="project.download_link ">
+          <a class="action__image" (click)="$event.stopPropagation()" *ngIf="project.download_link != null" target="_blank"
+            [href]="project.download_link ">
             <app-image [activeFilter]="true" srcImg="/assets/img/Icons/project/git.svg" />
           </a>
 
 
-          <app-image class="action__image" style="cursor: not-allowed;" [activeFilter]="true" srcImg="/assets/img/Icons/project/preview.svg" />
+          <app-image  class="action__image "  (click)="$event.stopPropagation(); openModal(project)"
+           [activeFilter]="true"  srcImg="/assets/img/Icons/project/preview.svg" />
 
         </div>
       </div>
     </article>
   </div>
   <a href="/projects" class="btn"> {{ data?.btn_text }}</a>
+
+  <app-sliding-modal [isVisible]="isModalVisible" (close)="onModalClose()">
+    <main class="modal-content">
+      <h2 class="modal__title">{{ projectItem?.title }}</h2>
+      <div class="video-container" *ngIf="projectItem?.video_link; else noVideo">
+        <iframe class="video" [src]="projectItem?.video_link" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <ng-template #noVideo>
+        <div class="imagen-container">
+          <app-image class2="max" [srcImg]="projectItem?.front_page?.link_900 ?? 'ruta-de-imagen-por-defecto.jpg'" />
+        </div>
+      </ng-template>
+      <div class="btns">
+        <a *ngIf="projectItem?.view_link != null" target="_blank" [href]="projectItem?.view_link " class="btn"> {{ data?.btn_view }}</a>
+        <a  *ngIf="projectItem?.download_link != null" target="_blank"  [href]="projectItem?.download_link " class="btn"> {{ data?.btn_git }}</a>
+      </div>
+      <div class="tools">
+
+      </div>
+      <h2 class="modal__subtitle">{{ data?.text_description }}</h2>
+      <div *ngIf="projectItem?.description; else nodescription" [innerHTML]="projectItem?.description"></div>
+      <ng-template #nodescription>
+        <div [innerHTML]="projectItem?.short_description"></div>
+      </ng-template>
+
+    </main>
+
+  </app-sliding-modal>
 </section>

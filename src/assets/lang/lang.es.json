@@ -87,68 +87,10 @@
         "text": "Ver más información del proyecto"
       }
     ],
-    "projects": [{
-        "name": "Proyecto",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      },
-      {
-        "name": "Proyecto",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      },
-      {
-        "name": "Proyecto",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      },
-      {
-        "name": "Proyecto",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      },
-      {
-        "name": "Proyecto",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      },
-      {
-        "name": "Proyecto",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      }
-    ],
-    "btn_text": "Ver todos"
+    "btn_text": "Ver todos",
+    "btn_view": "Ver Proyecto", 
+    "btn_git": "Ver Proyecto en github" ,
+    "text_description": "Descripción" 
   },
   "blog": {
     "title": "Mis Articulos",

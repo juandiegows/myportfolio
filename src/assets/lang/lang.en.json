@@ -87,69 +87,10 @@
         "text": "View More Project Information"
       }
     ],
-    "projects": [{
-        "name": "Project",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      },
-      {
-        "name": "Project",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      },
-      {
-        "name": "Project",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      },
-      {
-        "name": "Project",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      },
-      {
-        "name": "Project",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      },
-      {
-        "name": "Project",
-        "count_star": 3,
-        "url_git": "",
-        "url_details": "",
-        "url_preview": "",
-        "url_images": [
-          "/assets/img/projects/example-1.png"
-        ]
-      }
-    ],
-
-    "btn_text": "View all"
+    "btn_text": "View all",
+    "btn_view": "View Project", 
+    "btn_git": "View Project in github" ,
+    "text_description": "Description" 
   },
   "blog": {
     "title": "My Articles",

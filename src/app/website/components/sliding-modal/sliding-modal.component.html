@@ -1,0 +1,11 @@
+<div>
+  <div class="modal-overlay" *ngIf="isVisible" (click)="closeModal()"></div>
+  <div class="modal-content" [class.open]="isVisible">
+    <app-image class="close-button" srcImg="/assets/img/Icons/close.svg" (click)=" closeModal()" textAlt="cerrar" />
+    <div class="container-main">
+      <ng-content></ng-content>
+    </div>
+  
+  </div>
+  
+</div>

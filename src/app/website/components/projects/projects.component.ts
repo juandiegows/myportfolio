@@ -21,7 +21,18 @@ export class ProjectsComponent implements OnInit {
   projects: ProjectInfo[] = [];
   projectList: Project[] = [];
   lang: Lang = Lang.es;
+  isModalVisible = false;
 
+  projectItem: ProjectInfo  | null = null;  
+
+  openModal(project : ProjectInfo): void {
+    this.projectItem = project; 
+    this.isModalVisible = true;
+  }
+
+  onModalClose(): void {
+    this.isModalVisible = false;
+  }
   ngOnInit(): void {
     this.apiService.getProjects().subscribe({
       next: (d) => {

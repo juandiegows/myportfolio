@@ -14,4 +14,7 @@ export interface ProjectLang {
     url_images: string[];
   }>;
   btn_text: string;
+  btn_view: string;
+  btn_git: string;
+  text_description: string;
 }

@@ -28,6 +28,7 @@ import { UpButtomComponent } from './components/up-buttom/up-buttom.component';
 import { SearchComponent } from './pages/search/search.component';
 import { ProjectsComponent as PagesProjectsComponent   } from './pages/projects/projects.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
+import { SlidingModalComponent } from './components/sliding-modal/sliding-modal.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -55,7 +56,8 @@ import { ArticlesComponent } from './pages/articles/articles.component';
     UpButtomComponent,
     SearchComponent,
     PagesProjectsComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    SlidingModalComponent
   ],
   exports: [
     ProjectsCardComponent // Exporta el componente
