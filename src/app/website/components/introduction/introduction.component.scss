@@ -6,6 +6,7 @@
   margin: 0 auto;
   position: relative;
   border-bottom: 0.001vw solid var(--colorPrimary);
+
   .filter {
     filter: var(--colorPrimaryF);
     transition: var(--myTransition);
@@ -124,6 +125,14 @@
       .profile {
         z-index: 100;
         margin-top: -1vw;
+        display: inline-block;
+
+        .profile-img {
+
+          /* Bordes redondeados (opcional) */
+          filter: drop-shadow(0 0 20px var(--colorPrimary));
+          /* Sombra al objeto */
+        }
       }
 
       img {
@@ -278,6 +287,7 @@
       width: 100%;
       position: relative;
       margin: 0;
+
       .image_photo {
         position: absolute;
         width: 100%;
