@@ -1,9 +1,25 @@
 $time: 3s;
 
+.container-color {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10001;
+  background-color: var(--colorPrimary);
+  opacity: 0.05;
+}
+
+.container-color_active {
+  display: block;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
-  z-index: 100;
+  z-index: 10001;
   position: fixed;
   top: 0%;
   left: 0;
@@ -34,7 +50,7 @@ $time: 3s;
     grid-template-columns: 33% 66%;
     padding: 2rem;
     position: relative;
-    z-index: 101;
+    z-index: 10002;
 
     .btnClose {
       position: absolute;
