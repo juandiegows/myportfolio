@@ -322,8 +322,8 @@
 
   .modal__subtitle {
     color: var(--colorPrimary);
-    font-size: clamp(1rem, 1vw, 30rem);
-    margin: 1vw 0;
+    font-size: clamp(2rem, 1vw, 30rem);
+    margin: clamp(2rem, 1vw, 30rem) 0;
   }
 
   .imagen-container {
