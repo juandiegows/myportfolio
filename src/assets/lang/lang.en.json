@@ -42,7 +42,12 @@
   "client": {
     "title": "Clients",
     "btnVisit": "Visit",
-    "btnDetails": "Details"
+    "btnDetails": "Details",
+    "btn_view": "view",
+    "text_description": "Description",
+    "text_participants": "participant(s)",
+    "text_footer": "Made by JuanDiegoWS in the year",
+    "text_without_info": "no prior information"
   },
   "skills": {
     "btnProject": "See Projects",
@@ -57,7 +62,6 @@
       "titleyear": "years",
       "titleClear": "clean filter",
       "titleMessage": "You can click on the years to filter"
-
     },
     "dataEdu": {
       "subtitle": "school or entity",
@@ -74,7 +78,8 @@
   "project": {
     "title": "My Projects",
     "text": "Welcome to my projects. In this section, you can check out my most prominent projects. If you'd like to see more of my work, click on the 'View All' button.",
-    "items": [{
+    "items": [
+      {
         "url_image": "/assets/img/Icons/project/see.svg",
         "text": "View Functional Project"
       },
@@ -88,13 +93,14 @@
       }
     ],
     "btn_text": "View all",
-    "btn_view": "View Project", 
-    "btn_git": "View Project in github" ,
-    "text_description": "Description" 
+    "btn_view": "View Project",
+    "btn_git": "View Project in github",
+    "text_description": "Description"
   },
   "blog": {
     "title": "My Articles",
-    "blogs": [{
+    "blogs": [
+      {
         "url_image": "/assets/img/blog/blog.png",
         "date": "February 23, 2023",
         "title": "How to Create a Project from Scratch in Angular?"
@@ -141,6 +147,4 @@
     "link_title": "Links",
     "follow_me": "Follow me"
   }
-
-
 }

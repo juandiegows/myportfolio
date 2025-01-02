@@ -202,3 +202,59 @@
   }
 
 }
+
+
+.modal-content {
+  max-height: 90vh; /* Limita la altura máxima al 80% del viewport */
+  overflow-y: auto; 
+  height: 100%;
+  .btns{
+    display: flex;
+    gap: 0.3vw;
+    margin: 1vw 0;
+ 
+    .btn{
+      font-size: clamp(1rem, 0.8vw, 30rem) !important;
+      border-radius: 1vw;
+    }
+  }
+
+  .tools {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    margin-top: 1rem;
+    font-size: clamp(1.4rem, 1.4vw, 20rem);
+    & > * {
+      cursor: pointer;
+  
+      &:hover {
+        color: var(--colorPrimary);
+      }
+    }
+  }
+  .modal__title {
+    color: var(--colorPrimary);
+    font-size: clamp(2rem, 2vw, 30rem);
+    text-align: center;
+  }
+
+  .modal__subtitle {
+    color: var(--colorPrimary);
+    font-size: clamp(2rem, 1vw, 30rem);
+    margin: clamp(2rem, 1vw, 30rem) 0;
+  }
+
+
+  .imagen-container {
+    width: 80%;
+    margin: 2vw auto;
+    max-width: 30rem;
+  }
+
+  .year {
+    margin-top: 1vw;
+    font-size: clamp(2rem, 1vw, 30rem);
+  }
+
+}

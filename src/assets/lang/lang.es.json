@@ -42,7 +42,12 @@
   "client": {
     "title": "Clientes",
     "btnVisit": "Visitar",
-    "btnDetails": "Detalles"
+    "btnDetails": "Detalles",
+    "btn_view": "Ver",
+    "text_description": "Descripción",
+    "text_participants": "Participante(s)",
+    "text_footer": "Realido por JuanDiegoWS en el año ",
+    "text_without_info": "sin informacion previa"
   },
   "skills": {
     "title": "Mis habilidades",
@@ -74,7 +79,8 @@
   "project": {
     "title": "Mis Proyectos",
     "text": "Bienvenidos a mis projectos, puedes mirar en esta sección mis proyectos más destacado si quieres ver más de mis trabajos, presiona en el boton ver todos.",
-    "items": [{
+    "items": [
+      {
         "url_image": "/assets/img/Icons/project/see.svg",
         "text": "Ver proyecto funcional"
       },
@@ -88,13 +94,19 @@
       }
     ],
     "btn_text": "Ver todos",
-    "btn_view": "Ver Proyecto", 
-    "btn_git": "Ver Proyecto en github" ,
-    "text_description": "Descripción" 
+    "btn_view": "Ver Proyecto",
+    "btn_git": "Ver Proyecto en github",
+    "text_description": "Descripción"
   },
   "blog": {
     "title": "Mis Articulos",
-    "blogs": [{
+    "blogs": [
+      {
+        "url_image": "/assets/img/blog/blog.png",
+        "date": "23 febrero del 2023",
+        "title": "¿Cómo crear un proyecto desde cero en angular?"
+      },
+      {
         "url_image": "/assets/img/blog/blog.png",
         "date": "23 febrero del 2023",
         "title": "¿Cómo crear un proyecto desde cero en angular?"
@@ -105,10 +117,6 @@
         "title": "¿Cómo crear un proyecto desde cero en angular?"
       },
       {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "23 febrero del 2023",
-        "title": "¿Cómo crear un proyecto desde cero en angular?"
-      }, {
         "url_image": "/assets/img/blog/blog.png",
         "date": "23 febrero del 2023",
         "title": "¿Cómo crear un proyecto desde cero en angular?"

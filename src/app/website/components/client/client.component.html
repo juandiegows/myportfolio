@@ -1,6 +1,6 @@
 <section class="container">
 
-  <h2 class="title">{{ data.title }}</h2>
+  <h2 class="title">{{ data?.title }}</h2>
   <ng-container *ngIf="clients.length > 0; else emptyState">
     <div class="clients">
 
@@ -9,19 +9,20 @@
           {{ client.name }}
         </h3>
         <div class="client__image" [title]="client.name">
-          <app-image [srcImg]="client.url_logo" [title]="client.name" [textAlt]="client.name"  />
+          <app-image [srcImg]="client.url_logo" [title]="client.name" [textAlt]="client.name" />
         </div>
         <div class="tags">
           <p class="tag" *ngFor="let tool of client.topics">{{ tool | topic }}</p>
         </div>
         <div class="btns">
-          <a [href]="client.link_site" target="_blank" class="btn">{{ data.btnVisit }}</a>
-          <p class="btn">{{ data.btnDetails }}</p>
+          <a [href]="client.link_site" target="_blank" class="btn">{{ data?.btnVisit }}</a>
+          <p class="btn">{{ data?.btnDetails }}</p>
         </div>
         <div class="info_extra">
           <p class="count">
             {{ client.count_participants }}
-            <app-image class="icon" [activeFilter]="true"  title="clic para ver los integrantes" textAlt="user"  srcImg="/assets/img/Icons/user.svg" />
+            <app-image class="icon" [activeFilter]="true" title="clic para ver los integrantes" textAlt="user"
+              srcImg="/assets/img/Icons/user.svg" />
           </p>
           <p class="year">
             {{ client.year }}
@@ -36,4 +37,40 @@
     <p class="message_error">{{ message }}</p>
   </ng-template>
 
+  <app-sliding-modal [isVisible]="isModalVisible" (close)="onModalClose()">
+    <main class="modal-content">
+      <h2 class="modal__title">{{ clientItem?.name }}</h2>
+
+      <div class="video-container" *ngIf="false; else noVideo">
+        <iframe class="video" src="" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <ng-template #noVideo>
+        <div class="imagen-container">
+          <app-image class2="max" [srcImg]="clientItem?.url_logo ?? 'ruta-de-imagen-por-defecto.jpg'" />
+        </div>
+      </ng-template>
+      <div class="tools">
+        <p *ngFor="let topic of clientItem?.topics"> # {{ topic }}</p>
+      </div>
+      <div class="btns">
+        <a *ngIf="clientItem?.link_site != null" target="_blank" [href]="clientItem?.link_site " class="btn"> {{
+          data?.btn_view }}</a>
+      </div>
+      <h2 class="modal__subtitle">{{ data?.text_description }}</h2>
+      <div *ngIf="clientItem?.description; else nodescription" [innerHTML]="clientItem?.description"></div>
+      <ng-template #nodescription>
+        <div>{{ data?.text_without_info }}</div>
+      </ng-template>
+      <h2 class="modal__subtitle">{{ clientItem?.count_participants }} {{ data?.text_participants }}</h2>
+      <div>
+        <p></p>
+      </div>
+
+
+      <p class="year"> Copyright © {{ data?.text_footer }} {{ clientItem?.year }}</p>
+    </main>
+
+  </app-sliding-modal>
 </section>
