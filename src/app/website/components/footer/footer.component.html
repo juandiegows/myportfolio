@@ -17,7 +17,7 @@
       <a *ngFor="let social of userData.social_medias" target="_blank" rel="noopener" href="{{ social.link }}"
         title="{{ social.social_media.name }} JuanDiegoWS">
         <div class="image__social_media">
-          <app-image [activeFilter]="true" srcImg="{{ social.social_media.url }}"
+          <app-image-optimized [activeFilter]="true" srcImg="{{ social.social_media.url }}"
             textAlt="{{ social.social_media.name }}" />
         </div>
       </a>

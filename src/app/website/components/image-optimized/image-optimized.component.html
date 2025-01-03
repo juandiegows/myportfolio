@@ -1,0 +1,10 @@
+<img
+  class="{{ class2 }}"
+  [class.filter]="activeFilter"
+  [ngSrc]="srcImg"
+  alt="{{ textAlt }}"
+  title="{{ textAlt }}"
+  (error)="setImgDefault()"
+  decoding="sync"
+  fill
+/>

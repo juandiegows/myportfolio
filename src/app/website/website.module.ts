@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule,NgOptimizedImage  } from '@angular/common';
 import { WebsiteRoutingModule } from './website-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -29,6 +29,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { ProjectsComponent as PagesProjectsComponent   } from './pages/projects/projects.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { SlidingModalComponent } from './components/sliding-modal/sliding-modal.component';
+import { ImageOptimizedComponent } from './components/image-optimized/image-optimized.component';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -57,7 +59,8 @@ import { SlidingModalComponent } from './components/sliding-modal/sliding-modal.
     SearchComponent,
     PagesProjectsComponent,
     ArticlesComponent,
-    SlidingModalComponent
+    SlidingModalComponent,
+    ImageOptimizedComponent
   ],
   exports: [
     ProjectsCardComponent // Exporta el componente
@@ -66,7 +69,8 @@ import { SlidingModalComponent } from './components/sliding-modal/sliding-modal.
     CommonModule,
     WebsiteRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgOptimizedImage
   ],
   schemas: []
 })

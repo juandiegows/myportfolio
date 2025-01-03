@@ -76,7 +76,7 @@ export class SkillsComponent implements OnInit {
 
   itemActive: WorkInfo | EducationInfo = new Work;
 
-  active: boolean = false;
+  active: Boolean = false;
   IsExperience: boolean = true;
   constructor(
     private readonly setting: SettingService,
