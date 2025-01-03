@@ -12,7 +12,7 @@
   <div class="projects">
     <article class="project" *ngFor="let project of projects">
       <div class="project__image">
-        <app-image class2="max" [srcImg]="project.front_page.link_700" />
+        <app-image class2="max"[textAlt]="project.title" [srcImg]="project.front_page.link_700" />
       </div>
       <div class="more_info"  (click)="openModal(project)">
         <div class="stars" >
