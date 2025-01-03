@@ -19,32 +19,30 @@
 .card::before {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
   padding: 4px;
   background: conic-gradient(from var(--angle), transparent, var(--colorPrimary), transparent, transparent, transparent, transparent, transparent, transparent, transparent, transparent);
+  z-index: -1;
   animation: girar 4s linear infinite;
   border-radius: 2rem;
-  filter: blur(40px);
 }
-
 @media (min-width: 700px) {
   .card::after,
   .card::before {
-    border-radius: 2vw; /* border-radius para pantallas grandes */
+    border-radius: 2vw; 
   }
 }
 
-/* Difuminado para el pseudoelemento before */
 .card::before {
   filter: blur(40px);
   opacity: 0.5;
 }
 
-/* Animación de rotación */
+
 @keyframes girar {
   0% {
     --angle: 0deg;
@@ -55,7 +53,7 @@
   }
 }
 
-/* Estilo base de la tarjeta */
+
 .card {
   position: absolute;
   padding: 10px;
@@ -89,10 +87,10 @@
   .image-active {
     width: 90vw;
     height: auto;
-    max-height: 70rem;
+    max-height: 50rem;
     max-width: 60rem;
-    margin: 8px 0;
     border-radius: 2rem;
+    margin: 8px 0;
   }
 
 }
@@ -110,6 +108,7 @@ img {
     flex-direction: row;
     gap: 1rem;
     height: 80vh;
+    overflow: hidden;
 
     .image {
       transition: max-width 1s ease-in-out;
@@ -117,8 +116,6 @@ img {
       height: 60vh;
       max-height: 80vh;
       border-radius: 2vw;
-      overflow: hidden;
-      padding: 8px;
     }
 
     .image-active {
