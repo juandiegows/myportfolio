@@ -3,8 +3,6 @@ import { Lang, SettingService } from '../../services/setting.service';
 import { Topic } from '../../models/Topic.model';
 import { TopicInfo } from '../../models/info/TopicInfo.model';
 import { ApiService } from '../../services/api.service';
-import { TypeTopicInfo } from '../../models/info/TypeTopicInfo.model';
-import { Profession } from '../../models/Profession.model';
 import { Work } from '../../models/Work.model';
 import { WorkInfo } from '../../models/info/WorkInfo.model';
 import { EducationInfo } from '../../models/info/EducationInfo.model';
