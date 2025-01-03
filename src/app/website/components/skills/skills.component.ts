@@ -78,11 +78,11 @@ export class SkillsComponent implements OnInit {
 
   itemActive: WorkInfo | EducationInfo = new Work;
 
-  active: Boolean = false;
-  IsExperience: Boolean = true;
+  active: boolean = false;
+  IsExperience: boolean = true;
   constructor(
-    private setting: SettingService,
-    private apiService: ApiService
+    private readonly setting: SettingService,
+    private readonly apiService: ApiService
   ) { }
 
   ngOnInit(): void {

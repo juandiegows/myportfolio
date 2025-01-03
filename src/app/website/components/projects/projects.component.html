@@ -14,7 +14,7 @@
       <div class="project__image">
         <app-image class2="max"[textAlt]="project.title" [srcImg]="project.front_page.link_700" />
       </div>
-      <div class="more_info"  (click)="openModal(project)">
+      <div class="more_info" (click)="openModal(project)" (keydown)="openModal(project)">
         <div class="stars" >
           <p>{{ 0 }}</p>
           <div class="star__image">
@@ -41,7 +41,7 @@
 
 
           <app-image  class="action__image "  (click)="$event.stopPropagation(); openModal(project)"
-           [activeFilter]="true"  srcImg="/assets/img/Icons/project/preview.svg" />
+           (keydown)="$event.stopPropagation(); openModal(project)" [activeFilter]="true"  srcImg="/assets/img/Icons/project/preview.svg" />
 
         </div>
       </div>
@@ -53,7 +53,7 @@
     <main class="modal-content">
       <h2 class="modal__title">{{ projectItem?.title }}</h2>
       <div class="video-container" *ngIf="projectItem?.video_link; else noVideo">
-        <iframe class="video" [src]="projectItem?.video_link" title="YouTube video player" frameborder="0"
+        <iframe class="video" [src]="projectItem?.video_link" title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
