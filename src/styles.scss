@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import './variable.scss';
-@import url('./reset.scss');
+@use './variable.scss' as *;
+@use './reset.scss' as reset;
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 
 * {
   box-sizing: border-box;
