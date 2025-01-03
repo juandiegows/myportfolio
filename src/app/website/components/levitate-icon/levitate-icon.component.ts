@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
     standalone: false
 })
 export class LevitateIconComponent {
-  @Input() srcImg: String  = "";
-  @Input() textAlt:String = "undefined";
+  @Input() srcImg: string  = "";
+  @Input() textAlt: string = "undefined";
 }

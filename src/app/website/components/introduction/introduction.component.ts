@@ -12,7 +12,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class IntroductionComponent implements OnInit {
 
-  constructor(private setting: SettingService, private apiService: ApiService) {
+  constructor(private readonly setting: SettingService, private readonly apiService: ApiService) {
 
   }
 

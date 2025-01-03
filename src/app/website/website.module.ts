@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WebsiteRoutingModule } from './website-routing.module';
 import { HomeComponent } from './pages/home/home.component';
@@ -20,7 +20,8 @@ import { MyStoryComponent } from './components/my-story/my-story.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { FormContactMeComponent } from './components/form-contact-me/form-contact-me.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { GetDiffMonthPipe } from './pipes/get-diff-month.pipe';
 import { TopicPipe } from './pipes/topic.pipe';
 import { GetFormattedDatesPipe } from './pipes/get-formatted-dates.pipe';
@@ -67,6 +68,7 @@ import { SlidingModalComponent } from './components/sliding-modal/sliding-modal.
     WebsiteRoutingModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  schemas: []
 })
 export class WebsiteModule { }
