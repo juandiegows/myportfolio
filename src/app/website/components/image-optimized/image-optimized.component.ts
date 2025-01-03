@@ -7,10 +7,10 @@ import { Component, Input } from '@angular/core';
   standalone: false
 })
 export class ImageOptimizedComponent {
-  @Input() class2: string = "";
-  @Input() srcImg: string = "";
-  @Input() srcImgMobile: string = "";
-  @Input() textAlt: string = "undefined";
+  @Input() class2: String = "";
+  @Input() srcImg: String = "";
+  @Input() srcImgMobile: String = "";
+  @Input() textAlt: String = "undefined";
   @Input() activeFilter: boolean = false;
 
   srcImgDefault: string = "/assets/img/Icons/logo.svg";

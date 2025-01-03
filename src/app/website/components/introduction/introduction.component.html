@@ -15,8 +15,8 @@
         <ng-container *ngFor="let social of userData.social_medias">
           <a *ngIf="social.is_principal" target="_blank" rel="noopener" href="{{ social.link }}" title="{{ social.social_media.name }} JuanDiegoWS">
             <div class="image__social_media">
-              <app-image-optimized [activeFilter]="true" [srcImg]="social.social_media.url" [textAlt]="social.social_media.name">
-              </app-image-optimized>
+              <app-image [activeFilter]="true" [srcImg]="social.social_media.url" [textAlt]="social.social_media.name">
+              </app-image>
             </div>
           </a>
         </ng-container>
