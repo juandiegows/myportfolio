@@ -80,7 +80,6 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  overflow: hidden;
 
   .image {
     width: 90vw;
@@ -88,15 +87,16 @@
     border-radius: 2rem;
     transition: max-height 1s ease-in-out;
     max-width: 60rem;
-    max-height: 3rem;
+    max-height: 5rem;
     position: relative;
   }
 
   .image-active {
     width: 90vw;
     height: auto;
-    max-height: 30rem;
+    max-height: 70rem;
     max-width: 60rem;
+    margin: 8px 0;
     border-radius: 2rem;
   }
 
@@ -122,6 +122,7 @@ img {
       height: 60vh;
       max-height: 80vh;
       border-radius: 2vw;
+      overflow: hidden;
     }
 
     .image-active {
