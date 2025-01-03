@@ -6,9 +6,10 @@ import { Post } from '../../models/Post.model';
 import { BlogData } from '../../models/lang/blogData.model';
 
 @Component({
-  selector: 'app-articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.scss'],
+    selector: 'app-articles',
+    templateUrl: './articles.component.html',
+    styleUrls: ['./articles.component.scss'],
+    standalone: false
 })
 export class ArticlesComponent {
   message: String = '';

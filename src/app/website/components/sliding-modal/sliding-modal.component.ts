@@ -1,9 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-sliding-modal',
-  templateUrl: './sliding-modal.component.html',
-  styleUrls: ['./sliding-modal.component.scss']
+    selector: 'app-sliding-modal',
+    templateUrl: './sliding-modal.component.html',
+    styleUrls: ['./sliding-modal.component.scss'],
+    standalone: false
 })
 export class SlidingModalComponent {
   @Input() isVisible = false; // Controls visibility

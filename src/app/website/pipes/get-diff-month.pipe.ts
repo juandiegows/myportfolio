@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Lang } from '../services/setting.service';
 
 @Pipe({
-  name: 'getDiffMonth'
+    name: 'getDiffMonth',
+    standalone: false
 })
 export class GetDiffMonthPipe implements PipeTransform {
 

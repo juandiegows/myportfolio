@@ -6,9 +6,10 @@ import { ClientInfo } from '../../models/info/ClientInfo.model';
 import { ClientLang } from '../../models/lang/ClientLang.model';
 
 @Component({
-  selector: 'app-client',
-  templateUrl: './client.component.html',
-  styleUrls: ['./client.component.scss'],
+    selector: 'app-client',
+    templateUrl: './client.component.html',
+    styleUrls: ['./client.component.scss'],
+    standalone: false
 })
 export class ClientComponent implements OnInit {
   message = 'No hay datos disponibles en este momento.';

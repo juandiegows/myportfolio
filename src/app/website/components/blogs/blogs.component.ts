@@ -6,9 +6,10 @@ import { PostInfo } from '../../models/info/PostInfo.model';
 import { ApiService } from '../../services/api.service';
 
 @Component({
-  selector: 'app-blogs',
-  templateUrl: './blogs.component.html',
-  styleUrls: ['./blogs.component.scss'],
+    selector: 'app-blogs',
+    templateUrl: './blogs.component.html',
+    styleUrls: ['./blogs.component.scss'],
+    standalone: false
 })
 export class BlogsComponent {
   constructor(

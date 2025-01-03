@@ -3,9 +3,10 @@ import { ColorFilterService } from '../../services/color-filter.service';
 import { SettingService } from '../../services/setting.service';
 
 @Component({
-  selector: 'app-pallette',
-  templateUrl: './pallette.component.html',
-  styleUrls: ['./pallette.component.scss']
+    selector: 'app-pallette',
+    templateUrl: './pallette.component.html',
+    styleUrls: ['./pallette.component.scss'],
+    standalone: false
 })
 export class PalletteComponent {
   active: boolean = false;

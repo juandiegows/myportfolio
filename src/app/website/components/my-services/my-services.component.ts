@@ -5,9 +5,10 @@ import { Services } from '../../models/Services.model';
 import { ServicesInfo } from '../../models/info/ServicesInfo.model';
 
 @Component({
-  selector: 'app-my-services',
-  templateUrl: './my-services.component.html',
-  styleUrls: ['./my-services.component.scss'],
+    selector: 'app-my-services',
+    templateUrl: './my-services.component.html',
+    styleUrls: ['./my-services.component.scss'],
+    standalone: false
 })
 export class MyServicesComponent implements OnInit {
   message = "No hay servicios disponibles en este momento.";

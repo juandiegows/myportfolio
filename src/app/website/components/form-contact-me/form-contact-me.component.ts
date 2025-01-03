@@ -6,9 +6,10 @@ import { ApiService } from '../../services/api.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-form-contact-me',
-  templateUrl: './form-contact-me.component.html',
-  styleUrls: ['./form-contact-me.component.scss'],
+    selector: 'app-form-contact-me',
+    templateUrl: './form-contact-me.component.html',
+    styleUrls: ['./form-contact-me.component.scss'],
+    standalone: false
 })
 export class FormContactMeComponent {
   // @ts-ignore

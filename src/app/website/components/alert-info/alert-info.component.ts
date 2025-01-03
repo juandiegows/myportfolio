@@ -2,9 +2,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Lang, SettingService } from '../../services/setting.service';
 
 @Component({
-  selector: 'app-alert-info',
-  templateUrl: './alert-info.component.html',
-  styleUrls: ['./alert-info.component.scss']
+    selector: 'app-alert-info',
+    templateUrl: './alert-info.component.html',
+    styleUrls: ['./alert-info.component.scss'],
+    standalone: false
 })
 export class AlertInfoComponent implements OnInit {
   @Input()

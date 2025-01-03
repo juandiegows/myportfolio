@@ -5,9 +5,10 @@ import { User } from '../../models/User.model';
 import { ApiService } from '../../services/api.service';
 
 @Component({
-  selector: 'app-introduction',
-  templateUrl: './introduction.component.html',
-  styleUrls: ['./introduction.component.scss']
+    selector: 'app-introduction',
+    templateUrl: './introduction.component.html',
+    styleUrls: ['./introduction.component.scss'],
+    standalone: false
 })
 export class IntroductionComponent implements OnInit {
 

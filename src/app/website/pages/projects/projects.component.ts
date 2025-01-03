@@ -6,9 +6,10 @@ import { ProjectInfo } from '../../models/info/ProjectInfo.model';
 import { ProjectLang } from '../../models/lang/ProjectLang.model';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss'],
+    selector: 'app-projects',
+    templateUrl: './projects.component.html',
+    styleUrls: ['./projects.component.scss'],
+    standalone: false
 })
 export class ProjectsComponent {
   constructor(

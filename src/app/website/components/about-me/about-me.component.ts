@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { SettingService } from '../../services/setting.service';
 
 @Component({
-  selector: 'app-about-me',
-  templateUrl: './about-me.component.html',
-  styleUrls: ['./about-me.component.scss']
+    selector: 'app-about-me',
+    templateUrl: './about-me.component.html',
+    styleUrls: ['./about-me.component.scss'],
+    standalone: false
 })
 export class AboutMeComponent implements OnInit {
 

@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'getFormattedDates',
+    name: 'getFormattedDates',
+    standalone: false
 })
 export class GetFormattedDatesPipe implements PipeTransform {
   transform(date1: string, date2: string | null): string {
