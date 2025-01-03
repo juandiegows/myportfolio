@@ -16,7 +16,7 @@
         </div>
         <div class="btns">
           <a [href]="client.link_site" target="_blank" class="btn">{{ data?.btnVisit }}</a>
-          <p class="btn">{{ data?.btnDetails }}</p>
+          <p (click)="openModal(client)" class="btn">{{ data?.btnDetails }}</p>
         </div>
         <div class="info_extra">
           <p class="count">
@@ -64,9 +64,13 @@
         <div>{{ data?.text_without_info }}</div>
       </ng-template>
       <h2 class="modal__subtitle">{{ clientItem?.count_participants }} {{ data?.text_participants }}</h2>
-      <div>
-        <p></p>
-      </div>
+
+      <ul class="participants">
+        <li class="participant" *ngFor="let participant of clientItem?.participants">
+          <p>{{ participant.name }} {{ participant.last_name }}</p>
+          <a  target="_blank" href="mailto:{{ participant.email }}" class="email">{{ participant.email }}</a>
+        </li>
+      </ul>
 
 
       <p class="year"> Copyright © {{ data?.text_footer }} {{ clientItem?.year }}</p>

@@ -73,6 +73,7 @@
           background-color: var(--colorPrimary);
           text-decoration: none;
           color: var(--backgroundSecond);
+          cursor: pointer;
         }
       }
 
@@ -205,17 +206,38 @@
 
 
 .modal-content {
-  max-height: 90vh; /* Limita la altura máxima al 80% del viewport */
-  overflow-y: auto; 
+  max-height: 90vh;
+  /* Limita la altura máxima al 80% del viewport */
+  overflow-y: auto;
   height: 100%;
-  .btns{
+
+  .btns {
     display: flex;
     gap: 0.3vw;
     margin: 1vw 0;
- 
-    .btn{
+
+    .btn {
       font-size: clamp(1rem, 0.8vw, 30rem) !important;
       border-radius: 1vw;
+    }
+  }
+
+  .participants {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 2rem;
+    .participant{
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      border-radius: 1rem;
+      background-color: var(--backgroundSecond);
+      border-bottom: 1px solid var(--colorPrimary);
+      padding:0.4rem 0.8rem; 
+      .email{
+        color: var(--colorPrimary);
+      }
     }
   }
 
@@ -225,14 +247,16 @@
     gap: 1vw;
     margin-top: 1rem;
     font-size: clamp(1.4rem, 1.4vw, 20rem);
-    & > * {
+
+    &>* {
       cursor: pointer;
-  
+
       &:hover {
         color: var(--colorPrimary);
       }
     }
   }
+
   .modal__title {
     color: var(--colorPrimary);
     font-size: clamp(2rem, 2vw, 30rem);

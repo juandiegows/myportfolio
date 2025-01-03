@@ -41,7 +41,6 @@ export class ClientComponent implements OnInit {
         if (d.status != 200) {
           this.clientList = d.data as Client[];
           this.fillData();
-          this.openModal(this.clients[0]);  
         } else {
           this.message = 'Error al  intentar traer los datos desde el api.';
         }
@@ -69,6 +68,7 @@ export class ClientComponent implements OnInit {
           year: client.year,
           topics: client.topics,
           count_participants: client.count_participants,
+          participants: client.participants
         });
       } else {
         this.clients.push({
@@ -80,6 +80,7 @@ export class ClientComponent implements OnInit {
           year: client.year,
           topics: client.topics_spanish,
           count_participants: client.count_participants,
+          participants: client.participants
         });
       }
     });

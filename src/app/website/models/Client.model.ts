@@ -1,3 +1,5 @@
+import { User } from "./User.model";
+
 export class Client {
     id: number = 0;
     name: string = '';
@@ -9,4 +11,5 @@ export class Client {
     topics: string[] = [];
     topics_spanish: string[] = [];
     count_participants: number = 0;
+    participants: Array<User> = []; 
 }
