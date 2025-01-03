@@ -27,10 +27,10 @@
   height: 100%;
   padding: 4px;
   /* Espacio para el borde */
-  background: conic-gradient(from var(--angle), transparent, var(--colorPrimary), transparent, transparent, transparent);
+  background: conic-gradient(from var(--angle), transparent, var(--colorPrimary), transparent, transparent, transparent, transparent, transparent, transparent, transparent, transparent);
   z-index: -1;
   /* Detrás de la imagen */
-  animation: girar 2s linear infinite;
+  animation: girar 4s linear infinite;
   /* Animación de rotación */
   border-radius: 2rem;
 }
