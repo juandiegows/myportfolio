@@ -59,7 +59,7 @@
       </div>
       <ng-template #noVideo>
         <div class="imagen-container">
-          <app-image class2="max" [srcImg]="projectItem?.front_page?.link_900 ?? 'ruta-de-imagen-por-defecto.jpg'" />
+          <app-image class2="max" *ngIf="projectItem?.front_page?.link_900" [srcImg]="projectItem?.front_page?.link_900 ?? ''" />
         </div>
       </ng-template>
       <div class="btns">

@@ -48,7 +48,7 @@
       </div>
       <ng-template #noVideo>
         <div class="imagen-container">
-          <app-image class2="max" [srcImg]="clientItem?.url_logo ?? 'ruta-de-imagen-por-defecto.jpg'" />
+          <app-image *ngIf="clientItem?.url_logo" class2="max" [srcImg]="clientItem?.url_logo ?? ''" />
         </div>
       </ng-template>
       <div class="tools">
