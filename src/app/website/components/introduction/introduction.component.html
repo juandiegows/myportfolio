@@ -15,8 +15,8 @@
         <ng-container *ngFor="let social of userData.social_medias">
           <a *ngIf="social.is_principal" target="_blank" rel="noopener" href="{{ social.link }}" title="{{ social.social_media.name }} JuanDiegoWS">
             <div class="image__social_media">
-              <app-image [activeFilter]="true" [srcImg]="social.social_media.url" [textAlt]="social.social_media.name">
-              </app-image>
+              <app-image-optimized [activeFilter]="true" [srcImg]="social.social_media.url" [textAlt]="social.social_media.name">
+              </app-image-optimized>
             </div>
           </a>
         </ng-container>
@@ -31,26 +31,26 @@
       </h2>
       <div class="Outstaning_item">
         <div class="image">
-          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
+          <app-image-optimized [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
         </div>
         <p>{{ data.achievements1 }}</p>
       </div>
       <div class="Outstaning_item">
         <div class="image">
-          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
+          <app-image-optimized [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
         </div>
         <p>{{ data.achievements2 }}</p>
       </div>
       <div class="Outstaning_item">
         <div class="image">
-          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
+          <app-image-optimized [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
         </div>
         <p>{{ data.achievements3 }}</p>
       </div>
 
       <div class="Outstaning_item">
         <div class="image">
-          <app-image [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
+          <app-image-optimized [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
         </div>
         <p>{{ data.achievements4 }}</p>
       </div>

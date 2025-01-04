@@ -57,6 +57,15 @@
     a {
       width: auto;
       cursor: pointer;
+      .image__social_media{
+        width: 4rem;
+        height: 4rem;  
+        position: relative;
+        @media (min-width: 700px) {
+          width: 4vw;
+          height: 4vw;  
+        }
+      }
     }
   }
 
@@ -81,6 +90,8 @@
 
       .image {
         width: 4rem;
+        height: 4rem;
+        position: relative;
       }
     }
   }
@@ -255,7 +266,8 @@
           font-size: 1.8vw;
 
           .image {
-            width: 3vw;
+            width: 3vw ;
+            height: 3vw ;
           }
         }
       }
