@@ -193,9 +193,7 @@
       .project {
         position: relative;
         width: 40vw;
-        max-height: 55rem;
-        min-height: 55rem;
-
+        aspect-ratio: 16 / 9; 
         &,
         &:active,
         &:hover {
