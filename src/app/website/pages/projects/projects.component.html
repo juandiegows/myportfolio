@@ -23,7 +23,8 @@
     </div>
 
     <div class="projects">
-        <article class="project" *ngFor="let project of projects">
+        <article class="project"  (click)="$event.stopPropagation(); openModal(project)"
+        (keydown)="$event.stopPropagation(); openModal(project)"   *ngFor="let project of projects">
             <div class="project__image">
                 <app-image class2="max" [srcImg]="project.front_page.link_700" />
             </div>
@@ -55,7 +56,8 @@
                     </a>
 
 
-                    <app-image class="action__image" style="cursor: not-allowed;" [activeFilter]="true"
+                    <app-image class="action__image"  (click)="$event.stopPropagation(); openModal(project)"
+                    (keydown)="$event.stopPropagation(); openModal(project)" [activeFilter]="true"
                         srcImg="/assets/img/Icons/project/preview.svg" />
 
                 </div>
@@ -63,5 +65,38 @@
         </article>
     </div>
 </main>
+
+<app-sliding-modal [isVisible]="isModalVisible" (close)="onModalClose()">
+    <main class="modal-content">
+        <h2 class="modal__title">{{ projectItem?.title }}</h2>
+        <div class="video-container" *ngIf="projectItem?.video_link; else noVideo">
+            <iframe class="video" [src]="projectItem?.video_link" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <ng-template #noVideo>
+            <div class="imagen-container">
+                <app-image class2="max" *ngIf="projectItem?.front_page?.link_900"
+                    [srcImg]="projectItem?.front_page?.link_900 ?? ''" />
+            </div>
+        </ng-template>
+        <div class="btns">
+            <a *ngIf="projectItem?.view_link != null" target="_blank" [href]="projectItem?.view_link " class="btn"> {{
+                data?.btn_view }}</a>
+            <a *ngIf="projectItem?.download_link != null" target="_blank" [href]="projectItem?.download_link "
+                class="btn"> {{ data?.btn_git }}</a>
+        </div>
+        <div class="tools">
+
+        </div>
+        <h2 class="modal__subtitle">{{ data?.text_description }}</h2>
+        <div *ngIf="projectItem?.description; else nodescription" [innerHTML]="projectItem?.description"></div>
+        <ng-template #nodescription>
+            <div [innerHTML]="projectItem?.short_description"></div>
+        </ng-template>
+
+    </main>
+
+</app-sliding-modal>
 <app-footer />
 <app-up-buttom />

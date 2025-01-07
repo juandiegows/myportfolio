@@ -34,6 +34,7 @@ export class ProjectsComponent implements OnInit {
   onModalClose(): void {
     this.isModalVisible = false;
   }
+  
   ngOnInit(): void {
     this.apiService.getProjects().subscribe({
       next: (d) => {
