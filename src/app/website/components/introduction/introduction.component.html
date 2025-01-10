@@ -29,34 +29,14 @@
       <h2 class="title">
         {{ data.achievements }}
       </h2>
-      <div class="Outstaning_item">
+      <div class="Outstaning_item"  [title]="data.description"
+        *ngFor="let achievement of OutstandingAchievements">
         <div class="image">
-          <app-image-optimized [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
+          <app-image-optimized [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="achievement.name" />
         </div>
-        <p>{{ data.achievements1 }}</p>
+        <a class="link" target="_blank" [href]="achievement.link" >{{ achievement.name }}</a>
       </div>
-      <div class="Outstaning_item">
-        <div class="image">
-          <app-image-optimized [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
-        </div>
-        <p>{{ data.achievements2 }}</p>
-      </div>
-      <div class="Outstaning_item">
-        <div class="image">
-          <app-image-optimized [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
-        </div>
-        <p>{{ data.achievements3 }}</p>
-      </div>
-
-      <div class="Outstaning_item">
-        <div class="image">
-          <app-image-optimized [activeFilter]="true" srcImg="/assets/img/Icons/Outstanding.svg" [textAlt]="data.achievements" />
-        </div>
-        <p>{{ data.achievements4 }}</p>
-      </div>
-
-
-
+    
     </div>
     <a class="btn" [href]="data.linkDownload" download>{{ data.btnDownload }}</a>
   </div>
@@ -75,13 +55,11 @@
     <app-levitate-icon srcImg="/assets/img/Icons/Languaje/js.svg" textAlt="js" class="levitate levitate__1" />
     <app-levitate-icon srcImg="/assets/img/Icons/Languaje/java.svg" textAlt="java" class="levitate levitate__2" />
     <app-levitate-icon srcImg="/assets/img/Icons/Languaje/Csharp.svg" textAlt="C#" class="levitate levitate__3" />
-    <app-levitate-icon srcImg="/assets/img/Icons/Languaje/database.svg" textAlt="database"
-      class="levitate levitate__4" />
+    <app-levitate-icon srcImg="/assets/img/Icons/Languaje/database.svg" textAlt="database"  class="levitate levitate__4" />
     <app-levitate-icon srcImg="/assets/img/Icons/Languaje/html.svg" textAlt="html" class="levitate levitate__5" />
     <app-levitate-icon srcImg="/assets/img/Icons/Languaje/.net.svg" textAlt=".net" class="levitate levitate__6" />
     <app-levitate-icon srcImg="/assets/img/Icons/Languaje/css.svg" textAlt="css" class="levitate levitate__7" />
-    <app-levitate-icon srcImg="/assets/img/Icons/Languaje/android.svg" textAlt="android" textAlt="android"
-      class="levitate levitate__8" />
+    <app-levitate-icon srcImg="/assets/img/Icons/Languaje/android.svg" textAlt="android" class="levitate levitate__8" />
     <app-levitate-icon srcImg="/assets/img/Icons/Languaje/angular.svg" textAlt="angular" class="levitate levitate__9" />
     <app-levitate-icon srcImg="/assets/img/Icons/Languaje/kotlin.svg" textAlt="kotlin" class="levitate levitate__10" />
     <app-levitate-icon srcImg="/assets/img/Icons/Languaje/vue.svg" textAlt="vue.js" class="levitate levitate__11" />

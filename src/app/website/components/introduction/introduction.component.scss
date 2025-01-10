@@ -57,13 +57,15 @@
     a {
       width: auto;
       cursor: pointer;
-      .image__social_media{
+
+      .image__social_media {
         width: 4rem;
-        height: 4rem;  
+        height: 4rem;
         position: relative;
+
         @media (min-width: 700px) {
           width: 4vw;
-          height: 4vw;  
+          height: 4vw;
         }
       }
     }
@@ -73,6 +75,14 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    .link {
+      color: var(--color);
+
+      &:hover {
+        color: var(--colorPrimary);
+      }
+    }
 
     .title {
       color: var(--colorPrimary);
@@ -121,6 +131,7 @@
     -webkit-user-select: none;
     user-select: none;
     position: relative;
+    max-height: 93vh;
 
     .fondo_imagen {
       position: absolute;
@@ -266,8 +277,8 @@
           font-size: 1.8vw;
 
           .image {
-            width: 3vw ;
-            height: 3vw ;
+            width: 3vw;
+            height: 3vw;
           }
         }
       }

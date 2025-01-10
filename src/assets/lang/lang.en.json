@@ -12,22 +12,8 @@
   "introduction": {
     "hello": "Hi, My name is",
     "Iam": "I am",
-    "roles": [
-      "Web Developer",
-      "Mobile Developer",
-      "Full Stack Developer",
-      "Backend Developer",
-      "Data Analyst",
-      "Vue.js Developer",
-      "Angular Developer",
-      ".NET Developer",
-      "UX/UI Designer"
-    ],
+    "description": "Click to see more information about this achievement. This may be a news item, certification, evidence of recognition or achievement.",
     "achievements": "Outstanding Achievements",
-    "achievements1": "champion of worldskills colombia",
-    "achievements2": "champion of worldskills chile",
-    "achievements3": "runner-up of worldskills American",
-    "achievements4": "medal of excellence in worldskills special edition",
     "btnDownload": "Download summary CV",
     "linkDownload": "/assets/docs/CV/CV_JuanDiegoWS.en.pdf"
   },
@@ -99,38 +85,6 @@
   },
   "blog": {
     "title": "My Articles",
-    "blogs": [
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "February 23, 2023",
-        "title": "How to Create a Project from Scratch in Angular?"
-      },
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "February 23, 2023",
-        "title": "How to Create a Project from Scratch in Angular?"
-      },
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "February 23, 2023",
-        "title": "How to Create a Project from Scratch in Angular?"
-      },
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "February 23, 2023",
-        "title": "How to Create a Project from Scratch in Angular?"
-      },
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "February 23, 2023",
-        "title": "How to Create a Project from Scratch in Angular?"
-      },
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "February 23, 2023",
-        "title": "How to Create a Project from Scratch in Angular?"
-      }
-    ],
     "btn_text": "View All"
   },
   "contact_me": {

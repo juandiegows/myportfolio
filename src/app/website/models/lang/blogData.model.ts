@@ -1,6 +1,5 @@
 export interface BlogData {
   title: string;
-  blogs: BlogEntry[];
   btn_text: string;
 }
 

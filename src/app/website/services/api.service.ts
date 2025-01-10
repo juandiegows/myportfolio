@@ -27,6 +27,10 @@ export class ApiService {
     return this.http.get<any>(`${this.apiUrl}/user/juandiegows/skills`);
   }
 
+  getOutstandingAchievements(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/user/juandiegows/outstanding-achievements`);
+  }
+
   getWorks(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/user/juandiegows/works`);
   }

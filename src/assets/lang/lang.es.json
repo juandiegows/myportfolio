@@ -12,22 +12,8 @@
   "introduction": {
     "hello": "Hola, Mi nombre es",
     "Iam": "Soy",
-    "roles": [
-      "Desarrollador web",
-      "Desarrollador móvil",
-      "Desarrollador full stack",
-      "Desarrollador backend",
-      "Analista de datos",
-      "Desarrollador Vue.js",
-      "Desarrollador Angular",
-      "Desarrollador .NET",
-      "Diseñador UX/UI"
-    ],
+    "description": "Haz clic para ver más información sobre este logro. Puede ser una noticia, certificación, evidencia del reconocimiento o logro.",
     "achievements": "Logros destacados",
-    "achievements1": "Campeón de worldskills colombia",
-    "achievements2": "Campeón de worldskills chile",
-    "achievements3": "SubCampeón de worldskills American",
-    "achievements4": "Medalla de excelencia worldskills special edition",
     "btnDownload": "Descargar resumen CV",
     "linkDownload": "/assets/docs/CV/CV_JuanDiegoWS.pdf"
   },
@@ -100,38 +86,6 @@
   },
   "blog": {
     "title": "Mis Articulos",
-    "blogs": [
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "23 febrero del 2023",
-        "title": "¿Cómo crear un proyecto desde cero en angular?"
-      },
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "23 febrero del 2023",
-        "title": "¿Cómo crear un proyecto desde cero en angular?"
-      },
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "23 febrero del 2023",
-        "title": "¿Cómo crear un proyecto desde cero en angular?"
-      },
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "23 febrero del 2023",
-        "title": "¿Cómo crear un proyecto desde cero en angular?"
-      },
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "23 febrero del 2023",
-        "title": "¿Cómo crear un proyecto desde cero en angular?"
-      },
-      {
-        "url_image": "/assets/img/blog/blog.png",
-        "date": "23 febrero del 2023",
-        "title": "¿Cómo crear un proyecto desde cero en angular?"
-      }
-    ],
     "btn_text": "Ver todos"
   },
   "contact_me": {
