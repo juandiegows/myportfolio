@@ -9,9 +9,15 @@ import { tick } from '@angular/core/testing';
 })
 export class SettingService {
   constructor(private http: HttpClient, private colorF: ColorFilterService) {}
+
   lang: Lang = Lang.es;
   private _lang = new BehaviorSubject<Lang>(this.lang);
   lang$ = this._lang.asObservable();
+
+  color: string = '';
+  private _color = new BehaviorSubject<string>(this.color);
+  color$ = this._color.asObservable();
+
   data: any = {};
   setLang(lang: Lang) {
     localStorage.setItem('lang', lang);
@@ -133,6 +139,7 @@ export class SettingService {
     const result = this.colorF.solve();
     root.style.setProperty('--colorPrimaryF', result.filter);
     this.getColorF();
+    this._color.next(backgroundColor);
   }
 
   init() {

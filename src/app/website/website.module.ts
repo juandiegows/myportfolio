@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule,NgOptimizedImage  } from '@angular/common';
 import { WebsiteRoutingModule } from './website-routing.module';
 import { HomeComponent } from './pages/home/home.component';
@@ -30,6 +30,7 @@ import { ProjectsComponent as PagesProjectsComponent   } from './pages/projects/
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { SlidingModalComponent } from './components/sliding-modal/sliding-modal.component';
 import { ImageOptimizedComponent } from './components/image-optimized/image-optimized.component';
+import { ParticlesComponent } from './components/particles/particles.component';
 
 @NgModule({
   declarations: [
@@ -60,10 +61,12 @@ import { ImageOptimizedComponent } from './components/image-optimized/image-opti
     PagesProjectsComponent,
     ArticlesComponent,
     SlidingModalComponent,
-    ImageOptimizedComponent
+    ImageOptimizedComponent,
+    ParticlesComponent  
   ],
   exports: [
-    ProjectsCardComponent // Exporta el componente
+    ProjectsCardComponent ,
+    ParticlesComponent  
   ],
   imports: [
     CommonModule,
@@ -72,6 +75,6 @@ import { ImageOptimizedComponent } from './components/image-optimized/image-opti
     ReactiveFormsModule,
     NgOptimizedImage
   ],
-  schemas: []
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WebsiteModule { }
