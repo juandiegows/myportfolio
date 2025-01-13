@@ -4,13 +4,13 @@
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  position: sticky;
+  position: fixed;
   left: 0;
   top: 0;
   padding: 1vh 5vw;
   z-index: 10000;
   margin: 0;
-  background-color: var(--background);
+  //background-color: var(--background);
 
   .header__left {
     display: flex;
