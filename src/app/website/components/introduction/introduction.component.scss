@@ -86,10 +86,8 @@
     flex-direction: column;
     gap: 0.5rem;
     min-height: 50vh;
-
     .link {
       color: var(--color);
-
       &:hover {
         color: var(--colorPrimary);
       }
@@ -144,30 +142,26 @@
     user-select: none;
     position: relative;
     max-height: 93vh;
-    pointer-events: none; 
     .fondo_imagen {
       position: absolute;
-      pointer-events: none; 
     }
 
     .image_photo {
       width: 90vw;
       margin-top: -1vw;
-      pointer-events: none; 
       display: flex;
       justify-content: center;
-
+      pointer-events: none; 
       .profile {
         z-index: 100;
         margin-top: -1vw;
         display: inline-block;
-        pointer-events: none; 
         .profile-img {
 
           /* Bordes redondeados (opcional) */
           filter: drop-shadow(0 0 20px var(--colorPrimary));
           /* Sombra al objeto */
-          pointer-events: none; 
+   
         }
       }
 
@@ -175,7 +169,6 @@
         z-index: 2;
         width: 100%;
         height: auto;
-        pointer-events: none; 
       }
     }
 
