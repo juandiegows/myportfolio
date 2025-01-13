@@ -5,6 +5,7 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+
 }
 
 .container {
@@ -26,6 +27,7 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+  
     .text {
       display: flex;
       flex-direction: column;
@@ -64,10 +66,12 @@
     margin: 1rem 0;
     gap: 2vw;
     min-height: 5vh;
+    cursor: pointer; 
+
     a {
       width: auto;
       cursor: pointer;
-
+      z-index: 10;
       .image__social_media {
         width: 4rem;
         height: 4rem;
@@ -85,9 +89,10 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    min-height: 50vh;
+    min-height: 20vh;
     .link {
       color: var(--color);
+      z-index: 10;
       &:hover {
         color: var(--colorPrimary);
       }
@@ -120,6 +125,7 @@
     font-size: clamp(1.8rem, 2vw, 30rem);
     word-wrap: break-word;
     min-height: 5vh;
+    z-index: 10;
   }
 
   .btn {
@@ -130,7 +136,8 @@
     color: var(--background);
     font-size: clamp(2rem, 1vw, 30rem);
     text-align: center;
-    border-radius: 0.5vw;
+    border-radius: 0.5vw;  
+    z-index: 10;
   }
 
   .photo_languajes {
@@ -272,7 +279,7 @@
 
       .Outstanding {
         gap: 0.5vw;
-
+        min-height: 30vh;
         .title {
           font-size: 2.2vw;
           margin-bottom: 1vw;
@@ -313,7 +320,10 @@
     display: grid;
     grid-template-columns: 60% 40%;
     position: relative;
-
+    .Outstanding {
+      gap: 0.5vw;
+      min-height: 50vh;
+    }
     .photo_languajes {
       width: 100%;
       position: relative;
