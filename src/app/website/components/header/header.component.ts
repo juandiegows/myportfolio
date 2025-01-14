@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Lang } from '../../models/lang/lang.model';
-import { Navigation } from '../../models/lang/navigation.model';
-import { ColorFilterService } from '../../services/color-filter.service';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { SettingService, Lang as LangEnum, Mode } from '../../services/setting.service';
 import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
@@ -30,7 +27,7 @@ export class HeaderComponent implements OnInit {
   expanded = false;
   servicesAvailable: boolean = false;
 
-  constructor(private setting: SettingService,private router: Router,private apiService: ApiService) {
+  constructor(private readonly setting: SettingService,private readonly router: Router,private readonly apiService: ApiService) {
     this.lang = setting.lang;
   }
 
@@ -57,6 +54,22 @@ export class HeaderComponent implements OnInit {
           },
         });
 
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
+    this.checkScroll();
+  }
+
+  private checkScroll(): void {
+    const header = document.querySelector<HTMLElement>('.container__header');
+    if (header) {
+      if (window.scrollY > 20) {
+        header.style.backgroundColor = 'var(--background)';
+      } else {
+        header.style.backgroundColor = 'transparent';
+      }
+    }
   }
 
 
