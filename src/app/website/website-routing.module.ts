@@ -7,26 +7,34 @@ import { ArticlesComponent } from './pages/articles/articles.component';
 
 const routes: Routes = [
   {
-    path: 'search',
+    path: ':lang/search',
     component: SearchComponent,
   },
   {
-    path: 'projects',
+    path: ':lang/projects',
     component: ProjectsComponent,
   },
   {
-    path: 'blogs',
+    path: ':lang/blogs',
     component: ArticlesComponent,
   },
   {
-    path: ':id',
+    path: ':lang/:id',
+    component: HomeComponent,
+  },
+  {
+    path: ':lang',
     component: HomeComponent,
   },
   {
     path: '',
-    component: HomeComponent,
+    redirectTo: '/es',
+    pathMatch: 'full', // Redirigir a la versión en español por defecto
   },
-
+  {
+    path: '**',
+    redirectTo: '/es', // Redirigir cualquier ruta no encontrada
+  },
 ];
 
 @NgModule({
