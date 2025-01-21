@@ -13,11 +13,11 @@ import { ApiService } from '../../services/api.service';
 })
 export class BlogsComponent {
   constructor(
-    private setting: SettingService,
-    private apiService: ApiService
+    private readonly setting: SettingService,
+    private readonly apiService: ApiService
   ) { }
 
-  message: String = '';
+  message: string = '';
   blogs: PostInfo[] = [];
   blogList: Post[] = [];
   data: BlogData | null = null;
