@@ -31,6 +31,8 @@ import { ArticlesComponent } from './pages/articles/articles.component';
 import { SlidingModalComponent } from './components/sliding-modal/sliding-modal.component';
 import { ImageOptimizedComponent } from './components/image-optimized/image-optimized.component';
 import { ParticlesComponent } from './components/particles/particles.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer'; 
+import { ResumeComponent } from './components/resume/resume.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ import { ParticlesComponent } from './components/particles/particles.component';
     ArticlesComponent,
     SlidingModalComponent,
     ImageOptimizedComponent,
-    ParticlesComponent  
+    ParticlesComponent  ,
+    ResumeComponent
   ],
   exports: [
     ProjectsCardComponent ,
@@ -73,7 +76,8 @@ import { ParticlesComponent } from './components/particles/particles.component';
     WebsiteRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    PdfViewerModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
