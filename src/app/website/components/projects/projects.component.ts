@@ -13,8 +13,8 @@ import { ApiService } from '../../services/api.service';
 })
 export class ProjectsComponent implements OnInit {
   constructor(
-    private setting: SettingService,
-    private apiService: ApiService
+    private readonly setting: SettingService,
+    private readonly apiService: ApiService
   ) {}
   data: ProjectLang | null = null;
 

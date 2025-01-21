@@ -21,7 +21,7 @@ export class BlogsComponent {
   blogs: PostInfo[] = [];
   blogList: Post[] = [];
   data: BlogData | null = null;
-
+  lang: Lang = Lang.es;
   ngOnInit(): void {
     this.apiService.getPosts().subscribe({
       next: (d) => {
@@ -38,6 +38,7 @@ export class BlogsComponent {
     });
 
     this.setting.lang$.subscribe((d) => {
+      this.lang = d;
       this.data = this.setting.data.blog;
       this.fill();
     });
