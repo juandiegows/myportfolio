@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Lang, SettingService } from '../../services/setting.service';
 
 @Component({
@@ -14,8 +14,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private readonly route: ActivatedRoute,
-    private readonly setting: SettingService,
-    private readonly router: Router
+    private readonly setting: SettingService
   ) {}
 
   ngOnInit(): void {
