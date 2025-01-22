@@ -25,6 +25,8 @@ export class HomeComponent implements OnInit {
 
       // Configurar el idioma
       this.setting.setLang(this.lang === 'en' ? Lang.en : Lang.es);
+      window.history.pushState({}, '', `/${this.lang}/#${name}`);
+
       if (this.id) {
         setTimeout(() => {
           this.scrollToElement(this.id as string);
@@ -35,7 +37,6 @@ export class HomeComponent implements OnInit {
 
   private scrollToElement(name: string): void {
     // Actualizar la URL con el fragmento y el idioma
-    window.history.pushState({}, '', `/${this.lang}/#${name}`);
 
     const element = document.getElementById(name);
     if (element) {
