@@ -111,7 +111,7 @@ export class IntroductionComponent implements OnInit {
       this.pdfSrc =
         environment.apiUrlBase +
         '/resume/' +
-        this.lang +
+        lang +
         '/' +
         environment.userName +
         '/download';
