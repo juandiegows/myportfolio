@@ -4,13 +4,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
-import { ResumeComponent } from './components/resume/resume.component';
 
 const routes: Routes = [
-  {
-    path: ':lang/resume',
-    component: ResumeComponent
-  },
+
   {
     path: ':lang/search',
     component: SearchComponent,
