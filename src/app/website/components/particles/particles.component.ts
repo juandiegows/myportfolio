@@ -46,19 +46,29 @@ export class ParticlesComponent implements OnInit {
       particlesJS('particles-js', this.config);
     }
   }
-
-  private rgbToHex(rgb: string): string {
-    // Extraer los valores numéricos de la cadena `rgb`
-    const rgbValues = rgb.match(/\d+/g);
-
+  private rgbToHex(color: string): string {
+    console.log(color);
+  
+    // Si el color ya está en formato hexadecimal
+    if (color.startsWith('#')) {
+      // Verifica que tenga 7 caracteres (ej. #FF8A42)
+      if (color.length !== 7) {
+        throw new Error('Formato hexadecimal inválido');
+      }
+      return color.toUpperCase(); // Retorna directamente en formato válido
+    }
+  
+    // Si el color está en formato RGB
+    const rgbValues = color.match(/\d+/g);
     if (!rgbValues || rgbValues.length !== 3) {
       throw new Error('Formato RGB inválido');
     }
-
-    // Convertir cada componente a hexadecimal
+  
+    // Convertir a hexadecimal
     const [r, g, b] = rgbValues.map(Number);
     return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()}`;
   }
+  
 
   private isValidHex(color: string): boolean {
     const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
