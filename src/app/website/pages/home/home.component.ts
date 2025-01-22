@@ -25,9 +25,10 @@ export class HomeComponent implements OnInit {
 
       // Configurar el idioma
       this.setting.setLang(this.lang === 'en' ? Lang.en : Lang.es);
-      window.history.pushState({}, '', `/${this.lang}/#${name}`);
+      
 
       if (this.id) {
+        window.history.pushState({}, '', `/${this.lang}/#${this.id}`);
         setTimeout(() => {
           this.scrollToElement(this.id as string);
         }, 200);
