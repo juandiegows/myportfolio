@@ -1,0 +1,45 @@
+<section class="cd-horizontal-timeline">
+    <div class="timeline">
+        <div class="events-wrapper">
+            <div class="events" [ngStyle]="{ width: (eventsMinDistance * items.length) + 'px' }">
+               
+                <ol>
+                    <li *ngFor="let item of items; let i = index" (click)="selectItem(item.id, i)">
+                        <a [ngClass]="{ 'selected': selected === item.id }"
+                            [ngStyle]="{ 'left': (eventsMinDistance * (i + 1)) + 'px' }" [attr.data-id]="item.id"
+                            [attr.data-date]="item.date">
+                            {{ item.date }}
+                        </a>
+                    </li>
+
+                </ol>
+
+                <span class="filling-line" aria-hidden="true"></span>
+            </div> <!-- .events -->
+        </div> <!-- .events-wrapper -->
+
+        <ul class="cd-timeline-navigation">
+            <li><a href="#0" class="prev " :class="selected === 0 ? 'inactive' : ''">Prev</a></li>
+            <li><a href="#0" class="next">Next</a>
+                <svg viewBox="0 0 24 24" width="45px" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#000000" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+            </li>
+        </ul> <!-- .cd-timeline-navigation -->
+    </div> <!-- .timeline -->
+
+    <div class="events-content">
+        <ol>
+            <li *ngFor="let item of items" [ngClass]="{'selected': selected === item.id}" [attr.data-date]="item.date">
+                <h2>{{ item.title }}</h2>
+                <em>{{ item.date }}</em>
+                <p>{{ item.description }}</p>
+            </li>
+        </ol>
+    </div> <!-- .events-content -->
+</section>

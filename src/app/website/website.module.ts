@@ -31,6 +31,7 @@ import { ArticlesComponent } from './pages/articles/articles.component';
 import { SlidingModalComponent } from './components/sliding-modal/sliding-modal.component';
 import { ImageOptimizedComponent } from './components/image-optimized/image-optimized.component';
 import { ParticlesComponent } from './components/particles/particles.component';
+import { TimelineComponent } from "./components/timeline/timeline.component";
 
 @NgModule({
   declarations: [
@@ -62,7 +63,9 @@ import { ParticlesComponent } from './components/particles/particles.component';
     ArticlesComponent,
     SlidingModalComponent,
     ImageOptimizedComponent,
-    ParticlesComponent  
+    ParticlesComponent ,
+
+    TimelineComponent
   ],
   exports: [
     ProjectsCardComponent ,
@@ -74,7 +77,7 @@ import { ParticlesComponent } from './components/particles/particles.component';
     FormsModule,
     ReactiveFormsModule,
     NgOptimizedImage
-  ],
+],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class WebsiteModule { }
