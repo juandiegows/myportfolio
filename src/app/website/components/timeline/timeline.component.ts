@@ -93,6 +93,12 @@ export class TimelineComponent {
 
   ngOnInit(): void {
     this.first = this.items[0].id;
+    this.setDisabledPrev();
+    const events = document.querySelector('.events-wrapper') as HTMLElement;
+    events.addEventListener('scroll', () => {
+      this.setDisabledPrev();
+      this.setDisabledNext();
+    });
   }
 
   selectItem(id: number, index: number): void {
@@ -108,15 +114,68 @@ export class TimelineComponent {
         left: scrollDistance, // Desplaza horizontalmente en función del índice
         behavior: 'smooth', // Desplazamiento suave
       });
+    }
+  }
 
+  setDisabledPrev() {
+    const events = document.querySelector('.events-wrapper') as HTMLElement;
+    const prevButton = document.getElementById('prev');
+    if (events && prevButton) {
+      // Verifica si el scroll horizontal está en la posición inicial
 
-      const style = document.createElement('style');
-      style.innerHTML = `
-        .events-wrapper::after {
-          right: ${scrollDistance}px;
-        }
-      `;
-      document.head.appendChild(style);
+      if (events.scrollLeft === 0) {
+        // Agrega la clase 'inactive' para desactivar el botón
+        prevButton.classList.add('inactive');
+      } else {
+        // Quita la clase 'inactive' para activar el botón
+        prevButton.classList.remove('inactive');
+      }
+    }
+  }
+
+  setDisabledNext() {
+    const events = document.querySelector('.events-wrapper') as HTMLElement;
+    const nextButton = document.getElementById('next');
+
+    if (events && nextButton) {
+      // Verifica si el scroll está al máximo
+      if (events.scrollLeft + events.clientWidth >= events.scrollWidth - 50) {
+        nextButton.classList.add('inactive'); // Desactivar
+      } else {
+        nextButton.classList.remove('inactive'); // Activar
+      }
+    }
+  }
+
+  prev(): void {
+    const events = document.querySelector('.events-wrapper') as HTMLElement;
+
+    if (events) {
+      const containerWidth = events.offsetWidth * -1;
+      events.scrollTo({
+        left: containerWidth,
+        behavior: 'smooth', // Desplazamiento suave
+      });
+    }
+  }
+
+  next(): void {
+    const events = document.querySelector('.events-wrapper') as HTMLElement;
+
+    if (events) {
+      const containerWidth = events.offsetWidth;
+      const maxScrollLeft = events.scrollWidth - containerWidth; // Límite máximo del desplazamiento
+
+      // Calcula el nuevo valor para scrollLeft
+      const newScrollLeft = Math.min(
+        events.scrollLeft + containerWidth,
+        maxScrollLeft
+      );
+
+      events.scrollTo({
+        left: newScrollLeft, // Ajusta al límite si es necesario
+        behavior: 'smooth', // Desplazamiento suave
+      });
     }
   }
 
