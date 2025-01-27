@@ -1,11 +1,31 @@
 <section class="cd-horizontal-timeline">
-    <div class="timeline">
-        <div class="events-wrapper">
-            <div class="shadow-left"></div>
+    <div class="content">
+        <ng-container *ngIf="itemSelect">
+            <!-- Si es una imagen -->
+            <img *ngIf="isImage(itemSelect.type)" [src]="itemSelect.url" alt="{{ itemSelect.title }}" />
           
-            
-            <div class="events" [ngStyle]="{ width: (eventsMinDistance * (items.length + 1) + 100) + 'px' }">
-           
+            <!-- Si es un video -->
+            <video *ngIf="isVideo(itemSelect.type)" [src]="itemSelect.url" controls></video>
+          
+
+            <a
+              *ngIf="isWeb(itemSelect.type)"
+              [href]="itemSelect.url"
+              target="_blank"
+              class="btn "
+              >Abrir contenido</a
+            >
+          </ng-container>
+    </div>
+    <div class="timeline">
+
+        <div class="events-wrapper">
+
+            <div class="shadow-left"></div>
+
+
+            <div class="events" [ngStyle]="{ width: calculateEventsWidth() }">
+
                 <ol>
                     <li *ngFor="let item of items; let i = index" (click)="selectItem(item.id, i)">
                         <a [ngClass]="{ 'selected': selected === item.id }"
@@ -24,23 +44,17 @@
         </div> <!-- .events-wrapper -->
 
         <ul class="cd-timeline-navigation">
-            <li  (click)="prev()" ><a id="prev"  class="prev  inactive" >Prev</a></li>
-            <li (click)="next()" ><a  id="next"   class="next">Next</a>
-                <!-- <svg viewBox="0 0 24 24" width="45px" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#000000" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round"></path>
-                    </g>
-                </svg> -->
+            <li (click)="prev()"><a id="prev" class="prev  inactive">Prev</a></li>
+            <li (click)="next()"><a id="next" class="next">Next</a>
             </li>
         </ul> <!-- .cd-timeline-navigation -->
     </div> <!-- .timeline -->
 
     <div class="events-content">
+
         <ol>
-            <li *ngFor="let item of items" [ngClass]="{'selected': selected === item.id}" [attr.data-date]="item.date">
+            <li *ngFor="let item of items" id="event_{{ item.id }}" [attr.data-date]="item.date">
+
                 <h2>{{ item.title }}</h2>
                 <em>{{ item.date }}</em>
                 <p>{{ item.description }}</p>

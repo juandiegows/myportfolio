@@ -12,6 +12,7 @@ html {
   font-size: 10px;
   font-family: 'Quicksand', sans-serif;
   width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -57,7 +58,7 @@ body {
   padding: 0.8rem 2rem;
   background-color: var(--colorPrimary);
   text-decoration: none;
-  color: #333333;
+  color: var(--color);
 }
 
 ::selection {
