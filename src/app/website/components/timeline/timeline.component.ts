@@ -42,7 +42,7 @@ export class TimelineComponent {
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi!',
       url: 'https://juandiegows.com/assets/video/HV%20Juan%20Diego%20Mej%C3%ADa.mp4',
       type: 'video', // Especificar el tipo
-      IsInitial: true,
+      IsInitial: false,
     },
     {
       id: 2,
@@ -97,8 +97,17 @@ export class TimelineComponent {
   ];
 
   ngOnInit(): void {
-    this.itemSelect = this.items.find((item) => item.id === this.selected);
+    this.itemSelect = this.items.find((item) => item.IsInitial);
     this.first = this.itemSelect.id || this.items[0].id;
+    const eventElement = document.getElementById(`event_${ this.itemSelect.id}`);
+    this.selected =  this.itemSelect.id; 
+      if (eventElement) {
+        // Desplázate suavemente hacia el evento seleccionado
+        eventElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end',
+        });
+      }
     this.setDisabledPrev();
     const events = document.querySelector('.events-wrapper') as HTMLElement;
     events.addEventListener('scroll', () => {
