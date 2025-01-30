@@ -4,8 +4,8 @@ export interface EventInfo {
     date: string;
     title: string;
     description: string;
-    url: string;
-    type: string;
+    url: string | null;
+    type: string | null;
     is_initial: boolean;
     created_at: string;
     updated_at: string;
