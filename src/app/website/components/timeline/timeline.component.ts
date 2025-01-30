@@ -2,6 +2,8 @@ import { AfterViewInit, Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Event } from '../../models/Event.model';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { EventInfo } from '../../models/info/EventInfo.model';
+import { Lang, SettingService } from '../../services/setting.service';
 
 @Component({
   selector: 'app-timeline',
@@ -17,17 +19,22 @@ export class TimelineComponent implements AfterViewInit {
   itemSelect: any = {};
   safeUrl: SafeResourceUrl | null = null; // URL segura para iframe
 
-  events: Event[] = [];
-
+  events: EventInfo[] = [];
+  eventsAll: Event[] = [];
   constructor(
     private readonly apiService: ApiService,
-    private readonly sanitizer: DomSanitizer
+    private readonly sanitizer: DomSanitizer,
+    private readonly setting: SettingService
   ) {}
 
   ngOnInit(): void {
+    this.setting.lang$.subscribe(() => {
+      this.fillEvents();
+    });
     this.apiService.getEvents().subscribe({
       next: (data) => {
-        this.events = data.data as Event[];
+        this.eventsAll = data.data as Event[];
+        this.fillEvents();
         this.itemSelect = this.events.find((event) => event.is_initial);
         this.first = this.itemSelect.id || this.events[0].id;
         this.selected = this.itemSelect.id;
@@ -57,20 +64,44 @@ export class TimelineComponent implements AfterViewInit {
         behavior: 'smooth',
       });
 
-      const eventElement = document.getElementById(`event_${ this.selected}`);
+      const eventElement = document.getElementById(`event_${this.selected}`);
       if (eventElement) {
-        const eventsContent = document.querySelector(`.events-content`) as HTMLElement;
+        const eventsContent = document.querySelector(
+          `.events-content`
+        ) as HTMLElement;
         const ancho_eventElement = eventElement.clientWidth; // Obtener el ancho del elemento
         const scrollDistance = index * ancho_eventElement;
-        
+
         eventsContent.scrollTo({
           left: scrollDistance,
-          behavior: 'smooth' // Desplazamiento suave
+          behavior: 'smooth', // Desplazamiento suave
         });
-      } 
+      }
     }, 3000);
+  }
 
+  fillEvents() {
+    this.events = this.eventsAll.map((event) => ({
+      id: event.id,
+      user_id: event.user_id,
+      date: event.date,
+      title: this.setting.lang === Lang.en ? event.title : event.spanish_title,
+      description:
+        this.setting.lang === Lang.en
+          ? event.description
+          : event.spanish_description,
+      url: event.url,
+      type: event.type,
+      is_initial: event.is_initial,
+      created_at: event.created_at,
+      updated_at: event.updated_at,
+      url_full: event.url_full,
+    }));
 
+    this.itemSelect = this.events.find((event) => event.is_initial);
+    this.first = this.itemSelect?.id || this.events[0]?.id;
+    this.selected = this.itemSelect?.id;
+    this.selectItem(this.itemSelect?.id);
   }
 
   selectItem(id: number): void {
