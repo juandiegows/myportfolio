@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { Message } from '../models/Message.model';
+import { Event } from '../models/Event.model';
 @Injectable({
   providedIn: 'root',
 })
@@ -34,6 +35,11 @@ export class ApiService {
   getWorks(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/user/juandiegows/works`);
   }
+
+  getEvents(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/user/juandiegows/events`);
+  }
+
 
   getEducations(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/user/juandiegows/educations`);

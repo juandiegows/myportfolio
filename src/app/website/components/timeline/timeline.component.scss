@@ -29,6 +29,21 @@ Main Components
   display: none;
 }
 
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.video iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
 .cd-horizontal-timeline.loaded {
   /* show the timeline after events position has been set (using JavaScript) */
   opacity: 1;
@@ -38,13 +53,13 @@ Main Components
   position: relative;
   height: 100px;
   width: 90%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .content {
   width: 90%;
-  max-width: 800px;
+  max-width: 1000px;
   height: 450px;
   margin: 0 auto;
   display: flex;
@@ -52,7 +67,17 @@ Main Components
   justify-content: center;
   overflow: hidden;
   border-radius: 10px;
+  font-size: 4rem;
+  text-align: justify;
+  line-height: 1.5;
 }
+
+.content p {
+  max-height: 100%; /* Asegura que el párrafo no exceda el contenedor */
+  overflow-y: auto;  /* Habilita el scroll vertical */
+  padding: 10px;  /* Agrega algo de espacio dentro del p */
+}
+
 
 .content img,
 .content video {
@@ -336,13 +361,13 @@ Main Components
 
 
 .cd-horizontal-timeline .events-content li>* {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .cd-horizontal-timeline .events-content h2 {
   font-weight: bold;
-  font-size: 2.6rem;
+  font-size: 1.6rem;
   font-family: "Playfair Display", serif;
   font-weight: 700;
   line-height: 1.2;
@@ -374,11 +399,11 @@ Main Components
 
 @media only screen and (min-width: 768px) {
   .cd-horizontal-timeline .events-content h2 {
-    font-size: 7rem;
+    font-size: 3rem;
   }
 
   .cd-horizontal-timeline .events-content em {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .cd-horizontal-timeline .events-content p {

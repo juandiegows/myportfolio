@@ -2,20 +2,26 @@
     <div class="content">
         <ng-container *ngIf="itemSelect">
             <!-- Si es una imagen -->
-            <img *ngIf="isImage(itemSelect.type)" [src]="itemSelect.url" alt="{{ itemSelect.title }}" />
-          
-            <!-- Si es un video -->
-            <video *ngIf="isVideo(itemSelect.type)" [src]="itemSelect.url" controls></video>
-          
+            <img *ngIf="isImage(itemSelect.type)" [src]="itemSelect.url_full" alt="{{ itemSelect.title }}" />
 
-            <a
-              *ngIf="isWeb(itemSelect.type)"
-              [href]="itemSelect.url"
-              target="_blank"
-              class="btn "
-              >Abrir contenido</a
-            >
-          </ng-container>
+            <!-- Si es un video -->
+            <video *ngIf="isVideo(itemSelect.type)" [src]="itemSelect.url_full" controls></video>
+
+
+            <div class="video" *ngIf="isYoutube(itemSelect.type)">
+                <iframe [src]="safeUrl"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+
+            <p *ngIf="isText(itemSelect.type)">{{ itemSelect.description }}</p>
+
+
+            <a *ngIf="isWeb(itemSelect.type)" [href]="itemSelect.url_full" target="_blank" class="btn ">Abrir
+                contenido</a>
+        </ng-container>
     </div>
     <div class="timeline">
 
@@ -27,7 +33,8 @@
             <div class="events" [ngStyle]="{ width: calculateEventsWidth() }">
 
                 <ol>
-                    <li *ngFor="let item of items; let i = index" (click)="selectItem(item.id, i)">
+                    <li *ngFor="let item of events; let i = index" (click)="selectItem(item.id)"
+                        id="event_Item{{ item.id }}">
                         <a [ngClass]="{ 'selected': selected === item.id }"
                             [ngStyle]="{ 'left': (eventsMinDistance * (i + 1)) + 'px' }" [attr.data-id]="item.id"
                             [attr.data-date]="item.date">
@@ -53,7 +60,7 @@
     <div class="events-content">
 
         <ol>
-            <li *ngFor="let item of items" id="event_{{ item.id }}" [attr.data-date]="item.date">
+            <li *ngFor="let item of events" id="event_{{ item.id }}" [attr.data-date]="item.date">
 
                 <h2>{{ item.title }}</h2>
                 <em>{{ item.date }}</em>
