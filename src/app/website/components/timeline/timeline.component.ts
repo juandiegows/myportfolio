@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Event } from '../../models/Event.model';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -15,11 +21,12 @@ export class TimelineComponent implements AfterViewInit {
   @ViewChild('eventsWrapper') eventsWrapper!: ElementRef<HTMLElement>;
   @ViewChild('prevButton') prevButton!: ElementRef<HTMLElement>;
   @ViewChild('nextButton') nextButton!: ElementRef<HTMLElement>;
+  @ViewChild('eventsContainer') eventsContainer!: ElementRef<HTMLElement>;
 
   eventsMinDistance = 120;
   selected = 1;
   first = 1;
-  itemSelect: any  = {};
+  itemSelect: any = {};
   safeUrl: SafeResourceUrl | null = null;
   events: EventInfo[] = [];
   eventsAll: Event[] = [];
@@ -27,23 +34,33 @@ export class TimelineComponent implements AfterViewInit {
   constructor(
     private readonly apiService: ApiService,
     private readonly sanitizer: DomSanitizer,
-    private readonly setting: SettingService
+    private readonly setting: SettingService,
+    private readonly renderer: Renderer2
   ) {}
 
   ngOnInit(): void {
+ 
     this.setting.lang$.subscribe(() => this.fillEvents());
 
     this.apiService.getEvents().subscribe({
       next: (data) => {
         this.eventsAll = data.data;
         this.fillEvents();
+        if (this.eventsContainer) {
+          this.renderer.setStyle(
+            this.eventsContainer.nativeElement,
+            'width',
+            this.calculateEventsWidth()
+          );
+        }
       },
       error: (err) => console.error('Error al cargar eventos:', err),
     });
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => this.scrollToSelected(), 3000);
+   
+    setTimeout(() => this.scrollToSelected(), 5000);
   }
 
   fillEvents(): void {
@@ -56,7 +73,8 @@ export class TimelineComponent implements AfterViewInit {
           : event.spanish_description,
     }));
 
-    this.itemSelect = this.events.find((event) => event.is_initial) || this.events[0];
+    this.itemSelect =
+      this.events.find((event) => event.is_initial) || this.events[0];
     this.first = this.itemSelect?.id ?? 1;
     this.selected = this.itemSelect?.id ?? 1;
     this.selectItem(this.selected);
@@ -67,7 +85,9 @@ export class TimelineComponent implements AfterViewInit {
     this.itemSelect = this.events.find((item) => item.id === id);
 
     if (this.itemSelect && this.isYoutube(this.itemSelect.type)) {
-      this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.itemSelect.url);
+      this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+        this.itemSelect.url
+      );
     }
 
     this.scrollToSelected();
@@ -80,7 +100,10 @@ export class TimelineComponent implements AfterViewInit {
     if (index === -1) return;
 
     const scrollDistance = index * 100;
-    this.eventsWrapper.nativeElement.scrollTo({ left: scrollDistance, behavior: 'smooth' });
+    this.eventsWrapper.nativeElement.scrollTo({
+      left: scrollDistance,
+      behavior: 'smooth',
+    });
 
     const eventElement = document.getElementById(`event_${this.selected}`);
     eventElement?.scrollIntoView({ behavior: 'smooth', block: 'end' });
@@ -91,7 +114,8 @@ export class TimelineComponent implements AfterViewInit {
   calculateEventsWidth(): string {
     if (!this.eventsWrapper) return '0px';
     const wrapperWidth = this.eventsWrapper.nativeElement.offsetWidth;
-    const calculatedWidth = this.eventsMinDistance * (this.events.length + 1) + 100;
+    const calculatedWidth =
+      this.eventsMinDistance * (this.events.length + 1) + 50;
     return `${Math.max(calculatedWidth, wrapperWidth)}px`;
   }
 
@@ -100,7 +124,8 @@ export class TimelineComponent implements AfterViewInit {
 
     const eventsEl = this.eventsWrapper.nativeElement;
     const atStart = eventsEl.scrollLeft === 0;
-    const atEnd = eventsEl.scrollLeft + eventsEl.clientWidth >= eventsEl.scrollWidth - 50;
+    const atEnd =
+      eventsEl.scrollLeft + eventsEl.clientWidth >= eventsEl.scrollWidth - 50;
 
     this.prevButton.nativeElement.classList.toggle('inactive', atStart);
     this.nextButton.nativeElement.classList.toggle('inactive', atEnd);
@@ -110,7 +135,10 @@ export class TimelineComponent implements AfterViewInit {
     if (!this.eventsWrapper) return;
 
     const containerWidth = this.eventsWrapper.nativeElement.offsetWidth * -1;
-    this.eventsWrapper.nativeElement.scrollBy({ left: containerWidth, behavior: 'smooth' });
+    this.eventsWrapper.nativeElement.scrollBy({
+      left: containerWidth,
+      behavior: 'smooth',
+    });
 
     setTimeout(() => this.updateNavButtons(), 500);
   }
@@ -119,7 +147,10 @@ export class TimelineComponent implements AfterViewInit {
     if (!this.eventsWrapper) return;
 
     const containerWidth = this.eventsWrapper.nativeElement.offsetWidth;
-    this.eventsWrapper.nativeElement.scrollBy({ left: containerWidth, behavior: 'smooth' });
+    this.eventsWrapper.nativeElement.scrollBy({
+      left: containerWidth,
+      behavior: 'smooth',
+    });
 
     setTimeout(() => this.updateNavButtons(), 500);
   }

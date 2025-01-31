@@ -30,7 +30,7 @@
             <div class="shadow-left"></div>
 
 
-            <div class="events" [ngStyle]="{ width: calculateEventsWidth() }">
+            <div class="events" #eventsContainer>
 
                 <ol>
                     <li *ngFor="let item of events; let i = index" (click)="selectItem(item.id)"
