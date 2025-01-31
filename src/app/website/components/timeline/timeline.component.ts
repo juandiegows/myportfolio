@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Event } from '../../models/Event.model';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -9,21 +9,18 @@ import { Lang, SettingService } from '../../services/setting.service';
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss'],
-  standalone : true
+  standalone: false,
 })
 export class TimelineComponent implements AfterViewInit {
-  @ViewChild('eventsWrapper') eventsWrapper!: ElementRef<HTMLElement>;
-  @ViewChild('prevButton') prevButton!: ElementRef<HTMLElement>;
-  @ViewChild('nextButton') nextButton!: ElementRef<HTMLElement>;
+  eventsMinDistance: number = 120;
 
-  eventsMinDistance = 120;
-  selected = 1;
-  first = 1;
+  selected: number = 1;
+  first: number = 1;
   itemSelect: any = {};
-  safeUrl: SafeResourceUrl | null = null;
+  safeUrl: SafeResourceUrl | null = null; // URL segura para iframe
+
   events: EventInfo[] = [];
   eventsAll: Event[] = [];
-
   constructor(
     private readonly apiService: ApiService,
     private readonly sanitizer: DomSanitizer,
@@ -31,97 +28,191 @@ export class TimelineComponent implements AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.setting.lang$.subscribe(() => this.fillEvents());
-
+    this.setting.lang$.subscribe(() => {
+      this.fillEvents();
+    });
     this.apiService.getEvents().subscribe({
       next: (data) => {
-        this.eventsAll = data.data;
+        this.eventsAll = data.data as Event[];
         this.fillEvents();
+        this.itemSelect = this.events.find((event) => event.is_initial);
+        this.first = this.itemSelect.id || this.events[0].id;
+        this.selected = this.itemSelect.id;
+        this.selectItem(this.itemSelect.id);
       },
-      error: (err) => console.error('Error al cargar eventos:', err),
+      error: (err) => {
+        console.error('Error al cargar eventos:', err);
+      },
+    });
+
+    this.setDisabledPrev();
+    const events = document.querySelector('.events-wrapper') as HTMLElement;
+    events.addEventListener('scroll', () => {
+      this.setDisabledPrev();
+      this.setDisabledNext();
     });
   }
 
-  ngAfterViewInit(): void {
-    setTimeout(() => this.scrollToSelected(), 3000);
+  ngAfterViewInit() {
+    setTimeout(() => {
+      const events = document.querySelector('.events-wrapper') as HTMLElement;
+      const index = this.events.findIndex((item) => item.id === this.selected);
+      let scrollDistance = index * 100;
+
+      events.scrollTo({
+        left: scrollDistance,
+        behavior: 'smooth',
+      });
+
+      const eventElement = document.getElementById(`event_${this.selected}`);
+      if (eventElement) {
+        const eventsContent = document.querySelector(
+          `.events-content`
+        ) as HTMLElement;
+        const ancho_eventElement = eventElement.clientWidth; // Obtener el ancho del elemento
+        const scrollDistance = index * ancho_eventElement;
+
+        eventsContent.scrollTo({
+          left: scrollDistance,
+          behavior: 'smooth', // Desplazamiento suave
+        });
+      }
+    }, 3000);
   }
 
-  fillEvents(): void {
+  fillEvents() {
     this.events = this.eventsAll.map((event) => ({
-      ...event,
+      id: event.id,
+      user_id: event.user_id,
+      date: event.date,
       title: this.setting.lang === Lang.en ? event.title : event.spanish_title,
       description:
         this.setting.lang === Lang.en
           ? event.description
           : event.spanish_description,
+      url: event.url,
+      type: event.type,
+      is_initial: event.is_initial,
+      created_at: event.created_at,
+      updated_at: event.updated_at,
+      url_full: event.url_full,
     }));
 
-    this.itemSelect = this.events.find((event) => event.is_initial) || this.events[0];
-    this.first = this.itemSelect?.id ?? 1;
-    this.selected = this.itemSelect?.id ?? 1;
-    this.selectItem(this.selected);
+    this.itemSelect = this.events.find((event) => event.is_initial);
+    this.first = this.itemSelect?.id || this.events[0]?.id;
+    this.selected = this.itemSelect?.id;
+    this.selectItem(this.itemSelect?.id);
   }
 
   selectItem(id: number): void {
     this.selected = id;
-    this.itemSelect = this.events.find((item) => item.id === id) as EventInfo;
+    this.itemSelect = this.events.find((item) => item.id === id);
 
-    if (this.itemSelect && this.isYoutube(this.itemSelect.type)) {
-      this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.itemSelect.url);
+    // Sanitizar URL si es de YouTube
+    if (this.isYoutube(this.itemSelect.type)) {
+      this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+        this.itemSelect.url
+      );
     }
 
-    this.scrollToSelected();
-  }
+    const events = document.querySelector('.events-wrapper') as HTMLElement;
 
-  scrollToSelected(): void {
-    if (!this.eventsWrapper) return;
+    if (events) {
+      const index = this.events.findIndex((item) => item.id === id);
+      const scrollDistance = index * 100;
 
-    const index = this.events.findIndex((item) => item.id === this.selected);
-    if (index === -1) return;
+      events.scrollTo({
+        left: scrollDistance,
+        behavior: 'smooth',
+      });
 
-    const scrollDistance = index * 100;
-    this.eventsWrapper.nativeElement.scrollTo({ left: scrollDistance, behavior: 'smooth' });
-
-    const eventElement = document.getElementById(`event_${this.selected}`);
-    eventElement?.scrollIntoView({ behavior: 'smooth', block: 'end' });
-
-    this.updateNavButtons();
+      const eventElement = document.getElementById(`event_${id}`);
+      if (eventElement) {
+        eventElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }
+    }
   }
 
   calculateEventsWidth(): string {
-    if (!this.eventsWrapper) return '0px';
-    const wrapperWidth = this.eventsWrapper.nativeElement.offsetWidth;
-    const calculatedWidth = this.eventsMinDistance * (this.events.length + 1) + 100;
+    const eventsWrapper = document.querySelector(
+      '.events-wrapper'
+    ) as HTMLElement;
+
+    if (!eventsWrapper) {
+      return '0px'; // Si no se encuentra el contenedor, devolver un ancho predeterminado.
+    }
+
+    // Calcula el ancho basado en la distancia mínima y la cantidad de elementos.
+    const calculatedWidth =
+      this.eventsMinDistance * (this.events.length + 1) + 100;
+
+    // Obtén el ancho del contenedor `.events-wrapper`.
+    const wrapperWidth = eventsWrapper.offsetWidth;
+
+    // Devuelve el mayor entre el ancho calculado y el ancho del contenedor.
     return `${Math.max(calculatedWidth, wrapperWidth)}px`;
   }
 
-  updateNavButtons(): void {
-    if (!this.eventsWrapper) return;
+  setDisabledPrev() {
+    const events = document.querySelector('.events-wrapper') as HTMLElement;
+    const prevButton = document.getElementById('prev');
+    if (events && prevButton) {
+      // Verifica si el scroll horizontal está en la posición inicial
 
-    const eventsEl = this.eventsWrapper.nativeElement;
-    const atStart = eventsEl.scrollLeft === 0;
-    const atEnd = eventsEl.scrollLeft + eventsEl.clientWidth >= eventsEl.scrollWidth - 50;
+      if (events.scrollLeft === 0) {
+        // Agrega la clase 'inactive' para desactivar el botón
+        prevButton.classList.add('inactive');
+      } else {
+        // Quita la clase 'inactive' para activar el botón
+        prevButton.classList.remove('inactive');
+      }
+    }
+  }
 
-    this.prevButton.nativeElement.classList.toggle('inactive', atStart);
-    this.nextButton.nativeElement.classList.toggle('inactive', atEnd);
+  setDisabledNext() {
+    const events = document.querySelector('.events-wrapper') as HTMLElement;
+    const nextButton = document.getElementById('next');
+
+    if (events && nextButton) {
+      // Verifica si el scroll está al máximo
+      if (events.scrollLeft + events.clientWidth >= events.scrollWidth - 50) {
+        nextButton.classList.add('inactive'); // Desactivar
+      } else {
+        nextButton.classList.remove('inactive'); // Activar
+      }
+    }
   }
 
   prev(): void {
-    if (!this.eventsWrapper) return;
+    const events = document.querySelector('.events-wrapper') as HTMLElement;
 
-    const containerWidth = this.eventsWrapper.nativeElement.offsetWidth * -1;
-    this.eventsWrapper.nativeElement.scrollBy({ left: containerWidth, behavior: 'smooth' });
-
-    setTimeout(() => this.updateNavButtons(), 500);
+    if (events) {
+      const containerWidth = events.offsetWidth * -1;
+      events.scrollTo({
+        left: containerWidth,
+        behavior: 'smooth', // Desplazamiento suave
+      });
+    }
   }
 
   next(): void {
-    if (!this.eventsWrapper) return;
+    const events = document.querySelector('.events-wrapper') as HTMLElement;
 
-    const containerWidth = this.eventsWrapper.nativeElement.offsetWidth;
-    this.eventsWrapper.nativeElement.scrollBy({ left: containerWidth, behavior: 'smooth' });
+    if (events) {
+      const containerWidth = events.offsetWidth;
+      const maxScrollLeft = events.scrollWidth - containerWidth; // Límite máximo del desplazamiento
 
-    setTimeout(() => this.updateNavButtons(), 500);
+      // Calcula el nuevo valor para scrollLeft
+      const newScrollLeft = Math.min(
+        events.scrollLeft + containerWidth,
+        maxScrollLeft
+      );
+
+      events.scrollTo({
+        left: newScrollLeft, // Ajusta al límite si es necesario
+        behavior: 'smooth', // Desplazamiento suave
+      });
+    }
   }
 
   isImage(type: string): boolean {
