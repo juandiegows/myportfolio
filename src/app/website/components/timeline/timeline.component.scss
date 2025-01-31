@@ -94,6 +94,10 @@ Main Components
   overflow: hidden;
   --left-gradient: 0px;
   --right-gradient: 0px;
+  overflow-x: scroll; 
+  -webkit-overflow-scrolling: touch; 
+  scrollbar-width: none; /* Para Firefox */
+  -ms-overflow-style: none; /* Para Internet Explorer 10+ */
 }
 
 .cd-horizontal-timeline .events-wrapper::after,

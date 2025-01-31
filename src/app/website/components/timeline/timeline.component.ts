@@ -2,7 +2,6 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  HostListener,
   Renderer2,
   ViewChild,
 } from '@angular/core';
@@ -62,13 +61,19 @@ export class TimelineComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.eventsWrapper.nativeElement.addEventListener('wheel', (event) => {
       event.preventDefault();
-    
+
       this.eventsWrapper.nativeElement.scrollBy({
         left: event.deltaY < 0 ? -30 : 30,
       });
     });
+
+ 
     setTimeout(() => this.scrollToSelected(), 5000);
   }
+
+
+
+ 
 
   fillEvents(): void {
     this.events = this.eventsAll.map((event) => ({
@@ -181,6 +186,4 @@ export class TimelineComponent implements AfterViewInit {
   isYoutube(type: string): boolean {
     return type === 'youtube';
   }
-
-
 }
