@@ -76,7 +76,7 @@ export class SkillsComponent implements OnInit {
     titleMessage: "Puedes darle clic a los años para filtrar"
   };
 
-  active: boolean = false;
+  active: Boolean = false;
   IsExperience: boolean = true;
 
   constructor(
@@ -314,5 +314,17 @@ export class SkillsComponent implements OnInit {
 
   getEducation(item: any): EducationInfo {
     return item as EducationInfo;
+  }
+
+  trackById(index: number, item: any): any {
+    return item.id;
+  }
+  
+  trackByItem(index: number, item: any): any {
+    return item.id;
+  }
+  
+  trackByYear(index: number, year: number): number {
+    return year;
   }
 }
