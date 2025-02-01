@@ -216,6 +216,7 @@ $container-margin-top: 3rem;
           flex-direction: column;
           justify-content: space-between;
           padding: 1rem;
+         
 
           &::-webkit-scrollbar-track {
             background-color: var(--backgroundSecond);
@@ -302,8 +303,8 @@ $container-margin-top: 3rem;
           display: flex;
           align-items: center;
           height: 5rem;
+          overflow-y: hidden;
           overflow-x: auto;
-          overflow: hidden;
 
           &::-webkit-scrollbar {
             height: 8px;
@@ -452,7 +453,6 @@ $container-margin-top: 3rem;
 
             .entity__item {
               overflow-y: auto;
-              overflow: hidden;
               max-height: 17vw;
 
               .item {
@@ -475,7 +475,6 @@ $container-margin-top: 3rem;
 
           .info__container {
             overflow-y: auto;
-            overflow: hidden;
             padding: 0.5vw;
             padding-bottom: 2vw;
             max-height: 20vw;

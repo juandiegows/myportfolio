@@ -188,12 +188,12 @@ export class SkillsComponent implements OnInit {
   }
   
   hasMatchingSkill(work: WorkInfo): boolean {
-    // Verifica si al menos uno de los temas seleccionados está en el trabajo
     return this.skillsFilter.some(skill =>
-      work.topics?.some(workTopic => workTopic === skill.name)
+      work.topics?.some(workTopic => 
+        workTopic.toLowerCase() === skill.name.toLowerCase()
+      )
     );
   }
-
   /**
    * Función helper para transformar un Topic a TopicInfo según el idioma.
    */
