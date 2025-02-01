@@ -71,15 +71,13 @@ export class TimelineComponent implements AfterViewInit {
       (entries, obs) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Cuando el contenedor entra en la vista, se hace scroll hasta el elemento seleccionado
-            this.scrollToSelected();
-            // Una vez ejecutado, desconectamos el observer (si solo se necesita una vez)
+            this.scrollToSelected()
             obs.disconnect();
           }
         });
       },
       {
-        threshold: 0.5, // Se considera visible cuando el 50% del contenedor es visible (ajusta este valor según sea necesario)
+        threshold: 0.5, 
       }
     );
 

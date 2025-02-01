@@ -38,6 +38,13 @@ $container-margin-top: 3rem;
         height: clamp(3rem, 2vw, 20rem);
         cursor: pointer;
 
+        &:hover {
+          background-color: var(--backgroundSecond);
+          border-radius: 1rem;
+          opacity: 0.8;
+          padding: 1rem;
+        }
+
         .lang {
           width: 100%;
         }
@@ -347,7 +354,7 @@ $container-margin-top: 3rem;
           cursor: pointer;
         }
 
-        & > * {
+        &>* {
           margin: auto;
         }
       }
