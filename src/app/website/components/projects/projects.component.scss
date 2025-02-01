@@ -25,6 +25,8 @@
     }
 
     .project {
+      border-radius: 1rem;
+      overflow: hidden;
       background-color: var(--backgroundSecond);
       display: flex;
       flex-direction: column;

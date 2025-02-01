@@ -81,8 +81,8 @@
       }
     ],
     "btn_text": "View all",
-    "btn_view": "View Project",
-    "btn_git": "View code",
+    "btn_view": "Demo",
+    "btn_git": "code",
     "text_description": "Description"
   },
   "blog": {
