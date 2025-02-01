@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { forkJoin } from 'rxjs';
 import { Lang, SettingService } from '../../services/setting.service';
 import { Topic } from '../../models/Topic.model';
 import { TopicInfo } from '../../models/info/TopicInfo.model';
@@ -9,326 +10,229 @@ import { EducationInfo } from '../../models/info/EducationInfo.model';
 import { Education } from '../../models/Education.model';
 
 @Component({
-    selector: 'app-skills',
-    templateUrl: './skills.component.html',
-    styleUrls: ['./skills.component.scss'],
-    standalone: false
+  selector: 'app-skills',
+  templateUrl: './skills.component.html',
+  styleUrls: ['./skills.component.scss'],
+  standalone: false
 })
 export class SkillsComponent implements OnInit {
 
+  // Mensajes de estado
   messageSkill = "Consultado los datos...";
-  skills: TopicInfo[] = [];
-  skillList: Topic[] = [];
-
-
   messageWork = "Consultado los datos...";
-  works: WorkInfo[] = [];
-  worksList: Work[] = [];
-
   messageEducation = "Consultado los datos...";
+
+  // Datos originales
+  private skillList: Topic[] = [];
+  private worksList: Work[] = [];
+  private educationList: Education[] = [];
+
+  // Datos transformados
+  skills: TopicInfo[] = [];
+  works: WorkInfo[] = [];
   education: EducationInfo[] = [];
-  educationList: Education[] = [];
 
-  workEducation: WorkInfo[] | EducationInfo[] = [];
-  filter: number[] = []
+  // Datos combinados para experiencia / educación
+  workEducation: (WorkInfo | EducationInfo)[] = [];
+  filter: number[] = [];
 
+  // Datos activos
   skillActive: Topic = new Topic();
   skillInfoActive: TopicInfo = new TopicInfo();
+  itemActive: WorkInfo | EducationInfo = {} as WorkInfo;
 
-  lang : string = "";
+  // Configuración y mensajes en función del idioma
+  lang: string = "";
   dataSkill = {
-    "title": "Mi habilidades",
-    "btnProject": "Ver Proyectos",
-    "btnExperience": "Ver Experiencia"
-  }
-
+    title: "Mi habilidades",
+    btnProject: "Ver Proyectos",
+    btnExperience: "Ver Experiencia"
+  };
 
   dataExpEdu = {
-    "title": "Mi experiencia laboral y educación",
-    "titleExperience": "Experiencia",
-    "titleEducation": "educación",
-    "dataExp": {
-
-      "subtitle": "Empresa o Clientes",
-      "titleyear": "años",
-      "titleClear": "clean filter",
-      "titleMessage": "You can click on the years to filter"
+    title: "Mi experiencia laboral y educación",
+    titleExperience: "Experiencia",
+    titleEducation: "educación",
+    dataExp: {
+      subtitle: "Empresa o Clientes",
+      titleyear: "años",
+      titleClear: "clean filter",
+      titleMessage: "You can click on the years to filter"
     },
-    "dataEdu": {
-
-      "subtitle": "Escuela o Entidad",
-      "titleyear": "años",
-      "titleClear": "clean filter",
-      "titleMessage": "You can click on the years to filter"
+    dataEdu: {
+      subtitle: "Escuela o Entidad",
+      titleyear: "años",
+      titleClear: "clean filter",
+      titleMessage: "You can click on the years to filter"
     },
-    "textCertificate": "Certificate Download",
-    "textHelpCertificate": "clic para descargar el certificado"
+    textCertificate: "Certificate Download",
+    textHelpCertificate: "clic para descargar el certificado"
+  };
 
-
-  }
   dataE = {
+    subtitle: "Empresa o Clientes",
+    titleyear: "años",
+    titleClear: "Limpiar filtro",
+    titleMessage: "Puedes darle clic a los años para filtrar"
+  };
 
-    "subtitle": "Empresa o Clientes",
-    "titleyear": "años",
-    "titleClear": "Limpiar filtro",
-    "titleMessage": "Puedes darle clic a los años para filtrar"
-  }
-
-  itemActive: WorkInfo | EducationInfo = new Work;
-
-  active: Boolean = false;
+  active: boolean = false;
   IsExperience: boolean = true;
+
   constructor(
     private readonly setting: SettingService,
     private readonly apiService: ApiService
   ) { }
 
   ngOnInit(): void {
-
-    this.apiService.getSkills()
-      .subscribe({
-        next: d => {
-          if (d.status != 200) {
-            this.skillList = d.data as Topic[];
-            this.messageSkill = "";
-            this.fillData();
-          } else {
-            this.messageSkill = "Error al  intentar traer los datos desde el api.";
-          }
-        },
-        error: (error) => {
-          this.messageSkill = "Error al  intentar conectar con el api.";
-        }
-      });
-
-    this.apiService.getWorks()
-      .subscribe({
-        next: d => {
-          if (d.status != 200) {
-            this.worksList = d.data as Work[];
-            this.messageWork = "";
-            this.fillData();
-          } else {
-            this.messageWork = "Error al  intentar traer los datos desde el api.";
-          }
-        },
-        error: (error) => {
-          this.messageWork = "Error al  intentar conectar con el api.";
-        }
-      });
-
-    this.apiService.getEducations()
-      .subscribe({
-        next: d => {
-          if (d.status != 200) {
-            this.educationList = d.data as Education[];
-            this.messageEducation = "";
-            this.fillData();
-          } else {
-            this.messageEducation = "Error al  intentar traer los datos desde el api.";
-          }
-        },
-        error: (error) => {
-          this.messageEducation = "Error al  intentar conectar con el api.";
-        }
-      });
-
-    this.setting.lang$.subscribe(data => {
-      this.lang = data;
+    // Suscribirse a cambios de idioma y actualizar textos
+    this.setting.lang$.subscribe(langData => {
+      this.lang = langData;
       this.dataSkill = this.setting.data.skills;
       this.dataExpEdu = this.setting.data.experienceEducation;
-      this.ChangeData();
       this.fillData();
-    })
-  }
-
-  fillData() {
-    if (this.setting.lang == Lang.en) {
-      this.skillInfoActive =
-      {
-        id: this.skillActive.id,
-        name: this.skillActive.name,
-        link_image: this.skillActive.link_image,
-        description: this.skillActive.description,
-        topic: null,
-        type_topic: {
-          id: this.skillActive.type_topic.id,
-          name: this.skillActive.type_topic.name
-        }
-      }
-        ;
-    } else {
-      this.skillInfoActive =
-      {
-        id: this.skillActive.id,
-        name: this.skillActive.spanish_name,
-        link_image: this.skillActive.link_image,
-        description: this.skillActive.spanish_description,
-        topic: null,
-        type_topic: {
-          id: this.skillActive.type_topic.id,
-          name: this.skillActive.type_topic.spanish_name
-        }
-      }
-        ;
-    }
-
-    this.skills = [];
-    this.skillList.forEach((skill) => {
-      if (this.setting.lang == Lang.en) {
-        this.skills.push(
-          {
-            id: skill.id,
-            name: skill.name,
-            link_image: skill.link_image,
-            description: skill.description,
-            topic: null,
-            type_topic: {
-              id: skill.type_topic.id,
-              name: skill.type_topic.name
-            }
-          }
-        );
-      } else {
-        this.skills.push(
-          {
-            id: skill.id,
-            name: skill.spanish_name,
-            link_image: skill.link_image,
-            description: skill.spanish_description,
-            topic: null,
-            type_topic: {
-              id: skill.type_topic.id,
-              name: skill.type_topic.spanish_name
-            }
-          }
-        );
-      }
     });
 
+    // Realizar las 3 peticiones en paralelo
+    forkJoin({
+      skillsRes: this.apiService.getSkills(),
+      worksRes: this.apiService.getWorks(),
+      educationsRes: this.apiService.getEducations()
+    }).subscribe({
+      next: ({ skillsRes, worksRes, educationsRes }) => {
+        // Se asume que cuando status NO es 200 se tiene éxito (según la lógica original)
+        if (skillsRes.status !== 200) {
+          this.skillList = skillsRes.data as Topic[];
+          this.messageSkill = "";
+        } else {
+          this.messageSkill = "Error al intentar traer los datos desde el api.";
+        }
 
-    if (this.skills.length == 0) {
+        if (worksRes.status !== 200) {
+          this.worksList = worksRes.data as Work[];
+          this.messageWork = "";
+        } else {
+          this.messageWork = "Error al intentar traer los datos desde el api.";
+        }
+
+        if (educationsRes.status !== 200) {
+          this.educationList = educationsRes.data as Education[];
+          this.messageEducation = "";
+        } else {
+          this.messageEducation = "Error al intentar traer los datos desde el api.";
+        }
+        this.fillData();
+      },
+      error: (error) => {
+        this.messageSkill = "Error al intentar conectar con el api.";
+        this.messageWork = "Error al intentar conectar con el api.";
+        this.messageEducation = "Error al intentar conectar con el api.";
+      }
+    });
+  }
+
+  /**
+   * Transforma y asigna los datos para skills, works y educación según el idioma.
+   */
+  fillData(): void {
+    // Actualiza skillInfoActive basado en skillActive
+    this.skillInfoActive = this.transformTopic(this.skillActive);
+
+    // Transforma lista de skills
+    this.skills = this.skillList.map(skill => this.transformTopic(skill));
+    if (this.skills.length === 0) {
       this.messageSkill = "No hay habilidades disponibles";
     }
 
-
-    this.works = [];
-    this.worksList.forEach((work) => {
-      if (this.setting.lang == Lang.en) {
-        this.works.push(
-          {
-            id: work.id,
-            logo: work.logo,
-            business: work.business,
-            profession: {
-              id: work.profession.id,
-              name: work.profession.name,
-
-            },
-            description: work.description,
-            certificate_url: work.certificate_url,
-            topics: work.topics,
-            start_date: work.start_date,
-            end_date: work.end_date
-          }
-        );
-      } else {
-        this.works.push(
-          {
-            id: work.id,
-            logo: work.logo,
-            business: work.business,
-            profession: {
-              id: work.profession.id,
-              name: work.profession.name_spanish,
-
-            },
-            description: work.spanish_description,
-            certificate_url: work.certificate_url,
-            topics: work.topics_spanish,
-            start_date: work.start_date,
-            end_date: work.end_date
-          }
-        );
-      }
-    });
-
-
-    if (this.works.length == 0) {
+    // Transforma lista de works
+    this.works = this.worksList.map(work => this.transformWork(work));
+    if (this.works.length === 0) {
       this.messageWork = "No hay experiencia laboral disponibles";
     }
 
-
-
-    this.education = [];
-    this.educationList.forEach((education) => {
-      if (this.setting.lang == Lang.en) {
-        this.education.push(
-          {
-            id: education.id,
-            entity: education.entity,
-            title: education.title,
-            title_education: education.title_education,
-            description: education.description,
-            certificate_url: education.certificate_url,
-            start_date: education.start_date,
-            end_date: education.end_date
-          }
-        );
-      } else {
-        this.education.push(
-          {
-            id: education.id,
-            entity: education.entity,
-            title: education.spanish_title,
-            title_education: education.spanish_title_education,
-            description: education.spanish_description,
-            certificate_url: education.certificate_url,
-            start_date: education.start_date,
-            end_date: education.end_date
-          }
-        );
-      }
-    });
-
-
-    if (this.education.length == 0) {
+    // Transforma lista de educación
+    this.education = this.educationList.map(edu => this.transformEducation(edu));
+    if (this.education.length === 0) {
       this.messageEducation = "No hay estudios disponibles";
     }
+
+    // Actualiza la vista de experiencia/educación según el flag actual
     this.ChangeData();
   }
 
-
-
-  GetItem(): any[] {
-    if (this.filter.length == 0) {
-      if (this.IsExperience) {
-        return this.works;
-      } else {
-        return this.education;
+  /**
+   * Función helper para transformar un Topic a TopicInfo según el idioma.
+   */
+  private transformTopic(topic: Topic): TopicInfo {
+    return {
+      id: topic.id,
+      name: this.setting.lang === Lang.en ? topic.name : topic.spanish_name,
+      link_image: topic.link_image,
+      description: this.setting.lang === Lang.en ? topic.description : topic.spanish_description,
+      topic: null,
+      type_topic: {
+        id: topic.type_topic.id,
+        name: this.setting.lang === Lang.en ? topic.type_topic.name : topic.type_topic.spanish_name
       }
-    }
-    if (this.IsExperience) {
-      return this.works.filter(x =>
-        this.filter.includes(this.GetDate(x.start_date).getFullYear()) ||
-        this.filter.includes(this.GetDate(x.end_date).getFullYear())
-      );
-    } else {
-      return this.education.filter(x =>
-        this.filter.includes(this.GetDate(x.start_date).getFullYear()) ||
-        this.filter.includes(this.GetDate(x.end_date).getFullYear())
-      );
-    }
-
+    };
   }
 
-  clearFilter() {
+  /**
+   * Función helper para transformar un Work a WorkInfo según el idioma.
+   */
+  private transformWork(work: Work): WorkInfo {
+    return {
+      id: work.id,
+      logo: work.logo,
+      business: work.business,
+      profession: {
+        id: work.profession.id,
+        name: this.setting.lang === Lang.en ? work.profession.name : work.profession.name_spanish
+      },
+      description: this.setting.lang === Lang.en ? work.description : work.spanish_description,
+      certificate_url: work.certificate_url,
+      topics: this.setting.lang === Lang.en ? work.topics : work.topics_spanish,
+      start_date: work.start_date,
+      end_date: work.end_date
+    };
+  }
+
+  /**
+   * Función helper para transformar un Education a EducationInfo según el idioma.
+   */
+  private transformEducation(education: Education): EducationInfo {
+    return {
+      id: education.id,
+      entity: education.entity,
+      title: this.setting.lang === Lang.en ? education.title : education.spanish_title,
+      title_education: this.setting.lang === Lang.en ? education.title_education : education.spanish_title_education,
+      description: this.setting.lang === Lang.en ? education.description : education.spanish_description,
+      certificate_url: education.certificate_url,
+      start_date: education.start_date,
+      end_date: education.end_date
+    };
+  }
+
+  /**
+   * Devuelve la lista filtrada de items (works o educaciones) según el filtro de años.
+   */
+  GetItem(): (WorkInfo | EducationInfo)[] {
+    const list = this.IsExperience ? this.works : this.education;
+    if (this.filter.length === 0) return list;
+    return list.filter(item =>
+      this.filter.includes(this.getYearFromDate(item.start_date)) ||
+      this.filter.includes(this.getYearFromDate(item.end_date))
+    );
+  }
+
+  clearFilter(): void {
     this.filter = [];
   }
 
-  setFilter(year: number) {
-    if (this.filter.includes(year)) {
-      this.filter.splice(this.filter.indexOf(year), 1);
+  setFilter(year: number): void {
+    const index = this.filter.indexOf(year);
+    if (index > -1) {
+      this.filter.splice(index, 1);
     } else {
       this.filter.push(year);
     }
@@ -338,82 +242,71 @@ export class SkillsComponent implements OnInit {
     return this.filter.includes(year);
   }
 
-
-
-  Open(data: TopicInfo, index: number) {
+  Open(data: TopicInfo, index: number): void {
     this.skillInfoActive = data;
     this.skillActive = this.skillList[index];
     this.active = true;
   }
 
-  OpenExperience() {
+  OpenExperience(): void {
     this.IsExperience = true;
     this.ChangeData();
   }
 
-  OpenEducation() {
+  OpenEducation(): void {
     this.IsExperience = false;
     this.ChangeData();
   }
 
-
-  ChangeData() {
+  /**
+   * Actualiza la lista combinada y el item activo según la pestaña (experiencia o educación).
+   */
+  ChangeData(): void {
     this.clearFilter();
-    if (this.IsExperience) {
-      this.workEducation = this.works;
-    } else {
-      this.workEducation = this.education;
-    }
+    this.workEducation = this.IsExperience ? this.works : this.education;
     this.itemActive = this.workEducation[0];
   }
 
   getMessage(): string {
-    if (this.IsExperience) {
-      return this.messageWork;
-    } else {
-      return this.messageEducation;
-    }
+    return this.IsExperience ? this.messageWork : this.messageEducation;
   }
 
-
-  GetDate(_date1: string | null): Date {
-    if (_date1 == null) {
-      return new Date();
+  /**
+   * Parsea una fecha en distintos formatos a un objeto Date.
+   */
+  GetDate(_date: string | null): Date {
+    if (!_date) return new Date();
+    if (_date.includes('/')) {
+      const [day, month, year] = _date.split('/').map(Number);
+      return new Date(year, month - 1, day);
     }
-    if (_date1.includes('/')) {
-      let dateParts = _date1.split('/');
-      return new Date(Number(dateParts[2]), Number(dateParts[1]) - 1, Number(dateParts[0]));
-    } else {
-      return new Date(_date1);
-    }
-
+    return new Date(_date);
   }
 
+  /**
+   * Extrae el año de una fecha (cadena) utilizando GetDate.
+   */
+  private getYearFromDate(dateStr: string | null): number {
+    return this.GetDate(dateStr).getFullYear();
+  }
 
+  /**
+   * Obtiene todos los años relevantes de los items actuales para generar el filtro.
+   */
   GetYear(): number[] {
-    let years: number[] = [];
-    this.workEducation.forEach(element => {
-      let dateFinal = new Date().toISOString().slice(0, 10);
-      if (element.end_date != null) {
-        dateFinal = element.end_date;
-      }
-      let date = this.GetDate(element.start_date);
-      let datef = this.GetDate(dateFinal);
-      if (!years.includes(date.getFullYear()))
-        years.push(date.getFullYear());
-
-      if (!years.includes(datef.getFullYear()))
-        years.push(datef.getFullYear());
+    const years = new Set<number>();
+    this.workEducation.forEach(item => {
+      years.add(this.getYearFromDate(item.start_date));
+      years.add(this.getYearFromDate(item.end_date));
     });
-
-    return years.sort((a, b) => a - b);
+    return Array.from(years).sort((a, b) => a - b);
   }
 
+  // Métodos de apoyo para el template
 
   isWorkInfo(item: any): boolean {
     return item && item.hasOwnProperty('profession');
-}
-
+  }
 
   getWorkInfo(item: any): WorkInfo {
     return item as WorkInfo;
@@ -422,5 +315,4 @@ export class SkillsComponent implements OnInit {
   getEducation(item: any): EducationInfo {
     return item as EducationInfo;
   }
-
 }

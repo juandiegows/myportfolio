@@ -72,9 +72,6 @@ export class TimelineComponent implements AfterViewInit {
   }
 
 
-
- 
-
   fillEvents(): void {
     this.events = this.eventsAll.map((event) => ({
       ...event,

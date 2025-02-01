@@ -1,10 +1,20 @@
+// Variables de uso global
+$transition-speed: 2s ease;
+$primary-gap: 3.5rem;
+$desktop-gap: 3vw;
+
+$container-padding: 5vw;
+$container-margin-top: 3rem;
+
+// Base
 .container {
   width: 100%;
   margin: auto;
-  padding: 1rem 5vw;
-  margin-top: 3rem;
+  padding: 1rem $container-padding;
+  margin-top: $container-margin-top;
   box-sizing: border-box;
 
+  // Sección de Skills
   .container__skills {
     width: 100%;
     display: flex;
@@ -16,18 +26,17 @@
     }
 
     .skills {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+      margin: 2rem 0;
       width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 3.5rem;
+      gap: $primary-gap;
 
       .skill {
         width: clamp(3rem, 2vw, 20rem);
-        cursor: pointer;
         height: clamp(3rem, 2vw, 20rem);
+        cursor: pointer;
 
         .lang {
           width: 100%;
@@ -36,6 +45,7 @@
     }
   }
 
+  // Sección de Educación y Experiencia
   .education_experience {
     display: flex;
     flex-direction: column;
@@ -54,7 +64,6 @@
       height: clamp(4rem, 5vh, 30rem);
       box-sizing: border-box;
       position: relative;
-
       margin-top: 1rem;
 
       .option {
@@ -65,46 +74,42 @@
         height: 100%;
         cursor: pointer;
         font-weight: 600;
-        -webkit-user-select: none;
         user-select: none;
+        transition: all $transition-speed;
 
-        transition: all 2s ease;
+        &:hover {
+          color: var(--colorPrimary);
+        }
       }
 
       .option-active {
         color: var(--background);
+
+        &:hover {
+          font-weight: 900;
+        }
       }
 
       .option-active_index {
         position: absolute;
         top: 0;
         left: 0;
-        transition: all 2s ease;
         width: 50%;
         height: 100%;
         background-color: var(--colorPrimary);
         border-radius: 10px;
+        transition: all $transition-speed;
         z-index: -1;
       }
 
       .option-active_index_2 {
         left: 50%;
       }
-
-      .option:hover {
-        color: var(--colorPrimary);
-      }
-
-      .option-active:hover {
-        color: var(--background);
-        font-weight: 900;
-      }
     }
 
     .edu_exp_container {
       margin-top: 2rem;
       width: 100%;
-
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -115,13 +120,12 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        padding: 1rem 0 0 0;
+        padding: 1rem 0 0;
 
         .entity {
           width: 100%;
           overflow: auto;
           position: relative;
-          top: 0;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -146,7 +150,6 @@
           .entity__item {
             width: 100%;
             margin-top: 1rem;
-            height: auto;
 
             .item {
               display: flex;
@@ -164,10 +167,10 @@
 
               &:hover {
                 background-color: var(--backgroundSecond);
-              }
 
-              &:hover>.indicator {
-                background-color: var(--colorPrimary);
+                .indicator {
+                  background-color: var(--colorPrimary);
+                }
               }
             }
 
@@ -183,7 +186,6 @@
 
         .info__container {
           background-color: var(--backgroundSecond);
-
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -239,9 +241,8 @@
           .info_extra {
             margin-top: 2rem;
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
+            align-items: center;
             gap: 1rem;
 
             .btn_certificate {
@@ -251,7 +252,6 @@
               color: var(--color);
               padding: 1vw 2vw;
               margin-top: 1vw;
-
             }
           }
         }
@@ -276,10 +276,9 @@
         .years {
           display: flex;
           align-items: center;
-
           height: 5rem;
-          overflow: hidden;
           overflow-x: auto;
+          overflow: hidden;
 
           &::-webkit-scrollbar {
             height: 8px;
@@ -295,7 +294,6 @@
             align-items: center;
             height: 100%;
             cursor: pointer;
-            -webkit-user-select: none;
             user-select: none;
 
             p {
@@ -349,7 +347,7 @@
           cursor: pointer;
         }
 
-        &>* {
+        & > * {
           margin: auto;
         }
       }
@@ -357,21 +355,20 @@
   }
 }
 
+/* Responsive: Estilos para pantallas grandes */
 @media (min-width: 900px) {
   .container {
     display: grid;
-    padding: 1vw 5vw;
-    gap: 3vw;
-    grid-template-rows: 1fr;
     grid-template-columns: 48% 48%;
-    margin-bottom: 3vw;
-    margin-top: 3vw;
+    grid-template-rows: 1fr;
+    gap: 3vw;
+    padding: 1vw $container-padding;
+    margin: 3vw auto;
+
     .container__skills {
       .skills {
         margin-top: 3vw;
-        gap: 3vw;
-        display: flex;
-        flex-wrap: wrap;
+        gap: $desktop-gap;
         justify-content: flex-start;
         align-items: center;
 
@@ -388,17 +385,14 @@
     .education_experience {
       font-size: 1.4vw;
 
-
       .options {
         border-bottom: 0.15vw solid var(--colorPrimary);
         border-radius: 0.5vw;
 
         .option {
           border-radius: 1vw;
-          transition: color 2s ease;
+          transition: color $transition-speed;
         }
-
-
 
         .option-active_index {
           border-radius: 0.5vw;
@@ -432,8 +426,8 @@
             height: 100%;
 
             .entity__item {
-              overflow: hidden;
               overflow-y: auto;
+              overflow: hidden;
               max-height: 17vw;
 
               .item {
@@ -455,8 +449,8 @@
           }
 
           .info__container {
-            overflow: hidden;
             overflow-y: auto;
+            overflow: hidden;
             padding: 0.5vw;
             padding-bottom: 2vw;
             max-height: 20vw;
@@ -465,17 +459,16 @@
             &::-webkit-scrollbar {
               width: 0.4vw;
             }
-            .info__tools{
+
+            .info__tools {
               gap: 1vw;
             }
 
             .info__title {
-
-              gap: 1vw;
               position: sticky;
+              top: -1vw;
               z-index: 100;
               font-size: 1.4vw;
-              top: -1vw;
               padding: 1vw 0;
               background-color: var(--backgroundSecond);
 
@@ -495,20 +488,17 @@
 
               .btn_certificate {
                 padding: 0.5vw 1vw;
-
               }
             }
           }
         }
 
         .container__years {
-
           height: 3vw;
           padding-bottom: 0.5vw;
 
           .years__title {
             font-size: 1.8vw;
-            text-align: center;
             cursor: pointer;
           }
 
@@ -519,12 +509,10 @@
               height: 0.8vw;
             }
 
-
-
             .year {
-
               padding: 0 0.5vw;
               position: relative;
+
               .indicator {
                 position: absolute;
                 left: 0;
@@ -532,8 +520,6 @@
                 border-radius: 1vw;
               }
             }
-
-
           }
         }
 

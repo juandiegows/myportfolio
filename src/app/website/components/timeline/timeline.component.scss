@@ -125,9 +125,7 @@ Main Components
   background-image: linear-gradient(to right, var(--background), rgba(248, 248, 248, 0));
   /* Fondo degradado */
   z-index: 10;
-  /* Asegúrate de que esté encima de otros elementos */
   pointer-events: none;
-  /* Evita que bloquee la interacción con otros elementos */
 }
 
 .shadow-right {
@@ -316,9 +314,6 @@ Main Components
   border-color: var(--colorPrimary);
 }
 
-.cd-timeline-navigation a.inactive {
-  cursor: not-allowed;
-}
 
 .cd-timeline-navigation a.inactive::after {
   background-position: 0 -16px;
