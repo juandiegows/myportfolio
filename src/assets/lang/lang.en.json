@@ -82,7 +82,7 @@
     ],
     "btn_text": "View all",
     "btn_view": "View Project",
-    "btn_git": "View Project in github",
+    "btn_git": "View code",
     "text_description": "Description"
   },
   "blog": {

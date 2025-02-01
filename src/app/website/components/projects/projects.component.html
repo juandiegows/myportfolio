@@ -10,39 +10,17 @@
     </ul>
   </div>
   <div class="projects">
-    <article class="project" *ngFor="let project of projects">
+    <article class="project" *ngFor="let project of projects" (click)="openModal(project)" (keydown)="openModal(project)">
       <div class="project__image">
-        <app-image class2="max"[textAlt]="project.title" [srcImg]="project.front_page.link_700" />
+        <img class="image" [alt]="project.title" [src]="project.front_page.link_700" />
       </div>
-      <div class="more_info" (click)="openModal(project)" (keydown)="openModal(project)">
-        <div class="stars" >
-          <p>{{ 0 }}</p>
-          <div class="star__image">
-            <app-image [textAlt]="project.title" [title]="project.title" [activeFilter]="true"
-              srcImg="/assets/img/Icons/project/star.svg" />
+      <div class="info__project">
+        <h3 class="title__project"> {{ project.title }}</h3>
+        <p class="description__project"> {{ project.short_description }}</p>
 
-          </div>
-        </div>
-
-        <svg class="bottom_project" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400.42 122.25">
-          <path class="cls-2" d="m3.48,48.17L399.37,8.82l-40.49,91.32-351-1.54L3.48,48.17Z" />
-          <path class="cls-1" d="m0,24.64l368.39,51.7L400.42,0v122.25H0V24.64Z" />
-        </svg>
-        <h3 class="project__title">{{ project.title }}</h3>
-        <div class="actions" >
-          <a class="action__image" (click)="$event.stopPropagation()" *ngIf="project.view_link != null" target="_blank" [href]="project.view_link ">
-            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/project/see.svg" />
-          </a>
-
-          <a class="action__image" (click)="$event.stopPropagation()" *ngIf="project.download_link != null" target="_blank"
-            [href]="project.download_link ">
-            <app-image [activeFilter]="true" srcImg="/assets/img/Icons/project/git.svg" />
-          </a>
-
-
-          <app-image  class="action__image "  (click)="$event.stopPropagation(); openModal(project)"
-           (keydown)="$event.stopPropagation(); openModal(project)" [activeFilter]="true"  srcImg="/assets/img/Icons/project/preview.svg" />
-
+        <div class="btns" (click)="$event.stopPropagation()">
+          <a *ngIf="project.view_link != null" target="_blank" [href]="project.view_link " class="btn"> {{ data?.btn_view }}</a>
+          <a *ngIf="project.download_link != null" target="_blank" [href]="project.download_link " class="btn"> {{ data?.btn_git }}</a> 
         </div>
       </div>
     </article>
@@ -59,12 +37,15 @@
       </div>
       <ng-template #noVideo>
         <div class="imagen-container">
-          <app-image class2="max" *ngIf="projectItem?.front_page?.link_900" [srcImg]="projectItem?.front_page?.link_900 ?? ''" />
+          <app-image class2="max" *ngIf="projectItem?.front_page?.link_900"
+            [srcImg]="projectItem?.front_page?.link_900 ?? ''" />
         </div>
       </ng-template>
       <div class="btns">
-        <a *ngIf="projectItem?.view_link != null" target="_blank" [href]="projectItem?.view_link " class="btn"> {{ data?.btn_view }}</a>
-        <a  *ngIf="projectItem?.download_link != null" target="_blank"  [href]="projectItem?.download_link " class="btn"> {{ data?.btn_git }}</a>
+        <a *ngIf="projectItem?.view_link != null" target="_blank" [href]="projectItem?.view_link " class="btn"> {{
+          data?.btn_view }}</a>
+        <a *ngIf="projectItem?.download_link != null" target="_blank" [href]="projectItem?.download_link " class="btn">
+          {{ data?.btn_git }}</a>
       </div>
       <div class="tools">
 
