@@ -13,7 +13,23 @@ $container-margin-top: 3rem;
   padding: 1rem $container-padding;
   margin-top: $container-margin-top;
   box-sizing: border-box;
-
+  .container_skills {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--backgroundDark);
+    font-size: 1.4rem;
+    .skill_filter{
+      width: 3rem;
+      cursor: pointer;
+      
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
   // Sección de Skills
   .container__skills {
     width: 100%;
@@ -24,6 +40,8 @@ $container-margin-top: 3rem;
     .title {
       text-align: center;
     }
+
+
 
     .skills {
       margin: 2rem 0;

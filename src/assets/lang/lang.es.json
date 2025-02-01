@@ -38,7 +38,8 @@
   "skills": {
     "title": "Mis habilidades",
     "btnProject": "Ver Proyectos",
-    "btnExperience": "Ver Experiencia"
+    "btnExperience": "Ver Experiencia",
+    "txt_skills": "Para filtrar por habilidades, puedes darle  doble clic a la habilidad que deseas filtrar"
   },
   "experienceEducation": {
     "title": "Mi experiencia laboral y educación",

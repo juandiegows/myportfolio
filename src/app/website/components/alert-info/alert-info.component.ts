@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Lang, SettingService } from '../../services/setting.service';
+import { Topic } from '../../models/Topic.model';
+import { TopicInfo } from '../../models/info/TopicInfo.model';
 
 @Component({
     selector: 'app-alert-info',
@@ -13,26 +15,36 @@ export class AlertInfoComponent implements OnInit {
 
   @Output()
   IsActive = new EventEmitter<Boolean>();
-  @Input()
-  img: String = "";
-  @Input()
-  title: String = "sin titulo";
-  @Input()
-  texto: String = "";
+  @Output() onExperienceClick = new EventEmitter<TopicInfo>();
 
   @Input()
-  textBtnProject: String = ""
+  skill: TopicInfo  | null = null;
+
   @Input()
-  textBtnExperience: String = ""
+  textBtnProject: string = ""
+  @Input()
+  textBtnExperience: string = ""
+
+
   Close() {
     this.active = false;
     this.IsActive.emit(false);
   }
+
+
+  onExperience() {
+    if(this.skill == null) return;
+    this.Close();
+    this.onExperienceClick.emit(this.skill);
+  }
+
   message_active = false;
-  constructor(private setting: SettingService) {
+  constructor(private  readonly setting: SettingService) {
 
   }
+
   message = "doble clic afuera para cerrar"
+
   ngOnInit(): void {
     this.setting.lang$.subscribe(data => {
       if(data == Lang.es){

@@ -3,13 +3,13 @@
 </div>
 <div class="container" (dblclick)=" Close()" (click)="message_active = true" [class.container_active]="active">
   <div id="myAlert" class="alert" (mouseenter)="message_active = false" (mouseleave)="message_active = true">
-    <app-image class="image" [srcImg]="img" [textAlt]="title" />
+    <app-image class="image" [srcImg]="skill?.link_image ?? ''" [textAlt]="skill?.name?? ''" />
     <div class="info">
-      <h3 class="title">{{title}}</h3>
-      <p class="text">{{texto}}</p>
+      <h3 class="title">{{skill?.name}}</h3>
+      <p class="text">{{skill?.description}}</p>
       <div class="actions">
         <!-- <p class="btn">{{textBtnProject}}</p> -->
-        <p class="btn">{{textBtnExperience}}</p>
+        <p class="btn" (click)="onExperience()">{{textBtnExperience}}</p>
       </div>
     </div>
     <app-image class="btnClose" srcImg="/assets/img/Icons/close.svg" (click)=" Close()" textAlt="cerrar" />

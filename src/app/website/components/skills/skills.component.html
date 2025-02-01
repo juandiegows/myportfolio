@@ -3,8 +3,11 @@
   <div class="container__skills">
     <h2 class="title">{{ dataSkill.title }}</h2>
     <div class="skills">
-      <div class="skill" *ngFor="let skill of skills; let i = index; trackBy: trackById" (click)="Open(skill, i)"
-        (keydown.enter)="Open(skill, i)" (keydown.space)="Open(skill, i)">
+      <div class="skill"
+      *ngFor="let skill of skills; let i = index; trackBy: trackById"
+      (click)="Open(skill, i)"
+      tabindex="0"
+      [ngClass]="{ 'active': skillsFilter.includes(skill) }">
         <app-image class="lang" [title]="skill.name" [srcImg]="skill.link_image" [textAlt]="skill.name"></app-image>
       </div>
     </div>
@@ -109,6 +112,19 @@
           </div>
         </div>
       </div>
+      <div class="container_skills">
+        <ng-container *ngIf="skillsFilter && skillsFilter.length > 0; else noSkills">
+          <div *ngFor="let skill of skillsFilter">
+            <div class="skill_filter" (click)="toggleSkill(skill)">
+              <app-image class="lang" [title]="skill.name" [srcImg]="skill.link_image" [textAlt]="skill.name"></app-image>
+            </div>
+
+          </div>
+        </ng-container>
+        <ng-template #noSkills>
+          <p>{{ dataSkill.txt_skills }}</p>
+        </ng-template>
+      </div>
       <div class="container__infoYear">
         <p class="filter__clear" (click)="clearFilter()" (keydown.enter)="clearFilter()"
           (keydown.space)="clearFilter()">
@@ -120,6 +136,5 @@
   </div>
 </div>
 
-<app-alert-info [active]="active" (IsActive)="active = $event" [title]="skillInfoActive.name"
-  [img]="skillInfoActive.link_image" [texto]="skillInfoActive.description" [textBtnProject]="dataSkill.btnProject"
+<app-alert-info [active]="active" (onExperienceClick)="toggleSkill($event)" (IsActive)="active = $event"  [skill]="skillInfoActive" [textBtnProject]="dataSkill.btnProject"
   [textBtnExperience]="dataSkill.btnExperience"></app-alert-info>

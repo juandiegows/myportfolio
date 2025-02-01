@@ -29,6 +29,7 @@ export class SkillsComponent implements OnInit {
 
   // Datos transformados
   skills: TopicInfo[] = [];
+  skillsFilter: TopicInfo[] = [];
   works: WorkInfo[] = [];
   education: EducationInfo[] = [];
 
@@ -46,7 +47,8 @@ export class SkillsComponent implements OnInit {
   dataSkill = {
     title: "Mi habilidades",
     btnProject: "Ver Proyectos",
-    btnExperience: "Ver Experiencia"
+    btnExperience: "Ver Experiencia",
+     txt_skills: "Para filtar por habilidades, puedes darle  doble clic a la habilidad que deseas filtrar"
   };
 
   dataExpEdu = {
@@ -131,6 +133,19 @@ export class SkillsComponent implements OnInit {
     });
   }
 
+
+  toggleSkill(skill: TopicInfo): void {
+    const index = this.skillsFilter.findIndex(s => s.id === skill.id);
+    if (index !== -1) {
+      // Si ya existe, la removemos
+      this.skillsFilter.splice(index, 1);
+    } else {
+      // Si no existe, la agregamos
+      this.skillsFilter.push(skill);
+    }
+    this.filterWorks();
+  }
+
   /**
    * Transforma y asigna los datos para skills, works y educación según el idioma.
    */
@@ -145,7 +160,7 @@ export class SkillsComponent implements OnInit {
     }
 
     // Transforma lista de works
-    this.works = this.worksList.map(work => this.transformWork(work));
+    this.filterWorks();
     if (this.works.length === 0) {
       this.messageWork = "No hay experiencia laboral disponibles";
     }
@@ -158,6 +173,25 @@ export class SkillsComponent implements OnInit {
 
     // Actualiza la vista de experiencia/educación según el flag actual
     this.ChangeData();
+  }
+
+  filterWorks(): void {
+    if (this.skillsFilter.length === 0) {
+      // Si no hay filtros seleccionados, mostrar todos los trabajos
+      this.works = this.worksList.map(work => this.transformWork(work));
+      return;
+    }
+  
+    this.works = this.worksList
+      .filter(work => this.hasMatchingSkill(work))
+      .map(work => this.transformWork(work));
+  }
+  
+  hasMatchingSkill(work: WorkInfo): boolean {
+    // Verifica si al menos uno de los temas seleccionados está en el trabajo
+    return this.skillsFilter.some(skill =>
+      work.topics?.some(workTopic => workTopic === skill.name)
+    );
   }
 
   /**
