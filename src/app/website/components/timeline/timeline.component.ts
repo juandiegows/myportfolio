@@ -67,10 +67,24 @@ export class TimelineComponent implements AfterViewInit {
       });
     });
 
- 
-    setTimeout(() => this.scrollToSelected(), 5000);
-  }
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Cuando el contenedor entra en la vista, se hace scroll hasta el elemento seleccionado
+            this.scrollToSelected();
+            // Una vez ejecutado, desconectamos el observer (si solo se necesita una vez)
+            obs.disconnect();
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Se considera visible cuando el 50% del contenedor es visible (ajusta este valor según sea necesario)
+      }
+    );
 
+    observer.observe(this.eventsWrapper.nativeElement);
+  }
 
   fillEvents(): void {
     this.events = this.eventsAll.map((event) => ({
