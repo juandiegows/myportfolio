@@ -34,13 +34,15 @@
       }
 
       .client__image {
-        margin-top: 2rem;
+        margin: 2rem 0;
         width: 100%;
+        max-width: 20rem;
         height: auto;
       }
 
       .tags {
         display: flex;
+        justify-content: center  ;
         gap: 1rem;
         flex-wrap: wrap;
         font-size: clamp(1.4rem, 1.4vw, 20rem);
@@ -74,6 +76,9 @@
           text-decoration: none;
           color: var(--backgroundSecond);
           cursor: pointer;
+          &:hover {
+            opacity: 0.8;
+          }
         }
       }
 
@@ -146,6 +151,7 @@
         .client__image {
           margin-top: 2vw;
           width: 70%;
+          max-width: 25rem;
         }
 
 
