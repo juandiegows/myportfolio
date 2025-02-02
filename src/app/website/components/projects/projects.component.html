@@ -2,12 +2,7 @@
   <h2 class="title"> {{ data?.title }}</h2>
   <div class="info">
     {{ data?.text }}
-    <ul class="list">
-      <li class="item" *ngFor="let item of data?.items">
-        <app-image class="icon" [activeFilter]="true" [srcImg]="item.url_image" />
-        {{ item.text }}
-      </li>
-    </ul>
+
   </div>
   <div class="projects">
     <article class="project" *ngFor="let project of projects" (click)="openModal(project)" (keydown)="openModal(project)">

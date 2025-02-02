@@ -66,20 +66,6 @@
   "project": {
     "title": "Mis Proyectos",
     "text": "Bienvenidos a mis projectos, puedes mirar en esta sección mis proyectos más destacado si quieres ver más de mis trabajos, presiona en el boton ver todos.",
-    "items": [
-      {
-        "url_image": "/assets/img/Icons/project/see.svg",
-        "text": "Ver proyecto funcional"
-      },
-      {
-        "url_image": "/assets/img/Icons/project/git.svg",
-        "text": "Ver proyecto en Git"
-      },
-      {
-        "url_image": "/assets/img/Icons/project/preview.svg",
-        "text": "Ver más información del proyecto"
-      }
-    ],
     "btn_text": "Ver todos",
     "btn_view": "Demo",
     "btn_git": "código",
