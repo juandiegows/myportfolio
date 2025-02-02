@@ -17,7 +17,9 @@
       <div class="info__project">
         <h3 class="title__project"> {{ project.title }}</h3>
         <p class="description__project"> {{ project.short_description }}</p>
-
+        <div class="topics">
+          <p class="topic" *ngFor="let topic of project.topics"> {{ topic.name|topic }}</p>
+        </div>
         <div class="btns" (click)="$event.stopPropagation()">
           <a *ngIf="project.view_link != null" target="_blank" [href]="project.view_link " class="btn"> {{ data?.btn_view }}</a>
           <a *ngIf="project.download_link != null" target="_blank" [href]="project.download_link " class="btn"> {{ data?.btn_git }}</a> 

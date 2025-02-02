@@ -1,4 +1,5 @@
-import { FrontPageInfo } from "./FrontPageInfo.model";
+import { FrontPageInfo } from './FrontPageInfo.model';
+import { TopicInfo } from './TopicInfo.model';
 
 export class ProjectInfo {
   id: number = 0;
@@ -8,6 +9,7 @@ export class ProjectInfo {
   title: string = '';
   short_description: string = '';
   description: string = '';
+  topics?: TopicInfo[] = [];
   view_link: string = '';
   download_link: string = '';
   video_link: string | null = null;

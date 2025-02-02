@@ -30,6 +30,7 @@
       background-color: var(--backgroundSecond);
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
 
       .project__image {
         .image {
@@ -41,7 +42,9 @@
       .info__project {
         display: flex;
         flex-direction: column;
-        justify-content: start;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
 
         .title__project {
           font-size: clamp(2rem, 1vw, 30rem);
@@ -50,19 +53,41 @@
           margin: 1rem 0;
           font-weight: 900;
         }
-        .description__project{
+
+        .description__project {
           font-size: clamp(1.5rem, 1vw, 20rem);
           text-align: justify;
           margin: 1rem;
         }
-        .btns{
+
+        .btns {
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
           gap: 1rem;
-          margin: 1rem 0; 
-          .btn{
+          margin: 1rem 0;
+
+          .btn {
             font-size: clamp(1.5rem, 1vw, 20rem);
+          }
+        }
+      }
+
+      .topics {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 90%;
+        margin: 0.5rem auto;
+
+        .topic {
+          white-space: nowrap;
+          cursor: pointer;
+          font-weight: 900;
+
+          &:hover {
+            color: var(--colorPrimary);
           }
         }
       }

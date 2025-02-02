@@ -1,4 +1,5 @@
 import { FrontPage } from "./FrontPage.model";
+import { Topic } from "./Topic.model";
 
 export class Project {
   id: number = 0;
@@ -11,6 +12,7 @@ export class Project {
   spanish_short_description: string = '';
   description: string = '';
   spanish_description: string = '';
+  topics: Topic[]=[];
   view_link: string = '';
   download_link: string = '';
   video_link: string | null = null;
