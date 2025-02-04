@@ -1,32 +1,198 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
-
+// --------------------------------
+// Primary style
+// --------------------------------
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 a {
   text-decoration: none;
 }
 
-/* -------------------------------- 
-
-Main Components 
-
--------------------------------- */
+// --------------------------------
+// Main Components
+// --------------------------------
 .cd-horizontal-timeline {
   opacity: 1;
-  margin: 0em auto;
-  -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
+  margin: 0 auto;
   transition: opacity 0.2s;
-}
 
-.cd-horizontal-timeline::before {
-  /* never visible - this is used in jQuery to check the current MQ */
-  content: 'mobile';
-  display: none;
+  &::before {
+    // Nunca visible - se utiliza en jQuery para verificar la media query actual
+    content: 'mobile';
+    display: none;
+  }
+
+  &.loaded {
+    // Mostrar la timeline después de ajustar la posición de los eventos vía JavaScript
+    opacity: 1;
+  }
+
+  .timeline {
+    position: relative;
+    height: 100px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .events-wrapper {
+    position: relative;
+    height: 100%;
+    margin: 0 40px;
+    overflow: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE10+
+
+    &::before,
+    &::after {
+      // Sombreados en los laterales de la timeline
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      height: 100%;
+      width: 20px;
+    }
+  }
+
+  .events {
+    // Línea gris/timeline
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 49px;
+    height: 2px;
+    width: 100%; // Será definido vía JavaScript
+    background: var(--colorPrimary);
+    opacity: 0.8;
+    transition: transform 0.4s;
+    
+    a {
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      text-align: center;
+      font-size: 1.3rem;
+      padding-bottom: 15px;
+      color: var(--color);
+      transform: translateZ(0); // Soluciona un bug en Safari
+          
+      &::after {
+        // Punto que representa el evento
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -5px;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        border: 2px solid var(--colorPrimary);
+        background-color: var(--background);
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+      
+      &:hover::after {
+        background-color: var(--colorPrimary);
+        border-color: var(--colorPrimary);
+        opacity: 0.8;
+        cursor: pointer;
+      }
+      
+      &.selected {
+        pointer-events: none;
+        
+        &::after {
+          background-color: var(--colorPrimary);
+          border-color: var(--colorPrimary);
+        }
+      }
+      
+      &.older-event::after {
+        border-color: var(--colorPrimary);
+      }
+    }
+  }
+
+  .filling-line {
+    // Línea de relleno verde de la timeline
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--colorPrimary);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s;
+  }
+
+  .events-content {
+    position: relative;
+    width: 100%;
+    margin: 2em 0;
+    overflow: hidden;
+
+    ol {
+      display: flex;
+
+      li {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: 0 5%;
+        opacity: 1;
+        cursor: pointer;
+        flex: 1; // Cada li ocupa el mismo espacio
+        min-width: 100%;
+        box-sizing: border-box;
+
+        &.selected {
+          z-index: 2;
+          opacity: 1;
+        }
+        
+        > * {
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 1.2;
+      color: var(--colorPrimary);
+      opacity: 0.6;
+    }
+
+    em {
+      display: block;
+      font-style: italic;
+      margin: 10px auto;
+      color: var(--colorPrimary);
+      opacity: 0.6;
+
+      &::before {
+        content: '- ';
+      }
+    }
+
+    p {
+      font-size: 1.4rem;
+      color: var(--color);
+    }
+
+    // Line-height común para <em> y <p>
+    em,
+    p {
+      line-height: 1.6;
+    }
+  }
 }
 
 .video {
@@ -36,25 +202,12 @@ Main Components
   width: 100%;
   max-width: 800px;
   height: auto;
-}
 
-.video iframe {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-}
-
-.cd-horizontal-timeline.loaded {
-  /* show the timeline after events position has been set (using JavaScript) */
-  opacity: 1;
-}
-
-.cd-horizontal-timeline .timeline {
-  position: relative;
-  height: 100px;
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .content {
@@ -70,60 +223,29 @@ Main Components
   font-size: 2rem;
   text-align: justify;
   line-height: 1.5;
+
+  p {
+    max-height: 100%; // Evita que el párrafo exceda el contenedor
+    overflow-y: auto;  // Habilita scroll vertical
+    padding: 10px;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
 }
 
-.content p {
-  max-height: 100%; /* Asegura que el párrafo no exceda el contenedor */
-  overflow-y: auto;  /* Habilita el scroll vertical */
-  padding: 10px;  /* Agrega algo de espacio dentro del p */
-}
-
-
-.content img,
-.content video {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-
-.cd-horizontal-timeline .events-wrapper {
-  position: relative;
-  height: 100%;
-  margin: 0 40px;
-  overflow: hidden;
-  --left-gradient: 0px;
-  --right-gradient: 0px;
-  overflow-x: scroll; 
-  -webkit-overflow-scrolling: touch; 
-  scrollbar-width: none; /* Para Firefox */
-  -ms-overflow-style: none; /* Para Internet Explorer 10+ */
-}
-
-.cd-horizontal-timeline .events-wrapper::after,
-.cd-horizontal-timeline .events-wrapper::before {
-  /* these are used to create a shadow effect at the sides of the timeline */
-  content: '';
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  height: 100%;
-  width: 20px;
-}
-
+// Sombreados laterales
 .shadow-left {
   position: sticky;
-  /* Fija el elemento relativo al contenedor .events */
   left: 0;
-  /* Fija al borde izquierdo */
   top: 0;
-  /* Si necesitas fijarlo verticalmente */
   height: 100%;
-  /* Asegura que cubra toda la altura del contenedor */
   width: 50px;
-  /* Ajusta el ancho según el efecto deseado */
   background-image: linear-gradient(to right, var(--background), rgba(248, 248, 248, 0));
-  /* Fondo degradado */
   z-index: 10;
   pointer-events: none;
 }
@@ -140,273 +262,84 @@ Main Components
   transform: translate(-100%, -100%);
 }
 
+// Navegación de la timeline
+.cd-timeline-navigation {
+  a {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    border: 2px solid var(--colorPrimary);
+    overflow: hidden;
+    color: transparent;
+    text-indent: 100%;
+    white-space: nowrap;
+    transition: border-color 0.3s;
+    cursor: pointer;
 
-.cd-horizontal-timeline .events {
-  /* this is the grey line/timeline */
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 49px;
-  height: 2px;
-  width: 100%;
-  /* width will be set using JavaScript */
-  background: var(--colorPrimary);
-  opacity: 0.8;
-  -webkit-transition: -webkit-transform 0.4s;
-  -moz-transition: -moz-transform 0.4s;
-  transition: transform 0.4s;
+    &::after {
+      content: '';
+      position: absolute;
+      height: 16px;
+      width: 16px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.prev {
+      left: 0;
+    }
+
+    &.next {
+      right: 0;
+    }
+
+    &:hover {
+      border-color: var(--colorPrimary);
+    }
+
+    &.inactive {
+      &::after {
+        background-position: 0 -16px;
+      }
+      &:hover {
+        border-color: var(--colorPrimary);
+      }
+    }
+  }
 }
 
-
-.cd-horizontal-timeline .filling-line {
-  /* this is used to create the green line filling the timeline */
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: var(--colorPrimary);
-  -webkit-transform: scaleX(0);
-  -moz-transform: scaleX(0);
-  -ms-transform: scaleX(0);
-  -o-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -ms-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
-  -webkit-transition: -webkit-transform 0.3s;
-  -moz-transition: -moz-transform 0.3s;
-  transition: transform 0.3s;
-}
-
-.cd-horizontal-timeline .events a {
-  position: absolute;
-  bottom: 0;
-  z-index: 2;
-  text-align: center;
-  font-size: 1.3rem;
-  padding-bottom: 15px;
-  color: var(--color);
-  /* fix bug on Safari - text flickering while timeline translates */
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-.cd-horizontal-timeline .events a::after {
-  /* this is used to create the event spot */
-  content: '';
-  position: absolute;
-  left: 50%;
-  right: auto;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-  bottom: -5px;
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  border: 2px solid var(--colorPrimary);
-  background-color: var(--background);
-  -webkit-transition: background-color 0.3s, border-color 0.3s;
-  -moz-transition: background-color 0.3s, border-color 0.3s;
-  transition: background-color 0.3s, border-color 0.3s;
-}
-
-.no-touch .cd-horizontal-timeline .events a:hover::after {
-  background-color: var(--colorPrimary);
-  border-color: var(--colorPrimary);
-}
-
-.cd-horizontal-timeline .events a.selected {
-  pointer-events: none;
-
-}
-
-.cd-horizontal-timeline .events a.selected::after {
-  background-color: var(--colorPrimary);
-  border-color: var(--colorPrimary);
-}
-
-.cd-horizontal-timeline .events a:hover::after {
-  background-color: var(--colorPrimary);
-  border-color: var(--colorPrimary);
-  opacity: 0.8;
-  cursor: pointer;
-}
-
-.events a.selected::after {
-  background-color: var(--colorPrimary);
-  border-color: var(--colorPrimary);
-}
-
-.cd-horizontal-timeline .events a.older-event::after {
-  border-color: var(--colorPrimary);
-}
-
+// --------------------------------
+// Media Queries
+// --------------------------------
 @media only screen and (min-width: 1100px) {
   .cd-horizontal-timeline {
     margin: 1em auto;
+
+    &::before {
+      content: 'desktop';
+    }
   }
-
-  .cd-horizontal-timeline::before {
-    /* never visible - this is used in jQuery to check the current MQ */
-    content: 'desktop';
-  }
-}
-
-.cd-timeline-navigation a {
-  /* these are the left/right arrows to navigate the timeline */
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  bottom: auto;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  height: 34px;
-  width: 34px;
-  border-radius: 50%;
-  border: 2px solid var(--colorPrimary);
-  /* replace text with an icon */
-  overflow: hidden;
-  color: transparent;
-  text-indent: 100%;
-  white-space: nowrap;
-  -webkit-transition: border-color 0.3s;
-  -moz-transition: border-color 0.3s;
-  transition: border-color 0.3s;
-  cursor: pointer;
-}
-
-
-
-.cd-timeline-navigation a::after {
-  /* arrow icon */
-  content: '';
-  position: absolute;
-  height: 16px;
-  width: 16px;
-  left: 50%;
-  top: 50%;
-  bottom: auto;
-  right: auto;
-}
-
-.cd-timeline-navigation a.prev {
-  left: 0;
-}
-
-.cd-timeline-navigation a.next {
-  right: 0;
-}
-
-.no-touch .cd-timeline-navigation a:hover {
-  border-color: var(--colorPrimary);
-}
-
-
-.cd-timeline-navigation a.inactive::after {
-  background-position: 0 -16px;
-}
-
-.no-touch .cd-timeline-navigation a.inactive:hover {
-  border-color: var(--colorPrimary);
-}
-
-.cd-horizontal-timeline .events-content {
-  position: relative;
-  width: 100%;
-  margin: 2em 0;
-  overflow: hidden;
-}
-
-.cd-horizontal-timeline .events-content ol {
-  display: flex;
-}
-
-.cd-horizontal-timeline .events-content li {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  left: 0;
-  top: 0;
-  padding: 0 5%;
-  opacity: 1;
-  cursor: pointer;
-  flex: 1;
-  /* Cada li ocupa un espacio igual */
-  min-width: 100%;
-  /* Al menos el ancho del contenedor padre (ol) */
-  box-sizing: border-box;
-  /* Incluye el padding y el border en el tamaño total */
-}
-
-.cd-horizontal-timeline .events-content li.selected {
-  /* visible event content */
-  position: relative;
-  z-index: 2;
-  opacity: 1;
-}
-
-
-.cd-horizontal-timeline .events-content li>* {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.cd-horizontal-timeline .events-content h2 {
-  font-weight: bold;
-  font-size: 1.6rem;
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--colorPrimary);
-  opacity: 0.6;
-}
-
-.cd-horizontal-timeline .events-content em {
-  display: block;
-  font-style: italic;
-  margin: 10px auto;
-  color: var(--colorPrimary);
-  opacity: 0.6;
-}
-
-.cd-horizontal-timeline .events-content em::before {
-  content: '- ';
-}
-
-.cd-horizontal-timeline .events-content p {
-  font-size: 1.4rem;
-  color: var(--color);
-}
-
-.cd-horizontal-timeline .events-content em,
-.cd-horizontal-timeline .events-content p {
-  line-height: 1.6;
 }
 
 @media only screen and (min-width: 768px) {
-  .cd-horizontal-timeline .events-content h2 {
-    font-size: 3rem;
-  }
+  .cd-horizontal-timeline {
+    .events-content {
+      h2 {
+        font-size: 3rem;
+      }
 
-  .cd-horizontal-timeline .events-content em {
-    font-size: 1.8rem;
-  }
+      em {
+        font-size: 1.8rem;
+      }
 
-  .cd-horizontal-timeline .events-content p {
-    font-size: 1.8rem;
+      p {
+        font-size: 1.8rem;
+      }
+    }
   }
 }
-
