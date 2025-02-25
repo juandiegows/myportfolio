@@ -14,7 +14,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FormContactMeComponent {
   // @ts-ignore
   messageForm: FormGroup;
-
+  captchaValid: boolean = false;  
   constructor(
     private setting: SettingService,
     private apiService: ApiService
@@ -54,8 +54,38 @@ export class FormContactMeComponent {
     });
   }
 
+
+    // Callback cuando el reCAPTCHA es resuelto
+    onCaptchaResolved(captchaResponse: string): void {
+      if (captchaResponse) {
+        this.captchaValid = true;  // reCAPTCHA validado
+      } else {
+        this.captchaValid = false; // Si no es válido, no se permite el envío
+      }
+    }
+
+
   onSubmit() {
     this.enable = false;
+    if (!this.captchaValid) {
+    let  mensaje= 'No se puede enviar el correo porque no se ha validado el reCAPTCHA';
+      let count = 0;
+      this.messageReponse.message = mensaje + ' ' + (10 - count) + ' seg';
+      count++;
+      let time = setInterval(() => {
+        if (this.messageReponse.message == '') {
+          clearInterval(time);
+          return;
+        }
+        this.messageReponse.message = mensaje + ' ' + (10 - count) + ' seg';
+        count++;
+        if (count == 11) {
+          clearInterval(time);
+          this.messageReponse.message = '';
+        }
+      }, 1000);
+      return;
+    }
     if (!this.messageForm.valid) {
       return;
     }

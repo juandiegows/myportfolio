@@ -1,4 +1,5 @@
 <section class="container">
+  <script src="https://www.google.com/recaptcha/api.js"></script>
   <form id="contact-me" class="form" [formGroup]="messageForm" (ngSubmit)="onSubmit()">
     <div  class="message_form" *ngIf="messageReponse.message != ''">
       <h4 >{{ messageReponse.message }}</h4>
@@ -49,8 +50,12 @@
         <div *ngIf="messageForm.get('message')?.errors?.['maxlength']">{{ lang === 'en' ? 'Message must be at most 250 characters long.' : 'El mensaje debe tener como máximo 250 caracteres.' }}</div>
       </div>
     </div>
+    <re-captcha
+    [siteKey]="'6LeVs-EqAAAAANRiBj457gbudlRyEQ4PjTPIGSPN0'"
+    (resolved)="onCaptchaResolved($event)">
+  </re-captcha>
 
-    <button type="submit" [disabled]="!messageForm.valid || !enable" class="btn">{{ data?.btn_send }}</button>
+    <button class="g-recaptcha btn"  type="submit" [disabled]="!messageForm.valid || !enable" >{{ data?.btn_send }}</button>
   </form>
 
 </section>
