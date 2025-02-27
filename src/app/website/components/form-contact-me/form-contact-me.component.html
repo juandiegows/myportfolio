@@ -50,10 +50,6 @@
         <div *ngIf="messageForm.get('message')?.errors?.['maxlength']">{{ lang === 'en' ? 'Message must be at most 250 characters long.' : 'El mensaje debe tener como máximo 250 caracteres.' }}</div>
       </div>
     </div>
-    <re-captcha
-    [siteKey]="'6LeVs-EqAAAAANRiBj457gbudlRyEQ4PjTPIGSPN0'"
-    (resolved)="onCaptchaResolved($event)">
-  </re-captcha>
 
     <button class="g-recaptcha btn"  type="submit" [disabled]="!messageForm.valid || !enable" >{{ data?.btn_send }}</button>
   </form>

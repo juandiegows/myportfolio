@@ -32,6 +32,8 @@ import { SlidingModalComponent } from './components/sliding-modal/sliding-modal.
 import { ImageOptimizedComponent } from './components/image-optimized/image-optimized.component';
 import { ParticlesComponent } from './components/particles/particles.component';
 import { TimelineComponent } from "./components/timeline/timeline.component";
+import {   RecaptchaV3Module, RECAPTCHA_V3_SITE_KEY   } from 'ng-recaptcha';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -76,8 +78,14 @@ import { TimelineComponent } from "./components/timeline/timeline.component";
     WebsiteRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    RecaptchaV3Module 
 ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+providers: [
+  {
+    provide: RECAPTCHA_V3_SITE_KEY ,
+    useValue: environment.recaptcha.siteKey,
+  },
+],
 })
 export class WebsiteModule { }
