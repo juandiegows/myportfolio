@@ -72,7 +72,6 @@ export class FormContactMeComponent {
     // Ejecutar reCAPTCHA solo si el formulario es válido
     this.recaptchaV3Service.execute('submit').subscribe({
         next: (token: string) => {
-            console.log(`Token [${token}] generado`);
             this.enviarMensaje(token); // Enviar el mensaje con el token del reCAPTCHA
         },
         error: (error) => {
