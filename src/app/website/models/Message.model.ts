@@ -3,5 +3,5 @@ export class Message {
   subject: string = '';
   email: string = '';
   message: string = '';
-  recaptchaToken: string = '';
+  captcha_token: string = '';
 }

@@ -89,7 +89,7 @@ private enviarMensaje(token: string) {
         subject: this.messageForm.value.subject,
         email: this.messageForm.value.email,
         message: this.messageForm.value.message,
-        recaptchaToken: token // Enviar el token a la API
+        captcha_token: token // Enviar el token a la API
     };
 
     this.apiService.sendMessage(this.message).subscribe({
@@ -103,8 +103,18 @@ private enviarMensaje(token: string) {
             this.enable = true;
         },
         error: (error) => {
-            console.error('Error al enviar el mensaje:', error);
-            this.mostrarMensaje('Error al intentar consumir el API', 10, 400);
+            // Mostrar los errores específicos del formulario
+            if (error?.error?.errors) {
+              const errors = error.error.errors;
+              const errorMessages = Object.keys(errors)
+                  .map((key) => `${key}: ${errors[key].join(', ')}`)
+                  .join('\n');
+  
+              this.mostrarMensaje(errorMessages, 10, 400);
+          } else {
+              this.mostrarMensaje('Error al intentar consumir el API', 10, 400);
+          }
+    
             this.enable = true;
         }
     });
