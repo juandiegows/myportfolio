@@ -68,7 +68,7 @@ a {
     opacity: 0.8;
     transition: transform 0.4s;
     
-    a {
+    p {
       position: absolute;
       bottom: 0;
       z-index: 2;
@@ -264,7 +264,7 @@ a {
 
 // Navegación de la timeline
 .cd-timeline-navigation {
-  a {
+  p {
     position: absolute;
     z-index: 1;
     top: 50%;

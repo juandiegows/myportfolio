@@ -35,11 +35,11 @@
                 <ol>
                     <li *ngFor="let item of events; let i = index" (click)="selectItem(item.id)"
                         id="event_Item{{ item.id }}">
-                        <a [ngClass]="{ 'selected': selected === item.id }"
+                        <p [ngClass]="{ 'selected': selected === item.id }"
                             [ngStyle]="{ 'left': (eventsMinDistance * (i + 1)) + 'px' }" [attr.data-id]="item.id"
                             [attr.data-date]="item.date">
                             {{ item.date }}
-                        </a>
+                        </p>
                     </li>
 
                 </ol>
@@ -51,9 +51,8 @@
         </div> <!-- .events-wrapper -->
 
         <ul class="cd-timeline-navigation">
-            <li (click)="prev()" #prevButton><a id="prev" class="prev  inactive">Prev</a></li>
-            <li (click)="next()" #nextButton><a id="next" class="next">Next</a>
-            </li>
+            <li (click)="prev()" #prevButton><p id="prev" class="prev  inactive">Prev</p></li>
+            <li (click)="next()" #nextButton><p id="next" class="next">Next</p></li>
         </ul> <!-- .cd-timeline-navigation -->
     </div> <!-- .timeline -->
 
