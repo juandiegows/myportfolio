@@ -73,7 +73,7 @@
             </div>
           </ng-template>
 
-          <p class="info__desc">{{ itemActive.description }}</p>
+          <div class="info__desc" [innerHTML]="itemActive.description"></div>
           <div class="info__tools" *ngIf="isWorkInfo(itemActive)">
             <p class="link" *ngFor="let tool of getWorkInfo(itemActive).topics">
               {{ tool | topic }}
